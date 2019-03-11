@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csu.lab.mapper.ResearcherMapper">
+  <resultMap id="BaseResultMap" type="com.csu.lab.pojo.Researcher">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="rid" jdbcType="INTEGER" property="rid" />
+    <result column="aid" jdbcType="INTEGER" property="aid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="post" jdbcType="VARCHAR" property="post" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="person_type" jdbcType="INTEGER" property="personType" />
+    <result column="affiliated_tutor" jdbcType="INTEGER" property="affiliatedTutor" />
+    <result column="direction" jdbcType="VARCHAR" property="direction" />
+    <result column="introduction" jdbcType="VARCHAR" property="introduction" />
+  </resultMap>
+</mapper>

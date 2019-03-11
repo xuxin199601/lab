@@ -1,0 +1,260 @@
+/* 不让vue代码显示出来 */
+[v-cloak] {
+    display: none;
+}
+
+/* 让h4稍微美观那么一点点 */
+h4 {
+    font-weight: bold;
+}
+
+/* 让h1旁边的small别太靠近 */
+h1 small {
+    margin-left: 10px;
+}
+
+.sidebar .info small {
+    padding-right: 5px;
+}
+
+#barcode {
+    display: block;
+    height: 100px;
+}
+
+.form-group span.form-display {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #CCC;
+    padding-left: 20px;
+
+    font-size: 14px;
+}
+
+.form-group div.form-display {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #CCC;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    font-size: 14px;
+}
+/* 使得用于显示序号的一列不会那么尴尬 */
+/* 其实也可以用来放checkbox的拉 */
+.table tr th:nth-child(1),
+.table tr td:nth-child(1) {
+    width: 40px;
+    text-align: center;
+}
+
+/* 在原有table的基础上进行的对齐方式扩展 */
+.table.table-center tr th,
+.table.table-center tr td {
+    text-align: center;
+}
+.table.table-left tr th,
+.table.table-left tr td {
+    text-align: left;
+}
+.table.table-right tr th,
+.table.table-rifht tr td {
+    text-align: right;
+}
+
+/* 给有chb-line属性的tr添加点击效果 */
+.table .chb-line:hover {
+    cursor: pointer;
+}
+
+/* 矮小的formcontrol */
+.form-control-sm {
+    height: 28px;
+}
+
+/* 优化下box下面的tab */
+.box .box-header .nav li a:link {
+    color: rgb(85, 85, 85);
+}
+
+/* 优化下加了msg属性的callout */
+.callout.callout-msg {
+    margin: 0;
+    padding: 5px 5px;
+}
+
+/* 扩充表格对齐方式 */
+.table.table-center tr td,
+.table.table-center tr th {
+    vertical-align: middle;
+    text-align: center;
+}
+.table.table-center-col tr td,
+.table.table-center-col tr th {
+    vertical-align: middle;
+}
+.table.table-center-row tr td,
+.table.table-center-row tr th {
+    text-align: center;
+}
+
+/* 让表格内的img不要太大 */
+.table tr td img { margin: 5px; }
+.table tr td img.lg { height: 128px; }
+.table tr td img.md { height: 64px; }
+.table tr td img.sm { height: 32px; }
+.table tr td img.circle { border-radius: 100%; }
+
+.table tr td[colspan] {
+    text-align: left;
+}
+
+/* 扩展的pull-center！别乱用！！ */
+.pull-center {
+    text-align: center;
+}
+
+/* 扩展的分页按钮 */
+.pagination li a span {
+    padding: 0 5px;
+}
+
+/* 扩展row上下间距 */
+.row.lg { margin-top: 48px; margin-bottom: 48px; }
+.row.md { margin-top: 32px; margin-bottom: 32px; }
+.row.sm { margin-top: 16px; margin-bottom: 16px; }
+.row.xs { margin-top: 8px; margin-bottom: 8px; }
+
+/* 扩展input-group下title span的表现 */
+.input-group span.title {
+    display: inline-block;
+    min-width: 60px;
+}
+
+/* 表格里面的permission应该好看点 */
+.table .permission:nth-child() {
+    float: left;
+    padding: 0 2px;
+}
+
+/* 使checkbox与旁边的文字不会那么挤 */
+.chbbox label span {
+    padding-left: 5px;
+}
+
+/* 优化菜单字体 */
+.sidebar-menu li a {
+    color: rgb(184, 199, 206);
+}
+
+/* 响应式图片 */
+img.responsive {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* 美化文件按钮 */
+.a-upload {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    position: relative;
+    color: rgb(85, 85, 85);
+    background-color: #FFF;
+    border: 1px solid rgb(204, 204, 204);
+    overflow: hidden;
+    display: inline-block;
+    text-align: left;
+
+    margin-bottom: 20px;
+}
+
+.a-upload input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.a-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none
+}
+
+.muti-text-display::-webkit-scrollbar {
+    display: none;
+}
+
+.muti-text-display {
+    width: 100%;
+    min-height: 400px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+}
+
+
+/* 修改select2让其更好看点 */
+/* .select2-container {
+    
+    display: block;
+}
+.select2-container .select2-selection {
+    width: 100%;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-color: #d2d6de;
+    padding: 0 12px;
+    min-height: 34px;
+}
+.select2-container .select2-selection .select2-selection__choice {
+    background-color: #3c8dbc;
+    border-color: #367fa9;
+    padding: 1px 10px;
+}
+.select2-container .select2-selection .select2-selection__choice .select2-selection__choice__remove {
+    color: rgba(255,255,255,0.7);
+    margin-right: 3px;
+}
+select.select2 {
+    display: none;
+} */
+
+
+.index-chara, .index-permission {
+    display: block;
+    font-size: 24px;
+}
+.index-chara em {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #555;
+}
+.index-permission ul {
+    display: inline;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+} 
+.index-permission ul li {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 20px;
+    color: #555;
+}
+.index-permission ul li:not(:last-child):after {
+    content: "、";
+    font-size: 20px;
+}
