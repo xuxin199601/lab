@@ -4,6 +4,7 @@ public enum ResultEnum {
     UNKONW_ERROR(-1, "未知错误"),
     SUCCESS(0, "成功"),
     NO_FOUND(101, "未找到信息"),
+    ACCOUNT_OR_PASSWORD_ERROR(1,"账号或密码错误"),
 
     ;
 
