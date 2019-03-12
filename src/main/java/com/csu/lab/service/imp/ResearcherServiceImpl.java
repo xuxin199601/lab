@@ -1,5 +1,6 @@
 package com.csu.lab.service.imp;
 
+import com.csu.lab.enums.ResultEnum;
 import com.csu.lab.exception.ResearcherException;
 import com.csu.lab.mapper.ResearcherMapper;
 import com.csu.lab.pojo.Researcher;
@@ -37,10 +38,10 @@ public class ResearcherServiceImpl implements ResearcherService {
         List<Researcher> researcherList = queryByProperty("aid", tutor.getAid());
         if (researcherList.isEmpty()) {
             if(ResearcherMapper.insert(tutor) != 1) {
-                throw new ResearcherException(2, "Failure.");
+                throw new ResearcherException(ResultEnum.SAVE_FAILURE);
             }
         } else {
-            throw new ResearcherException(1, "Tutor Exist.");
+            throw new ResearcherException(ResultEnum.TUTOR_EXIST);
         }
     }
 
@@ -49,7 +50,7 @@ public class ResearcherServiceImpl implements ResearcherService {
     public void updateResearcher(Researcher researcher) {
         logger.info("updateTutor:{}", researcher);
         if(ResearcherMapper.updateByPrimaryKeySelective(researcher) != 1) {
-            throw new ResearcherException(2, "Failure.");
+            throw new ResearcherException(ResultEnum.UPDATE_FAILURE);
         }
     }
 
@@ -58,7 +59,7 @@ public class ResearcherServiceImpl implements ResearcherService {
     public void deleteResearcher(Integer researcherId) {
         logger.info("deleteTutorById:{}", researcherId);
         if(ResearcherMapper.deleteByPrimaryKey(researcherId) != 1) {
-            throw new ResearcherException(2, "Failure.");
+            throw new ResearcherException(ResultEnum.DELETE_FAILURE);
         }
     }
 
@@ -68,7 +69,7 @@ public class ResearcherServiceImpl implements ResearcherService {
         logger.info("queryResearcherById:{}", researcherId);
         Researcher researcher = ResearcherMapper.selectByPrimaryKey(researcherId);
         if (researcher == null) {
-            throw new ResearcherException(1, "Tutor No Found.");
+            throw new ResearcherException(ResultEnum.TUTOR_EXIST);
         }
         return researcher;
     }

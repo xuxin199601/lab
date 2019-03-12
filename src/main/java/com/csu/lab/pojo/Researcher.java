@@ -57,7 +57,7 @@ public class Researcher {
     }
 
     /**
-     * 添加导师所使用的构造函数
+     * 添加导师所使用的构造函数，无 rid、affiliatedTutor 字段
      */
     public Researcher(Integer aid, String name, String post, String image, Integer personType, String direction, String introduction) {
         this.aid = aid;
@@ -69,6 +69,9 @@ public class Researcher {
         this.introduction = introduction;
     }
 
+    /**
+     * 修改导师所使用的构造函数，无 affiliatedTutor 字段
+     */
     public Researcher(Integer rid, Integer aid, String name, String post, String image, Integer personType, String direction, String introduction) {
         this.rid = rid;
         this.aid = aid;
@@ -76,6 +79,35 @@ public class Researcher {
         this.post = post;
         this.image = image;
         this.personType = personType;
+        this.direction = direction;
+        this.introduction = introduction;
+    }
+
+    /**
+     * 添加研究生所使用的构造函数，无 rid 字段
+     */
+    public Researcher(Integer aid, String name, String post, String image, Integer personType, Integer affiliatedTutor, String direction, String introduction) {
+        this.aid = aid;
+        this.name = name;
+        this.post = post;
+        this.image = image;
+        this.personType = personType;
+        this.affiliatedTutor = affiliatedTutor;
+        this.direction = direction;
+        this.introduction = introduction;
+    }
+
+    /**
+     * 修改导师所使用的构造函数,全字段
+     */
+    public Researcher(Integer rid, Integer aid, String name, String post, String image, Integer personType, Integer affiliatedTutor, String direction, String introduction) {
+        this.rid = rid;
+        this.aid = aid;
+        this.name = name;
+        this.post = post;
+        this.image = image;
+        this.personType = personType;
+        this.affiliatedTutor = affiliatedTutor;
         this.direction = direction;
         this.introduction = introduction;
     }

@@ -6,9 +6,9 @@ public class ResearcherException extends RuntimeException {
 
     private Integer code;
 
-    public ResearcherException(Integer code, String result) {
-        super(result);
-        this.code = code;
+    public ResearcherException(ResultEnum resultEnum) {
+        super(resultEnum.getMsg());
+        this.code = resultEnum.getCode();
     }
 
     public Integer getCode() {
