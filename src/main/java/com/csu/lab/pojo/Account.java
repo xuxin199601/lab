@@ -1,5 +1,7 @@
 package com.csu.lab.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
 import javax.persistence.*;
 
@@ -18,6 +20,7 @@ public class Account {
     /**
      * 密码
      */
+    @JsonIgnore
     private String password;
 
     /**

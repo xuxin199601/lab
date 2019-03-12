@@ -1,7 +1,5 @@
 package com.csu.lab.exception;
 
-import com.csu.lab.enums.ResultEnum;
-import com.csu.lab.pojo.Account;
 import com.csu.lab.pojo.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +25,7 @@ public class ExceptionHandle {
             return Message.fail(accountException.getCode(), accountException.getMessage());
         }
         logger.error("【系统异常】{}", e.getMessage());
-        return Message.fail(ResultEnum.UNKONW_ERROR.getCode(), ResultEnum.UNKONW_ERROR.getMsg());
+        return Message.fail(-1, "未知异常");
     }
 
 //    @ExceptionHandler(value = AccountException.class)

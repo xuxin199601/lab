@@ -1,14 +1,25 @@
 package com.csu.lab.controller;
 
+import com.csu.lab.customConst.CustomConstant;
+import com.csu.lab.enums.ResultEnum;
+import com.csu.lab.exception.AccountException;
+import com.csu.lab.pojo.Account;
+import com.csu.lab.pojo.Message;
 import com.csu.lab.service.AccountService;
+import com.csu.lab.utils.CustomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.thymeleaf.util.StringUtils;
 
-import java.lang.reflect.Method;
+import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
+import java.util.Calendar;
+import java.util.Date;
 
 @RequestMapping("/server/account")
 @Controller
@@ -16,25 +27,39 @@ public class AccountController {
     @Autowired
     AccountService accountService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public Object login(@RequestParam("username") String username, @RequestParam("password") String password) {
-//        如果为空则返回异常
-//        if (StringUtils.isEmptyOrWhitespace(usernew.getPassword()) || StringUtils.isEmptyOrWhitespace(usernew.getUsername())) {
-//            throw new CustomExceptionOne(CustomError.USER_LOGIN_FAIL);
-//        }
-//
-//        Usernew usernew1 = usernewServices.validateLogin(usernew.getUsername(), usernew.getPassword());
-//        httpServletRequest.getSession().setAttribute(CustomConst.IS_LOGIN, true);
 
-        return "login";
+    @Autowired
+    HttpServletRequest httpServletRequest;
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @ResponseBody
+    public Message login(@RequestParam("username") String username, @RequestParam("password") String password) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+//        如果为空则返回异常
+        Account account = new Account();
+        account.setUsername(username);
+        account.setPassword(password);
+        if (StringUtils.isEmptyOrWhitespace(account.getPassword()) || StringUtils.isEmptyOrWhitespace(account.getUsername())) {
+            throw new AccountException(ResultEnum.ACCOUNT_OR_PASSWORD_IS_SPACE.getCode(), ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getMsg());
+        }
+        account.setPassword(account.getPassword());
+        Account newAccount = accountService.loginVaildata(account);
+        httpServletRequest.getSession().setAttribute(CustomConstant.IS_LOGIN, true);
+
+        return Message.success().add(newAccount);
     }
 
 
     @RequestMapping("/addAccount")
-    public Object addAccount(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("privileges") Integer privileges) {
+    @ResponseBody
+    public Message addAccount(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("privileges") Integer privileges) throws UnsupportedEncodingException, NoSuchAlgorithmException {
 
-
-        return null;
+        Account account = new Account();
+        account.setUsername(username);
+        account.setPassword(password);
+        account.setPrivileges(privileges);
+        account.setCreateTime(CustomUtils.getCustomTime(Calendar.getInstance().getTime()));
+        accountService.addAccount(account);
+        return Message.success().add(ResultEnum.SUCCESS.getMsg());
     }
 
     @RequestMapping("/deleteAccount")

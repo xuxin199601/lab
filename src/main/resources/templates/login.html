@@ -25,13 +25,13 @@
     <div class="login-box-body">
         <p class="login-box-msg">登录你的账号</p>
 
-        <form action="form_management" method="">
+        <form action="/server/account/login" method="post">
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="账号">
+                <input type="text" class="form-control" name="username" placeholder="账号">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="密码">
+                <input type="password" class="form-control" name="password" placeholder="密码">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
