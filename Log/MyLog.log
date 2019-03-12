@@ -676,3 +676,875 @@ tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中�
 	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
 
+2019-03-12 10:47:37.810  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 10:47:37.816  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 10:47:37.884  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 10:47:37.884  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 10:47:38.625  INFO 10952 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-12 10:47:38.659  INFO 10952 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 repository interfaces.
+2019-03-12 10:47:39.007  INFO 10952 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4767b41d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-12 10:47:39.575  INFO 10952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-12 10:47:39.598  INFO 10952 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-12 10:47:39.599  INFO 10952 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-12 10:47:39.606  INFO 10952 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
+2019-03-12 10:47:39.802  INFO 10952 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-12 10:47:39.803  INFO 10952 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1919 ms
+2019-03-12 10:47:39.972  INFO 10952 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-12 10:47:39.973  WARN 10952 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2019-03-12 10:47:40.594  INFO 10952 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-12 10:47:40.669  INFO 10952 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-12 10:47:40.761  INFO 10952 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-03-12 10:47:40.763  INFO 10952 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-03-12 10:47:40.908  INFO 10952 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-03-12 10:47:41.075  INFO 10952 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-12 10:47:41.255  INFO 10952 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-12 10:47:41.786  INFO 10952 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-12 10:47:41.829  WARN 10952 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-12 10:47:41.925  WARN 10952 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-03-12 10:47:42.157  INFO 10952 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-12 10:47:42.236  INFO 10952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-12 10:47:42.240  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 4.891 seconds (JVM running for 6.743)
+2019-03-12 11:07:55.712  INFO 10952 --- [Thread-16] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-12 11:07:55.714  INFO 10952 --- [Thread-16] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-03-12 11:07:55.718  INFO 10952 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-03-12 11:07:55.727  INFO 10952 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-03-12 11:07:56.443  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:07:56.444  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:07:56.658 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:08:07.739  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:08:07.741  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:08:07.752  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:08:07.753  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:08:07.976 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:08:12.754  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:08:12.754  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:08:12.770  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:08:12.770  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:08:12.966 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:08:19.698  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:08:19.698  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:08:19.704  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:08:19.705  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:08:19.875 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:08:25.607  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:08:25.607  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:08:25.617  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:08:25.617  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:08:25.831 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:08:34.592  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:08:34.592  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:08:34.599  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:08:34.599  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:08:34.792 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:08:50.987  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:08:50.987  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:08:50.994  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:08:50.995  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:08:51.171 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:09:31.793  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:09:31.793  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:09:31.801  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:09:31.801  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:09:31.998 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:09:45.112  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:09:45.113  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:09:45.121  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:09:45.121  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:09:45.293 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:27:38.397  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:27:38.397  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:27:38.409  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:27:38.409  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:27:38.749 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:27:43.445  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:27:43.446  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:27:43.454  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:27:43.454  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:27:43.920 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:28:37.054  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:28:37.054  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:28:37.061  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:28:37.061  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:28:37.263 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:28:47.171  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:28:47.171  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:28:47.178  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:28:47.178  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:28:47.356 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:28:55.159  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:28:55.159  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:28:55.165  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:28:55.166  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:28:55.351 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:29:04.220  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:29:04.220  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:29:04.230  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:29:04.230  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:29:04.422 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:29:12.299  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:29:12.300  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:29:12.309  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:29:12.310  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:29:12.675 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:29:32.085  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:29:32.085  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:29:32.092  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:29:32.092  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:29:32.293 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:29:42.275  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:29:42.275  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:29:42.282  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:29:42.282  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:29:42.504 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:29:47.295  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:29:47.295  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:29:47.305  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:29:47.306  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:29:47.626 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:29:53.653  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:29:53.653  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:29:53.660  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:29:53.660  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:29:53.828 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
+2019-03-12 11:30:27.339  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-12 11:30:27.339  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-12 11:30:27.346  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10952 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
+2019-03-12 11:30:27.346  INFO 10952 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-12 11:30:27.534 ERROR 10952 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+tk.mybatis.mapper.MapperException: tk.mybatis.mapper.provider.EmptyProvider中缺少selectOne方法!
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.fromMapperClass(MapperHelper.java:142) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:156) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.registerMapper(MapperHelper.java:162) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.mapper.mapperhelper.MapperHelper.setConfig(MapperHelper.java:278) ~[mapper-3.5.3.jar:na]
+	at tk.mybatis.spring.mapper.ClassPathMapperScanner.setMapperProperties(ClassPathMapperScanner.java:50) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at tk.mybatis.spring.annotation.MapperScannerRegistrar.registerBeanDefinitions(MapperScannerRegistrar.java:33) ~[mapper-spring-boot-autoconfigure-1.2.4.jar:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:364) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_121]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:363) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:145) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:117) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:327) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531) ~[spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.csu.lab.LabApplication.main(LabApplication.java:14) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_121]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_121]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_121]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_121]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+
