@@ -1,5 +1,6 @@
 package com.csu.lab.exception;
 
+import com.csu.lab.pojo.Account;
 import com.csu.lab.pojo.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,9 +21,18 @@ public class ExceptionHandle {
         if (e instanceof ResearcherException) {
             ResearcherException accountException = (ResearcherException) e;
             return Message.fail(accountException.getCode(), accountException.getMessage());
+        } else if (e instanceof AccountException) {
+            AccountException accountException = (AccountException) e;
+            return Message.fail(accountException.getCode(), accountException.getMessage());
         }
         logger.error("【系统异常】{}", e.getMessage());
         return Message.fail(-1, "未知异常");
     }
+
+//    @ExceptionHandler(value = AccountException.class)
+//    @ResponseBody
+//    public Message AccountExceptionHandle(AccountException e){
+//
+//    }
 
 }

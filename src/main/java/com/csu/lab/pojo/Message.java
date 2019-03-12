@@ -1,10 +1,12 @@
 package com.csu.lab.pojo;
 
+import com.csu.lab.enums.ResultEnum;
+
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- *json的通用返回类
+ * json的通用返回类
  */
 public class Message {
     // 200 成功 404 失败
@@ -22,6 +24,13 @@ public class Message {
         Message message = new Message();
         message.setCode(code);
         message.setResult(result);
+        return message;
+    }
+
+    public static Message fail(ResultEnum resultEnum) {
+        Message message = new Message();
+        message.setCode(resultEnum.getCode());
+        message.setResult(resultEnum.getMsg());
         return message;
     }
 
