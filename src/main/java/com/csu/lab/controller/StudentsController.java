@@ -14,8 +14,6 @@ import java.util.List;
 @RequestMapping("/server/student")
 public class StudentsController {
 
-    private Logger logger = LoggerFactory.getLogger(RestController.class);
-
     @Autowired
     private ResearcherService researcherService;
 
@@ -63,7 +61,6 @@ public class StudentsController {
                             @RequestParam("introduction")String introduction) throws Exception {
         Researcher researcher = new Researcher(rid, aid, name, post, image, personType, affiliatedTutor, direction, introduction);
         researcherService.updateResearcher(researcher);
-        logger.info("updateTutor:{}", researcher);
         return Message.success().add("Success");
     }
 

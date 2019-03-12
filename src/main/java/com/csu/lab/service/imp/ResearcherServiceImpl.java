@@ -69,7 +69,7 @@ public class ResearcherServiceImpl implements ResearcherService {
         logger.info("queryResearcherById:{}", researcherId);
         Researcher researcher = ResearcherMapper.selectByPrimaryKey(researcherId);
         if (researcher == null) {
-            throw new ResearcherException(ResultEnum.TUTOR_EXIST);
+            throw new ResearcherException(ResultEnum.TUTOR_NO_FOUND);
         }
         return researcher;
     }

@@ -16,7 +16,7 @@ public class Message {
 
     public static Message success() {
         Message message = new Message();
-        message.setCode(0);
+        message.setCode(ResultEnum.SUCCESS.getCode());
         return message;
     }
 
