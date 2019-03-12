@@ -5,7 +5,12 @@ public enum ResultEnum {
 
     SUCCESS(0, "成功"),
 
-    ACCOUNT_OR_PASSWORD_ERROR(1,"账号或密码错误"),
+    ACCOUNT_OR_PASSWORD_ERROR(1, "账号或密码错误"),
+
+    ACCOUNT_OR_PASSWORD_IS_SPACE(1, "账号或密码不能为空"),
+    //   添加账户时出现错误
+    ACCOUNT_EXIST(1, "Username Exist"),
+    ACCOUNT_FAILURE(1, "Failure"),
 
     // 保存导师信息时的错误
     TUTOR_EXIST(1, "Tutor Exist."),
@@ -18,9 +23,7 @@ public enum ResultEnum {
     TUTOR_NO_FOUND(1, "Tutor No Found."),
 
     // 删除导师信息时的错误
-    DELETE_FAILURE(1, "Failure.")
-
-    ;
+    DELETE_FAILURE(1, "Failure.");
 
     private Integer code;
 

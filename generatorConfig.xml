@@ -13,9 +13,9 @@
         </plugin>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/lab?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT%2B8&amp;useSSL=false"
-                        userId="root"
-                        password="root">
+                        connectionURL="jdbc:mysql://rm-uf68un8hsvdy8as740o.mysql.rds.aliyuncs.com:3306/lab?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT%2B8&amp;useSSL=false"
+                        userId="zhangqi"
+                        password="Lige19960711">
         </jdbcConnection>
 
         <!-- 对于生成的pojo所在包 -->
@@ -29,7 +29,7 @@
                              type="XMLMAPPER"/>
 
 
-        <table tableName="t_researcher"></table>
+        <table tableName="t_account"></table>
 
     </context>
 </generatorConfiguration>

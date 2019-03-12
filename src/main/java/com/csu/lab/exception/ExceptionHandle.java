@@ -1,6 +1,5 @@
 package com.csu.lab.exception;
 
-import com.csu.lab.pojo.Account;
 import com.csu.lab.pojo.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

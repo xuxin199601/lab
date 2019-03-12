@@ -9,4 +9,5 @@ public interface AccountService {
     public Integer addAccount(Account account);
     public Integer deleteAccount();
     public List<Account> getAccountList(Integer page_index,Integer page_size);
+    public Account equrySingleAccount(Account account);
 }
