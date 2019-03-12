@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csu.lab.mapper.ProjectMapper">
+  <resultMap id="BaseResultMap" type="com.csu.lab.pojo.Project">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="introduction" jdbcType="VARCHAR" property="introduction" />
+    <result column="project" jdbcType="VARCHAR" property="project" />
+    <result column="video" jdbcType="VARCHAR" property="video" />
+  </resultMap>
+</mapper>

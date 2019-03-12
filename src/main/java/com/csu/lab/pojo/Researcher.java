@@ -1,5 +1,7 @@
 package com.csu.lab.pojo;
 
+import org.springframework.data.annotation.Id;
+
 import javax.persistence.*;
 
 @Table(name = "t_researcher")

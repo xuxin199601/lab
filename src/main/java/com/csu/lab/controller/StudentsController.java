@@ -28,14 +28,14 @@ public class StudentsController {
 
     // 通过id获取研究生个人信息
     @GetMapping("/studentInfo")
-    public Message getTutorById(@RequestParam("rid")Integer rid) {
+    public Message getStudentById(@RequestParam("rid")Integer rid) {
         Researcher tutor = researcherService.queryResearcherById(rid);
         return Message.success().add(tutor);
     }
 
     // 添加研究生
     @PostMapping("/addStudent")
-    public Message addTutor(@RequestParam("aid")Integer aid,
+    public Message addStudent(@RequestParam("aid")Integer aid,
                            @RequestParam("name")String name,
                            @RequestParam("post")String post,
                            @RequestParam("image")String image,
@@ -50,7 +50,7 @@ public class StudentsController {
 
     // 修改研究生信息
     @PutMapping("/modifyStudent")
-    public Message modifyTutor(@RequestParam("rid")Integer rid,
+    public Message modifyStudent(@RequestParam("rid")Integer rid,
                             @RequestParam("aid")Integer aid,
                             @RequestParam("name")String name,
                             @RequestParam("post")String post,
@@ -66,7 +66,7 @@ public class StudentsController {
 
     // 删除研究生信息
     @DeleteMapping("/deleteStudent")
-    public Message deleteTuttor(@RequestParam("rid")Integer rid) {
+    public Message deleteStudent(@RequestParam("rid")Integer rid) {
         researcherService.deleteResearcher(rid);
         return Message.success().add("Success");
     }

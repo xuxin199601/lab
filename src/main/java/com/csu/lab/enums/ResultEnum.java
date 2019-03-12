@@ -7,18 +7,26 @@ public enum ResultEnum {
 
     ACCOUNT_OR_PASSWORD_ERROR(1,"账号或密码错误"),
 
-    // 保存导师信息时的错误
+    // 保存导师、研究生信息时的错误
     TUTOR_EXIST(1, "Tutor Exist."),
-    SAVE_FAILURE(2, "Failure."),
+    RESEARCHER_SAVE_FAILURE(2, "Failure."),
+    // 修改导师、研究生信息时的错误
+    RESEARCHER_UPDATE_FAILURE(1, "Failure."),
+    // 查询导师、研究生信息时的错误
+    RESEARCHER_NO_FOUND(1, "Tutor No Found."),
+    // 删除导师、研究生信息时的错误
+    RESEARCHER_DELETE_FAILURE(1, "Failure."),
 
-    // 修改导师信息时的错误
-    UPDATE_FAILURE(1, "Failure."),
 
-    // 查询导师信息时的错误
-    TUTOR_NO_FOUND(1, "Tutor No Found."),
-
-    // 删除导师信息时的错误
-    DELETE_FAILURE(1, "Failure.")
+    // 保存成果信息时的错误
+    THESIS_EXIST(1, "Thesis Exist."),
+    THESIS_SAVE_FAILURE(2, "Failure."),
+    // 修改导师、研究生信息时的错误
+    THESIS_UPDATE_FAILURE(1, "Failure."),
+    // 查询导师、研究生信息时的错误
+    THESIS_NO_FOUND(1, "Thesis No Found."),
+    // 删除导师、研究生信息时的错误
+    THESIS_DELETE_FAILURE(1, "Failure."),
 
     ;
 

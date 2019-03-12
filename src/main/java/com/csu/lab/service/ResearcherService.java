@@ -22,9 +22,6 @@ public interface ResearcherService {
     // 根据对象进行分页查询用户
     public List<Researcher> queryResearcherListPaged(Integer personType, Integer page, Integer pageSize);
 
-    // 根据用户Id自定义查询用户
-//    public Researcher queryResearcherByIdCustom(Integer researcherId);
-
     // 根据条件查询
     public List<Researcher> queryByProperty(String property, Object value);
 
