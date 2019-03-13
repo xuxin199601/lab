@@ -19,7 +19,7 @@ public interface ResearcherService {
     // 根据对象进行用户查询
     public List<Researcher> queryResearcherList(Researcher researcher);
 
-    // 根据对象进行分页查询用户
+    // 分页查询
     public List<Researcher> queryResearcherListPaged(Integer personType, Integer page, Integer pageSize);
 
     // 根据条件查询

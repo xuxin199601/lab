@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<jsp
-<html lang="cn">
+
+<html lang="cn"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>数据采集系统</title>
+    <title>实验室信息管理系统</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/font-awesome.min.css">
@@ -25,7 +26,7 @@
     <header class="main-header">
         <a href="#" class="logo">
             <span class="logo-mini"><b>DCS</b></span>
-            <span class="logo-lg"><b>数据采集系统</b></span>
+            <span class="logo-lg"><b>实验室信息管理系统</b></span>
         </a>
         <nav class="navbar navbar-static-top">
             <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
@@ -61,17 +62,23 @@
             <!-- START: 菜单栏 -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li>
-                    <a href="#" class="layout-side-item">
+                    <a href="researcher_management" class="layout-side-item">
                       <i class="icon ion-ios-list" style="font-size: 16px;margin-right: 2px;"></i>
-                      <span class="layout-side-item-label">表单管理</span>
+                      <span class="layout-side-item-label">研究人员管理</span>
                     </a>
                   </li>
                   <li>
-                      <a href="user_management" class="layout-side-item">
+                      <a href="thesis_management" class="layout-side-item">
                         <i class="icon ion-person" style="font-size: 16px; margin-right: 2px;"></i>
-                        <span class="layout-side-item-label">用户管理</span>
+                        <span class="layout-side-item-label">研究成果管理</span>
                       </a>
                     </li>
+                <li>
+                    <a href="project_management" class="layout-side-item">
+                        <i class="icon ion-person" style="font-size: 16px; margin-right: 2px;"></i>
+                        <span class="layout-side-item-label">项目管理</span>
+                    </a>
+                </li>
             </ul>
             <!-- END: 菜单栏 -->
         </section>
@@ -106,44 +113,30 @@
                                         <table class="table">
                                           <thead>
                                             <tr>
-                                              <th width="10%">#</th>
-                                              <th width="20%">用户名</th>
-                                              <th width="20%">年龄</th>
-                                              <th width="20%">密码</th>
-                                              <th width="20%">操作</th>
+                                                <th width="10%">#</th>
+                                                <th width="10%">工程名</th>
+                                                <th width="20%">简介</th>
+                                                <th width="10%">工程</th>
+                                                <th width="10%">视频</th>
+                                                <th width="10%">开始时间</th>
+                                                <th width="10%">结束时间</th>
+                                                <th width="20%">操作</th>
                                             </tr>
                                           </thead>
                                           <tbody>
-                                            <tr>
-                                              <td>1</td>
-                                              <td>李明</td>
-                                              <td>18</td>
-                                              <td>123456</td>
+                                            <tr th:each="project:${projectList}">
+                                                <td th:text="${project.pid}"></td>
+                                                <td th:text="${project.name}"></td>
+                                                <td th:text="${project.introduction}"></td>
+                                                <td th:text="${project.project}"></td>
+                                                <td th:text="${project.video}"></td>
+                                                <td th:text="${project.startTime}"></td>
+                                                <td th:text="${project.endTime}"></td>
                                               <td>
                                                 <a href="form_one" class="layout-btn btn-primary">修改</a>
                                                 <a href="#" class="layout-btn btn-danger">删除</a>
                                               </td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>李明</td>
-                                                <td>18</td>
-                                                <td>123456</td>
-                                                <td>
-                                                  <a href="form_one" class="layout-btn btn-primary">修改</a>
-                                                  <a href="#" class="layout-btn btn-danger">删除</a>
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                  <td>3</td>
-                                                  <td>李明</td>
-                                                  <td>18</td>
-                                                  <td>123456</td>
-                                                  <td>
-                                                      <a href="form_one" class="layout-btn btn-primary">修改</a>
-                                                      <a href="#" class="layout-btn btn-danger">删除</a>
-                                                  </td>
-                                              </tr>
                                           </tbody>
                                         </table>
                                 </div>

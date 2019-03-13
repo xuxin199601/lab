@@ -1,25 +1,25 @@
 package com.csu.lab.service;
 
-import com.csu.lab.pojo.Project;
+import com.csu.lab.pojo.Laboratory;
 
 import java.util.List;
 
 public interface LaboratoryService {
 
-    public List<Project> getProjectList();
+    public List<Laboratory> getLaboratoryList();
 
-    public void saveProject(Project project)throws Exception;
+    public void saveLaboratory(Laboratory laboratory)throws Exception;
 
-    public void updateProject(Project project);
+    public void updateLaboratory(Laboratory laboratory);
 
-    public void deleteProject(Integer projectId);
+    public void deleteLaboratory(Integer laboratoryId);
 
-    public Project queryProjectById(Integer projectId);
+    public Laboratory queryLaboratoryById(Integer laboratoryId);
 
-    // 根据对象进行分页查询用户
-    public List<Project> queryProjectListPaged(Integer page, Integer pageSize);
+    // 分页查询
+    public List<Laboratory> queryLaboratoryListPaged(Integer page, Integer pageSize);
 
     // 根据条件查询
-    public List<Project> queryByProperty(String property, Object value);
+    public List<Laboratory> queryByProperty(String property, Object value);
 
 }

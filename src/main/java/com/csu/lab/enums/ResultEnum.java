@@ -12,7 +12,7 @@ public enum ResultEnum {
     ACCOUNT_EXIST(1, "Username Exist"),
     ACCOUNT_FAILURE(1, "Failure"),
     ACCOUNT_DELETE_FAILURE(1,"Delete Account Failure."),
-    // 保存导师、研究生信息时的错误
+
     // 保存导师、研究生信息时的错误
     TUTOR_EXIST(1, "Tutor Exist."),
     RESEARCHER_SAVE_FAILURE(2, "Failure."),

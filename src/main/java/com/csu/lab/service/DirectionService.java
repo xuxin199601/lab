@@ -1,25 +1,25 @@
 package com.csu.lab.service;
 
-import com.csu.lab.pojo.Project;
+import com.csu.lab.pojo.Direction;
 
 import java.util.List;
 
 public interface DirectionService {
 
-    public List<Project> getProjectList();
+    public List<Direction> getDirectionList();
 
-    public void saveProject(Project project)throws Exception;
+    public void saveDirection(Direction direction)throws Exception;
 
-    public void updateProject(Project project);
+    public void updateDirection(Direction direction);
 
-    public void deleteProject(Integer projectId);
+    public void deleteDirection(Integer directionId);
 
-    public Project queryProjectById(Integer projectId);
+    public Direction queryDirectionById(Integer directionId);
 
-    // 根据对象进行分页查询用户
-    public List<Project> queryProjectListPaged(Integer page, Integer pageSize);
+    // 分页查询
+    public List<Direction> queryDirectionListPaged(Integer page, Integer pageSize);
 
     // 根据条件查询
-    public List<Project> queryByProperty(String property, Object value);
+    public List<Direction> queryByProperty(String property, Object value);
 
 }

@@ -16,7 +16,7 @@ public interface ProjectService {
 
     public Project queryProjectById(Integer projectId);
 
-    // 根据对象进行分页查询用户
+    // 分页查询
     public List<Project> queryProjectListPaged(Integer page, Integer pageSize);
 
     // 根据条件查询

@@ -1,103 +1,103 @@
-//package com.csu.lab.service.imp;
-//
-//import com.csu.lab.enums.ResultEnum;
-//import com.csu.lab.exception.ProjectException;
-//import com.csu.lab.mapper.ProjectMapper;
-//import com.csu.lab.pojo.Project;
-//import com.csu.lab.service.ProjectService;
-//import com.github.pagehelper.PageHelper;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Service;
-//import org.springframework.transaction.annotation.Propagation;
-//import org.springframework.transaction.annotation.Transactional;
-//import tk.mybatis.mapper.entity.Example;
-//
-//import java.util.List;
-//
-//
-//@Service
-//public class DirectionServiceImpl implements ProjectService{
-//
-//    private Logger logger = LoggerFactory.getLogger(DirectionServiceImpl.class);
-//
-//    @Autowired
-//    private ProjectMapper projectMapper;
-//
-//    @Override
-//    @Transactional(propagation = Propagation.SUPPORTS)
-//    public List<Project> getProjectList() {
-//        return projectMapper.selectAll();
-//    }
-//
-//    /**
-//     * 保存项目信息
-//     */
-//    @Override
-//    @Transactional(propagation = Propagation.REQUIRED)
-//    public void saveProject(Project project) {
-//        logger.info("addProject:{}", project);
-//        List<Project> projectList = queryByProperty("name", project.getName());
-//        if (projectList.isEmpty()) {
-//            if(projectMapper.insert(project) != 1) {
-//                throw new ProjectException(ResultEnum.PROJECT_SAVE_FAILURE);
-//            }
-//        } else {
-//            throw new ProjectException(ResultEnum.PROJECT_EXIST);
-//        }
-//    }
-//
-//    @Override
-//    @Transactional(propagation = Propagation.REQUIRED)
-//    public void updateProject(Project project) {
-//        logger.info("updateProject:{}", project);
-//        if(projectMapper.updateByPrimaryKeySelective(project) != 1) {
-//            throw new ProjectException(ResultEnum.PROJECT_UPDATE_FAILURE);
-//        }
-//    }
-//
-//    @Override
-//    @Transactional(propagation = Propagation.REQUIRED)
-//    public void deleteProject(Integer projectId) {
-//        logger.info("deleteProjectById:{}", projectId);
-//        if(projectMapper.deleteByPrimaryKey(projectId) != 1) {
-//            throw new ProjectException(ResultEnum.PROJECT_DELETE_FAILURE);
-//        }
-//    }
-//
-//    @Override
-//    @Transactional(propagation = Propagation.SUPPORTS)
-//    public Project queryProjectById(Integer projectId) {
-//        logger.info("queryProjectById:{}", projectId);
-//        Project project = projectMapper.selectByPrimaryKey(projectId);
-//        if (project == null) {
-//            throw new ProjectException(ResultEnum.PROJECT_NO_FOUND);
-//        }
-//        return project;
-//    }
-//
-//    @Override
-//    @Transactional(propagation = Propagation.SUPPORTS)
-//    public List<Project> queryProjectListPaged(Integer page, Integer pageSize) {
-//
-//        logger.info("queryProjectListPaged");
-//        PageHelper.startPage(page, pageSize);
-//
-//        List<Project> projectList = projectMapper.selectAll();
-//
-//        return projectList;
-//    }
-//
-//    @Override
-//    public List<Project> queryByProperty(String property, Object value) {
-//        Example example = new Example(Project.class);
-//        Example.Criteria criteria = example.createCriteria();
-//
-//        // 设置条件
-//        criteria.andEqualTo(property, value);
-//        example.and(criteria);
-//
-//        return projectMapper.selectByExample(example);
-//    }
-//}
+package com.csu.lab.service.imp;
+
+import com.csu.lab.enums.ResultEnum;
+import com.csu.lab.exception.DirectionException;
+import com.csu.lab.mapper.DirectionMapper;
+import com.csu.lab.pojo.Direction;
+import com.csu.lab.service.DirectionService;
+import com.github.pagehelper.PageHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+import tk.mybatis.mapper.entity.Example;
+
+import java.util.List;
+
+
+@Service
+public class DirectionServiceImpl implements DirectionService{
+
+    private Logger logger = LoggerFactory.getLogger(DirectionServiceImpl.class);
+
+    @Autowired
+    private DirectionMapper directionMapper;
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public List<Direction> getDirectionList() {
+        return directionMapper.selectAll();
+    }
+
+    /**
+     * 保存研究方向信息
+     */
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void saveDirection(Direction direction) {
+        logger.info("addDirection:{}", direction);
+        List<Direction> directionList = queryByProperty("resDirection", direction.getResDirection());
+        if (directionList.isEmpty()) {
+            if(directionMapper.insert(direction) != 1) {
+                throw new DirectionException(ResultEnum.DIRECTION_SAVE_FAILURE);
+            }
+        } else {
+            throw new DirectionException(ResultEnum.DIRECTION_EXIST);
+        }
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void updateDirection(Direction direction) {
+        logger.info("updateDirection:{}", direction);
+        if(directionMapper.updateByPrimaryKeySelective(direction) != 1) {
+            throw new DirectionException(ResultEnum.DIRECTION_UPDATE_FAILURE);
+        }
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void deleteDirection(Integer directionId) {
+        logger.info("deleteDirectionById:{}", directionId);
+        if(directionMapper.deleteByPrimaryKey(directionId) != 1) {
+            throw new DirectionException(ResultEnum.DIRECTION_DELETE_FAILURE);
+        }
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public Direction queryDirectionById(Integer directionId) {
+        logger.info("queryDirectionById:{}", directionId);
+        Direction direction = directionMapper.selectByPrimaryKey(directionId);
+        if (direction == null) {
+            throw new DirectionException(ResultEnum.DIRECTION_NO_FOUND);
+        }
+        return direction;
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public List<Direction> queryDirectionListPaged(Integer page, Integer pageSize) {
+
+        logger.info("queryDirectionListPaged");
+        PageHelper.startPage(page, pageSize);
+
+        List<Direction> directionList = directionMapper.selectAll();
+
+        return directionList;
+    }
+
+    @Override
+    public List<Direction> queryByProperty(String property, Object value) {
+        Example example = new Example(Direction.class);
+        Example.Criteria criteria = example.createCriteria();
+
+        // 设置条件
+        criteria.andEqualTo(property, value);
+        example.and(criteria);
+
+        return directionMapper.selectByExample(example);
+    }
+}

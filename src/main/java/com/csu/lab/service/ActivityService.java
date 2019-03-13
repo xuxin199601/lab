@@ -16,7 +16,7 @@ public interface ActivityService {
 
     public Activity queryActivityById(Integer activityId);
 
-    // 根据对象进行分页查询用户
+    // 分页查询
     public List<Activity> queryActivityListPaged(Integer page, Integer pageSize);
 
     // 根据条件查询
