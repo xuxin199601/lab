@@ -3,7 +3,7 @@ package com.csu.lab.enums;
 public enum ResultEnum {
     UNKONW_ERROR(-1, "系统异常"),
 
-    SUCCESS(0, "成功"),
+    SUCCESS(0, "Success"),
 
     ACCOUNT_OR_PASSWORD_ERROR(1, "账号或密码错误"),
 
@@ -11,7 +11,7 @@ public enum ResultEnum {
     //   添加账户时出现错误
     ACCOUNT_EXIST(1, "Username Exist"),
     ACCOUNT_FAILURE(1, "Failure"),
-
+    ACCOUNT_DELETE_FAILURE(1,"Delete Account Failure."),
     // 保存导师、研究生信息时的错误
     TUTOR_EXIST(1, "Tutor Exist."),
     RESEARCHER_SAVE_FAILURE(2, "Failure."),

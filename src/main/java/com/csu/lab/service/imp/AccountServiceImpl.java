@@ -5,10 +5,12 @@ import com.csu.lab.exception.AccountException;
 import com.csu.lab.mapper.AccountMapper;
 import com.csu.lab.pojo.Account;
 import com.csu.lab.service.AccountService;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
@@ -43,13 +45,24 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public Integer deleteAccount() {
-        return null;
+    @Transactional(propagation = Propagation.REQUIRED)
+    public Integer deleteAccount(Integer aid) {
+
+        return accountMapper.deleteByPrimaryKey(aid);
     }
 
     @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
     public List<Account> getAccountList(Integer page_index, Integer page_size) {
-        return null;
+        PageHelper.startPage(page_index, page_size);
+        Example example = new Example(Account.class);
+        Example.Criteria criteria = example.createCriteria();
+//        if (!StringUtils.isEmptyOrWhitespace(Message.getStuName())) {
+//            criteria.andLike("stu_name", "%" + student.getStuName() + "%");
+//        }
+//        example.orderBy("id").desc();
+        List<Account> messages = accountMapper.selectByExample(example);
+        return messages;
     }
 
     @Override

@@ -9,6 +9,8 @@ import com.csu.lab.service.AccountService;
 import com.csu.lab.utils.CustomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +22,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 @RequestMapping("/server/account")
 @Controller
@@ -51,6 +54,7 @@ public class AccountController {
 
     @RequestMapping("/addAccount")
     @ResponseBody
+//    @Transactional(propagation = Propagation.SUPPORTS)
     public Message addAccount(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("privileges") Integer privileges) throws UnsupportedEncodingException, NoSuchAlgorithmException {
 
         Account account = new Account();
@@ -63,12 +67,24 @@ public class AccountController {
     }
 
     @RequestMapping("/deleteAccount")
-    public Object deleteAccount(@RequestParam("aid") Integer aid) {
-        return null;
+    @ResponseBody
+//    @Transactional(propagation = Propagation.REQUIRED)
+    public Message deleteAccount(@RequestParam("aid") Integer aid) {
+
+        if(accountService.deleteAccount(aid)==1){
+            return Message.success().add(ResultEnum.SUCCESS);
+        }else{
+            return Message.fail(ResultEnum.ACCOUNT_DELETE_FAILURE);
+        }
+//        return null;
     }
 
     @RequestMapping("accountList")
-    public Object accountList(@RequestParam("page_index") Integer page_index, @RequestParam("page_size") Integer page_size) {
-        return null;
+    @ResponseBody
+//    @Transactional(propagation = Propagation.SUPPORTS)
+    public Message accountList(@RequestParam("page_index") Integer page_index, @RequestParam("page_size") Integer page_size) {
+
+        List<Account> accountList = accountService.getAccountList(page_index,page_size);
+        return Message.success().add(accountList);
     }
 }
