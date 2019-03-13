@@ -23,22 +23,22 @@ public class ResearcherServiceImpl implements ResearcherService {
     private Logger logger = LoggerFactory.getLogger(ResearcherServiceImpl.class);
 
     @Autowired
-    private ResearcherMapper ResearcherMapper;
+    private ResearcherMapper researcherMapper;
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
     public List<Researcher> getResearcherList() {
-        return ResearcherMapper.selectAll();
+        return researcherMapper.selectAll();
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public void saveResearcher(Researcher tutor) {
-        logger.info("addTutor:{}", tutor);
-        List<Researcher> researcherList = queryByProperty("aid", tutor.getAid());
+    public void saveResearcher(Researcher researcher) {
+        logger.info("addResearcher:{}", researcher);
+        List<Researcher> researcherList = queryByProperty("aid", researcher.getAid());
         if (researcherList.isEmpty()) {
-            if(ResearcherMapper.insert(tutor) != 1) {
-                throw new ResearcherException(ResultEnum.SAVE_FAILURE);
+            if(researcherMapper.insert(researcher) != 1) {
+                throw new ResearcherException(ResultEnum.RESEARCHER_SAVE_FAILURE);
             }
         } else {
             throw new ResearcherException(ResultEnum.TUTOR_EXIST);
@@ -48,18 +48,19 @@ public class ResearcherServiceImpl implements ResearcherService {
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public void updateResearcher(Researcher researcher) {
-        logger.info("updateTutor:{}", researcher);
-        if(ResearcherMapper.updateByPrimaryKeySelective(researcher) != 1) {
-            throw new ResearcherException(ResultEnum.UPDATE_FAILURE);
+        logger.info("updateResearcher:{}", researcher);
+        researcherMapper.updateByPrimaryKey(researcher);
+        if(researcherMapper.updateByPrimaryKey(researcher) != 1) {
+            throw new ResearcherException(ResultEnum.RESEARCHER_UPDATE_FAILURE);
         }
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public void deleteResearcher(Integer researcherId) {
-        logger.info("deleteTutorById:{}", researcherId);
-        if(ResearcherMapper.deleteByPrimaryKey(researcherId) != 1) {
-            throw new ResearcherException(ResultEnum.DELETE_FAILURE);
+        logger.info("deleteResearcherById:{}", researcherId);
+        if(researcherMapper.deleteByPrimaryKey(researcherId) != 1) {
+            throw new ResearcherException(ResultEnum.RESEARCHER_DELETE_FAILURE);
         }
     }
 
@@ -67,9 +68,9 @@ public class ResearcherServiceImpl implements ResearcherService {
     @Transactional(propagation = Propagation.SUPPORTS)
     public Researcher queryResearcherById(Integer researcherId) {
         logger.info("queryResearcherById:{}", researcherId);
-        Researcher researcher = ResearcherMapper.selectByPrimaryKey(researcherId);
+        Researcher researcher = researcherMapper.selectByPrimaryKey(researcherId);
         if (researcher == null) {
-            throw new ResearcherException(ResultEnum.TUTOR_NO_FOUND);
+            throw new ResearcherException(ResultEnum.RESEARCHER_NO_FOUND);
         }
         return researcher;
     }
@@ -84,7 +85,7 @@ public class ResearcherServiceImpl implements ResearcherService {
             criteria.andLike("Researchername", "%" + researcher.getName() + "%");
         }
 
-        List<Researcher> researcherList = ResearcherMapper.selectByExample(example);
+        List<Researcher> researcherList = researcherMapper.selectByExample(example);
 
         return researcherList;
     }
@@ -110,7 +111,7 @@ public class ResearcherServiceImpl implements ResearcherService {
         criteria.andEqualTo(property, value);
         example.and(criteria);
 
-        return ResearcherMapper.selectByExample(example);
+        return researcherMapper.selectByExample(example);
     }
 
 }

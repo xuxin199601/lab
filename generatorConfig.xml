@@ -29,7 +29,12 @@
                              type="XMLMAPPER"/>
 
 
-        <table tableName="t_account"></table>
+        <!--<table tableName="t_activity"></table>-->
+        <!--<table tableName="t_direction"></table>-->
+        <!--<table tableName="t_laboratory"></table>-->
+        <!--<table tableName="t_project"></table>-->
+        <!--<table tableName="t_relationship"></table>-->
+        <table tableName="t_researcher"></table>
 
     </context>
 </generatorConfiguration>

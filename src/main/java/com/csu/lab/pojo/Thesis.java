@@ -1,7 +1,5 @@
 package com.csu.lab.pojo;
 
-import org.springframework.data.annotation.Id;
-
 import java.util.Date;
 import javax.persistence.*;
 
@@ -44,39 +42,9 @@ public class Thesis {
     private String data;
 
     /**
-     * 论文发表时间
+     * 发表时间
      */
     private Date time;
-
-    public Thesis() {
-    }
-
-    /**
-     * 添加成果信息所用的构造函数
-     */
-    public Thesis(String name, String abstracts, String keywords, String content, String code, String data, Date time) {
-        this.name = name;
-        this.abstracts = abstracts;
-        this.keywords = keywords;
-        this.content = content;
-        this.code = code;
-        this.data = data;
-        this.time = time;
-    }
-
-    /**
-     * 修改成果信息所用的构造函数
-     */
-    public Thesis(Integer tid, String name, String abstracts, String keywords, String content, String code, String data, Date time) {
-        this.tid = tid;
-        this.name = name;
-        this.abstracts = abstracts;
-        this.keywords = keywords;
-        this.content = content;
-        this.code = code;
-        this.data = data;
-        this.time = time;
-    }
 
     /**
      * 获取成果编号
@@ -117,7 +85,7 @@ public class Thesis {
     /**
      * 获取摘要
      *
-     * @return abstract - 摘要
+     * @return abstracts - 摘要
      */
     public String getAbstracts() {
         return abstracts;
@@ -128,7 +96,7 @@ public class Thesis {
      *
      * @param abstracts 摘要
      */
-    public void setAbstract(String abstracts) {
+    public void setAbstracts(String abstracts) {
         this.abstracts = abstracts;
     }
 
@@ -205,18 +173,18 @@ public class Thesis {
     }
 
     /**
-     * 获取论文发表时间
+     * 获取发表时间
      *
-     * @return time - 论文发表时间
+     * @return time - 发表时间
      */
     public Date getTime() {
         return time;
     }
 
     /**
-     * 设置论文发表时间
+     * 设置发表时间
      *
-     * @param time 论文发表时间
+     * @param time 发表时间
      */
     public void setTime(Date time) {
         this.time = time;

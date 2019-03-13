@@ -1,5 +1,7 @@
 package com.csu.lab.exception;
 
+import com.csu.lab.enums.ResultEnum;
+import com.csu.lab.pojo.Laboratory;
 import com.csu.lab.pojo.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,20 +20,36 @@ public class ExceptionHandle {
     @ResponseBody
     public Message handle(Exception e) {
         if (e instanceof ResearcherException) {
-            ResearcherException accountException = (ResearcherException) e;
-            return Message.fail(accountException.getCode(), accountException.getMessage());
+            ResearcherException researcherException = (ResearcherException) e;
+            logger.error("【请求失败】{}", e.getMessage());
+            return Message.fail(researcherException.getCode(), researcherException.getMessage());
         } else if (e instanceof AccountException) {
             AccountException accountException = (AccountException) e;
+            logger.error("【请求失败】{}", e.getMessage());
             return Message.fail(accountException.getCode(), accountException.getMessage());
+        } else if (e instanceof ThesisException) {
+            ThesisException thesisException = (ThesisException) e;
+            logger.error("【请求失败】{}", e.getMessage());
+            return Message.fail(thesisException.getCode(), thesisException.getMessage());
+        } else if (e instanceof ProjectException) {
+            ProjectException projectException = (ProjectException) e;
+            logger.error("【请求失败】{}", e.getMessage());
+            return Message.fail(projectException.getCode(), projectException.getMessage());
+        } else if (e instanceof ActivityException) {
+            ActivityException activityException = (ActivityException) e;
+            logger.error("【请求失败】{}", e.getMessage());
+            return Message.fail(activityException.getCode(), activityException.getMessage());
+        } else if (e instanceof DirectionException) {
+            DirectionException directionException = (DirectionException) e;
+            logger.error("【请求失败】{}", e.getMessage());
+            return Message.fail(directionException.getCode(), directionException.getMessage());
+        } else if (e instanceof LaboratoryException) {
+            LaboratoryException laboratoryException = (LaboratoryException) e;
+            logger.error("【请求失败】{}", e.getMessage());
+            return Message.fail(laboratoryException.getCode(), laboratoryException.getMessage());
         }
         logger.error("【系统异常】{}", e.getMessage());
-        return Message.fail(-1, "未知异常");
+        return Message.fail(ResultEnum.UNKONW_ERROR.getCode(), ResultEnum.UNKONW_ERROR.getMsg());
     }
-
-//    @ExceptionHandler(value = AccountException.class)
-//    @ResponseBody
-//    public Message AccountExceptionHandle(AccountException e){
-//
-//    }
 
 }

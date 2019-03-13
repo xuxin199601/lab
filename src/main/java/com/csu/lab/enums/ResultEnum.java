@@ -13,6 +13,7 @@ public enum ResultEnum {
     ACCOUNT_FAILURE(1, "Failure"),
     ACCOUNT_DELETE_FAILURE(1,"Delete Account Failure."),
     // 保存导师、研究生信息时的错误
+    // 保存导师、研究生信息时的错误
     TUTOR_EXIST(1, "Tutor Exist."),
     RESEARCHER_SAVE_FAILURE(2, "Failure."),
     // 修改导师、研究生信息时的错误
@@ -32,6 +33,47 @@ public enum ResultEnum {
     THESIS_NO_FOUND(1, "Thesis No Found."),
     // 删除导师、研究生信息时的错误
     THESIS_DELETE_FAILURE(1, "Failure."),
+
+
+    // 保存项目信息时的错误
+    PROJECT_EXIST(1, "Project Exist."),
+    PROJECT_SAVE_FAILURE(2, "Failure."),
+    // 修改项目信息时的错误
+    PROJECT_UPDATE_FAILURE(1, "Failure."),
+    // 查询项目信息时的错误
+    PROJECT_NO_FOUND(1, "Project No Found."),
+    // 删除项目信息时的错误
+    PROJECT_DELETE_FAILURE(1, "Failure."),
+
+    // 保存活动信息时的错误
+    ACTIVITY_EXIST(1, "Activity Exist."),
+    ACTIVITY_SAVE_FAILURE(2, "Failure."),
+    // 修改活动信息时的错误
+    ACTIVITY_UPDATE_FAILURE(1, "Failure."),
+    // 查询活动信息时的错误
+    ACTIVITY_NO_FOUND(1, "Activity No Found."),
+    // 删除活动信息时的错误
+    ACTIVITY_DELETE_FAILURE(1, "Failure."),
+
+    // 保存研究方向信息时的错误
+    DIRECTION_EXIST(1, "Direction Exist."),
+    DIRECTION_SAVE_FAILURE(2, "Failure."),
+    // 修改研究方向信息时的错误
+    DIRECTION_UPDATE_FAILURE(1, "Failure."),
+    // 查询研究方向信息时的错误
+    DIRECTION_NO_FOUND(1, "Direction No Found."),
+    // 删除研究方向信息时的错误
+    DIRECTION_DELETE_FAILURE(1, "Failure."),
+
+    // 保存实验室信息时的错误
+    LABORATORY_EXIST(1, "Laboratory Exist."),
+    LABORATORY_SAVE_FAILURE(2, "Failure."),
+    // 修改实验室信息时的错误
+    LABORATORY_UPDATE_FAILURE(1, "Failure."),
+    // 查询实验室信息时的错误
+    LABORATORY_NO_FOUND(1, "Laboratory No Found."),
+    // 删除实验室信息时的错误
+    LABORATORY_DELETE_FAILURE(1, "Failure."),
 
     ;
 
