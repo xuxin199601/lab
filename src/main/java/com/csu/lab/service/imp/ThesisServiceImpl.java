@@ -38,7 +38,7 @@ public class ThesisServiceImpl implements ThesisService{
     @Transactional(propagation = Propagation.REQUIRED)
     public void saveThesis(Thesis thesis) {
         logger.info("addThesis:{}", thesis);
-        List<Thesis> ThesisList = queryByProperty("tid", thesis.getTid());
+        List<Thesis> ThesisList = queryByProperty("name", thesis.getName());
         if (ThesisList.isEmpty()) {
             if(thesisMapper.insert(thesis) != 1) {
                 throw new ThesisException(ResultEnum.THESIS_SAVE_FAILURE);
@@ -50,9 +50,9 @@ public class ThesisServiceImpl implements ThesisService{
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public void updateThesis(Thesis Thesis) {
-        logger.info("updateThesis:{}", Thesis);
-        if(thesisMapper.updateByPrimaryKeySelective(Thesis) != 1) {
+    public void updateThesis(Thesis thesis) {
+        logger.info("updateThesis:{}", thesis);
+        if(thesisMapper.updateByPrimaryKeySelective(thesis) != 1) {
             throw new ThesisException(ResultEnum.THESIS_UPDATE_FAILURE);
         }
     }

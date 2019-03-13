@@ -1,7 +1,5 @@
 package com.csu.lab.pojo;
 
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.*;
 
 @Table(name = "t_researcher")
@@ -35,15 +33,14 @@ public class Researcher {
     /**
      * 人员类别；0:导师，1:硕士生，2:博士生，3:其他
      */
-    @Column(name = "person_type")
+//    @Column(name = "person_type")
     private Integer personType;
 
     /**
      * 学生隶属导师编号
      */
-    @Column(name = "affiliated_tutor")
-    // 默认为-1
-    private Integer affiliatedTutor = -1;
+//    @Column(name = "affiliated_tutor")
+    private Integer affiliatedTutor;
 
     /**
      * 研究方向
@@ -54,65 +51,6 @@ public class Researcher {
      * 人员介绍
      */
     private String introduction;
-
-    public Researcher() {
-    }
-
-    /**
-     * 添加导师所使用的构造函数，无 rid、affiliatedTutor 字段
-     */
-    public Researcher(Integer aid, String name, String post, String image, Integer personType, String direction, String introduction) {
-        this.aid = aid;
-        this.name = name;
-        this.post = post;
-        this.image = image;
-        this.personType = personType;
-        this.direction = direction;
-        this.introduction = introduction;
-    }
-
-    /**
-     * 修改导师所使用的构造函数，无 affiliatedTutor 字段
-     */
-    public Researcher(Integer rid, Integer aid, String name, String post, String image, Integer personType, String direction, String introduction) {
-        this.rid = rid;
-        this.aid = aid;
-        this.name = name;
-        this.post = post;
-        this.image = image;
-        this.personType = personType;
-        this.direction = direction;
-        this.introduction = introduction;
-    }
-
-    /**
-     * 添加研究生所使用的构造函数，无 rid 字段
-     */
-    public Researcher(Integer aid, String name, String post, String image, Integer personType, Integer affiliatedTutor, String direction, String introduction) {
-        this.aid = aid;
-        this.name = name;
-        this.post = post;
-        this.image = image;
-        this.personType = personType;
-        this.affiliatedTutor = affiliatedTutor;
-        this.direction = direction;
-        this.introduction = introduction;
-    }
-
-    /**
-     * 修改导师所使用的构造函数,全字段
-     */
-    public Researcher(Integer rid, Integer aid, String name, String post, String image, Integer personType, Integer affiliatedTutor, String direction, String introduction) {
-        this.rid = rid;
-        this.aid = aid;
-        this.name = name;
-        this.post = post;
-        this.image = image;
-        this.personType = personType;
-        this.affiliatedTutor = affiliatedTutor;
-        this.direction = direction;
-        this.introduction = introduction;
-    }
 
     /**
      * 获取研究员编号

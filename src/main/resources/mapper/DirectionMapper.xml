@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csu.lab.mapper.DirectionMapper">
+  <resultMap id="BaseResultMap" type="com.csu.lab.pojo.Direction">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="did" jdbcType="INTEGER" property="did" />
+    <result column="res_direction" jdbcType="VARCHAR" property="resDirection" />
+    <result column="details" jdbcType="VARCHAR" property="details" />
+  </resultMap>
+</mapper>

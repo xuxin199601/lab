@@ -1,7 +1,6 @@
 package com.csu.lab.pojo;
 
-import org.springframework.data.annotation.Id;
-
+import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_project")
@@ -31,6 +30,18 @@ public class Project {
      * 项目视频
      */
     private String video;
+
+    /**
+     * 项目开始时间
+     */
+    @Column(name = "start_time")
+    private Date startTime;
+
+    /**
+     * 项目截止时间
+     */
+    @Column(name = "end_time")
+    private Date endTime;
 
     /**
      * 获取项目编号
@@ -120,5 +131,41 @@ public class Project {
      */
     public void setVideo(String video) {
         this.video = video;
+    }
+
+    /**
+     * 获取项目开始时间
+     *
+     * @return start_time - 项目开始时间
+     */
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    /**
+     * 设置项目开始时间
+     *
+     * @param startTime 项目开始时间
+     */
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * 获取项目截止时间
+     *
+     * @return end_time - 项目截止时间
+     */
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    /**
+     * 设置项目截止时间
+     *
+     * @param endTime 项目截止时间
+     */
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 }

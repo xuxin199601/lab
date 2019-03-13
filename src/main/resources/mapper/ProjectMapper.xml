@@ -10,5 +10,7 @@
     <result column="introduction" jdbcType="VARCHAR" property="introduction" />
     <result column="project" jdbcType="VARCHAR" property="project" />
     <result column="video" jdbcType="VARCHAR" property="video" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
   </resultMap>
 </mapper>

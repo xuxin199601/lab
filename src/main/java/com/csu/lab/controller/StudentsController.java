@@ -3,8 +3,6 @@ package com.csu.lab.controller;
 import com.csu.lab.pojo.Message;
 import com.csu.lab.pojo.Researcher;
 import com.csu.lab.service.ResearcherService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,31 +33,14 @@ public class StudentsController {
 
     // 添加研究生
     @PostMapping("/addStudent")
-    public Message addStudent(@RequestParam("aid")Integer aid,
-                           @RequestParam("name")String name,
-                           @RequestParam("post")String post,
-                           @RequestParam("image")String image,
-                           @RequestParam("person_type")Integer personType,
-                           @RequestParam("affiliated_tutor")Integer affiliatedTutor,
-                           @RequestParam("direction")String direction ,
-                           @RequestParam("introduction")String introduction) throws Exception {
-        Researcher researcher = new Researcher(aid, name, post, image, personType, affiliatedTutor, direction, introduction);
+    public Message addStudent(@ModelAttribute Researcher researcher) throws Exception {
         researcherService.saveResearcher(researcher);
         return Message.success().add("添加成功");
     }
 
     // 修改研究生信息
     @PutMapping("/modifyStudent")
-    public Message modifyStudent(@RequestParam("rid")Integer rid,
-                            @RequestParam("aid")Integer aid,
-                            @RequestParam("name")String name,
-                            @RequestParam("post")String post,
-                            @RequestParam("image")String image,
-                            @RequestParam("person_type")Integer personType,
-                            @RequestParam("affiliated_tutor")Integer affiliatedTutor,
-                            @RequestParam("direction")String direction ,
-                            @RequestParam("introduction")String introduction) throws Exception {
-        Researcher researcher = new Researcher(rid, aid, name, post, image, personType, affiliatedTutor, direction, introduction);
+    public Message modifyStudent(@ModelAttribute Researcher researcher) {
         researcherService.updateResearcher(researcher);
         return Message.success().add("Success");
     }

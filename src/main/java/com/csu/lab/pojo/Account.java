@@ -10,6 +10,7 @@ public class Account {
     /**
      * 账户编号
      */
+    @Id
     private Integer aid;
 
     /**
