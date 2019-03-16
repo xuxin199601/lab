@@ -34,13 +34,13 @@ public class Researcher {
      * 人员类别；0:导师，1:硕士生，2:博士生，3:其他
      */
 //    @Column(name = "person_type")
-    private Integer personType;
+    private Integer personType = 0;
 
     /**
      * 学生隶属导师编号
      */
 //    @Column(name = "affiliated_tutor")
-    private Integer affiliatedTutor;
+    private Integer affiliatedTutor = -1;
 
     /**
      * 研究方向

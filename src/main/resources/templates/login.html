@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>数据采集系统</title>
+    <title>实验室信息管理系统</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/font-awesome.min.css">
@@ -19,11 +19,13 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="login"><b>数据采集系统</b></a>
+        <a href="login"><b>实验室信息管理系统</b></a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">登录你的账号</p>
+        <!--判断-->
+        <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
 
         <form action="doLogin" method="get">
             <div class="form-group has-feedback">
