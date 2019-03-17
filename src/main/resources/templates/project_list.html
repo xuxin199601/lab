@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="cn"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="commons/bar::commonHeader"></head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+<div class="wrapper">
+
+    <!-- -->
+    <div th:replace="commons/bar::topbar"></div>
+
+    <!-- -->
+    <div th:replace="commons/bar::sidebar"></div>
+
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>表单管理<small>Form Management</small></h1>
+           
+        </section>
+        
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-6">
+                                    <input type="text" class="form-control" id="text-name" placeholder="用户昵称">
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <input type="text" class="form-control" id="text-openId" placeholder="用户openId">
+                                </div>
+                                <div class="col-md-4 col-sm-12">
+                                    <div class="form-group pull-right">
+                                        <a href="#" th:href="@{/server/addProject}" class="btn btn-primary" id="btn-add">添加</a>
+                                        <a href="#" class="btn btn-primary" id="btn-search">搜索</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                        <table class="table">
+                                          <thead>
+                                            <tr>
+                                                <th width="10%">#</th>
+                                                <th width="10%">工程名</th>
+                                                <th width="20%">简介</th>
+                                                <th width="10%">工程</th>
+                                                <th width="10%">视频</th>
+                                                <th width="10%">开始时间</th>
+                                                <th width="10%">结束时间</th>
+                                                <th width="20%">操作</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr th:each="project:${projectList}">
+                                                <td th:text="${project.pid}"></td>
+                                                <td th:text="${project.name}"></td>
+                                                <td th:text="${project.introduction}"></td>
+                                                <td th:text="${project.project}"></td>
+                                                <td th:text="${project.video}"></td>
+                                                <td th:text="${#dates.format(project.startTime,'yyyy-MM-dd')}"></td>
+                                                <td th:text="${#dates.format(project.endTime,'yyyy-MM-dd')}"></td>
+                                              <td>
+                                                <a href="form_one" class="layout-btn btn-primary">修改</a>
+                                                <a href="#" class="layout-btn btn-danger">删除</a>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <ul class="pagination pagination-sm no-margin pull-right">
+                                <li>
+                                    <a th:if="${not isFirstPage}" th:href="@{${'projectList'}(pageNum=${pageNum-1},pageSize=${pageSize})}" aria-label="Previous">
+                                        <span aria-hidden="true">«</span>
+                                    </a>
+                                    <a th:if="${isFirstPage}" href="javascript:void(0);" aria-label="Previous">
+                                        <span aria-hidden="true">«</span>
+                                    </a>
+                                </li>
+
+                                <li th:each="pageNo : ${#numbers.sequence(1, totalPages)}">
+                                    <a th:if="${pageNum eq pageNo}" href="javascript:void(0);">
+                                        <span th:text="${pageNo}"></span>
+                                    </a>
+
+                                    <a th:if="${not (pageNum eq pageNo)}" th:href="@{${'projectList'}(pageNum=${pageNo},pageSize=${pageSize})}">
+                                        <span th:text="${pageNo}"></span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a th:if="${not isLastPage}" th:href="@{${'projectList'}(pageNum=${pageNum+1},pageSize=${pageSize})}" aria-label="Next">
+                                        <span aria-hidden="true">»</span>
+                                    </a>
+                                    <a th:if="${isLastPage}" href="javascript:void(0);" aria-label="Next">
+                                        <span aria-hidden="true">»</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 引入footer -->
+    <div th:replace="commons/bar::footer"></div>
+
+</div>
+
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/adminlte.min.js"></script>
+</body>
+</html>

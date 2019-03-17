@@ -79,7 +79,7 @@ public class AccountServiceImpl implements AccountService {
                 throw new AccountException(ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getCode(), ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getMsg());
             }
         } else {
-            throw new AccountException(ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getCode(), ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getMsg());
+             throw new AccountException(ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getCode(), ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getMsg());
         }
 //        if(false){
 //            throw  new AccountException(ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getCode(),ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getMsg());
