@@ -6,20 +6,17 @@ import java.util.List;
 
 public interface ProjectService {
 
-    public List<Project> getProjectList();
+    List<Project> getProjectList();
 
-    public void saveProject(Project project)throws Exception;
+    void saveProject(Project project)throws Exception;
 
-    public void updateProject(Project project);
+    void updateProject(Project project);
 
-    public void deleteProject(Integer projectId);
+    void deleteProject(Integer projectId);
 
-    public Project queryProjectById(Integer projectId);
-
-    // 分页查询
-    public List<Project> queryProjectListPaged(Integer page, Integer pageSize);
+    Project queryProjectById(Integer projectId);
 
     // 根据条件查询
-    public List<Project> queryByProperty(String property, Object value);
+    List<Project> queryByProperty(String property, Object value);
 
 }

@@ -1,27 +1,49 @@
 package com.csu.lab.controller;
 
 import com.csu.lab.pojo.Message;
+import com.csu.lab.pojo.Project;
 import com.csu.lab.pojo.Thesis;
 import com.csu.lab.service.ThesisService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.ModelMap;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
-@RestController
-@RequestMapping("/server/thesis")
+@Controller
 public class ThesisController {
 
     @Autowired
     private ThesisService thesisService;
 
     // 分页成果信息列表
-//    @GetMapping("/thesisList")
-//    public Message getStudentByPage(@RequestParam("page_index")Integer pageIndex,
-//                                    @RequestParam("page_size")Integer pageSize) {
-//        List<Thesis> thesisList = thesisService.queryThesisListPaged(pageIndex, pageSize);
-//        return Message.success().add(thesisList);
-//    }
+    @GetMapping("/server/thesis/thesisList")
+    public String getStudentByPage(@RequestParam(defaultValue = "1") Integer pageNum,
+                                    @RequestParam(defaultValue = "10") Integer pageSize,
+                                    Model model) {
+
+        PageHelper.startPage(pageNum,pageSize);
+
+        List<Thesis> thesisList = thesisService.getThesisList();
+
+        PageInfo pageInfo = new PageInfo(thesisList,10);
+
+        model.addAttribute("pageInfo",pageInfo);
+        //获得当前页
+        model.addAttribute("pageNum",pageInfo.getPageNum());
+        //获得一页显示的条数
+        model.addAttribute("pageSize",pageInfo.getPageSize());
+        //是否是第一页
+        model.addAttribute("isFirstPage",pageInfo.isIsFirstPage());
+        //获得总页数
+        model.addAttribute("totalPages",pageInfo.getPages());
+        //是否是最后一页
+        model.addAttribute("isLastPage",pageInfo.isIsLastPage());
+        return "server/gain/thesisManage";
+    }
 
     // 通过id获取成果信息
     @GetMapping("/thesisInfo")
@@ -53,51 +75,9 @@ public class ThesisController {
         return Message.success().add("Success");
     }
 
+    /********************************************************************************************************************************/
     /**
-     * 跳转到编辑成果界面
+     * 下方写client代码
      */
-    @GetMapping("/thesis/{tid}")
-    public String getThesisById(@PathVariable("tid")Integer tid,
-                               ModelMap modelMap) {
-        Thesis thesis = thesisService.queryThesisById(tid);
-        modelMap.addAttribute("thesis", thesis);
-        return "thesis_add";
-    }
 
-    /**
-     * 修改按钮，更新成果信息，返回至list
-     */
-    @PutMapping("/saveThesis")
-    public String saveteThesis(@ModelAttribute Thesis thesis,
-                              ModelMap modelMap) {
-        thesisService.updateThesis(thesis);
-        return "redirect:/server/thesisList";
-    }
-
-    /**
-     * 添加按钮，添加成果信息，返回至list
-     */
-    @PostMapping("/saveThesis")
-    public String saveThesis(@ModelAttribute Thesis thesis) throws Exception {
-        thesisService.saveThesis(thesis);
-        return "redirect:/server/thesisList";
-    }
-
-    /**
-     * 跳转到添加成果页面
-     */
-    @GetMapping(value = "/addThesis")
-    public String toAddPage(){
-        return "thesis_add";
-    }
-
-    /**
-     * 删除成果信息
-     */
-    @DeleteMapping("/thesis/{tid}")
-    public String delThesis(@PathVariable("tid")Integer rid) {
-        thesisService.deleteThesis(rid);
-        return "redirect:/server/thesisList";
-    }
-    
 }

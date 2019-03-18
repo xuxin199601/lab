@@ -26,7 +26,6 @@ public class ProjectServiceImpl implements ProjectService{
     private ProjectMapper projectMapper;
 
     @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
     public List<Project> getProjectList() {
         return projectMapper.selectAll();
     }
@@ -75,18 +74,6 @@ public class ProjectServiceImpl implements ProjectService{
             throw new ProjectException(ResultEnum.PROJECT_NO_FOUND);
         }
         return project;
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
-    public List<Project> queryProjectListPaged(Integer page, Integer pageSize) {
-
-        logger.info("queryProjectListPaged");
-        PageHelper.startPage(page, pageSize);
-
-        List<Project> projectList = projectMapper.selectAll();
-
-        return projectList;
     }
 
     @Override

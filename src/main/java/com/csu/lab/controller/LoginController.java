@@ -1,23 +1,19 @@
 package com.csu.lab.controller;
 
 
-import com.csu.lab.customConst.CustomConstant;
 import com.csu.lab.pojo.Account;
-import com.csu.lab.pojo.Researcher;
 import com.csu.lab.service.AccountService;
 import com.csu.lab.service.ResearcherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.thymeleaf.util.StringUtils;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
+import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/server")
 public class LoginController {
 
     @Autowired
@@ -29,31 +25,37 @@ public class LoginController {
     @Autowired
     private ResearcherService researcherService;
 
-    @RequestMapping("/doLogin")
-    public String doLogin(@RequestParam("username") String username,
-                          @RequestParam("password") String password,
-                          ModelMap modelMap) {
-        Account account = new Account();
-        account.setUsername(username);
-        account.setPassword(password);
-        if (StringUtils.isEmptyOrWhitespace(account.getPassword()) || StringUtils.isEmptyOrWhitespace(account.getUsername())) {
-            modelMap.addAttribute("msg", "用户名密码错误");
-            return "index";
-        }
-        account.setPassword(account.getPassword());
-        Account newAccount = accountService.loginVaildata(account);
-        httpServletRequest.getSession().setAttribute(CustomConstant.IS_LOGIN, true);
-
-        // 登陆成功，跳转到管理页面
-        List<Researcher> researcherList = researcherService.queryResearcherListPaged(0, 1, 10);
-        modelMap.addAttribute("researchers", researcherList);
-        return "tutor_list";
-    }
-
-    @RequestMapping("/index")
+    //跳转到登录界面
+    @RequestMapping("/server/login")
     public String doLoginLab() {
-        return "login";
+        return "server/login";
     }
 
 
+    //跳转到project
+    @RequestMapping("/server/project")
+    public String doProject(){
+        return "server/gain/projectManage";
+    }
+
+
+    //登录实现
+    @RequestMapping(value = "/server/doLogin",method = RequestMethod.POST)
+    public String doLogin(Account account, Model model, HttpSession httpSession) {
+
+        Account user = accountService.loginVaildata(account);
+
+        if (user != null) {
+            httpSession.setAttribute("user", user);
+            return "redirect:home";
+        } else {
+            model.addAttribute("error", "用户名或密码错误，请重新登录！");
+            return "server/login";
+        }
+    }
+
+    /********************************************************************************************************************************/
+    /**
+     * 下方写client代码
+     */
 }

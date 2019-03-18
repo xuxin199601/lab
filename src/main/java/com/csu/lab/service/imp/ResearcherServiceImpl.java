@@ -26,9 +26,9 @@ public class ResearcherServiceImpl implements ResearcherService {
     private ResearcherMapper researcherMapper;
 
     @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
-    public List<Researcher> getResearcherList() {
-        return researcherMapper.selectAll();
+    public List<Researcher> getResearcherList(Integer personType) {
+        List<Researcher> researcherList = queryByProperty("personType", personType);
+        return researcherList;
     }
 
     @Override
@@ -37,9 +37,7 @@ public class ResearcherServiceImpl implements ResearcherService {
         logger.info("addResearcher:{}", researcher);
         List<Researcher> researcherList = queryByProperty("aid", researcher.getAid());
         if (researcherList.isEmpty()) {
-            if(researcherMapper.insert(researcher) == 1) {
-
-            } else {
+            if(researcherMapper.insert(researcher) != 1) {
                 throw new ResearcherException(ResultEnum.RESEARCHER_SAVE_FAILURE);
             }
         } else {
@@ -51,14 +49,13 @@ public class ResearcherServiceImpl implements ResearcherService {
     @Transactional(propagation = Propagation.REQUIRED)
     public void updateResearcher(Researcher researcher) {
         logger.info("updateResearcher:{}", researcher);
-        researcherMapper.updateByPrimaryKeySelective(researcher);
-        if(researcherMapper.updateByPrimaryKeySelective(researcher) != 1) {
+        researcherMapper.updateByPrimaryKey(researcher);
+        if(researcherMapper.updateByPrimaryKey(researcher) != 1) {
             throw new ResearcherException(ResultEnum.RESEARCHER_UPDATE_FAILURE);
         }
     }
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRED)
     public void deleteResearcher(Integer researcherId) {
         logger.info("deleteResearcherById:{}", researcherId);
         if(researcherMapper.deleteByPrimaryKey(researcherId) != 1) {
@@ -88,37 +85,6 @@ public class ResearcherServiceImpl implements ResearcherService {
         }
 
         List<Researcher> researcherList = researcherMapper.selectByExample(example);
-
-        return researcherList;
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
-    public List<Researcher> queryResearcherListPaged(Integer personType, Integer page, Integer pageSize) {
-
-        logger.info("queryResearcherListPaged");
-        PageHelper.startPage(page, pageSize);
-
-        List<Researcher> researcherList = queryByProperty("personType", personType);
-
-        return researcherList;
-    }
-
-    /**
-     * 分页查询研究生信息
-     */
-    @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
-    public List<Researcher> queryStudentListPaged(Integer page, Integer pageSize) {
-
-        logger.info("queryResearcherListPaged");
-        PageHelper.startPage(page, pageSize);
-
-        List<Researcher> researcherList = queryByProperty("personType", (Integer)1);
-        List<Researcher> list2 = queryByProperty("personType", (Integer)2);
-        researcherList.addAll(list2);
-
-//        List<Researcher> researcherList = researcherMapper.selectAll();
 
         return researcherList;
     }

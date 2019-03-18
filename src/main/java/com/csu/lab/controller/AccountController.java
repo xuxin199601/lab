@@ -1,60 +1,61 @@
 package com.csu.lab.controller;
 
-import com.csu.lab.customConst.CustomConstant;
 import com.csu.lab.enums.ResultEnum;
-import com.csu.lab.exception.AccountException;
 import com.csu.lab.pojo.Account;
 import com.csu.lab.pojo.Message;
 import com.csu.lab.service.AccountService;
 import com.csu.lab.utils.CustomUtils;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.thymeleaf.util.StringUtils;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
-@RequestMapping("/server/account")
+
+/**
+ * 账户管理
+ */
 @Controller
 public class AccountController {
+
     @Autowired
     AccountService accountService;
 
+    //账户管理界面
+    @RequestMapping("/server/account/accountList")
+    public String accountList(@RequestParam(defaultValue = "1") Integer pageNum,
+                              @RequestParam(defaultValue = "10") Integer pageSize,
+                              Model model) {
 
-    @Autowired
-    HttpServletRequest httpServletRequest;
+        PageHelper.startPage(pageNum,pageSize);
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    @ResponseBody
-    public Message login(@RequestParam("username") String username, @RequestParam("password") String password) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-//        如果为空则返回异常
-        Account account = new Account();
-        account.setUsername(username);
-        account.setPassword(password);
-        if (StringUtils.isEmptyOrWhitespace(account.getPassword()) || StringUtils.isEmptyOrWhitespace(account.getUsername())) {
-            throw new AccountException(ResultEnum.ACCOUNT_OR_PASSWORD_IS_SPACE.getCode(), ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getMsg());
-        }
-        account.setPassword(account.getPassword());
-        Account newAccount = accountService.loginVaildata(account);
-        httpServletRequest.getSession().setAttribute(CustomConstant.IS_LOGIN, true);
+        List<Account> list = accountService.getAccountList();
+        PageInfo pageInfo = new PageInfo(list,10);
 
-        return Message.success().add(newAccount);
+        model.addAttribute("pageInfo",pageInfo);
+        //获得当前页
+        model.addAttribute("pageNum",pageInfo.getPageNum());
+        //获得一页显示的条数
+        model.addAttribute("pageSize",pageInfo.getPageSize());
+        //是否是第一页
+        model.addAttribute("isFirstPage",pageInfo.isIsFirstPage());
+        //获得总页数
+        model.addAttribute("totalPages",pageInfo.getPages());
+        //是否是最后一页
+        model.addAttribute("isLastPage",pageInfo.isIsLastPage());
+        return "server/account/accountManage";
     }
 
-
-    @RequestMapping("/addAccount")
+    @RequestMapping("/server/account/addAccount")
     @ResponseBody
-//    @Transactional(propagation = Propagation.SUPPORTS)
     public Message addAccount(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("privileges") Integer privileges) throws UnsupportedEncodingException, NoSuchAlgorithmException {
 
         Account account = new Account();
@@ -66,25 +67,19 @@ public class AccountController {
         return Message.success().add(ResultEnum.SUCCESS.getMsg());
     }
 
-    @RequestMapping("/deleteAccount")
+    @RequestMapping("/server/account/deleteAccount")
     @ResponseBody
-//    @Transactional(propagation = Propagation.REQUIRED)
     public Message deleteAccount(@RequestParam("aid") Integer aid) {
 
-        if(accountService.deleteAccount(aid)==1){
+        if (accountService.deleteAccount(aid) == 1) {
             return Message.success().add(ResultEnum.SUCCESS);
-        }else{
+        } else {
             return Message.fail(ResultEnum.ACCOUNT_DELETE_FAILURE);
         }
-//        return null;
     }
 
-    @RequestMapping("accountList")
-    @ResponseBody
-//    @Transactional(propagation = Propagation.SUPPORTS)
-    public Message accountList(@RequestParam("page_index") Integer page_index, @RequestParam("page_size") Integer page_size) {
-
-        List<Account> accountList = accountService.getAccountList(page_index,page_size);
-        return Message.success().add(accountList);
-    }
+    /********************************************************************************************************************************/
+    /**
+     * 下方写client代码
+     */
 }

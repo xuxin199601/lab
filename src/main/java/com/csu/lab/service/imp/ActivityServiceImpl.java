@@ -26,7 +26,6 @@ public class ActivityServiceImpl implements ActivityService{
     private ActivityMapper activityMapper;
 
     @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
     public List<Activity> getActivityList() {
         return activityMapper.selectAll();
     }
@@ -60,7 +59,6 @@ public class ActivityServiceImpl implements ActivityService{
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public void deleteActivity(Integer activityId) {
-        logger.info("deleteActivityById:{}", activityId);
         if(activityMapper.deleteByPrimaryKey(activityId) != 1) {
             throw new ActivityException(ResultEnum.ACTIVITY_DELETE_FAILURE);
         }
@@ -69,24 +67,11 @@ public class ActivityServiceImpl implements ActivityService{
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
     public Activity queryActivityById(Integer activityId) {
-        logger.info("queryActivityById:{}", activityId);
         Activity activity = activityMapper.selectByPrimaryKey(activityId);
         if (activity == null) {
             throw new ActivityException(ResultEnum.ACTIVITY_NO_FOUND);
         }
         return activity;
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
-    public List<Activity> queryActivityListPaged(Integer page, Integer pageSize) {
-
-        logger.info("queryActivityListPaged");
-        PageHelper.startPage(page, pageSize);
-
-        List<Activity> activityList = activityMapper.selectAll();
-
-        return activityList;
     }
 
     @Override

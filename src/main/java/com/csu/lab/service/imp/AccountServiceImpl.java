@@ -6,6 +6,7 @@ import com.csu.lab.mapper.AccountMapper;
 import com.csu.lab.pojo.Account;
 import com.csu.lab.service.AccountService;
 import com.github.pagehelper.PageHelper;
+import org.omg.CORBA.INTERNAL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -19,6 +20,18 @@ public class AccountServiceImpl implements AccountService {
 
     @Autowired
     AccountMapper accountMapper;
+
+    @Override
+    public Account loginVaildata(Account account) {
+        Account user = accountMapper.selectOne(account);
+        return user;
+    }
+
+    @Override
+    public List<Account> getAccountList() {
+        List<Account> list = accountMapper.selectAll();
+        return list;
+    }
 
     @Override
     public Integer addAccount(Account account) {
@@ -37,53 +50,14 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
-    public Account equrySingleAccount(Account account) {
-
-        return accountMapper.selectOne(account);
-
-    }
-
-    @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public Integer deleteAccount(Integer aid) {
-
         return accountMapper.deleteByPrimaryKey(aid);
     }
 
     @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
-    public List<Account> getAccountList(Integer page_index, Integer page_size) {
-        PageHelper.startPage(page_index, page_size);
-        Example example = new Example(Account.class);
-        Example.Criteria criteria = example.createCriteria();
-//        if (!StringUtils.isEmptyOrWhitespace(Message.getStuName())) {
-//            criteria.andLike("stu_name", "%" + student.getStuName() + "%");
-//        }
-//        example.orderBy("id").desc();
-        List<Account> messages = accountMapper.selectByExample(example);
-        return messages;
-    }
+    public Account equrySingleAccount(Account account) {
+        return accountMapper.selectOne(account);
 
-    @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
-    public Account loginVaildata(Account account) {
-//        Account account1 = new Account();
-//        account1.setUsername(account.getUsername());
-//        usernew.setPassword(password);
-        Account user = accountMapper.selectOne(account);
-        if (user != null) {
-            if (user.getPassword().equals(account.getPassword())) {
-                return user;
-            } else {
-                throw new AccountException(ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getCode(), ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getMsg());
-            }
-        } else {
-             throw new AccountException(ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getCode(), ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getMsg());
-        }
-//        if(false){
-//            throw  new AccountException(ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getCode(),ResultEnum.ACCOUNT_OR_PASSWORD_ERROR.getMsg());
-//        }
-//        return null;
     }
 }

@@ -1,46 +1,59 @@
 package com.csu.lab.controller;
 
-import com.csu.lab.pojo.Direction;
+import com.csu.lab.pojo.Account;
 import com.csu.lab.pojo.Message;
 import com.csu.lab.pojo.Researcher;
-import com.csu.lab.service.DirectionService;
 import com.csu.lab.service.ResearcherService;
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Controller
-@RequestMapping("/server")
+@RequestMapping("")
 public class TutorsController {
 
     @Autowired
     private ResearcherService researcherService;
 
-    @Autowired
-    private DirectionService directionService;
+    // 分页获取导师信息列表
+    @GetMapping("/server/tutor/tutorList")
+    public String getTutorByPage(@RequestParam("person_type")Integer personType,
+                                  @RequestParam(defaultValue = "1") Integer pageNum,
+                                  @RequestParam(defaultValue = "10") Integer pageSize,
+                                  Model model) {
 
-    // 获取所有研究员的信息
-    @GetMapping("/allTutorList")
-    public Message getResearcherAll() {
-        List<Researcher> researcherList = researcherService.getResearcherList();
-        return Message.success().add(researcherList);
+        PageHelper.startPage(pageNum,pageSize);
+
+        List<Researcher> researcherList = researcherService.getResearcherList(personType);
+        PageInfo pageInfo = new PageInfo(researcherList,10);
+
+        model.addAttribute("pageInfo",pageInfo);
+
+        //获得当前页
+        model.addAttribute("pageNum",pageInfo.getPageNum());
+        //获得一页显示的条数
+        model.addAttribute("pageSize",pageInfo.getPageSize());
+        //是否是第一页
+        model.addAttribute("isFirstPage",pageInfo.isIsFirstPage());
+        //获得总页数
+        model.addAttribute("totalPages",pageInfo.getPages());
+        //是否是最后一页
+        model.addAttribute("isLastPage",pageInfo.isIsLastPage());
+
+        return "server/user/tutorManage";
     }
 
-    // 分页获取导师信息列表
-//    @GetMapping("/tutorList")
-//    public Message getTutorByPage(@RequestParam("person_type")Integer personType,
-//                                       @RequestParam("page_index")Integer pageIndex,
-//                                       @RequestParam("page_size")Integer pageSize) {
-//        List<Researcher> researcherList = researcherService.queryResearcherListPaged(personType, pageIndex, pageSize);
-//        return Message.success().add(researcherList);
-//    }
+    // 通过id获取导师个人信息
+    @GetMapping("/tutorInfo")
+    public Message getTutorById(@RequestParam("rid")Integer rid) {
+        Researcher tutor = researcherService.queryResearcherById(rid);
+        return Message.success().add(tutor);
+    }
 
     // 添加导师
     @PostMapping("/addTutor")
@@ -63,67 +76,9 @@ public class TutorsController {
         return Message.success().add("Success");
     }
 
-
-//    /**
-//     * 查询所有员工返回列表页面
-//     */
-//    @GetMapping(value = "/emps")
-//    public String list(Model model){
-//
-//        Collection<Employee> employees = employeeDao.getAll();
-//        model.addAttribute("emps",employees);
-//        return "emp/list";
-//    }
-
+    /********************************************************************************************************************************/
     /**
-     * 跳转到编辑导师界面
+     * 下方写client代码
      */
-    @GetMapping("/tutor/{rid}")
-    public String getTutorById(@PathVariable("rid")Integer rid,
-                               ModelMap modelMap) {
-        Researcher tutor = researcherService.queryResearcherById(rid);
-        modelMap.addAttribute("tutor", tutor);
-        return "tutor_add";
-    }
-
-    /**
-     * 修改按钮，更新导师信息，返回至list
-     */
-    @PutMapping("/saveTutor")
-    public String saveteTutor(@ModelAttribute Researcher researcher,
-                              ModelMap modelMap) {
-        researcherService.updateResearcher(researcher);
-        return "redirect:/server/tutorList";
-    }
-
-    /**
-     * 添加按钮，添加导师信息，返回至list
-     */
-    @PostMapping("/saveTutor")
-    public String saveTutor(@ModelAttribute Researcher researcher,
-                            ModelMap modelMap) throws Exception {
-        researcherService.saveResearcher(researcher);
-        return "redirect:/server/tutorList";
-    }
-
-    /**
-     * 跳转到添加导师页面
-     */
-    @GetMapping(value = "/addTutor")
-    public String toAddPage(ModelMap model){
-        List<Direction> directionList = directionService.getDirectionList();
-        model.addAttribute("directionList",directionList);
-        return "tutor_add";
-    }
-
-    /**
-     * 删除导师信息
-     */
-    @DeleteMapping("/tutor/{rid}")
-    public String delTutor(@PathVariable("rid")Integer rid,
-                           ModelMap modelMap) {
-        researcherService.deleteResearcher(rid);
-        return "redirect:/server/tutorList";
-    }
 
 }

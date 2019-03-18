@@ -1,7 +1,7 @@
 package com.csu.lab.enums;
 
 public enum ResultEnum {
-    UNKONW_ERROR(-1, "系统异常"),
+    UNKONW_ERROR(-11, "系统异常"),
 
     SUCCESS(0, "Success"),
 

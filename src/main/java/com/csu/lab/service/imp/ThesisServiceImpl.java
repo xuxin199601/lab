@@ -26,7 +26,6 @@ public class ThesisServiceImpl implements ThesisService{
     private ThesisMapper thesisMapper;
 
     @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
     public List<Thesis> getThesisList() {
         return thesisMapper.selectAll();
     }
