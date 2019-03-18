@@ -26,7 +26,6 @@ public class DirectionServiceImpl implements DirectionService{
     private DirectionMapper directionMapper;
 
     @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
     public List<Direction> getDirectionList() {
         return directionMapper.selectAll();
     }
@@ -77,17 +76,6 @@ public class DirectionServiceImpl implements DirectionService{
         return direction;
     }
 
-    @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
-    public List<Direction> queryDirectionListPaged(Integer page, Integer pageSize) {
-
-        logger.info("queryDirectionListPaged");
-        PageHelper.startPage(page, pageSize);
-
-        List<Direction> directionList = directionMapper.selectAll();
-
-        return directionList;
-    }
 
     @Override
     public List<Direction> queryByProperty(String property, Object value) {
