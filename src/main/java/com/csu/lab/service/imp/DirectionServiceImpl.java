@@ -3,6 +3,7 @@ package com.csu.lab.service.imp;
 import com.csu.lab.enums.ResultEnum;
 import com.csu.lab.exception.DirectionException;
 import com.csu.lab.mapper.DirectionMapper;
+import com.csu.lab.pojo.Account;
 import com.csu.lab.pojo.Direction;
 import com.csu.lab.service.DirectionService;
 import com.github.pagehelper.PageHelper;
@@ -20,7 +21,6 @@ import java.util.List;
 @Service
 public class DirectionServiceImpl implements DirectionService{
 
-    private Logger logger = LoggerFactory.getLogger(DirectionServiceImpl.class);
 
     @Autowired
     private DirectionMapper directionMapper;
@@ -30,52 +30,21 @@ public class DirectionServiceImpl implements DirectionService{
         return directionMapper.selectAll();
     }
 
+
+    @Override
+    public int addDirection(Direction direction) {
+        int result = directionMapper.insert(direction);
+        return result;
+    }
+
     /**
      * 保存研究方向信息
      */
     @Override
-    @Transactional(propagation = Propagation.REQUIRED)
-    public void saveDirection(Direction direction) {
-        logger.info("addDirection:{}", direction);
+    public List<Direction> saveDirection(Direction direction) {
         List<Direction> directionList = queryByProperty("resDirection", direction.getResDirection());
-        if (directionList.isEmpty()) {
-            if(directionMapper.insert(direction) != 1) {
-                throw new DirectionException(ResultEnum.DIRECTION_SAVE_FAILURE);
-            }
-        } else {
-            throw new DirectionException(ResultEnum.DIRECTION_EXIST);
-        }
+        return directionList;
     }
-
-    @Override
-    @Transactional(propagation = Propagation.REQUIRED)
-    public void updateDirection(Direction direction) {
-        logger.info("updateDirection:{}", direction);
-        if(directionMapper.updateByPrimaryKeySelective(direction) != 1) {
-            throw new DirectionException(ResultEnum.DIRECTION_UPDATE_FAILURE);
-        }
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.REQUIRED)
-    public void deleteDirection(Integer directionId) {
-        logger.info("deleteDirectionById:{}", directionId);
-        if(directionMapper.deleteByPrimaryKey(directionId) != 1) {
-            throw new DirectionException(ResultEnum.DIRECTION_DELETE_FAILURE);
-        }
-    }
-
-    @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
-    public Direction queryDirectionById(Integer directionId) {
-        logger.info("queryDirectionById:{}", directionId);
-        Direction direction = directionMapper.selectByPrimaryKey(directionId);
-        if (direction == null) {
-            throw new DirectionException(ResultEnum.DIRECTION_NO_FOUND);
-        }
-        return direction;
-    }
-
 
     @Override
     public List<Direction> queryByProperty(String property, Object value) {
@@ -88,4 +57,31 @@ public class DirectionServiceImpl implements DirectionService{
 
         return directionMapper.selectByExample(example);
     }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void updateDirection(Direction direction) {
+        if(directionMapper.updateByPrimaryKeySelective(direction) != 1) {
+            throw new DirectionException(ResultEnum.DIRECTION_UPDATE_FAILURE);
+        }
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void deleteDirection(Integer directionId) {
+        if(directionMapper.deleteByPrimaryKey(directionId) != 1) {
+            throw new DirectionException(ResultEnum.DIRECTION_DELETE_FAILURE);
+        }
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public Direction queryDirectionById(Integer directionId) {
+        Direction direction = directionMapper.selectByPrimaryKey(directionId);
+        if (direction == null) {
+            throw new DirectionException(ResultEnum.DIRECTION_NO_FOUND);
+        }
+        return direction;
+    }
+
 }

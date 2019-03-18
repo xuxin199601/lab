@@ -8,7 +8,9 @@ public interface DirectionService {
 
     public List<Direction> getDirectionList();
 
-    public void saveDirection(Direction direction)throws Exception;
+    int addDirection(Direction direction);
+
+    public List<Direction> saveDirection(Direction direction)throws Exception;
 
     public void updateDirection(Direction direction);
 
