@@ -78,4 +78,5 @@ public class AccountController {
             return Message.fail(ResultEnum.ACCOUNT_DELETE_FAILURE);
         }
     }
+
 }

@@ -60,4 +60,9 @@ public class AccountServiceImpl implements AccountService {
         return accountMapper.selectOne(account);
 
     }
+
+    @Override
+    public Account getAccount(Integer aid){
+        return accountMapper.selectByPrimaryKey(aid);
+    }
 }

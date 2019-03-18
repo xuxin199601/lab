@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
     <title>实验室概况</title>
-    <link rel="stylesheet" href="../../static/layui/css/layui.css">
-    <link rel="stylesheet" href="../../static/css/csu-style.css">
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+    <link rel="stylesheet" th:href="@{/css/csu-style.css}">
 </head>
 
 <body class="csu-iframe-body">
 
+<!--顶端信息条-->
+<div class="csu-content-top">
+    <nav frameborder="0" scrolling="no" name="csu-content-iframe" id="csu-content-iframe-top" class="navbar-default navbar-static-side" role="top" th:include="client/top :: top"></nav>
+</div>
+
 <fieldset class="layui-elem-field">
     <legend class="csu-color-theme"><b>实验室简介</b></legend>
-    <div class="layui-field-box">
+    <div class="layui-field-box" th:text="${laboratory.resDirection}">
         地球物理大地测量国家测绘地理信息局重点实验室前身是天文、重力实验室，由中国科学院首批学部委员夏坚白教授于1957年创建，1996年批准为国家测绘地理信息局部级重点实验室。实验室依托于武汉大学测绘学院的大地测量学与测量工程国家重点学科和固体地球物理学湖北省重点学科，具有大地测量学与测量工程、地球物理学两个一级学科博士学位授予点。实验室具有国际先进的导航定位、重力和地磁探测设备，建立了多个野外观测基地。已逐渐成为我国大地测量和固体地球物理等领域科学研究、学术交流及高层次人才培养的重要基地。
 
         实验室以研究地球重力场确定、大地测量地球物理反演、空间定位理论、方法与技术及其应用为目标，推进对地球系统运行规律的科学认识，为国家资源和环境政策、灾害对策、空间和国防技术的发展等提供科学依据和技术支撑。
@@ -23,14 +28,15 @@
     </div>
 </fieldset>
 
-<fieldset class="layui-elem-field">
+<fieldset class="layui-elem-field" >
     <legend class="csu-color-theme"><b>主要研究方向</b></legend>
-    <div class="layui-field-box">
+    <div class="layui-field-box" >
         地球物理学、大地测量学、大气和海洋科学等共同构成认识人类生存和发展环境的不同层次的科学体系。实验室以探测和研究地球各圈层及外层空间各种相关物理场及其时空分布为目标，努力推进对地球及其空间环境的科学认识，为国家资源和环境政策、灾害对策、空间和国防技术的发展等提供科学依据。为此，本实验室立足于大地测量学和固体地球物理学的基础研究，瞄准学科发展前沿和我国重大的基础研究和应用基础研究方向，通过学科间的交叉融合，实现优势互补，使本实验室成为大地测量学和固体地球物理学领域的科学研究和人才培养基地。在此科学目标指导下，本实验室确定了以下5个研究方向：
 
-        <fieldset class="layui-elem-field">
-            <legend class="csu-color-theme">地球重力场理论、方法与应用</legend>
-            <div class="layui-field-box">
+        <tr>
+        <fieldset class="layui-elem-field" th:each="direction:${pageInfo.list}">
+            <legend class="csu-color-theme" th:text="${direction.resDirection}">地球重力场理论、方法与应用</legend>
+            <div class="layui-field-box" th:text="${direction.details}">
                 地球重力场是发展空间技术、建立地球参考坐标系、资源勘探和发展远程武器所需要的基础信息。精密确定地球重力场、地球形状及其各自随时间的变化是本实验室具有特色的研究方向，包括5个子方向：
 
                 （a）地球重力场基础理论
@@ -45,60 +51,6 @@
             </div>
         </fieldset>
 
-        <fieldset class="layui-elem-field">
-            <legend class="csu-color-theme">大地测量地球物理反演理论、方法与应用</legend>
-            <div class="layui-field-box">
-                属于大地测量与地球物理学科交叉研究领域，主要研究利用大地测量和地球物理监测数据反演和解释相关地球内部物理问题的理论和方法，已成为监测地球变化和地质灾害的主要手段之一。该研究方向包括4个子方向：
-
-                （a）大地测量地球物理反演
-
-                （b）极地大地测量与环境变化
-            </div>
-        </fieldset>
-
-        <fieldset class="layui-elem-field">
-            <legend class="csu-color-theme">地球内部物理与地球动力学</legend>
-            <div class="layui-field-box">
-                （a）地球固体潮和地球自转变化
-
-                （b）地核动力学和运动学
-            </div>
-        </fieldset>
-
-        <fieldset class="layui-elem-field">
-            <legend class="csu-color-theme">空间大地测量理论、技术及应用</legend>
-            <div class="layui-field-box">
-                空间大地测量是利用卫星或河外类星体射电源电磁波信号精密测量地面及外空间任意点三维坐标及其随时间的变化，是现代大地测量的核心技术，也是大地测量扩大其应用领域的主要手段。该研究方向着重研究卫星运动轨道理论、地球坐标系的定义和实现、地壳运动监测技术及应用、空间大地测量数据处理理论与方法、深空大地测量技术等，包括5个子方向：
-
-                （a）卫星精密定轨的理论、方法及技术
-
-                （b）大地测量参考框架的建立与维持
-
-                （c）地壳运动的监测及应用
-
-                （d）深空大地测量技术及应用
-
-                （e）空间大地测量数据处理理论与方法
-            </div>
-        </fieldset>
-
-        <fieldset class="layui-elem-field">
-            <legend class="csu-color-theme">地震波传播理论及应用</legend>
-            <div class="layui-field-box">
-                地震波的传播规律是地球物理学的基础性理论研究，主要是研究多种地震波场在不同震源、不同介质、不同接收条件下的响应。通过反演技术揭示各种震源的动力学过程、地下介质的物理特性。该领域包括5个子方向：
-
-                (a) 粘弹性介质中的地震波传播理论
-
-                (b) 各向异性介质中的面波传播理论
-
-                (c) 地震波的反演理论
-
-                (d) 地震波的震源机制研究
-
-                (e) 地噪声的反演技术
-            </div>
-        </fieldset>
-
     </div>
 </fieldset>
 
@@ -108,19 +60,19 @@
         <div class="layui-row">
             <fieldset class="layui-col-sm4 layui-elem-field ">
                 <legend>地址</legend>
-                <div class="layui-field-box">
+                <div class="layui-field-box" th:text="${laboratory.address}">
                     湖南省长沙市中南大学铁道学院第二综合实验楼404
                 </div>
             </fieldset>
             <fieldset class="layui-col-sm4 layui-elem-field">
                 <legend>电话</legend>
-                <div class="layui-field-box">
+                <div class="layui-field-box" th:text="${laboratory.phone}">
                     11111111111
                 </div>
             </fieldset>
             <fieldset class="layui-col-sm4 layui-elem-field">
                 <legend>邮箱</legend>
-                <div class="layui-field-box">
+                <div class="layui-field-box" th:text="${laboratory.email}">
                     11111111111@111.com
                 </div>
             </fieldset>

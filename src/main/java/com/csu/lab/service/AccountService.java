@@ -10,4 +10,5 @@ public interface AccountService {
     Integer deleteAccount(Integer aid);
     List<Account> getAccountList();
     Account equrySingleAccount(Account account);
+    Account getAccount(Integer aid);
 }

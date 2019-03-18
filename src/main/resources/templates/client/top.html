@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>CSU学生管理系统</title>
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+    <link rel="stylesheet" th:href="@{/css/csu-style.css}">
+</head>
+<body th:fragment="top">
+
+<div class="csu-header">
+    <img class="csu-logo" th:src="@{/img/logo.png}">
+</div>
+
+<div class="csu-nav layui-bg-black">
+    <ul class="layui-nav">
+        <div class="layui-row">
+            <div class="layui-col-md10 csu-nav-1">
+                <li class="layui-nav-item" id="csu-home">
+                    <a target="csu-content-iframe" th:href="@{/client/index}">主页</a>
+                </li>
+                <li class="layui-nav-item" id="csu-introduction">
+                    <a target="csu-content-iframe" th:href="@{/client/laboratory/laboratoryInfo}">实验室概况</a>
+                </li>
+                <li class="layui-nav-item" id="csu-tutors">
+                    <a target="csu-content-iframe" th:href="@{tutor/index.html}">导师信息</a>
+                </li>
+                <li class="layui-nav-item" id="csu-students">
+                    <a target="csu-content-iframe" href="student/index.html">学生信息</a>
+                </li>
+                <li class="layui-nav-item" id="csu-papers">
+                    <a target="csu-content-iframe" href="thesis/index.html">论文成果</a>
+                </li>
+                <li class="layui-nav-item" id="csu-projects">
+                    <a target="csu-content-iframe" href="project/index.html">项目成果</a>
+                </li>
+                <li class="layui-nav-item" id="csu-activities">
+                    <a target="csu-content-iframe" href="activity/index.html">实验室活动</a>
+                </li>
+            </div>
+            <div class="layui-col-md2">
+
+                <!--如果登录就显示-->
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><img th:src="@{/img/test/head.png}" class="layui-nav-img">大叔</a>
+                    <dl class="layui-nav-child">
+                        <dd id="csu-my-information"><a target="csu-content-iframe" th:href="@{student/student.html}">我的信息</a>
+                        </dd>
+                        <hr>
+                        <dd><a href="account/login.html">退出</a></dd>
+                    </dl>
+                </li>
+
+                <!--如果未登录就显示-->
+                <!--<li class="layui-nav-item">-->
+                <!--<a href="account/login.html">登录</a>-->
+                <!--</li>-->
+
+            </div>
+        </div>
+    </ul>
+</div>
+
+<!--这是layui的脚本-->
+<script src="@{/layui/layui.js"}></script>
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+<script src="@{/js/layui/html5.min.js"}></script>
+<script src="@{/js/layui/respond.min.js"}></script>
+<![endif]-->
+
+<!--这是iframeResizer的脚本-->
+<script src="@{/js/iframe-resizer/iframeResizer.min.js"}></script>
+<script>
+    iFrameResize({log: false});
+</script>
+
+<!--这是自己设定的一些脚本-->
+<script>
+
+    layui.use('element', function () {
+        var element = layui.element;
+        var $ = layui.$;
+
+        //这个框架太坑了直接禁止掉layui-this
+        $('li').click(function(){
+            $(this).removeClass('layui-this');
+        })
+        $('dd').click(function(){
+            $(this).removeClass('layui-this');
+        })
+    });
+
+    layui.use('layer', function () {
+        var layer = layui.layer;
+        var $ = layui.$;
+        var index;
+        $(document).on('click', '#csu-catalog-button', function () {
+            index = layer.open({
+                type: 1
+                , closeBtn: 0 //不显示关闭按钮
+                , title: false
+                // , anim: 2
+                , shadeClose: true //开启遮罩关闭
+                , id: "csu-float-nav"
+                , content:
+                "<ul class=\"layui-nav layui-nav-tree\" >\n" +
+                "    <li class=\"layui-nav-item\"><a target=\"csu-content-iframe\" href=\"home.html\">主页</a></li>\n" +
+                "    <li class=\"layui-nav-item\"><a target=\"csu-content-iframe\" href=\"introduction/index.html\">实验室概况</a></li>\n" +
+                "    <li class=\"layui-nav-item\"><a target=\"csu-content-iframe\" href=\"tutor/index.html\">导师信息</a></li>\n" +
+                "    <li class=\"layui-nav-item\"><a target=\"csu-content-iframe\" href=\"student/index.html\">学生信息</a></li>\n" +
+                "    <li class=\"layui-nav-item\"><a target=\"csu-content-iframe\" href=\"thesis/index.html\">论文成果</a></li>\n" +
+                "    <li class=\"layui-nav-item\"><a target=\"csu-content-iframe\" href=\"project/index.html\">项目成果</a></li>\n" +
+                "    <li class=\"layui-nav-item\"><a target=\"csu-content-iframe\" href=\"activity/index.html\">实验室活动</a></li>\n" +
+                "</ul>"
+            });
+        });
+        $(document).on('click', '#csu-float-nav', function () {
+            layer.close(index)
+        });
+    });
+
+</script>
+
+</body>
+</html>

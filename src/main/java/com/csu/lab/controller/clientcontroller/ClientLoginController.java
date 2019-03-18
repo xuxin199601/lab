@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/server")
-public class LoginController {
+@RequestMapping("/client")
+public class ClientLoginController {
 
     @Autowired
     AccountService accountService;
@@ -29,29 +29,8 @@ public class LoginController {
     //跳转到登录界面
     @RequestMapping("/login")
     public String doLoginLab() {
-        return "server/login";
+        return "client/login";
     }
 
 
-    //跳转到project
-    @RequestMapping("/project")
-    public String doProject(){
-        return "server/gain/projectManage";
-    }
-
-
-    //登录实现
-    @RequestMapping(value = "/doLogin",method = RequestMethod.POST)
-    public String doLogin(Account account, Model model, HttpSession httpSession) {
-
-        Account user = accountService.loginVaildata(account);
-
-        if (user != null) {
-            httpSession.setAttribute("user", user);
-            return "redirect:home";
-        } else {
-            model.addAttribute("error", "用户名或密码错误，请重新登录！");
-            return "server/login";
-        }
-    }
 }
