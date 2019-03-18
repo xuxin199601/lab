@@ -16,9 +16,6 @@ public interface DirectionService {
 
     public Direction queryDirectionById(Integer directionId);
 
-    // 分页查询
-    public List<Direction> queryDirectionListPaged(Integer page, Integer pageSize);
-
     // 根据条件查询
     public List<Direction> queryByProperty(String property, Object value);
 
