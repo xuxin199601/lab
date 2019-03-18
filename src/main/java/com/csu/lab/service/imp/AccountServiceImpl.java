@@ -62,7 +62,26 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public Account getAccount(Integer aid){
+    public List<Account> queryByProperty(String property, Object value) {
+        Example example = new Example(Account.class);
+        Example.Criteria criteria = example.createCriteria();
+
+        // 设置条件
+        criteria.andLike(property, "%" + value + "%");
+        example.and(criteria);
+
+        return accountMapper.selectByExample(example);
+    }
+
+    @Override
+    public Account queryAccountById(Integer aid) {
         return accountMapper.selectByPrimaryKey(aid);
+    }
+
+    @Override
+    public void updateAccount(Account account) {
+        if(accountMapper.updateByPrimaryKeySelective(account) != 1) {
+            throw new AccountException(ResultEnum.ACTIVITY_UPDATE_FAILURE);
+        }
     }
 }

@@ -11,11 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -30,15 +32,23 @@ public class AccountController {
     @Autowired
     AccountService accountService;
 
-    //账户管理界面
+    // 跳转到账户管理界面
     @RequestMapping("/accountList")
     public String accountList(@RequestParam(defaultValue = "1") Integer pageNum,
                               @RequestParam(defaultValue = "10") Integer pageSize,
+                              @RequestParam(name = "value", required = false) Integer value,
                               Model model) {
 
         PageHelper.startPage(pageNum,pageSize);
 
-        List<Account> list = accountService.getAccountList();
+        List<Account> list;
+        if (value != null){
+            model.addAttribute("key", value);
+            list = accountService.queryByProperty("username", value);
+        }else {
+            list = accountService.getAccountList();
+        }
+
         PageInfo pageInfo = new PageInfo(list,10);
 
         model.addAttribute("pageInfo",pageInfo);
@@ -55,28 +65,40 @@ public class AccountController {
         return "server/account/accountManage";
     }
 
+    // 跳转到新增账户页面
     @RequestMapping("/addAccount")
-    @ResponseBody
-    public Message addAccount(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("privileges") Integer privileges) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-
-        Account account = new Account();
-        account.setUsername(username);
-        account.setPassword(password);
-        account.setPrivileges(privileges);
-        account.setCreateTime(CustomUtils.getCustomTime(Calendar.getInstance().getTime()));
-        accountService.addAccount(account);
-        return Message.success().add(ResultEnum.SUCCESS.getMsg());
+    public String toAddPage() {
+        return "server/account/addAccount";
     }
 
-    @RequestMapping("/deleteAccount")
-    @ResponseBody
-    public Message deleteAccount(@RequestParam("aid") Integer aid) {
+    // 跳转到修改账户页面
+    @RequestMapping("/editAccount")
+    public String toEditPage(@RequestParam("id")Integer aid,
+                             Model model) {
+        Account account = accountService.queryAccountById(aid);
+        model.addAttribute("account", account);
+        return "server/account/addAccount";
+    }
 
-        if (accountService.deleteAccount(aid) == 1) {
-            return Message.success().add(ResultEnum.SUCCESS);
-        } else {
-            return Message.fail(ResultEnum.ACCOUNT_DELETE_FAILURE);
-        }
+    // 保存添加的账户信息，跳转到账户管理界面
+    @RequestMapping(value = "/saveAccount", method = RequestMethod.POST)
+    public String saveTutor(Account account) {
+        accountService.addAccount(account);
+        return "redirect:/server/account/accountList";
+    }
+
+    // 保存修改的账户信息，跳转到账户管理界面
+    @RequestMapping(value = "/saveAccount", method = RequestMethod.PUT)
+    public String saveEditTutor(Account account) {
+        accountService.updateAccount(account);
+        return "redirect:/server/account/accountList";
+    }
+
+    // 删除账户信息，跳转到账户管理界面
+    @RequestMapping("/deleteAccount")
+    public String delTutor(@RequestParam("id")Integer rid) {
+        accountService.deleteAccount(rid);
+        return "redirect:/server/account/accountList";
     }
 
 }

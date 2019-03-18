@@ -101,4 +101,30 @@ public class ResearcherServiceImpl implements ResearcherService {
         return researcherMapper.selectByExample(example);
     }
 
+
+    @Override
+    public List<Researcher> queryTutorByProperty(String property, Object value) {
+        Example example = new Example(Researcher.class);
+        Example.Criteria criteria = example.createCriteria();
+
+        // 设置条件
+        criteria.andEqualTo("personType", 0);
+        criteria.andLike(property, "%" + value + "%");
+        example.and(criteria);
+
+        return researcherMapper.selectByExample(example);
+    }
+
+    @Override
+    public List<Researcher> queryStudentByProperty(String property, Object value) {
+        Example example = new Example(Researcher.class);
+        Example.Criteria criteria = example.createCriteria();
+
+        // 设置条件
+        criteria.andEqualTo("personType", 1);
+        criteria.andLike(property, "%" + value + "%");
+        example.and(criteria);
+
+        return researcherMapper.selectByExample(example);
+    }
 }
