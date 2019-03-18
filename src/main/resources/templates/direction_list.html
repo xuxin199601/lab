@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="cn"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="commons/bar::commonHeader"></head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+<div class="wrapper">
+
+    <!-- -->
+    <div th:replace="commons/bar::topbar"></div>
+
+    <!-- -->
+    <div th:replace="commons/bar::sidebar"></div>
+
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>研究方向信息管理<small>Direction Information Management</small></h1>
+           
+        </section>
+        
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-primary">
+                        <div class="box-body">
+                            <form th:action="@{/server/directionList}" method="get">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6">
+                                        <input type="text" name="value" class="form-control" placeholder="研究方向编号" th:if="${key} == null"/>
+                                        <input type="text" name="value" class="form-control" placeholder="研究方向编号" th:if="${key} != null" th:value="${key}" />
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <div class="form-group pull-right">
+                                            <button type="submit" class="btn btn-primary">搜索</button>
+                                            <a href="#" th:href="@{/server/addDirection}" class="btn btn-primary" id="btn-add">添加</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                        <table class="table">
+                                          <thead>
+                                            <tr>
+                                              <th width="25%">#</th>
+                                              <th width="25%">研究方向</th>
+                                              <th width="25%">详情</th>
+                                              <th width="25%">操作</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr th:each="direction:${directiontList}">
+                                                <td th:text="${direction.did}"></td>
+                                                <td th:text="${direction.resDirection}"></td>
+                                                <td th:text="${direction.details}"></td>
+                                                <td>
+                                                    <a href="#" th:href="@{/server/direction/}+${direction.did}" class="layout-btn btn-primary">修改</a>
+                                                    <!--<a href="#" th:href="@{/server/tutor/}+${researcher.rid}" lass="layout-btn btn-danger">删除</a>-->
+                                                    <a th:attr="del_uri=@{/server/direction/}+${direction.did}"  class="layout-btn btn-danger deleteBtn">删除</a>
+                                                </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <ul class="pagination pagination-sm no-margin pull-right">
+                                <li>
+                                    <a th:if="${not isFirstPage}" th:href="@{${'thesisList'}(pageNum=${pageNum-1},pageSize=${pageSize})}" aria-label="Previous">
+                                        <span aria-hidden="true">«</span>
+                                    </a>
+                                    <a th:if="${isFirstPage}" href="javascript:void(0);" aria-label="Previous">
+                                        <span aria-hidden="true">«</span>
+                                    </a>
+                                </li>
+
+                                <li th:each="pageNo : ${#numbers.sequence(1, totalPages)}">
+                                    <a th:if="${pageNum eq pageNo}" href="javascript:void(0);">
+                                        <span th:text="${pageNo}"></span>
+                                    </a>
+
+                                    <a th:if="${not (pageNum eq pageNo)}" th:href="@{${'thesisList'}(pageNum=${pageNo},pageSize=${pageSize})}">
+                                        <span th:text="${pageNo}"></span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a th:if="${not isLastPage}" th:href="@{${'thesisList'}(pageNum=${pageNum+1},pageSize=${pageSize})}" aria-label="Next">
+                                        <span aria-hidden="true">»</span>
+                                    </a>
+                                    <a th:if="${isLastPage}" href="javascript:void(0);" aria-label="Next">
+                                        <span aria-hidden="true">»</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 引入footer -->
+    <div th:replace="commons/bar::footer"></div>
+
+</div>
+
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/adminlte.min.js"></script>
+</body>
+</html>

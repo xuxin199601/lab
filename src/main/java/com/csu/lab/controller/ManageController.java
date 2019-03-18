@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -39,10 +40,20 @@ public class ManageController {
      */
     @GetMapping("/tutorList")
     public String getResearcherManagement(ModelMap modelMap,
+                                          @RequestParam(name = "value", required = false) Integer value,
                                           @RequestParam(defaultValue = "1") Integer pageNum,
                                           @RequestParam(defaultValue = "10") Integer pageSize) {
-        List<Researcher> researcherList = researcherService.queryResearcherListPaged(0, pageNum, pageSize);
-        modelMap.addAttribute("researchers", researcherList);
+
+        List<Researcher> researcherList = new ArrayList<>();
+        if (value != null){
+            modelMap.addAttribute("key", value);
+            Researcher researcher = researcherService.queryResearcherById(value);
+            researcherList.add(researcher);
+            modelMap.addAttribute("researcherList", researcherList);
+        }else {
+            researcherList = researcherService.queryResearcherListPaged(0, pageNum, pageSize);
+            modelMap.addAttribute("researcherList", researcherList);
+        }
 
         // 分页设置
         PageInfo pageInfo = new PageInfo<Researcher>(researcherList, 5);
@@ -60,10 +71,19 @@ public class ManageController {
      */
     @RequestMapping("/studentList")
     public String getStudentManagement(ModelMap modelMap,
+                                       @RequestParam(name = "value", required = false) Integer value,
                                        @RequestParam(defaultValue = "1") Integer pageNum,
                                        @RequestParam(defaultValue = "10") Integer pageSize) {
-        List<Researcher> researcherList = researcherService.queryStudentListPaged(pageNum, pageSize);
-        modelMap.addAttribute("researchers", researcherList);
+        List<Researcher> researcherList = new ArrayList<>();
+        if (value != null){
+            modelMap.addAttribute("key", value);
+            Researcher researcher = researcherService.queryResearcherById(value);
+            researcherList.add(researcher);
+            modelMap.addAttribute("researcherList", researcherList);
+        }else {
+            researcherList = researcherService.queryStudentListPaged(pageNum, pageSize);
+            modelMap.addAttribute("researcherList", researcherList);
+        }
 
         // 分页设置
         PageInfo pageInfo = new PageInfo<Researcher>(researcherList, 5);
@@ -168,7 +188,7 @@ public class ManageController {
                                    @RequestParam(defaultValue = "1") Integer pageNum,
                                    @RequestParam(defaultValue = "10") Integer pageSize) {
         List<Laboratory> laboratoryList = laboratoryService.queryLaboratoryListPaged(pageNum, pageSize);
-        modelMap.addAttribute("laboratoryList", laboratoryList);
+        modelMap.addAttribute("labList", laboratoryList);
 
         // 分页设置
         PageInfo pageInfo = new PageInfo<Laboratory>(laboratoryList, 5);
