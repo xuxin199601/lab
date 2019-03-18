@@ -48,6 +48,12 @@ public class TutorsController {
         return "server/user/tutorManage";
     }
 
+    // 跳转到导师新增页面
+    @RequestMapping("/addTutor")
+    public String toAddPage() {
+        return "server/account/addAccount";
+    }
+
     // 通过id获取导师个人信息
     @GetMapping("/tutorInfo")
     public Message getTutorById(@RequestParam("rid")Integer rid) {
