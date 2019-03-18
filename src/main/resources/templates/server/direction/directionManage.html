@@ -48,7 +48,7 @@
                                 <div class="row">
 
                                     <div class="col-sm-2 m-b-xs">
-                                        <input id="search" name="minOrderTimeStr" class="form-control" type="text"  placeholder="搜索账号" />
+                                        <input id="search" name="minOrderTimeStr" class="form-control" type="text"  placeholder="搜索研究方向" />
                                     </div>
                                     <div class="col-sm-2 m-b-xs">
                                         <button class="btn btn-primary btn-block" type="submit"><i class="fa fa-search"></i>&nbsp;&nbsp;&nbsp;&nbsp;<strong>搜索</strong></button>
@@ -84,14 +84,14 @@
                                     <thead>
                                     <tr>
                                         <th width="5%">编号</th>
-                                        <th width="25%">研究方向</th>
+                                        <th>研究方向</th>
                                         <th width="10%">操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr th:each="direction:${pageInfo.list}">
                                         <td th:text="${direction.did}">Onions</td>
-                                        <td th:text="${direction.res_direction}">Onions</td>
+                                        <td th:text="${direction.resDirection}">Onions</td>
                                         <td>
                                             <a th:href="@{#}" title="查看详情">查看详情</a>
                                         </td>
