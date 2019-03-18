@@ -87,7 +87,7 @@
                                         <th>项目名称</th>
                                         <td width="20%">截止时间</td>
                                         <td width="20%">开始时间</td>
-                                        <th width="10%">操作</th>
+                                        <th width="20%">操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -97,7 +97,7 @@
                                         <td th:switch="${project.start_time}"></td>
                                         <td th:switch="${project.end_time}"></td>
                                         <td>
-                                            <a th:href="@{#}" title="查看详情">查看详情</a>
+                                            <a th:href="@{#}" class="btn btn-success btn-xs">查看详情</a>
                                         </td>
                                     </tr>
                                     </tbody>
