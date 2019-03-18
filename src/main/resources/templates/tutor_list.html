@@ -17,7 +17,7 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>表单管理<small>Form Management</small></h1>
+            <h1>导师信息管理<small>Tutor Information Management</small></h1>
            
         </section>
         
@@ -26,20 +26,21 @@
                 <div class="col-md-12">
                     <div class="box box-primary">
                         <div class="box-body">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-6">
-                                    <input type="text" class="form-control" id="text-name" placeholder="用户昵称">
-                                </div>
-                                <div class="col-md-4 col-sm-6">
-                                    <input type="text" class="form-control" id="text-openId" placeholder="用户openId">
-                                </div>
-                                <div class="col-md-4 col-sm-12">
-                                    <div class="form-group pull-right">
-                                        <a href="#" th:href="@{/server/addTutor}" class="btn btn-primary" id="btn-add">添加</a>
-                                        <a href="#" class="btn btn-primary" id="btn-search">搜索</a>
+                            <form th:action="@{/server/tutorList}" method="get">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6">
+                                        <input type="text" name="value" class="form-control" placeholder="导师编号" th:if="${key} == null"/>
+                                        <input type="text" name="value" class="form-control" placeholder="导师编号" th:if="${key} != null" th:value="${key}" />
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <div class="form-group pull-right">
+                                            <button type="submit" class="btn btn-primary">搜索</button>
+                                            <a href="#" th:href="@{/server/addTutor}" class="btn btn-primary" id="btn-add">添加</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
+
                             <div class="row">
                                 <div class="col-md-12">
                                         <table class="table">
@@ -57,7 +58,7 @@
                                             </tr>
                                           </thead>
                                           <tbody>
-                                            <tr th:each="researcher:${researchers}">
+                                            <tr th:each="researcher:${researcherList}">
                                                 <td th:text="${researcher.rid}"></td>
                                                 <td th:text="${researcher.aid}"></td>
                                                 <td th:text="${researcher.name}"></td>

@@ -17,7 +17,7 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            <h1>表单管理<small>Form Management</small></h1>
+            <h1>活动信息管理<small>Activity Information Management</small></h1>
            
         </section>
         
@@ -26,50 +26,42 @@
                 <div class="col-md-12">
                     <div class="box box-primary">
                         <div class="box-body">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-6">
-                                    <input type="text" class="form-control" id="text-name" placeholder="用户昵称">
-                                </div>
-                                <div class="col-md-4 col-sm-6">
-                                    <input type="text" class="form-control" id="text-openId" placeholder="用户openId">
-                                </div>
-                                <div class="col-md-4 col-sm-12">
-                                    <div class="form-group pull-right">
-                                        <a href="#" th:href="@{/server/addActivity}" class="btn btn-primary" id="btn-add">添加</a>
-                                        <a href="#" class="btn btn-primary" id="btn-search">搜索</a>
+                            <form th:action="@{/server/activityList}" method="get">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6">
+                                        <input type="text" name="value" class="form-control" placeholder="活动编号" th:if="${key} == null"/>
+                                        <input type="text" name="value" class="form-control" placeholder="活动编号" th:if="${key} != null" th:value="${key}" />
+                                    </div>
+                                    <div class="col-md-4 col-sm-12">
+                                        <div class="form-group pull-right">
+                                            <button type="submit" class="btn btn-primary">搜索</button>
+                                            <a href="#" th:href="@{/server/addActivity}" class="btn btn-primary" id="btn-add">添加</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                             <div class="row">
                                 <div class="col-md-12">
                                         <table class="table">
                                           <thead>
                                             <tr>
-                                              <th width="10%">#</th>
-                                              <th width="10%">账号</th>
-                                              <th width="10%">姓名</th>
-                                              <th width="10%">职称</th>
-                                              <th width="10%">头像</th>
-                                              <th width="10%">类型</th>
-                                              <th width="10%">导师</th>
-                                              <th width="10%">研究方向</th>
+                                              <th width="20%">#</th>
+                                              <th width="20%">活动名称</th>
+                                              <th width="20%">时间</th>
+                                              <th width="20%">简介</th>
                                               <th width="20%">操作</th>
                                             </tr>
                                           </thead>
                                           <tbody>
-                                            <tr th:each="researcher:${researchers}">
-                                                <td th:text="${researcher.rid}"></td>
-                                                <td th:text="${researcher.aid}"></td>
-                                                <td th:text="${researcher.name}"></td>
-                                                <td th:text="${researcher.post}"></td>
-                                                <td th:text="${researcher.image}"></td>
-                                                <td th:text="${researcher.personType}"></td>
-                                                <td th:text="${researcher.affiliatedTutor}"></td>
-                                                <td th:text="${researcher.direction}"></td>
+                                            <tr th:each="activity:${activityList}">
+                                                <td th:text="${activity.aid}"></td>
+                                                <td th:text="${activity.name}"></td>
+                                                <td th:text="${#dates.format(activity.time,'yyyy-MM-dd')}"></td>
+                                                <td th:text="${activity.introduction}"></td>
                                               <td>
-                                                <a href="#" th:href="@{/server/tutor/}+${researcher.rid}" class="layout-btn btn-primary">修改</a>
+                                                <a href="#" th:href="@{/server/activity/}+${activity.aid}" class="layout-btn btn-primary">修改</a>
                                                 <!--<a href="#" th:href="@{/server/tutor/}+${researcher.rid}" lass="layout-btn btn-danger">删除</a>-->
-                                                  <a th:attr="del_uri=@{/server/tutor/}+${researcher.rid}"  class="layout-btn btn-danger deleteBtn">删除</a>
+                                                  <a th:attr="del_uri=@{/server/activity/}+${activity.aid}"  class="layout-btn btn-danger deleteBtn">删除</a>
                                               </td>
                                             </tr>
                                           </tbody>

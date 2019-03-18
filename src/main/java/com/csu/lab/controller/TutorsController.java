@@ -5,12 +5,14 @@ import com.csu.lab.pojo.Message;
 import com.csu.lab.pojo.Researcher;
 import com.csu.lab.service.DirectionService;
 import com.csu.lab.service.ResearcherService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
