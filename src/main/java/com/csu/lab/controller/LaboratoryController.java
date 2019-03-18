@@ -1,53 +1,46 @@
 package com.csu.lab.controller;
 
 import com.csu.lab.pojo.Laboratory;
-import com.csu.lab.pojo.Message;
 import com.csu.lab.service.LaboratoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/server/laboratory")
 public class LaboratoryController {
 
     @Autowired
     private LaboratoryService laboratoryService;
 
-    // 分页实验室信息列表
-    @GetMapping("/laboratoryList")
-    public Message getStudentByPage(@RequestParam("page_index")Integer pageIndex,
-                                    @RequestParam("page_size")Integer pageSize) {
-        List<Laboratory> laboratoryList = laboratoryService.queryLaboratoryListPaged(pageIndex, pageSize);
-        return Message.success().add(laboratoryList);
-    }
+    // 实验室信息展示，只有单条信息，只获取第一条数据
+    @RequestMapping("/laboratoryList")
+    public String getStudentByPage(Model model) {
+        List<Laboratory> list = laboratoryService.getLaboratoryList();
 
-    // 通过id获取实验室信息
-    @GetMapping("/laboratoryInfo")
-    public Message getLaboratoryById(@RequestParam("lid")Integer pid) {
-        Laboratory laboratory = laboratoryService.queryLaboratoryById(pid);
-        return Message.success().add(laboratory);
-    }
-
-    // 添加实验室
-    @PostMapping("/addLaboratory")
-    public Message addLaboratory(Laboratory laboratory) throws Exception {
-        laboratoryService.saveLaboratory(laboratory);
-        return Message.success().add("添加成功");
+        model.addAttribute("laboratory", list.get(0));
+        return "server/laboratory/laboratoryManage";
     }
 
     // 修改实验室信息
-    @PutMapping("/modifyLaboratory")
-    public Message modifyLaboratory(Laboratory laboratory) {
-        laboratoryService.updateLaboratory(laboratory);
-        return Message.success().add("Success");
-    }
+    @PostMapping("/modifyLaboratory")
+    public String modifyLaboratory(Laboratory laboratory, Model model) {
 
-    // 删除实验室信息
-    @DeleteMapping("/deleteLaboratory")
-    public Message deleteLaboratory(@RequestParam("lid")Integer rid) {
-        laboratoryService.deleteLaboratory(rid);
-        return Message.success().add("Success");
+        System.out.println(laboratory.getLid());
+
+        int result = laboratoryService.updateLaboratory(laboratory);
+
+        if (result == 1) {
+            model.addAttribute("error", "修改成功");
+        } else {
+            model.addAttribute("error", "修改失败");
+        }
+        return "redirect:laboratoryList";
     }
 }
