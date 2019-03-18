@@ -20,9 +20,9 @@ import java.util.Calendar;
 import java.util.List;
 
 
-/**
- * 账户管理
- */
+
+/*账户管理*/
+
 @Controller
 @RequestMapping("/client/account")
 public class ClientAccountController {
@@ -30,18 +30,5 @@ public class ClientAccountController {
     @Autowired
     AccountService accountService;
 
-    //浏览自己账户
-    @RequestMapping("/getAccount")
-    @ResponseBody
-    public Message getAccount(@RequestParam("aid") Integer aid){
-        Account account = accountService.getAccount(aid);
-        return Message.success().add(account);
-    }
-
-   /* @RequestMapping("/getAccount")
-
-    public Account getAccount(@RequestParam("aid") Integer aid){
-        return accountService.getAccount(aid);
-    }*/
 
 }
