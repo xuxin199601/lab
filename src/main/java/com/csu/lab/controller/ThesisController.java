@@ -21,15 +21,24 @@ public class ThesisController {
     private ThesisService thesisService;
 
     // 分页成果信息列表
-    @GetMapping("/thesisList")
+    @RequestMapping("/thesisList")
     public String getStudentByPage(@RequestParam(defaultValue = "1") Integer pageNum,
                                     @RequestParam(defaultValue = "10") Integer pageSize,
+                                    @RequestParam(name = "value",required = false) String value,
                                     Model model) {
 
         PageHelper.startPage(pageNum,pageSize);
 
-        List<Thesis> thesisList = thesisService.getThesisList();
+//        List<Thesis> thesisList
 
+//                = thesisService.getThesisList();
+        List<Thesis> thesisList;
+        if (value != null){
+            model.addAttribute("key", value);
+            thesisList = thesisService.queryByProperty("name", value);
+        }else {
+            thesisList = thesisService.getThesisList();
+        }
         PageInfo pageInfo = new PageInfo(thesisList,10);
 
         model.addAttribute("pageInfo",pageInfo);
@@ -47,38 +56,56 @@ public class ThesisController {
     }
 
     // 通过id获取成果信息
-    @GetMapping("/thesisInfo")
+    @RequestMapping("/thesisInfo")
     public Message getThesisById(@RequestParam("tid")Integer rid) {
         Thesis thesis = thesisService.queryThesisById(rid);
         return Message.success().add(thesis);
     }
 
-    // 添加成果
-    @PostMapping("/addThesis")
-    public Message addThesis(Thesis thesis) throws Exception {
-//        Date time_date = DateConverterConfig.parseDate(time, "yyyy-MM-dd");
-//        Thesis Thesis = new Thesis(name, abstracts, keywords, content, code, data, time_date);
-        thesisService.saveThesis(thesis);
-        return Message.success().add("添加成功");
+
+    @RequestMapping("/addThesis")
+    public String addThesis() {
+        return "server/gain/addThesis";
     }
 
-    // 修改成果信息
-    @PutMapping("/modifyThesis")
-    public Message modifyThesis(Thesis thesis) {
-        thesisService.updateThesis(thesis);
-        return Message.success().add("Success");
+    @RequestMapping("/editThesis")
+    public String toEditPage(@RequestParam("id")Integer aid,
+                             Model model) {
+        Thesis thesis = thesisService.queryThesisById(aid);
+        model.addAttribute("thesis", thesis);
+        return "server/gain/addThesis";
     }
 
-    // 删除成果信息
-    @DeleteMapping("/deleteThesis")
-    public Message deleteTuttor(@RequestParam("tid")Integer rid) {
-        thesisService.deleteThesis(rid);
-        return Message.success().add("Success");
-    }
+
+
+
+
+
 
     /********************************************************************************************************************************/
     /**
      * 下方写client代码
      */
+    // 添加成果
+    @RequestMapping(value = "/saveThesis",method=RequestMethod.POST)
+    public String saveThesis(Thesis thesis) throws Exception {
+//        Date time_date = DateConverterConfig.parseDate(time, "yyyy-MM-dd");
+//        Thesis Thesis = new Thesis(name, abstracts, keywords, content, code, data, time_date);
+        thesisService.saveThesis(thesis);
+        return "redirect:/server/thesis/thesisList";
+    }
 
+    // 修改成果信息
+    @RequestMapping(value = "/saveThesis",method = RequestMethod.PUT)
+    public String modifyThesis(Thesis thesis) {
+        thesisService.updateThesis(thesis);
+        return "redirect:/server/thesis/thesisList";
+    }
+
+    // 删除成果信息
+    @RequestMapping("/deleteThesis")
+    public String deleteTuttor(@RequestParam("id")Integer tid) {
+        thesisService.deleteThesis(tid);
+        return "redirect:/server/thesis/thesisList";
+    }
 }

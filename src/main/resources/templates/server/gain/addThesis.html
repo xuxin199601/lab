@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>后台信息管理系统</title>
+
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+    <link th:href="@{/css/plugins/iCheck/custom.css}" rel="stylesheet"/>
+    <link th:href="@{/css/plugins/footable/footable.core.css}" rel="stylesheet"/>
+
+    <!-- datetimepicker -->
+    <link th:href="@{/css/bootstrap-datetimepicker.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{/css/bootstrap-datetimepicker.min.css}" rel="stylesheet" media="screen"/>
+
+</head>
+
+<body>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>添加论文</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <form th:action="@{/server/thesis/saveThesis}" id="formTag" method="POST" class="form-horizontal" enctype="multipart/form-data">
+
+                    <input type="hidden" name="_method" value="put" th:if="${thesis!=null}">
+
+                    <input type="hidden" name="tid" th:value="${thesis.tid}" th:if="${thesis!=null}">
+
+                    <div class="form-group"><label class="col-sm-2 control-label">论文名称：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="name"  name="name" placeholder="论文标题" th:value="${thesis!=null}?${thesis.name}">
+                        </div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">论文摘要：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="abstracts"  name="abstracts" placeholder="论文摘要" th:value="${thesis!=null}?${thesis.abstracts}">
+                        </div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">论文摘要：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="keywords"  name="keywords" placeholder="关键词" th:value="${thesis!=null}?${thesis.keywords}">
+                        </div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group"><label class="col-sm-2 control-label">论文内容：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="content"  name="content" placeholder="内容" th:value="${thesis!=null}?${thesis.content}">
+                        </div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+                    <!--<div class="hr-line-dashed"></div>-->
+                    <div class="form-group"><label class="col-sm-2 control-label">论文代码：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="code"  name="code" placeholder="代码" th:value="${thesis!=null}?${thesis.code}">
+                        </div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">论文数据：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="data"  name="data" placeholder="数据" th:value="${thesis!=null}?${thesis.data}">
+                        </div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+                    <!--<div class="form-group"><label class="col-sm-2 control-label">权限：</label>-->
+                        <!--<div class="col-sm-10">-->
+                            <!--&lt;!&ndash;<input type="text" class="form-control" id="privileges"  name="privileges" placeholder="权限" th:value="${thesis!=null}?${thesis.privileges}">&ndash;&gt;-->
+                            <!--<select class="form-control" id="privileges" name="privileges">-->
+                                <!--<option th:selected="${thesis!=null}?${thesis.privileges == 0}" th:value="0">超级管理员</option>-->
+                                <!--<option th:selected="${thesis!=null}?${thesis.privileges == 1}" th:value="1">管理员</option>-->
+                                <!--<option th:selected="${thesis!=null}?${thesis.privileges == 2}" th:value="2">普通人员</option>-->
+                            <!--</select>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="hr-line-dashed"></div>-->
+
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <button type="submit" class="btn btn-primary" th:text="${thesis!=null}?'&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改&nbsp;&nbsp;&nbsp;&nbsp;':'&nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;'">&nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+        <div class="footer" th:include="server/footer :: copyright"></div>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script th:src="@{/js/jquery-2.1.1.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/plugins/metisMenu/jquery.metisMenu.js}"></script>
+<script th:src="@{/js/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
+
+<!-- Custom and plugin javascript -->
+<script th:src="@{/js/inspinia.js}"></script>
+<script th:src="@{/js/plugins/pace/pace.min.js}"></script>
+
+<!-- datepicker -->
+<script th:src="@{/js/bootstrap.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/bootstrap-datetimepicker.js}"></script>
+<script th:src="@{/js/locales/bootstrap-datetimepicker.zh-CN.js}"></script>
+
+<script th:inline="javascript">
+    $("#minOrderTimeStr").datetimepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        todayBtn: true,
+        todayHighlight: true,
+        showMeridian: true,
+        pickerPosition: "bottom-left",
+        language: 'zh-CN',//中文，需要引用zh-CN.js包
+        startView: 2,//月视图
+        minView: 2//日期时间选择器所能够提供的最精确的时间选择视图
+    });
+
+    $("#maxOrderTimeStr").datetimepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        todayBtn: true,
+        todayHighlight: true,
+        showMeridian: true,
+        pickerPosition: "bottom-left",
+        language: 'zh-CN',//中文，需要引用zh-CN.js包
+        startView: 2,//月视图
+        minView: 2//日期时间选择器所能够提供的最精确的时间选择视图
+    });
+</script>
+
+</body>
+
+</html>

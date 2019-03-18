@@ -20,7 +20,7 @@ public interface ThesisService {
     public List<Thesis> queryThesisListPaged(Integer page, Integer pageSize);
 
     // 根据条件查询
-    public List<Thesis> queryByProperty(String property, Object value);
+    public List<Thesis> queryByProperty(String property, String value);
 
 
 

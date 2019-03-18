@@ -18,7 +18,7 @@ import java.util.List;
 
 
 @Service
-public class ThesisServiceImpl implements ThesisService{
+public class ThesisServiceImpl implements ThesisService {
 
     private Logger logger = LoggerFactory.getLogger(ThesisServiceImpl.class);
 
@@ -39,7 +39,7 @@ public class ThesisServiceImpl implements ThesisService{
         logger.info("addThesis:{}", thesis);
         List<Thesis> ThesisList = queryByProperty("name", thesis.getName());
         if (ThesisList.isEmpty()) {
-            if(thesisMapper.insert(thesis) != 1) {
+            if (thesisMapper.insert(thesis) != 1) {
                 throw new ThesisException(ResultEnum.THESIS_SAVE_FAILURE);
             }
         } else {
@@ -51,7 +51,7 @@ public class ThesisServiceImpl implements ThesisService{
     @Transactional(propagation = Propagation.REQUIRED)
     public void updateThesis(Thesis thesis) {
         logger.info("updateThesis:{}", thesis);
-        if(thesisMapper.updateByPrimaryKeySelective(thesis) != 1) {
+        if (thesisMapper.updateByPrimaryKeySelective(thesis) != 1) {
             throw new ThesisException(ResultEnum.THESIS_UPDATE_FAILURE);
         }
     }
@@ -60,7 +60,7 @@ public class ThesisServiceImpl implements ThesisService{
     @Transactional(propagation = Propagation.REQUIRED)
     public void deleteThesis(Integer ThesisId) {
         logger.info("deleteThesisById:{}", ThesisId);
-        if(thesisMapper.deleteByPrimaryKey(ThesisId) != 1) {
+        if (thesisMapper.deleteByPrimaryKey(ThesisId) != 1) {
             throw new ThesisException(ResultEnum.THESIS_DELETE_FAILURE);
         }
     }
@@ -89,12 +89,12 @@ public class ThesisServiceImpl implements ThesisService{
     }
 
     @Override
-    public List<Thesis> queryByProperty(String property, Object value) {
+    public List<Thesis> queryByProperty(String property, String value) {
         Example example = new Example(Thesis.class);
         Example.Criteria criteria = example.createCriteria();
 
         // 设置条件
-        criteria.andEqualTo(property, value);
+        criteria.andLike(property, "%" + value + "%");
         example.and(criteria);
 
         return thesisMapper.selectByExample(example);
