@@ -20,20 +20,27 @@ public class TutorsController {
     @Autowired
     private ResearcherService researcherService;
 
-    // 分页获取导师信息列表
-    @GetMapping("/tutorList")
-    public String getTutorByPage(@RequestParam("person_type")Integer personType,
-                                  @RequestParam(defaultValue = "1") Integer pageNum,
-                                  @RequestParam(defaultValue = "10") Integer pageSize,
-                                  Model model) {
+    // 跳转到导师管理界面
+    @RequestMapping("/tutorList")
+    public String tutorList(@RequestParam(name = "person_type", defaultValue = "0")Integer personType,
+                              @RequestParam(defaultValue = "1") Integer pageNum,
+                              @RequestParam(defaultValue = "10") Integer pageSize,
+                              @RequestParam(name = "value", required = false) String value,
+                              Model model) {
 
         PageHelper.startPage(pageNum,pageSize);
 
-        List<Researcher> researcherList = researcherService.getResearcherList(personType);
+        List<Researcher> researcherList;
+        if (value != null){
+            model.addAttribute("key", value);
+            researcherList = researcherService.queryTutorByProperty("name", value);
+        }else {
+            researcherList = researcherService.getResearcherList(personType);
+        }
+
         PageInfo pageInfo = new PageInfo(researcherList,10);
 
         model.addAttribute("pageInfo",pageInfo);
-
         //获得当前页
         model.addAttribute("pageNum",pageInfo.getPageNum());
         //获得一页显示的条数
@@ -44,42 +51,43 @@ public class TutorsController {
         model.addAttribute("totalPages",pageInfo.getPages());
         //是否是最后一页
         model.addAttribute("isLastPage",pageInfo.isIsLastPage());
-
         return "server/user/tutorManage";
     }
 
-    // 跳转到导师新增页面
+    // 跳转到新增导师页面
     @RequestMapping("/addTutor")
     public String toAddPage() {
-        return "server/account/addAccount";
+        return "server/tutor/addTutor";
     }
 
-    // 通过id获取导师个人信息
-    @GetMapping("/tutorInfo")
-    public Message getTutorById(@RequestParam("rid")Integer rid) {
-        Researcher tutor = researcherService.queryResearcherById(rid);
-        return Message.success().add(tutor);
+    // 跳转到修改导师页面
+    @RequestMapping("/editTutor")
+    public String toEditPage(@RequestParam("id")Integer aid,
+                             Model model) {
+        Researcher researcher = researcherService.queryResearcherById(aid);
+        model.addAttribute("researcher", researcher);
+        return "server/researcher/addResearcher";
     }
 
-    // 添加导师
-    @PostMapping("/addTutor")
-    public Message addTutor(@ModelAttribute Researcher researcher) throws Exception {
+    // 保存添加的导师信息，跳转到导师管理界面
+    @RequestMapping(value = "/saveTutor", method = RequestMethod.POST)
+    public String saveTutor(Researcher researcher) throws Exception {
         researcherService.saveResearcher(researcher);
-        return Message.success().add("添加成功");
+        return "redirect:/server/researcher/addResearcher";
     }
 
-    // 修改导师信息
-    @PutMapping("/modifyTutor")
-    public Message modifyTutor(@ModelAttribute Researcher researcher){
+    // 保存修改的导师信息，跳转到导师管理界面
+    @RequestMapping(value = "/saveTutor", method = RequestMethod.PUT)
+    public String saveEditTutor(Researcher researcher) {
         researcherService.updateResearcher(researcher);
-        return Message.success().add("Success");
+        return "redirect:/server/researcher/addResearcher";
     }
 
-    // 删除导师信息
-    @DeleteMapping("/deleteTutor")
-    public Message deleteTutor(@RequestParam("rid")Integer rid) {
+    // 删除导师信息，跳转到导师管理界面
+    @RequestMapping("/deleteTutor")
+    public String delTutor(@RequestParam("id")Integer rid) {
         researcherService.deleteResearcher(rid);
-        return Message.success().add("Success");
+        return "redirect:/server/researcher/addResearcher";
     }
 
     /********************************************************************************************************************************/
