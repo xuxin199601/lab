@@ -49,8 +49,8 @@ public class ResearcherServiceImpl implements ResearcherService {
     @Transactional(propagation = Propagation.REQUIRED)
     public void updateResearcher(Researcher researcher) {
         logger.info("updateResearcher:{}", researcher);
-        researcherMapper.updateByPrimaryKey(researcher);
-        if(researcherMapper.updateByPrimaryKey(researcher) != 1) {
+        researcherMapper.updateByPrimaryKeySelective(researcher);
+        if(researcherMapper.updateByPrimaryKeySelective(researcher) != 1) {
             throw new ResearcherException(ResultEnum.RESEARCHER_UPDATE_FAILURE);
         }
     }

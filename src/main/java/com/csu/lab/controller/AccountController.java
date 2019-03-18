@@ -36,7 +36,7 @@ public class AccountController {
     @RequestMapping("/accountList")
     public String accountList(@RequestParam(defaultValue = "1") Integer pageNum,
                               @RequestParam(defaultValue = "10") Integer pageSize,
-                              @RequestParam(name = "value", required = false) Integer value,
+                              @RequestParam(name = "value", required = false) String value,
                               Model model) {
 
         PageHelper.startPage(pageNum,pageSize);

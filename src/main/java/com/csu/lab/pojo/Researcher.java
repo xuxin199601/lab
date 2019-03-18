@@ -40,7 +40,7 @@ public class Researcher {
      * 学生隶属导师编号
      */
 //    @Column(name = "affiliated_tutor")
-    private Integer affiliatedTutor;
+    private Integer affiliatedTutor = -1;
 
     /**
      * 研究方向

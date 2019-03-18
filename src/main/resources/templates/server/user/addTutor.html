@@ -25,8 +25,8 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5 th:if="${account==null}">添加账户</h5>
-                <h5 th:if="${account!=null}">修改账户</h5>
+                <h5 th:if="${researcher==null}">添加导师信息</h5>
+                <h5 th:if="${researcher!=null}">修改导师信息</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -34,44 +34,70 @@
                 </div>
             </div>
             <div class="ibox-content">
-                <form th:action="@{/server/account/saveAccount}" id="formTag" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                <form th:action="@{/server/tutor/saveTutor}" id="formTag" method="POST" class="form-horizontal" enctype="multipart/form-data">
 
-                    <input type="hidden" name="_method" value="put" th:if="${account!=null}">
+                    <input type="hidden" name="_method" value="put" th:if="${researcher!=null}">
 
-                    <input type="hidden" name="aid" th:value="${account.aid}" th:if="${account!=null}">
+                    <input type="hidden" name="rid" th:value="${researcher.rid}" th:if="${researcher!=null}">
 
-                    <div class="form-group"><label class="col-sm-2 control-label">账号：</label>
+                    <input type="hidden" name="personType" th:value="0" th:if="${researcher == null}">
+
+                    <div class="form-group"><label class="col-sm-2 control-label">导师编号：</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="username"  name="username" placeholder="用户名" th:value="${account!=null}?${account.username}">
+                            <input type="text" class="form-control" id="aid"  name="aid" placeholder="导师编号" th:value="${researcher!=null}?${researcher.aid}">
                         </div>
                     </div>
 
                     <div class="hr-line-dashed"></div>
 
-                    <div class="form-group"><label class="col-sm-2 control-label">密码：</label>
+                    <div class="form-group"><label class="col-sm-2 control-label">姓名：</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="password"  name="password" placeholder="密码" th:value="${account!=null}?${account.password}">
+                            <input type="text" class="form-control" id="name"  name="name" placeholder="姓名" th:value="${researcher!=null}?${researcher.name}">
                         </div>
                     </div>
 
                     <div class="hr-line-dashed"></div>
 
-                    <div class="form-group"><label class="col-sm-2 control-label">权限：</label>
+                    <div class="form-group"><label class="col-sm-2 control-label">头像：</label>
                         <div class="col-sm-10">
-                            <!--<input type="text" class="form-control" id="privileges"  name="privileges" placeholder="权限" th:value="${account!=null}?${account.privileges}">-->
-                            <select class="form-control" id="privileges" name="privileges">
-                                <option th:selected="${account!=null}?${account.privileges == 0}" th:value="0">超级管理员</option>
-                                <option th:selected="${account!=null}?${account.privileges == 1}" th:value="1">管理员</option>
-                                <option th:selected="${account!=null}?${account.privileges == 2}" th:value="2">普通人员</option>
+                            <input type="text" class="form-control" id="image"  name="image" placeholder="头像" th:value="${researcher!=null}?${researcher.image}">
+                        </div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">职称：</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="post" name="post">
+                                <option th:selected="${researcher!=null}?${researcher.post == '教授'}" th:value="教授">教授</option>
+                                <option th:selected="${researcher!=null}?${researcher.post == '副教授'}" th:value="副教授">副教授</option>
+                                <option th:selected="${researcher!=null}?${researcher.post == '讲师'}" th:value="讲师">讲师</option>
                             </select>
-
                         </div>
                     </div>
+
+                    <div class="hr-line-dashed"></div>
+
+
+                    <div class="form-group"><label class="col-sm-2 control-label">研究方向：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="direction"  name="direction" placeholder="研究方向" th:value="${researcher!=null}?${researcher.direction}">
+                        </div>
+                    </div>
+
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="form-group"><label class="col-sm-2 control-label">简介：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="introduction"  name="introduction" placeholder="人员简介" th:value="${researcher!=null}?${researcher.introduction}">
+                        </div>
+                    </div>
+
                     <div class="hr-line-dashed"></div>
 
                     <div class="form-group">
                         <div class="col-sm-4 col-sm-offset-2">
-                            <button type="submit" class="btn btn-primary" th:text="${account!=null}?'&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改&nbsp;&nbsp;&nbsp;&nbsp;':'&nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;'">&nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                            <button type="submit" class="btn btn-primary" th:text="${researcher!=null}?'&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改&nbsp;&nbsp;&nbsp;&nbsp;':'&nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;'">&nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;</button>
                         </div>
                     </div>
                 </form>

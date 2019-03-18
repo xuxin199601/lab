@@ -57,7 +57,7 @@ public class TutorsController {
     // 跳转到新增导师页面
     @RequestMapping("/addTutor")
     public String toAddPage() {
-        return "server/tutor/addTutor";
+        return "server/user/addTutor";
     }
 
     // 跳转到修改导师页面
@@ -66,28 +66,28 @@ public class TutorsController {
                              Model model) {
         Researcher researcher = researcherService.queryResearcherById(aid);
         model.addAttribute("researcher", researcher);
-        return "server/researcher/addResearcher";
+        return "server/user/addTutor";
     }
 
     // 保存添加的导师信息，跳转到导师管理界面
     @RequestMapping(value = "/saveTutor", method = RequestMethod.POST)
     public String saveTutor(Researcher researcher) throws Exception {
         researcherService.saveResearcher(researcher);
-        return "redirect:/server/researcher/addResearcher";
+        return "redirect:/server/tutor/tutorList";
     }
 
     // 保存修改的导师信息，跳转到导师管理界面
-    @RequestMapping(value = "/saveTutor", method = RequestMethod.PUT)
+        @RequestMapping(value = "/saveTutor", method = RequestMethod.PUT)
     public String saveEditTutor(Researcher researcher) {
         researcherService.updateResearcher(researcher);
-        return "redirect:/server/researcher/addResearcher";
+        return "redirect:/server/tutor/tutorList";
     }
 
     // 删除导师信息，跳转到导师管理界面
     @RequestMapping("/deleteTutor")
     public String delTutor(@RequestParam("id")Integer rid) {
         researcherService.deleteResearcher(rid);
-        return "redirect:/server/researcher/addResearcher";
+        return "redirect:/server/tutor/tutorList";
     }
 
     /********************************************************************************************************************************/

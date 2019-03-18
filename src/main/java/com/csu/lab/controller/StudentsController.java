@@ -19,21 +19,31 @@ public class StudentsController {
     @Autowired
     private ResearcherService researcherService;
 
-    // 分页获取研究生信息列表
-    @GetMapping("/studentList")
-    public String getStudentByPage(@RequestParam("person_type")Integer personType,
-                                    @RequestParam(defaultValue = "1") Integer pageNum,
-                                    @RequestParam(defaultValue = "10") Integer pageSize,
-                                    Model model) {
+    // 跳转到导师管理界面
+    @RequestMapping("/studentList")
+    public String studentList(@RequestParam(name = "person_type", defaultValue = "1")Integer personType,
+                            @RequestParam(defaultValue = "1") Integer pageNum,
+                            @RequestParam(defaultValue = "10") Integer pageSize,
+                            @RequestParam(name = "value", required = false) String value,
+                            Model model) {
 
         PageHelper.startPage(pageNum,pageSize);
 
-        List<Researcher> researcherList = researcherService.getResearcherList(personType);
+        List<Researcher> researcherList;
+        if (value != null){
+            model.addAttribute("key", value);
+            researcherList = researcherService.queryStudentByProperty("name", value);
+        }else {
+            researcherList = researcherService.getResearcherList(personType);
+        }
+
+        // 查询导师信息
+        List<Researcher> tutors = researcherService.getResearcherList(0);
+        model.addAttribute("tutors", tutors);
 
         PageInfo pageInfo = new PageInfo(researcherList,10);
 
         model.addAttribute("pageInfo",pageInfo);
-
         //获得当前页
         model.addAttribute("pageNum",pageInfo.getPageNum());
         //获得一页显示的条数
@@ -44,36 +54,42 @@ public class StudentsController {
         model.addAttribute("totalPages",pageInfo.getPages());
         //是否是最后一页
         model.addAttribute("isLastPage",pageInfo.isIsLastPage());
-
         return "server/user/studentManage";
     }
 
-    // 通过id获取研究生个人信息
-    @GetMapping("/studentInfo")
-    public Message getStudentById(@RequestParam("rid")Integer rid) {
-        Researcher tutor = researcherService.queryResearcherById(rid);
-        return Message.success().add(tutor);
+    // 跳转到新增导师页面
+    @RequestMapping("/addStudent")
+    public String toAddPage() {
+        return "server/user/addStudent";
     }
 
-    // 添加研究生
-    @PostMapping("/addStudent")
-    public Message addStudent(@ModelAttribute Researcher researcher) throws Exception {
+    // 跳转到修改导师页面
+    @RequestMapping("/editStudent")
+    public String toEditPage(@RequestParam("id")Integer aid,
+                             Model model) {
+        Researcher researcher = researcherService.queryResearcherById(aid);
+        model.addAttribute("researcher", researcher);
+        return "server/user/addStudent";
+    }
+
+    // 保存添加的导师信息，跳转到导师管理界面
+    @RequestMapping(value = "/saveStudent", method = RequestMethod.POST)
+    public String saveStudent(Researcher researcher) throws Exception {
         researcherService.saveResearcher(researcher);
-        return Message.success().add("添加成功");
+        return "redirect:/server/student/studentList";
     }
 
-    // 修改研究生信息
-    @PutMapping("/modifyStudent")
-    public Message modifyStudent(@ModelAttribute Researcher researcher) {
+    // 保存修改的导师信息，跳转到导师管理界面
+    @RequestMapping(value = "/saveStudent", method = RequestMethod.PUT)
+    public String saveEditStudent(Researcher researcher) {
         researcherService.updateResearcher(researcher);
-        return Message.success().add("Success");
+        return "redirect:/server/student/studentList";
     }
 
-    // 删除研究生信息
-    @DeleteMapping("/deleteStudent")
-    public Message deleteStudent(@RequestParam("rid")Integer rid) {
+    // 删除导师信息，跳转到导师管理界面
+    @RequestMapping("/deleteStudent")
+    public String delStudent(@RequestParam("id")Integer rid) {
         researcherService.deleteResearcher(rid);
-        return Message.success().add("Success");
+        return "redirect:/server/student/studentList";
     }
-
 }

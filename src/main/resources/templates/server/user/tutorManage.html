@@ -27,7 +27,7 @@
 		<div class="border-bottom" th:include="server/header :: headerTop"></div>
 		<div class="row wrapper border-bottom white-bg page-heading" th:fragment="headerNav">
 			<div class="col-lg-10">
-				<h2>导师管理</h2>
+				<h2>导师信息管理</h2>
 			</div>
 		</div>
 
@@ -88,23 +88,23 @@
 										<th width="10%">头像</th>
 										<th width="10%">姓名</th>
 										<th>职称</th>
-										<th width="10%">隶属导师</th>
 										<td width="25%">研究方向</td>
-										<th width="10%">操作</th>
+										<th width="15%">操作</th>
 									</tr>
 									</thead>
 									<tbody>
-									<tr th:each="student:${pageInfo.list}">
-										<td th:text="${student.rid}">Onions</td>
+									<tr th:each="tutor:${pageInfo.list}">
+										<td th:text="${tutor.rid}">Onions</td>
 										<td>
 											<img src="@{${studnet.image}}"/>
 										</td>
-										<td th:text="${student.name}">Onions</td>
-										<td th:text="${student.post}">Onions</td>
-										<td th:switch="${student.affiliated_tutor}">Options</td>
-										<td th:text="${student.direction}">Onions</td>
+										<td th:text="${tutor.name}">Onions</td>
+										<td th:text="${tutor.post}">Onions</td>
+										<td th:text="${tutor.direction}">Onions</td>
 										<td>
-											<a th:href="@{#}" title="查看详情">查看详情</a>
+											<a th:href="@{#}" class="layout-btn btn-primary" title="查看详情">&nbsp;查看详情&nbsp;</a>
+											<a th:href="@{${'/server/tutor/editTutor'}(id=${tutor.rid})}" class="layout-btn btn-primary" title="修改">&nbsp;修&nbsp;改&nbsp;</a>
+											<a th:href="@{${'/server/tutor/deleteTutor'}(id=${tutor.rid})}" class="layout-btn btn-danger deleteBtn" title="删除">&nbsp;删&nbsp;除&nbsp;</a>
 										</td>
 									</tr>
 									</tbody>
