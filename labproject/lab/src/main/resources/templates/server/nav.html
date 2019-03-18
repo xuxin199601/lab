@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8"/>
+<title>后台管理系统</title>
+</head>
+<body>
+	<nav class="navbar-default navbar-static-side" role="navigation" th:fragment="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> 
+                    	<span>
+                            <img alt="image" class="img-circle" th:src="@{/img/cat.jpg}" height="48px" width="48px" />
+						</span>
+                    	<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> 
+                            	<span class="block m-t-xs">
+                            		<strong class="font-bold">username</strong>
+                             	</span> 
+                             </span>
+                     	</a>
+                    </div>
+                    <div class="logo-element">
+                        YX
+                    </div>
+                </li>
+                <li>
+                    <a th:href="@{#}"><i class="fa fa-th-large"></i> <span class="nav-label">首页</span></a>
+                </li>
+                <li>
+                    <a th:href="@{/server/account/accountList}"><i class="fa fa-user"></i><span class="nav-label">账户管理</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">人员管理</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li id="teacher"><a th:href="@{${'/server/tutor/tutorList'}(person_type='0')}">导师信息</a></li>
+                        <li id="student"><a th:href="@{${'/server/student/studentList'}(person_type='1')}">学生信息</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-book"></i> <span class="nav-label">成果管理</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li id="thsis"><a th:href="@{/server/thesis/thesisList}">论文成果</a></li>
+                        <li id="project"><a th:href="@{/server/project/projectList}">项目成果</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a th:href="@{/server/activity/activityList}"><i class="fa fa-globe"></i> <span class="nav-label">活动管理</span></a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>
+
+
+
