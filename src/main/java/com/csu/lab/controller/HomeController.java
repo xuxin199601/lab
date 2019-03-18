@@ -4,18 +4,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/server")
 public class HomeController {
 
 
     //跳转到home界面
-    @RequestMapping("/server/home")
+    @RequestMapping("/home")
     public String doIndex(){
         return "server/home";
     }
 
-    /********************************************************************************************************************************/
-    /**
-     * 下方写client代码
-     */
 
 }

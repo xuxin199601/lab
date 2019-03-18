@@ -24,13 +24,14 @@ import java.util.List;
  * 账户管理
  */
 @Controller
+@RequestMapping("/server/account")
 public class AccountController {
 
     @Autowired
     AccountService accountService;
 
     //账户管理界面
-    @RequestMapping("/server/account/accountList")
+    @RequestMapping("/accountList")
     public String accountList(@RequestParam(defaultValue = "1") Integer pageNum,
                               @RequestParam(defaultValue = "10") Integer pageSize,
                               Model model) {
@@ -54,7 +55,7 @@ public class AccountController {
         return "server/account/accountManage";
     }
 
-    @RequestMapping("/server/account/addAccount")
+    @RequestMapping("/addAccount")
     @ResponseBody
     public Message addAccount(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("privileges") Integer privileges) throws UnsupportedEncodingException, NoSuchAlgorithmException {
 
@@ -67,7 +68,7 @@ public class AccountController {
         return Message.success().add(ResultEnum.SUCCESS.getMsg());
     }
 
-    @RequestMapping("/server/account/deleteAccount")
+    @RequestMapping("/deleteAccount")
     @ResponseBody
     public Message deleteAccount(@RequestParam("aid") Integer aid) {
 
@@ -77,9 +78,4 @@ public class AccountController {
             return Message.fail(ResultEnum.ACCOUNT_DELETE_FAILURE);
         }
     }
-
-    /********************************************************************************************************************************/
-    /**
-     * 下方写client代码
-     */
 }

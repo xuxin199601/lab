@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("")
+@RequestMapping("/server/tutor")
 public class TutorsController {
 
     @Autowired
     private ResearcherService researcherService;
 
     // 分页获取导师信息列表
-    @GetMapping("/server/tutor/tutorList")
+    @GetMapping("/tutorList")
     public String getTutorByPage(@RequestParam("person_type")Integer personType,
                                   @RequestParam(defaultValue = "1") Integer pageNum,
                                   @RequestParam(defaultValue = "10") Integer pageSize,

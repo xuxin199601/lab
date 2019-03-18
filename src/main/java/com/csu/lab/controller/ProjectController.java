@@ -17,13 +17,14 @@ import java.util.List;
  * 项目管理
  */
 @Controller
+@RequestMapping("/server/project")
 public class ProjectController {
 
     @Autowired
     private ProjectService projectService;
 
     // 分页项目信息列表
-    @GetMapping("/server/project/projectList")
+    @GetMapping("/projectList")
     public String getStudentByPage(@RequestParam(defaultValue = "1") Integer pageNum,
                                     @RequestParam(defaultValue = "10") Integer pageSize,
                                     Model model) {
@@ -50,36 +51,31 @@ public class ProjectController {
     }
 
     // 通过id获取项目信息
-    @GetMapping("/server/project/projectInfo")
+    @GetMapping("/projectInfo")
     public Message getProjectById(@RequestParam("pid")Integer pid) {
         Project project = projectService.queryProjectById(pid);
         return Message.success().add(project);
     }
 
     // 添加项目
-    @PostMapping("/server/project/addProject")
+    @PostMapping("/addProject")
     public Message addProject(Project project) throws Exception {
         projectService.saveProject(project);
         return Message.success().add("添加成功");
     }
 
     // 修改项目信息
-    @PutMapping("/server/project/modifyProject")
+    @PutMapping("/modifyProject")
     public Message modifyProject(Project project) {
         projectService.updateProject(project);
         return Message.success().add("Success");
     }
 
     // 删除项目信息
-    @DeleteMapping("/server/project/deleteProject")
+    @DeleteMapping("/deleteProject")
     public Message deleteProject(@RequestParam("pid")Integer rid) {
         projectService.deleteProject(rid);
         return Message.success().add("Success");
     }
-
-    /********************************************************************************************************************************/
-    /**
-     * 下方写client代码
-     */
 
 }

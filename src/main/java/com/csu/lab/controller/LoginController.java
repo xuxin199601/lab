@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
+@RequestMapping("/server")
 public class LoginController {
 
     @Autowired
@@ -26,21 +27,21 @@ public class LoginController {
     private ResearcherService researcherService;
 
     //跳转到登录界面
-    @RequestMapping("/server/login")
+    @RequestMapping("/login")
     public String doLoginLab() {
         return "server/login";
     }
 
 
     //跳转到project
-    @RequestMapping("/server/project")
+    @RequestMapping("/project")
     public String doProject(){
         return "server/gain/projectManage";
     }
 
 
     //登录实现
-    @RequestMapping(value = "/server/doLogin",method = RequestMethod.POST)
+    @RequestMapping(value = "/doLogin",method = RequestMethod.POST)
     public String doLogin(Account account, Model model, HttpSession httpSession) {
 
         Account user = accountService.loginVaildata(account);
@@ -53,9 +54,4 @@ public class LoginController {
             return "server/login";
         }
     }
-
-    /********************************************************************************************************************************/
-    /**
-     * 下方写client代码
-     */
 }

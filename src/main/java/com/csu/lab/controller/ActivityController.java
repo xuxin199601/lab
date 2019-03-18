@@ -76,9 +76,4 @@ public class ActivityController {
         activityService.deleteActivity(rid);
         return Message.success().add("Success");
     }
-
-    /********************************************************************************************************************************/
-    /**
-     * 下方写client代码
-     */
 }

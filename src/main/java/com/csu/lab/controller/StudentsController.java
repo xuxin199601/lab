@@ -13,13 +13,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@RequestMapping("/server/student")
 public class StudentsController {
 
     @Autowired
     private ResearcherService researcherService;
 
     // 分页获取研究生信息列表
-    @GetMapping("/server/student/studentList")
+    @GetMapping("/studentList")
     public String getStudentByPage(@RequestParam("person_type")Integer personType,
                                     @RequestParam(defaultValue = "1") Integer pageNum,
                                     @RequestParam(defaultValue = "10") Integer pageSize,
@@ -74,10 +75,5 @@ public class StudentsController {
         researcherService.deleteResearcher(rid);
         return Message.success().add("Success");
     }
-
-    /********************************************************************************************************************************/
-    /**
-     * 下方写client代码
-     */
 
 }

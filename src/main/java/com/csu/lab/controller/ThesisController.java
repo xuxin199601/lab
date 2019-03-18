@@ -14,13 +14,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@RequestMapping("/server/thesis")
 public class ThesisController {
 
     @Autowired
     private ThesisService thesisService;
 
     // 分页成果信息列表
-    @GetMapping("/server/thesis/thesisList")
+    @GetMapping("/thesisList")
     public String getStudentByPage(@RequestParam(defaultValue = "1") Integer pageNum,
                                     @RequestParam(defaultValue = "10") Integer pageSize,
                                     Model model) {

@@ -50,10 +50,4 @@ public class LaboratoryController {
         laboratoryService.deleteLaboratory(rid);
         return Message.success().add("Success");
     }
-
-    /********************************************************************************************************************************/
-    /**
-     * 下方写client代码
-     */
-
 }
