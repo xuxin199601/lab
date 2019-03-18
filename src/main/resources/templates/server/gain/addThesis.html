@@ -25,7 +25,8 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>添加论文</h5>
+                <h5 th:if="${thesis==null}">添加论文信息</h5>
+                <h5 th:if="${thesis!=null}">修改论文信息</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
