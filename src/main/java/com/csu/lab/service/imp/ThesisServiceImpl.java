@@ -9,6 +9,7 @@ import com.csu.lab.pojo.Thesis;
 import com.csu.lab.service.ThesisService;
 import com.csu.lab.utils.CustomUtils;
 import com.github.pagehelper.PageHelper;
+import org.omg.CORBA.INTERNAL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +44,7 @@ public class ThesisServiceImpl implements ThesisService {
      */
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public void saveThesis(Thesis thesis, List<MultipartFile> files) throws IOException {
+    public Integer saveThesis(Thesis thesis, List<MultipartFile> files) throws IOException {
         logger.info("addThesis:{}", thesis);
         List<Thesis> ThesisList = queryByProperty("name", thesis.getName());
         if (ThesisList.isEmpty()) {
@@ -120,11 +121,12 @@ public class ThesisServiceImpl implements ThesisService {
         } else {
             throw new ThesisException(ResultEnum.THESIS_EXIST);
         }
+        return thesisMapper.insert(thesis);
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public void updateThesis(Thesis thesis, List<MultipartFile> files) throws IOException {
+    public Integer updateThesis(Thesis thesis, List<MultipartFile> files) throws IOException {
         logger.info("updateThesis:{}", thesis);
         for (int i = 0; i < files.size(); i++) {
             MultipartFile file = files.get(i);
@@ -178,6 +180,8 @@ public class ThesisServiceImpl implements ThesisService {
         if (thesisMapper.updateByPrimaryKeySelective(thesis) != 1) {
             throw new ThesisException(ResultEnum.THESIS_UPDATE_FAILURE);
         }
+
+        return thesisMapper.updateByPrimaryKeySelective(thesis);
     }
 
     /**
@@ -187,11 +191,11 @@ public class ThesisServiceImpl implements ThesisService {
      */
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public void deleteThesis(Integer ThesisId) {
+    public Integer deleteThesis(Integer ThesisId) {
         logger.info("deleteThesisById:{}", ThesisId);
         Thesis thesis = thesisMapper.selectByPrimaryKey(ThesisId);
         if (thesis == null) {
-            return;
+            return -1;
         }
         if (thesisMapper.deleteByPrimaryKey(ThesisId) != 1) {
             throw new ThesisException(ResultEnum.THESIS_DELETE_FAILURE);
@@ -200,6 +204,7 @@ public class ThesisServiceImpl implements ThesisService {
             CustomUtils.deleteFile(thesis.getCode());
             CustomUtils.deleteFile(thesis.getData());
         }
+        return thesisMapper.deleteByPrimaryKey(ThesisId);
     }
 
     @Override

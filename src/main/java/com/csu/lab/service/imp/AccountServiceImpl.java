@@ -79,9 +79,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public void updateAccount(Account account) {
-        if(accountMapper.updateByPrimaryKeySelective(account) != 1) {
-            throw new AccountException(ResultEnum.ACTIVITY_UPDATE_FAILURE);
-        }
+    public Integer updateAccount(Account account) {
+        return accountMapper.updateByPrimaryKeySelective(account);
     }
 }

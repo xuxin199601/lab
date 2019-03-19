@@ -33,7 +33,7 @@ public class ResearcherServiceImpl implements ResearcherService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public void saveResearcher(Researcher researcher) {
+    public Integer saveResearcher(Researcher researcher) {
         logger.info("addResearcher:{}", researcher);
         Researcher tempResearcher = new Researcher();
         tempResearcher.setAid(researcher.getAid());
@@ -45,24 +45,27 @@ public class ResearcherServiceImpl implements ResearcherService {
         } else {
             throw new ResearcherException(ResultEnum.TUTOR_EXIST);
         }
+        return researcherMapper.insert(researcher);
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public void updateResearcher(Researcher researcher) {
+    public Integer updateResearcher(Researcher researcher) {
         logger.info("updateResearcher:{}", researcher);
         researcherMapper.updateByPrimaryKeySelective(researcher);
         if(researcherMapper.updateByPrimaryKeySelective(researcher) != 1) {
             throw new ResearcherException(ResultEnum.RESEARCHER_UPDATE_FAILURE);
         }
+        return researcherMapper.updateByPrimaryKeySelective(researcher);
     }
 
     @Override
-    public void deleteResearcher(Integer researcherId) {
-        logger.info("deleteResearcherById:{}", researcherId);
+    public Integer deleteResearcher(Integer researcherId) {
+
         if(researcherMapper.deleteByPrimaryKey(researcherId) != 1) {
             throw new ResearcherException(ResultEnum.RESEARCHER_DELETE_FAILURE);
         }
+        return researcherMapper.deleteByPrimaryKey(researcherId);
     }
 
     @Override

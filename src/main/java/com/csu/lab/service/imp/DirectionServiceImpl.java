@@ -55,7 +55,7 @@ public class DirectionServiceImpl implements DirectionService{
     }
 
     @Override
-    public int deleteDirection(Integer directionId) {
+    public Integer deleteDirection(Integer directionId) {
         return directionMapper.deleteByPrimaryKey(directionId);
     }
 

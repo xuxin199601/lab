@@ -15,11 +15,11 @@ public interface ThesisService {
 
     public List<Thesis> getThesisList();
 
-    public void saveThesis(Thesis thesis, List<MultipartFile> files) throws Exception;
+    public Integer saveThesis(Thesis thesis, List<MultipartFile> files) throws Exception;
 
-    public void updateThesis(Thesis thesis, List<MultipartFile> files) throws IOException;
+    public Integer updateThesis(Thesis thesis, List<MultipartFile> files) throws IOException;
 
-    public void deleteThesis(Integer thesisId);
+    public Integer deleteThesis(Integer thesisId);
 
     public Thesis queryThesisById(Integer thesisId);
 

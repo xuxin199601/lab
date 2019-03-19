@@ -43,7 +43,7 @@ public class ProjectServiceImpl implements ProjectService {
      */
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public void saveProject(Project project) throws IOException {
+    public Integer saveProject(Project project) throws IOException {
         logger.info("addProject:{}", project);
         List<Project> projectList = queryByProperty("name", project.getName());
         if (projectList.isEmpty()) {
@@ -68,10 +68,12 @@ public class ProjectServiceImpl implements ProjectService {
         } else {
             throw new ProjectException(ResultEnum.PROJECT_EXIST);
         }
+
+        return projectMapper.insert(project);
     }
 
     @Override
-    public void saveProject(Project project, MultipartFile blFile) throws Exception {
+    public Integer saveProject(Project project, MultipartFile blFile) throws Exception {
         logger.info("addProject:{}", project);
         List<Project> projectList = queryByProperty("name", project.getName());
         if (projectList.isEmpty()) {
@@ -97,19 +99,21 @@ public class ProjectServiceImpl implements ProjectService {
         } else {
             throw new ProjectException(ResultEnum.PROJECT_EXIST);
         }
+        return projectMapper.insert(project);
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public void updateProject(Project project) {
+    public Integer updateProject(Project project) {
         logger.info("updateProject:{}", project);
         if (projectMapper.updateByPrimaryKeySelective(project) != 1) {
             throw new ProjectException(ResultEnum.PROJECT_UPDATE_FAILURE);
         }
+        return projectMapper.updateByPrimaryKeySelective(project);
     }
 
     @Override
-    public void updateProject(Project project, MultipartFile blFile) throws IOException {
+    public Integer updateProject(Project project, MultipartFile blFile) throws IOException {
         logger.info("updateProject:{}", project);
 
 //        如果文件为空，则不修改
@@ -127,11 +131,13 @@ public class ProjectServiceImpl implements ProjectService {
             throw new ProjectException(ResultEnum.PROJECT_UPDATE_FAILURE);
         }
 
+        return projectMapper.updateByPrimaryKeySelective(project);
+
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public void deleteProject(Integer projectId) {
+    public Integer deleteProject(Integer projectId) {
         logger.info("deleteProjectById:{}", projectId);
         Project project = projectMapper.selectByPrimaryKey(projectId);
         if (projectMapper.deleteByPrimaryKey(projectId) != 1) {
@@ -139,6 +145,7 @@ public class ProjectServiceImpl implements ProjectService {
         } else {
             CustomUtils.deleteFile(project.getVideo());
         }
+        return projectMapper.deleteByPrimaryKey(projectId);
     }
 
     @Override

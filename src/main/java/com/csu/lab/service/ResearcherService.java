@@ -8,11 +8,11 @@ public interface ResearcherService {
 
     public List<Researcher> getResearcherList(Integer personType);
 
-    public void saveResearcher(Researcher researcher)throws Exception;
+    public Integer saveResearcher(Researcher researcher)throws Exception;
 
-    public void updateResearcher(Researcher researcher);
+    public Integer updateResearcher(Researcher researcher);
 
-    public void deleteResearcher(Integer researcherId);
+    public Integer deleteResearcher(Integer researcherId);
 
     public Researcher queryResearcherById(Integer researcherId);
 

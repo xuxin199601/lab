@@ -10,11 +10,11 @@ public interface ProjectService {
 
     List<Project> getProjectList();
 
-    void saveProject(Project project)throws Exception;
-    void saveProject(Project project, MultipartFile blFile)throws Exception;
-    void updateProject(Project project);
-    void updateProject(Project project,MultipartFile blFile) throws IOException;
-    void deleteProject(Integer projectId);
+    Integer saveProject(Project project)throws Exception;
+    Integer saveProject(Project project, MultipartFile blFile)throws Exception;
+    Integer updateProject(Project project);
+    Integer updateProject(Project project,MultipartFile blFile) throws IOException;
+    Integer deleteProject(Integer projectId);
 
     Project queryProjectById(Integer projectId);
 

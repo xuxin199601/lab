@@ -7,7 +7,7 @@ import java.util.List;
 public interface AccountService {
     Account loginVaildata(Account account);
     Integer addAccount(Account account);
-    void updateAccount(Account account);
+    Integer updateAccount(Account account);
     Integer deleteAccount(Integer aid);
     List<Account> getAccountList();
     Account equrySingleAccount(Account account);

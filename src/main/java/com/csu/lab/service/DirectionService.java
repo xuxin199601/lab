@@ -12,7 +12,7 @@ public interface DirectionService {
 
     public int updateDirection(Direction direction);
 
-    public int deleteDirection(Integer directionId);
+    public Integer deleteDirection(Integer directionId);
 
     public Direction queryDirectionById(Integer directionId);
 
