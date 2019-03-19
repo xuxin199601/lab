@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Controller
@@ -108,4 +110,29 @@ public class ThesisController {
         thesisService.deleteThesis(tid);
         return "redirect:/server/thesis/thesisList";
     }
+
+    /**
+     * 通过验证的用户下载论文
+     */
+    @GetMapping("/thesisContent/{tid}/{aid}")
+    public void getThesisContent(@PathVariable Integer tid, @PathVariable Integer aid, HttpServletResponse response, HttpServletRequest request){
+        thesisService.getThesisContent(tid,aid,response,request);
+    }
+
+    /**
+     * 通过验证的用户下载论文代码
+     */
+    @GetMapping("/thesisCode/{tid}/{aid}")
+    public void getThesisCode(@PathVariable Integer tid,@PathVariable Integer aid, HttpServletResponse response,HttpServletRequest request){
+        thesisService.getThesisCode(tid,aid,response,request);
+    }
+
+    /**
+     * 通过验证的用户下载论文数据集（考虑没有数据集的情况）
+     */
+    @GetMapping("/thesisData/{tid}/{aid}")
+    public void getThesisData(@PathVariable Integer tid,@PathVariable Integer aid, HttpServletResponse response,HttpServletRequest request){
+        thesisService.getThesisData(tid,aid,response,request);
+    }
+
 }
