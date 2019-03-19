@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <title>后台信息管理系统</title>
 
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
-    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
-    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
 
     <link th:href="@{/css/plugins/iCheck/custom.css}" rel="stylesheet"/>
     <link th:href="@{/css/plugins/footable/footable.core.css}" rel="stylesheet"/>
@@ -16,6 +16,9 @@
     <!-- datetimepicker -->
     <link th:href="@{/css/bootstrap-datetimepicker.css}" rel="stylesheet" media="screen"/>
     <link th:href="@{/css/bootstrap-datetimepicker.min.css}" rel="stylesheet" media="screen"/>
+
+    <!-- Sweet Alert -->
+    <link th:href="@{/css/plugins/sweetalert/sweetalert.css}" rel="stylesheet"/>
 
 </head>
 
@@ -28,23 +31,22 @@
             <div class="col-lg-10">
                 <h2>系统管理</h2>
                 <!--<ol class="breadcrumb">-->
-                    <!--<li>-->
-                        <!--<a href="#">首页</a>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                        <!--<a>系统管理</a>-->
-                    <!--</li>-->
+                <!--<li>-->
+                <!--<a href="#">首页</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a>系统管理</a>-->
+                <!--</li>-->
 
-                    <!--<li class="active">-->
-                        <!--<strong>信息修改</strong>-->
-                    <!--</li>-->
+                <!--<li class="active">-->
+                <!--<strong>信息修改</strong>-->
+                <!--</li>-->
                 <!--</ol>-->
             </div>
             <div class="col-lg-2">
             </div>
         </div>
         <div class="wrapper wrapper-content animated fadeInRight">
-
 
 
             <div class="row">
@@ -59,13 +61,15 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-                            <form id="formTag" th:action="@{/server/laboratory/modifyLaboratory}" method="post" class="form-horizontal" enctype="multipart/form-data">
+                            <form id="formTag" th:action="@{/server/laboratory/modifyLaboratory}" method="post"
+                                  class="form-horizontal" enctype="multipart/form-data">
 
                                 <input type="hidden" name="lid" th:value="${laboratory.lid}">
 
                                 <div class="form-group"><label class="col-sm-2 control-label">实验室简介：</label>
                                     <div class="col-sm-10">
-                                        <textarea id="direction" name="resDirection" class="form-control" rows="6" th:text="${laboratory.resDirection}" readonly></textarea>
+                                        <textarea id="direction" name="resDirection" class="form-control" rows="9"
+                                                  th:text="${laboratory.resDirection}" readonly></textarea>
                                     </div>
                                 </div>
 
@@ -73,14 +77,17 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">地址：</label>
                                     <div class="col-sm-10">
-                                        <input id="realName1" name="address" type="text" class="form-control" th:value="${laboratory.address}" readonly/>
+                                        <input id="realName1" name="address" type="text" class="form-control"
+                                               th:value="${laboratory.address}" readonly/>
                                     </div>
                                 </div>
+
                                 <div class="hr-line-dashed"></div>
-x
+
                                 <div class="form-group"><label class="col-sm-2 control-label">电话：</label>
                                     <div class="col-sm-10">
-                                        <input id="business" name="phone" type="text" class="form-control" th:value="${laboratory.phone}" readonly/>
+                                        <input id="business" name="phone" type="text" class="form-control"
+                                               th:value="${laboratory.phone}" readonly/>
                                     </div>
                                 </div>
 
@@ -88,20 +95,24 @@ x
 
                                 <div class="form-group"><label class="col-sm-2 control-label">邮箱：</label>
                                     <div class="col-sm-10">
-                                        <input id="email" name="email" type="email" class="form-control" th:value="${laboratory.email}" readonly/>
+                                        <input id="email" name="email" type="email" class="form-control"
+                                               th:value="${laboratory.email}" readonly/>
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
-
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
                                         <button id="xiugai" class="btn btn-primary" type="button">&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改&nbsp;&nbsp;&nbsp;&nbsp;</button>
 
-                                        <button id="submitButton" class="btn btn-primary" style="display: none;" type="button">&nbsp;&nbsp;&nbsp;&nbsp;提&nbsp;&nbsp;&nbsp;&nbsp;交&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                        <button id="submitButton" class="btn btn-primary" style="display: none;"
+                                                type="button">&nbsp;&nbsp;&nbsp;&nbsp;提&nbsp;&nbsp;&nbsp;&nbsp;交&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </button>
 
-                                        <button id="cancel" class="btn btn-primary" style="display: none;" type="button">&nbsp;&nbsp;&nbsp;&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;&nbsp;&nbsp;&nbsp;</button>
-                                </div>
+                                        <button id="cancel" class="btn btn-primary" style="display: none;"
+                                                type="button">&nbsp;&nbsp;&nbsp;&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -136,41 +147,43 @@ x
 <!-- SUMMERNOTE -->
 <script th:src="@{/js/plugins/summernote/summernote.min.js}"></script>
 
+<!-- Sweet alert -->
+<script th:src="@{/js/plugins/sweetalert/sweetalert.min.js}"></script>
 
 
 <script th:inline="javascript">
 
-    var error = [[${error}]];
-
     $(document).ready(function () {
 
-        if(error!=null){
+        var error = [[${error}]];
+
+        if (error != null) {
             swal({
-                title : "温馨提示",
-                text : error
+                title: "温馨提示",
+                text: error
             });
         }
-        
-        $("#xiugai").click(function () {
-            $("#direction").attr("readonly",false);
-            $("#realName1").attr("readonly",false);
-            $("#business").attr("readonly",false);
-            $("#email").attr("readonly",false);
 
-            $("#xiugai").attr("style","display:none;");
-            $("#submitButton").attr("style","display:inline;");
-            $("#cancel").attr("style","display:inline;").attr("style","margin-left:30px;");
+        $("#xiugai").click(function () {
+            $("#direction").attr("readonly", false);
+            $("#realName1").attr("readonly", false);
+            $("#business").attr("readonly", false);
+            $("#email").attr("readonly", false);
+
+            $("#xiugai").attr("style", "display:none;");
+            $("#submitButton").attr("style", "display:inline;");
+            $("#cancel").attr("style", "display:inline;").attr("style", "margin-left:30px;");
         });
 
         $("#cancel").click(function () {
-            $("#direction").attr("readonly",true);
-            $("#realName1").attr("readonly",true);
-            $("#business").attr("readonly",true);
-            $("#email").attr("readonly",true);
+            $("#direction").attr("readonly", true);
+            $("#realName1").attr("readonly", true);
+            $("#business").attr("readonly", true);
+            $("#email").attr("readonly", true);
 
-            $("#xiugai").attr("style","display:inline;");
-            $("#submitButton").attr("style","display:none;");
-            $("#cancel").attr("style","display:none;");
+            $("#xiugai").attr("style", "display:inline;");
+            $("#submitButton").attr("style", "display:none;");
+            $("#cancel").attr("style", "display:none;");
 
             $("#direction").val([[${laboratory.resDirection}]]);
             $("#realName1").val([[${laboratory.address}]]);
@@ -179,7 +192,7 @@ x
         });
 
         //提交
-        $("#submitButton").click(function(){
+        $("#submitButton").click(function () {
 
             $("#formTag").submit();
         });

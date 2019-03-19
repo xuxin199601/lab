@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../../static/layui/css/layui.css">
-    <link rel="stylesheet" href="../../static/css/csu-style.css">
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+    <link rel="stylesheet" th:href="@{/css/csu-style.css}">
 </head>
 <body class="csu-iframe-body">
+
+<!--顶端信息条-->
+<div class="csu-content-top">
+    <nav frameborder="0" scrolling="no" name="csu-content-iframe" id="csu-content-iframe-top" class="navbar-default navbar-static-side" role="top" th:include="client/top :: top"></nav>
+</div>
+
 <fieldset class="layui-elem-field">
     <legend class="csu-color-theme"><b>肖途</b></legend>
     <div class="layui-field-box">

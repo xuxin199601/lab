@@ -14,30 +14,34 @@ import java.util.List;
 @RequestMapping("/server/laboratory")
 public class LaboratoryController {
 
+    String msg;
+
     @Autowired
     private LaboratoryService laboratoryService;
 
     // 实验室信息展示，只有单条信息，只获取第一条数据
     @RequestMapping("/laboratoryList")
-    public String getStudentByPage(Model model, @RequestParam("error") String error) {
+    public String getStudentByPage(Model model) {
         List<Laboratory> list = laboratoryService.getLaboratoryList();
 
         model.addAttribute("laboratory", list.get(0));
+        model.addAttribute("error",msg);
+        msg = null;
         return "server/laboratory/laboratoryManage";
     }
 
     // 修改实验室信息
     @PostMapping("/modifyLaboratory")
-    public String modifyLaboratory(Laboratory laboratory, RedirectAttributes attr) {
+    public String modifyLaboratory(Laboratory laboratory) {
 
         System.out.println(laboratory.getLid());
 
         int result = laboratoryService.updateLaboratory(laboratory);
 
         if (result == 1) {
-            attr.addAttribute("error", "修改成功");
+            msg = "修改成功";
         } else {
-            attr.addAttribute("error", "修改失败");
+            msg = "修改失败";
         }
         return "redirect:laboratoryList";
     }

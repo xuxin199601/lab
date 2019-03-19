@@ -20,7 +20,27 @@
 </head>
 
 <body>
-
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation" th:include="server/nav :: navigation"></nav>
+    <div id="page-wrapper" class="gray-bg">
+        <div class="border-bottom" th:include="server/header :: headerTop"></div>
+        <div class="row wrapper border-bottom white-bg page-heading" th:fragment="headerNav">
+            <div class="col-lg-10">
+                <h2>学术成果管理</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a>学术成果管理</a>
+                    </li>
+                    <li class="active">
+                        <strong th:if="${thesis==null}">添加论文信息</strong>
+                        <strong th:if="${thesis!=null}">修改论文信息</strong>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-lg-2">
+            </div>
+        </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
 <div class="row">
     <div class="col-lg-12">
         <div class="ibox float-e-margins">

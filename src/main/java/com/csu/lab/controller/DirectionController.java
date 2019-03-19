@@ -10,11 +10,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
 @RequestMapping("/server/direction")
 public class DirectionController {
+
+    String msg;
 
     @Autowired
     private DirectionService directionService;
@@ -22,8 +25,13 @@ public class DirectionController {
     // 分页研究方向信息列表
     @GetMapping("/directionList")
     public String getStudentByPage(@RequestParam(defaultValue = "1") Integer pageNum,
-                                    @RequestParam(defaultValue = "10") Integer pageSize,
-                                    Model model) {
+                                   @RequestParam(defaultValue = "10") Integer pageSize,
+                                   Model model,
+                                   HttpSession session) {
+
+        session.setAttribute("error",msg);
+        msg = null;
+
         PageHelper.startPage(pageNum,pageSize);
 
         List<Direction> directionList = directionService.getDirectionList();
@@ -50,11 +58,22 @@ public class DirectionController {
         return Message.success().add(direction);
     }
 
+    //跳转到添加界面
+    @RequestMapping("/doAddDirection")
+    public String doAddDirection(){
+        return "server/direction/addDirection";
+    }
+
     // 添加研究方向
     @PostMapping("/addDirection")
-    public Message addDirection(Direction direction) throws Exception {
-        directionService.saveDirection(direction);
-        return Message.success().add("添加成功");
+    public String addDirection(Direction direction) {
+        int result = directionService.addDirection(direction);
+        if (result == 1) {
+            msg = "添加成功";
+        } else {
+            msg = "添加失败";
+        }
+        return "redirect:directionList";
     }
 
     // 修改研究方向信息
