@@ -99,8 +99,8 @@ public class ResearcherServiceImpl implements ResearcherService {
         example.and(criteria);
 
         return researcherMapper.selectByExample(example);
-    }
 
+    }
 
     @Override
     public List<Researcher> queryTutorByProperty(String property, Object value) {
@@ -124,6 +124,25 @@ public class ResearcherServiceImpl implements ResearcherService {
         criteria.andEqualTo("personType", 1);
         criteria.andLike(property, "%" + value + "%");
         example.and(criteria);
+
+        return researcherMapper.selectByExample(example);
+    }
+
+    @Override
+    public List<Researcher> queryAllStudent() {
+        Example example = new Example(Researcher.class);
+        Example.Criteria criteria = example.createCriteria();
+
+        // 设置条件
+        criteria.andEqualTo("personType", 1);
+
+        Example.Criteria criteria2 = example.createCriteria();
+        criteria2.andEqualTo("personType", 2);
+        example.or(criteria2);
+
+        Example.Criteria criteria3 = example.createCriteria();
+        criteria3.andEqualTo("personType", 3);
+        example.or(criteria3);
 
         return researcherMapper.selectByExample(example);
     }

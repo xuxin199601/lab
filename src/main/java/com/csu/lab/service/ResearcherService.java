@@ -28,4 +28,7 @@ public interface ResearcherService {
     // 根据条件查询学生信息
     public List<Researcher> queryStudentByProperty(String property, Object value);
 
+    //根据条件进行or查询
+    public List<Researcher> queryAllStudent();
+
 }
