@@ -121,7 +121,7 @@
 						<div class="ibox-footer" align="right">
 							<ul class="pagination">
 								<li>
-									<a th:if="${not isFirstPage}" th:href="@{${'accountList'}(pageNum=${pageNum-1},pageSize=${pageSize})}" aria-label="Previous">
+									<a th:if="${not isFirstPage}" th:href="@{${'tutorList'}(pageNum=${pageNum-1},pageSize=${pageSize})}" aria-label="Previous">
 										<span aria-hidden="true">«</span>
 									</a>
 									<a th:if="${isFirstPage}" href="javascript:void(0);" aria-label="Previous">
@@ -134,13 +134,13 @@
 										<span th:text="${pageNo}"></span>
 									</a>
 
-									<a th:if="${not (pageNum eq pageNo)}" th:href="@{${'accountList'}(pageNum=${pageNo},pageSize=${pageSize})}">
+									<a th:if="${not (pageNum eq pageNo)}" th:href="@{${'tutorList'}(pageNum=${pageNo},pageSize=${pageSize})}">
 										<span th:text="${pageNo}"></span>
 									</a>
 								</li>
 
 								<li>
-									<a th:if="${not isLastPage}" th:href="@{${'accountList'}(pageNum=${pageNum+1},pageSize=${pageSize})}" aria-label="Next">
+									<a th:if="${not isLastPage}" th:href="@{${'tutorList'}(pageNum=${pageNum+1},pageSize=${pageSize})}" aria-label="Next">
 										<span aria-hidden="true">»</span>
 									</a>
 									<a th:if="${isLastPage}" href="javascript:void(0);" aria-label="Next">
