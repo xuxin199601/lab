@@ -82,7 +82,7 @@ public class ProjectServiceImpl implements ProjectService{
         Example.Criteria criteria = example.createCriteria();
 
         // 设置条件
-        criteria.andEqualTo(property, value);
+        criteria.andLike(property, "%" + value + "%");
         example.and(criteria);
 
         return projectMapper.selectByExample(example);
