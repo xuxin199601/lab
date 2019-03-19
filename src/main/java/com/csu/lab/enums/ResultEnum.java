@@ -38,6 +38,7 @@ public enum ResultEnum {
     // 保存项目信息时的错误
     PROJECT_EXIST(1, "Project Exist."),
     PROJECT_SAVE_FAILURE(2, "Failure."),
+    PROJECT_VIDEO_FAILURE(2,"Video Save Failure"),
     // 修改项目信息时的错误
     PROJECT_UPDATE_FAILURE(1, "Failure."),
     // 查询项目信息时的错误

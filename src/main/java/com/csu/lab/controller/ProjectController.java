@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -21,22 +23,28 @@ import java.util.List;
 public class ProjectController {
 
     @Autowired
-    private ProjectService projectService;
+    ProjectService projectService;
 
-    // 分页项目信息列表
-    @GetMapping("/projectList")
-    public String getStudentByPage(@RequestParam(defaultValue = "1") Integer pageNum,
-                                    @RequestParam(defaultValue = "10") Integer pageSize,
-                                    Model model) {
+    // 跳转到账户管理界面
+    @RequestMapping("/projectList")
+    public String projectList(@RequestParam(defaultValue = "1") Integer pageNum,
+                              @RequestParam(defaultValue = "10") Integer pageSize,
+                              @RequestParam(name = "value", required = false) String value,
+                              Model model) {
 
         PageHelper.startPage(pageNum,pageSize);
 
-        List<Project> projectList = projectService.getProjectList();
+        List<Project> list;
+        if (value != null){
+            model.addAttribute("key", value);
+            list = projectService.queryByProperty("name", value);
+        }else {
+            list = projectService.getProjectList();
+        }
 
-        PageInfo pageInfo = new PageInfo(projectList,10);
+        PageInfo pageInfo = new PageInfo(list,10);
 
         model.addAttribute("pageInfo",pageInfo);
-
         //获得当前页
         model.addAttribute("pageNum",pageInfo.getPageNum());
         //获得一页显示的条数
@@ -50,32 +58,39 @@ public class ProjectController {
         return "server/gain/projectManage";
     }
 
-    // 通过id获取项目信息
-    @GetMapping("/projectInfo")
-    public Message getProjectById(@RequestParam("pid")Integer pid) {
+    // 跳转到新增账户页面
+    @RequestMapping("/addProject")
+    public String toAddPage() {
+        return "server/gain/addProject";
+    }
+
+    // 跳转到修改账户页面
+    @RequestMapping("/editProject")
+    public String toEditPage(@RequestParam("id")Integer pid,
+                             Model model) {
         Project project = projectService.queryProjectById(pid);
-        return Message.success().add(project);
+        model.addAttribute("project", project);
+        return "server/gain/addProject";
     }
 
-    // 添加项目
-    @PostMapping("/addProject")
-    public Message addProject(Project project) throws Exception {
-        projectService.saveProject(project);
-        return Message.success().add("添加成功");
+    // 保存添加的账户信息，跳转到账户管理界面
+    @RequestMapping(value = "/saveProject", method = RequestMethod.POST)
+    public String saveProject(Project project, @RequestParam("blFile")MultipartFile blFile) throws Exception {
+        projectService.saveProject(project,blFile);
+        return "redirect:/server/project/projectList";
     }
 
-    // 修改项目信息
-    @PutMapping("/modifyProject")
-    public Message modifyProject(Project project) {
-        projectService.updateProject(project);
-        return Message.success().add("Success");
+    // 保存修改的账户信息，跳转到账户管理界面
+    @RequestMapping(value = "/saveProject", method = RequestMethod.PUT)
+    public String saveEditProject(Project project,@RequestParam("blFile")MultipartFile blFile) throws IOException {
+        projectService.updateProject(project,blFile);
+        return "redirect:/server/project/projectList";
     }
 
-    // 删除项目信息
-    @DeleteMapping("/deleteProject")
-    public Message deleteProject(@RequestParam("pid")Integer rid) {
-        projectService.deleteProject(rid);
-        return Message.success().add("Success");
+    // 删除账户信息，跳转到账户管理界面
+    @RequestMapping("/deleteProject")
+    public String delProject(@RequestParam("id")Integer pid) {
+        projectService.deleteProject(pid);
+        return "redirect:/server/project/projectList";
     }
-
 }

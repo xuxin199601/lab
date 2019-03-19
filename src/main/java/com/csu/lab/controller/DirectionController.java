@@ -26,46 +26,47 @@ public class DirectionController {
     @GetMapping("/directionList")
     public String getStudentByPage(@RequestParam(defaultValue = "1") Integer pageNum,
                                    @RequestParam(defaultValue = "10") Integer pageSize,
+                                   @RequestParam(name = "value", required = false) String value,
                                    Model model,
                                    HttpSession session) {
 
-        session.setAttribute("error",msg);
+        session.setAttribute("error", msg);
         msg = null;
 
-        PageHelper.startPage(pageNum,pageSize);
+        PageHelper.startPage(pageNum, pageSize);
 
-        List<Direction> directionList = directionService.getDirectionList();
-        PageInfo pageInfo = new PageInfo(directionList,10);
+        List<Direction> directionList;
 
-        model.addAttribute("pageInfo",pageInfo);
+        if (value != null){
+            model.addAttribute("key", value);
+            directionList = directionService.queryByProperty("resDirection", value);
+        }else {
+            directionList = directionService.getDirectionList();
+        }
+        PageInfo pageInfo = new PageInfo(directionList, 10);
+
+        model.addAttribute("pageInfo", pageInfo);
         //获得当前页
-        model.addAttribute("pageNum",pageInfo.getPageNum());
+        model.addAttribute("pageNum", pageInfo.getPageNum());
         //获得一页显示的条数
-        model.addAttribute("pageSize",pageInfo.getPageSize());
+        model.addAttribute("pageSize", pageInfo.getPageSize());
         //是否是第一页
-        model.addAttribute("isFirstPage",pageInfo.isIsFirstPage());
+        model.addAttribute("isFirstPage", pageInfo.isIsFirstPage());
         //获得总页数
-        model.addAttribute("totalPages",pageInfo.getPages());
+        model.addAttribute("totalPages", pageInfo.getPages());
         //是否是最后一页
-        model.addAttribute("isLastPage",pageInfo.isIsLastPage());
+        model.addAttribute("isLastPage", pageInfo.isIsLastPage());
         return "server/direction/directionManage";
-    }
-
-    // 通过id获取研究方向信息
-    @GetMapping("/directionInfo")
-    public Message getDirectionById(@RequestParam("did")Integer pid) {
-        Direction direction = directionService.queryDirectionById(pid);
-        return Message.success().add(direction);
     }
 
     //跳转到添加界面
     @RequestMapping("/doAddDirection")
-    public String doAddDirection(){
+    public String doAddDirection() {
         return "server/direction/addDirection";
     }
 
     // 添加研究方向
-    @PostMapping("/addDirection")
+    @PostMapping("/saveDirection")
     public String addDirection(Direction direction) {
         int result = directionService.addDirection(direction);
         if (result == 1) {
@@ -76,17 +77,42 @@ public class DirectionController {
         return "redirect:directionList";
     }
 
-    // 修改研究方向信息
-    @PutMapping("/modifyDirection")
-    public Message modifyDirection(Direction direction) {
-        directionService.updateDirection(direction);
-        return Message.success().add("Success");
+    // 删除研究方向信息
+    @RequestMapping("/deleteDirection")
+    public String deleteDirection(@RequestParam("id") Integer did) {
+        int result = directionService.deleteDirection(did);
+        if (result == 1) {
+            msg = "删除成功";
+        } else {
+            msg = "删除失败";
+        }
+        return "redirect:directionList";
     }
 
-    // 删除研究方向信息
-    @DeleteMapping("/deleteDirection")
-    public Message deleteDirection(@RequestParam("did")Integer rid) {
-        directionService.deleteDirection(rid);
-        return Message.success().add("Success");
+    // 通过id获取研究方向信息
+    @GetMapping("/directionInfo")
+    public Message getDirectionById(@RequestParam("did") Integer pid) {
+        Direction direction = directionService.queryDirectionById(pid);
+        return Message.success().add(direction);
+    }
+
+    //跳转到修改研究方向模块
+    @RequestMapping("/doModifyDirection")
+    public String doModifyDirection(@RequestParam("id") Integer did, Model model) {
+        Direction direction = directionService.queryDirectionById(did);
+        model.addAttribute("direction", direction);
+        return "/server/direction/addDirection";
+    }
+
+    // 修改研究方向
+    @PutMapping("/saveDirection")
+    public String updateDirection(Direction direction) {
+        int result = directionService.updateDirection(direction);
+        if (result == 1) {
+            msg = "修改成功";
+        } else {
+            msg = "修改失败";
+        }
+        return "redirect:directionList";
     }
 }

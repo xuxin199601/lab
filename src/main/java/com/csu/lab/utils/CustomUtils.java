@@ -1,7 +1,12 @@
 package com.csu.lab.utils;
 
+import com.csu.lab.customConst.CustomConstant;
+import org.springframework.util.ClassUtils;
+import org.springframework.web.multipart.MultipartFile;
 import sun.misc.BASE64Encoder;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -9,6 +14,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.UUID;
 
 public class CustomUtils {
     public static String encodeByMD5(String str) throws NoSuchAlgorithmException, UnsupportedEncodingException {
@@ -35,6 +41,31 @@ public class CustomUtils {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static String uploadFile(MultipartFile blFile) throws IOException {
+        String oldFileName = blFile.getOriginalFilename();
+        String path = ClassUtils.getDefaultClassLoader().getResource("").getPath() + CustomConstant.VIDEO_SAVE_PATH;
+        String randomStr = UUID.randomUUID().toString();
+        String newFileName = randomStr + oldFileName.substring(oldFileName.lastIndexOf("."));
+        File file = new File(path, newFileName);
+        if (!file.getParentFile().exists()) {
+            file.getParentFile().mkdirs();
+        }
+        blFile.transferTo(file);
+        return path + "/" + newFileName;
+//        project.setVideo();
+    }
+
+    public static void deleteFile(String filename) {
+        if (filename != null && !filename.equals("")) {
+            File deleteFile = new File(filename);
+            if (deleteFile != null
+                    && deleteFile.exists() && deleteFile.isFile()) {
+                deleteFile.delete();
+            }
+        }
+
     }
 
 }
