@@ -61,17 +61,17 @@
 
                                 <input type="hidden" name="_method" value="put" th:if="${direction!=null}">
 
-                                <input type="hidden" name="aid" th:value="${direction.did}" th:if="${direction!=null}">
+                                <input type="hidden" name="did" th:value="${direction.did}" th:if="${direction!=null}">
 
                                 <div class="form-group"><label class="col-sm-2 control-label">研究方向：</label>
                                     <div class="col-sm-10">
-                                        <input id="realName1" name="resDirection" type="text" class="form-control" th:value="${direction.resDirection}" th:if="${direction != null}"/>
+                                        <input id="realName1" name="resDirection" type="text" class="form-control" th:value="${direction!=null}?${direction.resDirection}"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group"><label class="col-sm-2 control-label">详情：</label>
                                     <div class="col-sm-10">
-                                        <textarea id="direction" name="details" class="form-control" rows="6" th:text="${direction.details}" th:if="${direction != null}"></textarea>
+                                        <textarea id="direction" name="details" class="form-control" rows="6" th:text="${direction!=null}?${direction.details}"></textarea>
                                     </div>
                                 </div>
 
@@ -83,7 +83,6 @@
                                         <button id="submitButton" class="btn btn-primary"
                                                 type="button">&nbsp;&nbsp;&nbsp;&nbsp;提&nbsp;&nbsp;&nbsp;&nbsp;交&nbsp;&nbsp;&nbsp;&nbsp;
                                         </button>
-
                                     </div>
                                 </div>
                             </form>

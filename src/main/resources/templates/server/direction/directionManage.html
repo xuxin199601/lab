@@ -47,10 +47,13 @@
                             </div>
                         </div>
                         <div class="ibox-content" style="display: block;">
-                            <form action="orderManage_0_0_0">
+                            <form th:action="@{/server/direction/directionList}" method="get">
                                 <div class="row">
                                     <div class="col-sm-2 m-b-xs">
-                                        <input id="search" name="minOrderTimeStr" class="form-control" type="text"  placeholder="搜索研究方向" />
+                                        <input type="text" name="value" class="form-control" placeholder="搜索研究方向"
+                                               th:if="${key} == null"/>
+                                        <input type="text" name="value" class="form-control" placeholder="搜索研究方向"
+                                               th:if="${key} != null" th:value="${key}"/>
                                     </div>
                                     <div class="col-sm-2 m-b-xs">
                                         <button class="btn btn-primary btn-block" type="submit"><i class="fa fa-search"></i>&nbsp;&nbsp;&nbsp;&nbsp;<strong>搜索</strong></button>
@@ -92,7 +95,7 @@
                                     </thead>
                                     <tbody>
                                     <tr th:each="direction:${pageInfo.list}">
-                                        <td th:text="${direction.did}">Onions</td>
+                                        <td th:text="${directionStat.count} + (${pageNum} - 1) * ${pageSize}">Onions</td>
                                         <td th:text="${direction.resDirection}">Onions</td>
                                         <td>
                                             <a th:href="@{#}" class="btn btn-success btn-xs">查看详情</a>
