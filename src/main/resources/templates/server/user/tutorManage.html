@@ -1,160 +1,175 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<title>后台信息管理系统</title>
+    <title>后台信息管理系统</title>
 
-	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
-	<link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
-	<link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
 
-	<link th:href="@{/css/plugins/iCheck/custom.css}" rel="stylesheet"/>
-	<link th:href="@{/css/plugins/footable/footable.core.css}" rel="stylesheet"/>
+    <link th:href="@{/css/plugins/iCheck/custom.css}" rel="stylesheet"/>
+    <link th:href="@{/css/plugins/footable/footable.core.css}" rel="stylesheet"/>
 
-	<!-- datetimepicker -->
-	<link th:href="@{/css/bootstrap-datetimepicker.css}" rel="stylesheet" media="screen"/>
-	<link th:href="@{/css/bootstrap-datetimepicker.min.css}" rel="stylesheet" media="screen"/>
+    <!-- datetimepicker -->
+    <link th:href="@{/css/bootstrap-datetimepicker.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{/css/bootstrap-datetimepicker.min.css}" rel="stylesheet" media="screen"/>
+
+    <!-- Sweet Alert -->
+    <link th:href="@{/css/plugins/sweetalert/sweetalert.css}" rel="stylesheet"/>
 
 </head>
 
 <body>
 
 <div id="wrapper">
-	<nav class="navbar-default navbar-static-side" role="navigation" th:include="server/nav :: navigation"></nav>
-	<div id="page-wrapper" class="gray-bg">
-		<div class="border-bottom" th:include="server/header :: headerTop"></div>
-		<div class="row wrapper border-bottom white-bg page-heading" th:fragment="headerNav">
-			<div class="col-lg-10">
-				<h2>导师信息管理</h2>
-			</div>
-		</div>
+    <nav class="navbar-default navbar-static-side" role="navigation" th:include="server/nav :: navigation"></nav>
+    <div id="page-wrapper" class="gray-bg">
+        <div class="border-bottom" th:include="server/header :: headerTop"></div>
+        <div class="row wrapper border-bottom white-bg page-heading" th:fragment="headerNav">
+            <div class="col-lg-10">
+                <h2>导师信息管理</h2>
+            </div>
+        </div>
 
-		<div class="wrapper wrapper-content animated fadeInRight">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="ibox float-e-margins">
-						<div class="ibox-title">
-							<h5>搜索&amp;操作</h5>
-							<div class="ibox-tools">
-								<a class="collapse-link">
-									<i class="fa fa-chevron-up"></i>
-								</a>
-							</div>
-						</div>
-						<div class="ibox-content" style="display: block;">
-							<form th:action="@{/server/tutor/tutorList}" method="get">
-								<div class="row">
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>搜索&amp;操作</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content" style="display: block;">
+                            <form th:action="@{/server/tutor/tutorList}" method="get">
+                                <div class="row">
 
-									<div class="col-sm-2 m-b-xs">
-										<input type="text" name="value" class="form-control" placeholder="搜索导师姓名" th:if="${key} == null"/>
-										<input type="text" name="value" class="form-control" placeholder="搜索导师姓名" th:if="${key} != null" th:value="${key}" />
-									</div>
-									<div class="col-sm-2 m-b-xs">
-										<button class="btn btn-primary btn-block" type="submit"><i class="fa fa-search"></i>&nbsp;&nbsp;&nbsp;&nbsp;<strong>搜索</strong></button>
-									</div>
-									<div class="col-sm-2 m-b-xs">
-										<a href="#" th:href="@{/server/tutor/addTutor}" class="btn btn-primary btn-block"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;&nbsp;<strong>新增</strong></a>
-									</div>
-								</div>
-							</form>
-							<div class="row">
-								<div class="col-sm-6 m-b-xs">
+                                    <div class="col-sm-2 m-b-xs">
+                                        <input type="text" name="value" class="form-control" placeholder="搜索导师姓名"
+                                               th:if="${key} == null"/>
+                                        <input type="text" name="value" class="form-control" placeholder="搜索导师姓名"
+                                               th:if="${key} != null" th:value="${key}"/>
+                                    </div>
+                                    <div class="col-sm-2 m-b-xs">
+                                        <button class="btn btn-primary btn-block" type="submit"><i
+                                                class="fa fa-search"></i>&nbsp;&nbsp;&nbsp;&nbsp;<strong>搜索</strong>
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-2 m-b-xs">
+                                        <a href="#" th:href="@{/server/tutor/addTutor}"
+                                           class="btn btn-primary btn-block"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;&nbsp;<strong>新增</strong></a>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="row">
+                                <div class="col-sm-6 m-b-xs">
 
-								</div>
-								<div class="col-sm-6 m-b-xs">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-12">
-					<div class="ibox float-e-margins">
-						<div class="ibox-title">
-							<h5>导师列表</h5>
-							<div class="ibox-tools">
-								<a class="collapse-link">
-									<i class="fa fa-chevron-up"></i>
-								</a>
-							</div>
-						</div>
-						<div class="ibox-content">
-							<div class="table-responsive">
-								<table class=" table table-hover" data-page-size="10">
-									<thead>
-									<tr>
-										<th width="5%">编号</th>
-										<th width="10%">头像</th>
-										<th width="10%">姓名</th>
-										<th>职称</th>
-										<td width="25%">研究方向</td>
-										<th width="20%">操作</th>
-									</tr>
-									</thead>
-									<tbody>
-									<tr th:each="tutor:${pageInfo.list}">
-										<td th:text="${tutor.rid}">Onions</td>
-										<td>
-											<img src="@{${studnet.image}}"/>
-										</td>
-										<td th:text="${tutor.name}">Onions</td>
-										<td th:text="${tutor.post}">Onions</td>
-										<td th:text="${tutor.direction}">Onions</td>
-										<td>
-											<a th:href="@{#}" class="btn btn-success btn-xs">查看详情</a>
-											<a th:href="@{${'/server/tutor/editTutor'}(id=${tutor.rid})}" class="btn btn-info btn-xs" title="修改">&nbsp;修&nbsp;改&nbsp;</a>
-											<a th:href="@{${'/server/tutor/deleteTutor'}(id=${tutor.rid})}" class="btn btn-warning btn-xs" title="删除">&nbsp;删&nbsp;除&nbsp;</a>
-										</td>
-									</tr>
-									</tbody>
-									<tfoot>
-									<tr>
-										<td colspan="9">
-											<ul id="pageHTML" class="pagination pull-right"></ul>
-										</td>
-									</tr>
-									</tfoot>
-								</table>
-							</div>
-						</div>
-						<div class="ibox-footer" align="right">
-							<ul class="pagination">
-								<li>
-									<a th:if="${not isFirstPage}" th:href="@{${'tutorList'}(pageNum=${pageNum-1},pageSize=${pageSize})}" aria-label="Previous">
-										<span aria-hidden="true">«</span>
-									</a>
-									<a th:if="${isFirstPage}" href="javascript:void(0);" aria-label="Previous">
-										<span aria-hidden="true">«</span>
-									</a>
-								</li>
+                                </div>
+                                <div class="col-sm-6 m-b-xs">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>导师列表</h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="table-responsive">
+                                <table class=" table table-hover" data-page-size="10">
+                                    <thead>
+                                    <tr>
+                                        <th width="5%">编号</th>
+                                        <th width="10%">头像</th>
+                                        <th width="10%">姓名</th>
+                                        <th>职称</th>
+                                        <td width="25%">研究方向</td>
+                                        <th width="20%">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="tutor:${pageInfo.list}">
+                                        <td th:text="${tutorStat.count} + (${pageNum} - 1) * ${pageSize}">Onions</td>
+                                        <td>
+                                            <img src="@{${studnet.image}}"/>
+                                        </td>
+                                        <td th:text="${tutor.name}">Onions</td>
+                                        <td th:text="${tutor.post}">Onions</td>
+                                        <td th:text="${tutor.direction}">Onions</td>
+                                        <td>
+                                            <a th:href="@{#}" class="btn btn-success btn-xs">查看详情</a>
+                                            <a th:href="@{${'/server/tutor/editTutor'}(id=${tutor.rid})}"
+                                               class="btn btn-info btn-xs" title="修改">&nbsp;修&nbsp;改&nbsp;</a>
+                                            <a th:href="@{${'/server/tutor/deleteTutor'}(id=${tutor.rid})}"
+                                               class="btn btn-warning btn-xs" title="删除">&nbsp;删&nbsp;除&nbsp;</a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <td colspan="9">
+                                            <ul id="pageHTML" class="pagination pull-right"></ul>
+                                        </td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="ibox-footer" align="right">
+                            <ul class="pagination">
+                                <li>
+                                    <a th:if="${not isFirstPage}"
+                                       th:href="@{${'tutorList'}(pageNum=${pageNum-1},pageSize=${pageSize})}"
+                                       aria-label="Previous">
+                                        <span aria-hidden="true">«</span>
+                                    </a>
+                                    <a th:if="${isFirstPage}" href="javascript:void(0);" aria-label="Previous">
+                                        <span aria-hidden="true">«</span>
+                                    </a>
+                                </li>
 
-								<li th:each="pageNo : ${#numbers.sequence(1, totalPages)}">
-									<a th:if="${pageNum eq pageNo}" href="javascript:void(0);">
-										<span th:text="${pageNo}"></span>
-									</a>
+                                <li th:each="pageNo : ${#numbers.sequence(1, totalPages)}">
+                                    <a th:if="${pageNum eq pageNo}" href="javascript:void(0);">
+                                        <span th:text="${pageNo}"></span>
+                                    </a>
 
-									<a th:if="${not (pageNum eq pageNo)}" th:href="@{${'tutorList'}(pageNum=${pageNo},pageSize=${pageSize})}">
-										<span th:text="${pageNo}"></span>
-									</a>
-								</li>
+                                    <a th:if="${not (pageNum eq pageNo)}"
+                                       th:href="@{${'tutorList'}(pageNum=${pageNo},pageSize=${pageSize})}">
+                                        <span th:text="${pageNo}"></span>
+                                    </a>
+                                </li>
 
-								<li>
-									<a th:if="${not isLastPage}" th:href="@{${'tutorList'}(pageNum=${pageNum+1},pageSize=${pageSize})}" aria-label="Next">
-										<span aria-hidden="true">»</span>
-									</a>
-									<a th:if="${isLastPage}" href="javascript:void(0);" aria-label="Next">
-										<span aria-hidden="true">»</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer" th:include="server/footer :: copyright"></div>
-	</div>
+                                <li>
+                                    <a th:if="${not isLastPage}"
+                                       th:href="@{${'tutorList'}(pageNum=${pageNum+1},pageSize=${pageSize})}"
+                                       aria-label="Next">
+                                        <span aria-hidden="true">»</span>
+                                    </a>
+                                    <a th:if="${isLastPage}" href="javascript:void(0);" aria-label="Next">
+                                        <span aria-hidden="true">»</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer" th:include="server/footer :: copyright"></div>
+    </div>
 </div>
 
 <!-- Mainly scripts -->
@@ -174,29 +189,49 @@
 <script th:src="@{/js/locales/bootstrap-datetimepicker.zh-CN.js}"></script>
 
 <script th:inline="javascript">
-	$("#minOrderTimeStr").datetimepicker({
-		format: "yyyy-mm-dd",
-		autoclose: true,
-		todayBtn: true,
-		todayHighlight: true,
-		showMeridian: true,
-		pickerPosition: "bottom-left",
-		language: 'zh-CN',//中文，需要引用zh-CN.js包
-		startView: 2,//月视图
-		minView: 2//日期时间选择器所能够提供的最精确的时间选择视图
-	});
+    $("#minOrderTimeStr").datetimepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        todayBtn: true,
+        todayHighlight: true,
+        showMeridian: true,
+        pickerPosition: "bottom-left",
+        language: 'zh-CN',//中文，需要引用zh-CN.js包
+        startView: 2,//月视图
+        minView: 2//日期时间选择器所能够提供的最精确的时间选择视图
+    });
 
-	$("#maxOrderTimeStr").datetimepicker({
-		format: "yyyy-mm-dd",
-		autoclose: true,
-		todayBtn: true,
-		todayHighlight: true,
-		showMeridian: true,
-		pickerPosition: "bottom-left",
-		language: 'zh-CN',//中文，需要引用zh-CN.js包
-		startView: 2,//月视图
-		minView: 2//日期时间选择器所能够提供的最精确的时间选择视图
-	});
+    $("#maxOrderTimeStr").datetimepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        todayBtn: true,
+        todayHighlight: true,
+        showMeridian: true,
+        pickerPosition: "bottom-left",
+        language: 'zh-CN',//中文，需要引用zh-CN.js包
+        startView: 2,//月视图
+        minView: 2//日期时间选择器所能够提供的最精确的时间选择视图
+    });
+</script>
+
+<!-- Sweet alert -->
+<script th:src="@{/js/plugins/sweetalert/sweetalert.min.js}"></script>
+
+
+<script th:inline="javascript">
+
+    $(document).ready(function () {
+
+        var error = [[${session.error}]];
+
+        if (error != null) {
+            swal({
+                title: "温馨提示",
+                text: error
+            });
+        }
+
+    });
 </script>
 
 </body>

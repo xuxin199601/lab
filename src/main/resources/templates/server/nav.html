@@ -17,7 +17,7 @@
                     	<a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> 
                             	<span class="block m-t-xs">
-                            		<strong class="font-bold" th:text="${session.user.username}"></strong>
+                            		<strong class="font-bold" th:text="'用户名:'+${session.user.username}"></strong>
                              	</span> 
                              </span>
                      	</a>
@@ -25,9 +25,6 @@
                     <div class="logo-element">
                         YX
                     </div>
-                </li>
-                <li>
-                    <a th:href="@{#}"><i class="fa fa-th-large"></i> <span class="nav-label">首页</span></a>
                 </li>
                 <li>
                     <a th:href="@{/server/account/accountList}"><i class="fa fa-user"></i><span class="nav-label">账户管理</span></a>
