@@ -8,13 +8,14 @@
     <link rel="stylesheet" th:href="@{/css/csu-style.css}">
 </head>
 
+<!--
 <body class="csu-iframe-body">
-
+-->
+<body>
 <!--顶端信息条-->
-<div class="csu-content-top">
-    <nav frameborder="0" scrolling="no" name="csu-content-iframe" id="csu-content-iframe-top" class="navbar-default navbar-static-side" role="top" th:include="client/top :: top"></nav>
-</div>
+<nav frameborder="0" scrolling="no" name="csu-content-iframe" id="csu-content-iframe-top" class="navbar-default navbar-static-side" role="top" th:include="client/top :: top"></nav>
 
+<div class="csu-content-left">
 <fieldset class="layui-elem-field">
     <legend class="csu-color-theme"><b>实验室简介</b></legend>
     <div class="layui-field-box" th:text="${laboratory.resDirection}">
@@ -79,6 +80,10 @@
         </div>
     </div>
 </fieldset>
+</div>
+
+<!--底端信息条-->
+<nav frameborder="0" scrolling="no" name="csu-content-iframe" id="csu-content-iframe-bottom" class="navbar-default navbar-static-side" role="bottom" th:include="client/bottom :: bottom"></nav>
 
 <!--这是layui的脚本-->
 <script src="../../static/layui/layui.js"></script>
