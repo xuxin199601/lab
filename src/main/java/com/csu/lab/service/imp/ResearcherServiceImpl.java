@@ -35,8 +35,10 @@ public class ResearcherServiceImpl implements ResearcherService {
     @Transactional(propagation = Propagation.REQUIRED)
     public void saveResearcher(Researcher researcher) {
         logger.info("addResearcher:{}", researcher);
-        List<Researcher> researcherList = queryByProperty("aid", researcher.getAid());
-        if (researcherList.isEmpty()) {
+        Researcher tempResearcher = new Researcher();
+        tempResearcher.setAid(researcher.getAid());
+        Researcher exitsResearcher = researcherMapper.selectOne(tempResearcher);
+        if (exitsResearcher == null) {
             if(researcherMapper.insert(researcher) != 1) {
                 throw new ResearcherException(ResultEnum.RESEARCHER_SAVE_FAILURE);
             }
