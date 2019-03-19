@@ -13,6 +13,7 @@ import org.springframework.util.ClassUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -21,16 +22,22 @@ import java.util.List;
 @RequestMapping("/server/student")
 public class StudentsController {
 
+    String msg;
+
     @Autowired
     private ResearcherService researcherService;
 
     // 跳转到学生管理界面
     @RequestMapping("/studentList")
     public String studentList(@RequestParam(name = "person_type", defaultValue = "1")Integer personType,
-                            @RequestParam(defaultValue = "1") Integer pageNum,
-                            @RequestParam(defaultValue = "10") Integer pageSize,
-                            @RequestParam(name = "value", required = false) String value,
-                            Model model) {
+                              @RequestParam(defaultValue = "1") Integer pageNum,
+                              @RequestParam(defaultValue = "10") Integer pageSize,
+                              @RequestParam(name = "value", required = false) String value,
+                              Model model,
+                              HttpSession session) {
+
+        session.setAttribute("error", msg);
+        msg = null;
 
         PageHelper.startPage(pageNum,pageSize);
 
@@ -98,7 +105,12 @@ public class StudentsController {
         File dest = new File(imgPath);
         file.transferTo(dest);
 
-        researcherService.saveResearcher(researcher);
+        int result = researcherService.saveResearcher(researcher);
+        if (result == 1) {
+            msg = "添加成功";
+        } else {
+            msg = "添加失败";
+        }
         return "redirect:/server/student/studentList";
     }
 
@@ -122,14 +134,24 @@ public class StudentsController {
         File dest = new File(imgPath);
         file.transferTo(dest);
 
-        researcherService.updateResearcher(researcher);
+        int result = researcherService.updateResearcher(researcher);
+        if (result == 1) {
+            msg = "修改成功";
+        } else {
+            msg = "修改失败";
+        }
         return "redirect:/server/student/studentList";
     }
 
     // 删除学生信息，跳转到学生管理界面
     @RequestMapping("/deleteStudent")
     public String delStudent(@RequestParam("id")Integer rid) {
-        researcherService.deleteResearcher(rid);
+        int result = researcherService.deleteResearcher(rid);
+        if (result == 1) {
+            msg = "删除成功";
+        } else {
+            msg = "删除失败";
+        }
         return "redirect:/server/student/studentList";
     }
 }

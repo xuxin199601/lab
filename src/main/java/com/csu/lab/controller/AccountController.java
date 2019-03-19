@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
+import javax.xml.ws.spi.http.HttpHandler;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -29,6 +31,8 @@ import java.util.List;
 @RequestMapping("/server/account")
 public class AccountController {
 
+    String msg;
+
     @Autowired
     AccountService accountService;
 
@@ -37,7 +41,11 @@ public class AccountController {
     public String accountList(@RequestParam(defaultValue = "1") Integer pageNum,
                               @RequestParam(defaultValue = "10") Integer pageSize,
                               @RequestParam(name = "value", required = false) String value,
-                              Model model) {
+                              Model model,
+                              HttpSession session) {
+
+        session.setAttribute("error", msg);
+        msg = null;
 
         PageHelper.startPage(pageNum,pageSize);
 
@@ -77,27 +85,43 @@ public class AccountController {
                              Model model) {
         Account account = accountService.queryAccountById(aid);
         model.addAttribute("account", account);
+
         return "server/account/addAccount";
     }
 
     // 保存添加的账户信息，跳转到账户管理界面
     @RequestMapping(value = "/saveAccount", method = RequestMethod.POST)
     public String saveTutor(Account account) {
-        accountService.addAccount(account);
+        int result = accountService.addAccount(account);
+        if (result == 1){
+            msg = "添加成功";
+        } else {
+            msg = "添加失败";
+        }
         return "redirect:/server/account/accountList";
     }
 
     // 保存修改的账户信息，跳转到账户管理界面
     @RequestMapping(value = "/saveAccount", method = RequestMethod.PUT)
     public String saveEditTutor(Account account) {
-        accountService.updateAccount(account);
+        int result = accountService.updateAccount(account);
+        if (result == 1){
+            msg = "修改成功";
+        } else {
+            msg = "修改失败";
+        }
         return "redirect:/server/account/accountList";
     }
 
     // 删除账户信息，跳转到账户管理界面
     @RequestMapping("/deleteAccount")
     public String delTutor(@RequestParam("id")Integer rid) {
-        accountService.deleteAccount(rid);
+        int result = accountService.deleteAccount(rid);
+        if (result == 1){
+            msg = "删除成功";
+        } else {
+            msg = "删除失败";
+        }
         return "redirect:/server/account/accountList";
     }
 

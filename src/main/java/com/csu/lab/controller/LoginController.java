@@ -48,7 +48,7 @@ public class LoginController {
 
         if (user != null) {
             session.setAttribute("user", user);
-            return "redirect:home";
+            return "redirect:/server/account/accountList";
         } else {
             model.addAttribute("error", "用户名或密码错误，请重新登录！");
             return "server/login";

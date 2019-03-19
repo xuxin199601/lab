@@ -16,6 +16,7 @@ import org.springframework.util.ClassUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -23,6 +24,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/server/tutor")
 public class TutorsController {
+
+    String msg;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TutorsController.class);
 
@@ -32,10 +35,14 @@ public class TutorsController {
     // 跳转到导师管理界面
     @RequestMapping("/tutorList")
     public String tutorList(@RequestParam(name = "person_type", defaultValue = "0")Integer personType,
-                              @RequestParam(defaultValue = "1") Integer pageNum,
-                              @RequestParam(defaultValue = "10") Integer pageSize,
-                              @RequestParam(name = "value", required = false) String value,
-                              Model model) {
+                            @RequestParam(defaultValue = "1") Integer pageNum,
+                            @RequestParam(defaultValue = "10") Integer pageSize,
+                            @RequestParam(name = "value", required = false) String value,
+                            Model model,
+                            HttpSession session) {
+
+        session.setAttribute("error", msg);
+        msg = null;
 
         PageHelper.startPage(pageNum,pageSize);
 
@@ -98,7 +105,12 @@ public class TutorsController {
         File dest = new File(imgPath);
         file.transferTo(dest);
 
-        researcherService.saveResearcher(researcher);
+        int result = researcherService.saveResearcher(researcher);
+        if (result == 1) {
+            msg = "添加成功";
+        } else {
+            msg = "添加失败";
+        }
         return "redirect:/server/tutor/tutorList";
     }
 
@@ -123,14 +135,24 @@ public class TutorsController {
         File dest = new File(imgPath);
         file.transferTo(dest);
 
-        researcherService.updateResearcher(researcher);
+        int result = researcherService.updateResearcher(researcher);
+        if (result == 1) {
+            msg = "修改成功";
+        } else {
+            msg = "修改失败";
+        }
         return "redirect:/server/tutor/tutorList";
     }
 
     // 删除导师信息，跳转到导师管理界面
-    @RequestMapping(value = "/deleteTutor", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/deleteTutor")
     public String delTutor(@RequestParam("id")Integer rid) {
-        researcherService.deleteResearcher(rid);
+        int result = researcherService.deleteResearcher(rid);
+        if (result == 1) {
+            msg = "删除成功";
+        } else {
+            msg = "删除失败";
+        }
         return "redirect:/server/tutor/tutorList";
     }
 

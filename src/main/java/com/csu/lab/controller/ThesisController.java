@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -25,6 +26,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/server/thesis")
 public class ThesisController {
+
+    String msg;
 
     @Autowired
     private ThesisService thesisService;
@@ -34,7 +37,11 @@ public class ThesisController {
     public String getStudentByPage(@RequestParam(defaultValue = "1") Integer pageNum,
                                    @RequestParam(defaultValue = "10") Integer pageSize,
                                    @RequestParam(name = "value", required = false) String value,
-                                   Model model) {
+                                   Model model,
+                                   HttpSession session) {
+
+        session.setAttribute("error", msg);
+        msg = null;
 
         PageHelper.startPage(pageNum, pageSize);
 
@@ -85,18 +92,18 @@ public class ThesisController {
         return "server/gain/addThesis";
     }
 
-
-    /********************************************************************************************************************************/
-    /**
-     * 下方写client代码
-     */
     // 添加成果
     @RequestMapping(value = "/saveThesis", method = RequestMethod.POST)
     public String saveThesis(Thesis thesis, HttpServletRequest request) throws Exception {
 //        Date time_date = DateConverterConfig.parseDate(time, "yyyy-MM-dd");
 //        Thesis Thesis = new Thesis(name, abstracts, keywords, content, code, data, time_date);
         List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("file");
-        thesisService.saveThesis(thesis, files);
+        int result = thesisService.saveThesis(thesis, files);
+        if (result == 1) {
+            msg = "添加成功";
+        } else {
+            msg = "添加失败";
+        }
         return "redirect:/server/thesis/thesisList";
     }
 
@@ -104,17 +111,33 @@ public class ThesisController {
     @RequestMapping(value = "/saveThesis", method = RequestMethod.PUT)
     public String modifyThesis(Thesis thesis, HttpServletRequest request) throws IOException {
         List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("file");
-        thesisService.updateThesis(thesis, files);
+        int result = thesisService.updateThesis(thesis, files);
+        if (result == 1) {
+            msg = "修改成功";
+        } else {
+            msg = "修改失败";
+        }
         return "redirect:/server/thesis/thesisList";
     }
 
     // 删除成果信息
     @RequestMapping("/deleteThesis")
     public String deleteTuttor(@RequestParam("id") Integer tid) {
-        thesisService.deleteThesis(tid);
+        int result = thesisService.deleteThesis(tid);
+        if (result == 1) {
+            msg = "删除成功";
+        } else {
+            msg = "删除失败";
+        }
         return "redirect:/server/thesis/thesisList";
     }
 
+
+
+    /********************************************************************************************************************************/
+    /**
+     * 下方写client代码
+     */
     /**
      * 通过验证的用户下载论文
      */
