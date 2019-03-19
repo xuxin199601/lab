@@ -49,13 +49,13 @@ public class ProjectServiceImpl implements ProjectService {
         if (projectList.isEmpty()) {
 
 
-            MultipartFile blFile = project.getBlFile();
-            if (!blFile.isEmpty()) {
-                String newFilename = CustomUtils.uploadFile(blFile);
-                project.setVideo(newFilename);
-            } else {
-                project.setVideo("");
-            }
+//            MultipartFile blFile = project.getBlFile();
+//            if (!blFile.isEmpty()) {
+//                String newFilename = CustomUtils.uploadFile(blFile);
+//                project.setVideo(newFilename);
+//            } else {
+//                project.setVideo("");
+//            }
 
 //            int rowNum  = projectMapper.insert(project);
 //            if(rowNum==0){
