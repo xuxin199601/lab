@@ -58,7 +58,11 @@
 
                     <div class="form-group"><label class="col-sm-2 control-label">项目视频：</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="video"  name="video" placeholder="项目视频" th:value="${project!=null}?${project.video}">
+                            <input type="file" name="blFile" accept=".mp4,.rmvb,.flv,.avi,video"/>
+                            <input type="hidden" name="video" th:value="${project!=null}?${project.video}"/>
+                            <p th:if="${project!=null&&project.video!=''}" th:text="上传新的文件，将覆盖旧的文件"></p>
+                            <p th:if="${project!=null&&project.video==''}" th:text="该项目目前还没有视频"></p>
+                            <!--<input type="text" class="form-control" id="video"  name="video" placeholder="项目视频" th:value="${project!=null}?${project.video}">-->
                         </div>
                     </div>
 

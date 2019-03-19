@@ -1,24 +1,32 @@
 package com.csu.lab.service.imp;
 
+import com.csu.lab.customConst.CustomConstant;
 import com.csu.lab.enums.ResultEnum;
 import com.csu.lab.exception.ProjectException;
 import com.csu.lab.mapper.ProjectMapper;
 import com.csu.lab.pojo.Project;
 import com.csu.lab.service.ProjectService;
+import com.csu.lab.utils.CustomUtils;
 import com.github.pagehelper.PageHelper;
+import org.omg.CORBA.CustomMarshal;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.ClassUtils;
+import org.springframework.web.multipart.MultipartFile;
 import tk.mybatis.mapper.entity.Example;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 
 @Service
-public class ProjectServiceImpl implements ProjectService{
+public class ProjectServiceImpl implements ProjectService {
 
     private Logger logger = LoggerFactory.getLogger(ProjectServiceImpl.class);
 
@@ -35,11 +43,55 @@ public class ProjectServiceImpl implements ProjectService{
      */
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public void saveProject(Project project) {
+    public void saveProject(Project project) throws IOException {
         logger.info("addProject:{}", project);
         List<Project> projectList = queryByProperty("name", project.getName());
         if (projectList.isEmpty()) {
-            if(projectMapper.insert(project) != 1) {
+
+
+            MultipartFile blFile = project.getBlFile();
+            if (!blFile.isEmpty()) {
+                String newFilename = CustomUtils.uploadFile(blFile);
+                project.setVideo(newFilename);
+            } else {
+                project.setVideo("");
+            }
+
+//            int rowNum  = projectMapper.insert(project);
+//            if(rowNum==0){
+////                return ResultBundle.failure(ResCode.FALSE,"添加一级代理信息失败");
+//            }
+//            return ResultBundle.success(null);
+            if (projectMapper.insert(project) != 1) {
+                throw new ProjectException(ResultEnum.PROJECT_SAVE_FAILURE);
+            }
+        } else {
+            throw new ProjectException(ResultEnum.PROJECT_EXIST);
+        }
+    }
+
+    @Override
+    public void saveProject(Project project, MultipartFile blFile) throws Exception {
+        logger.info("addProject:{}", project);
+        List<Project> projectList = queryByProperty("name", project.getName());
+        if (projectList.isEmpty()) {
+//            MultipartFile blFile = project.getBlFile();
+            if (!blFile.isEmpty()) {
+                String newFilename = CustomUtils.uploadFile(blFile);
+                project.setVideo(newFilename);
+//                project.setVideo(path + "/" + newFileName);
+            } else if (blFile.getOriginalFilename().equals("")) {
+                project.setVideo("");
+            } else {
+                throw new ProjectException(ResultEnum.PROJECT_VIDEO_FAILURE);
+            }
+
+//            int rowNum  = projectMapper.insert(project);
+//            if(rowNum==0){
+////                return ResultBundle.failure(ResCode.FALSE,"添加一级代理信息失败");
+//            }
+//            return ResultBundle.success(null);
+            if (projectMapper.insert(project) != 1) {
                 throw new ProjectException(ResultEnum.PROJECT_SAVE_FAILURE);
             }
         } else {
@@ -51,17 +103,41 @@ public class ProjectServiceImpl implements ProjectService{
     @Transactional(propagation = Propagation.REQUIRED)
     public void updateProject(Project project) {
         logger.info("updateProject:{}", project);
-        if(projectMapper.updateByPrimaryKeySelective(project) != 1) {
+        if (projectMapper.updateByPrimaryKeySelective(project) != 1) {
             throw new ProjectException(ResultEnum.PROJECT_UPDATE_FAILURE);
         }
+    }
+
+    @Override
+    public void updateProject(Project project, MultipartFile blFile) throws IOException {
+        logger.info("updateProject:{}", project);
+
+//        如果文件为空，则不修改
+        if (!blFile.getOriginalFilename().equals("")) {
+            String deleteFilePath = project.getVideo();
+            String newFilename = CustomUtils.uploadFile(blFile);
+            project.setVideo(newFilename);
+//            删除旧的文件
+//            String path = ClassUtils.getDefaultClassLoader().getResource("").getPath() + CustomConstant.VIDEO_SAVE_PATH;
+//            String filename = path+""
+//            String deleteFilePath = project.getVideo();
+            CustomUtils.deleteFile(deleteFilePath);
+        }
+        if (projectMapper.updateByPrimaryKeySelective(project) != 1) {
+            throw new ProjectException(ResultEnum.PROJECT_UPDATE_FAILURE);
+        }
+
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public void deleteProject(Integer projectId) {
         logger.info("deleteProjectById:{}", projectId);
-        if(projectMapper.deleteByPrimaryKey(projectId) != 1) {
+        Project project= projectMapper.selectByPrimaryKey(projectId);
+        if (projectMapper.deleteByPrimaryKey(projectId) != 1) {
             throw new ProjectException(ResultEnum.PROJECT_DELETE_FAILURE);
+        }else{
+            CustomUtils.deleteFile(project.getVideo());
         }
     }
 

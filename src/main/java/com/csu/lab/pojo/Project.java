@@ -1,5 +1,7 @@
 package com.csu.lab.pojo;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import java.util.Date;
 import javax.persistence.*;
 
@@ -30,6 +32,15 @@ public class Project {
      * 项目视频
      */
     private String video;
+
+
+//    public String getVideo_url() {
+//        return video_url;
+//    }
+//
+//    public void setVideo_url(String video_url) {
+//        this.video_url = video_url;
+//    }
 
     /**
      * 项目开始时间

@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -73,15 +75,15 @@ public class ProjectController {
 
     // 保存添加的账户信息，跳转到账户管理界面
     @RequestMapping(value = "/saveProject", method = RequestMethod.POST)
-    public String saveProject(Project project) throws Exception {
-        projectService.saveProject(project);
+    public String saveProject(Project project, @RequestParam("blFile")MultipartFile blFile) throws Exception {
+        projectService.saveProject(project,blFile);
         return "redirect:/server/project/projectList";
     }
 
     // 保存修改的账户信息，跳转到账户管理界面
     @RequestMapping(value = "/saveProject", method = RequestMethod.PUT)
-    public String saveEditProject(Project project) {
-        projectService.updateProject(project);
+    public String saveEditProject(Project project,@RequestParam("blFile")MultipartFile blFile) throws IOException {
+        projectService.updateProject(project,blFile);
         return "redirect:/server/project/projectList";
     }
 
