@@ -54,4 +54,10 @@ public class LoginController {
             return "server/login";
         }
     }
+
+    @RequestMapping("/loginOut")
+    public String loginOut(HttpSession session){
+        session.setAttribute("user", null);
+        return "redirect:/server";
+    }
 }
