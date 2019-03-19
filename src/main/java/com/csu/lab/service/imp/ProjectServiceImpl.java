@@ -77,7 +77,7 @@ public class ProjectServiceImpl implements ProjectService {
         if (projectList.isEmpty()) {
 //            MultipartFile blFile = project.getBlFile();
             if (!blFile.isEmpty()) {
-                String newFilename = CustomUtils.uploadFile(blFile);
+                String newFilename = CustomUtils.uploadFile(blFile, CustomConstant.VIDEO_SAVE_PATH);
                 project.setVideo(newFilename);
 //                project.setVideo(path + "/" + newFileName);
             } else if (blFile.getOriginalFilename().equals("")) {
@@ -115,7 +115,7 @@ public class ProjectServiceImpl implements ProjectService {
 //        如果文件为空，则不修改
         if (!blFile.getOriginalFilename().equals("")) {
             String deleteFilePath = project.getVideo();
-            String newFilename = CustomUtils.uploadFile(blFile);
+            String newFilename = CustomUtils.uploadFile(blFile, CustomConstant.VIDEO_SAVE_PATH);
             project.setVideo(newFilename);
 //            删除旧的文件
 //            String path = ClassUtils.getDefaultClassLoader().getResource("").getPath() + CustomConstant.VIDEO_SAVE_PATH;
@@ -133,10 +133,10 @@ public class ProjectServiceImpl implements ProjectService {
     @Transactional(propagation = Propagation.REQUIRED)
     public void deleteProject(Integer projectId) {
         logger.info("deleteProjectById:{}", projectId);
-        Project project= projectMapper.selectByPrimaryKey(projectId);
+        Project project = projectMapper.selectByPrimaryKey(projectId);
         if (projectMapper.deleteByPrimaryKey(projectId) != 1) {
             throw new ProjectException(ResultEnum.PROJECT_DELETE_FAILURE);
-        }else{
+        } else {
             CustomUtils.deleteFile(project.getVideo());
         }
     }

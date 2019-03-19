@@ -43,9 +43,9 @@ public class CustomUtils {
         return null;
     }
 
-    public static String uploadFile(MultipartFile blFile) throws IOException {
+    public static String uploadFile(MultipartFile blFile, String filePath) throws IOException {
         String oldFileName = blFile.getOriginalFilename();
-        String path = ClassUtils.getDefaultClassLoader().getResource("").getPath() + CustomConstant.VIDEO_SAVE_PATH;
+        String path = ClassUtils.getDefaultClassLoader().getResource("").getPath() + filePath;
         String randomStr = UUID.randomUUID().toString();
         String newFileName = randomStr + oldFileName.substring(oldFileName.lastIndexOf("."));
         File file = new File(path, newFileName);

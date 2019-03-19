@@ -11,7 +11,7 @@ public enum ResultEnum {
     //   添加账户时出现错误
     ACCOUNT_EXIST(1, "Username Exist"),
     ACCOUNT_FAILURE(1, "Failure"),
-    ACCOUNT_DELETE_FAILURE(1,"Delete Account Failure."),
+    ACCOUNT_DELETE_FAILURE(1, "Delete Account Failure."),
 
     // 保存导师、研究生信息时的错误
     TUTOR_EXIST(1, "Tutor Exist."),
@@ -27,6 +27,9 @@ public enum ResultEnum {
     // 保存成果信息时的错误
     THESIS_EXIST(1, "Thesis Exist."),
     THESIS_SAVE_FAILURE(2, "Failure."),
+    THESIS_CONTENT_FAILURE(2, "内容保存失败"),
+    THESIS_CODE_FAILURE(2, "代码保存失败"),
+    THESIS_DATA_FAILURE(2, "代码保存失败"),
     // 修改导师、研究生信息时的错误
     THESIS_UPDATE_FAILURE(1, "Failure."),
     // 查询导师、研究生信息时的错误
@@ -38,7 +41,7 @@ public enum ResultEnum {
     // 保存项目信息时的错误
     PROJECT_EXIST(1, "Project Exist."),
     PROJECT_SAVE_FAILURE(2, "Failure."),
-    PROJECT_VIDEO_FAILURE(2,"Video Save Failure"),
+    PROJECT_VIDEO_FAILURE(2, "Video Save Failure"),
     // 修改项目信息时的错误
     PROJECT_UPDATE_FAILURE(1, "Failure."),
     // 查询项目信息时的错误

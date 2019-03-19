@@ -4,18 +4,20 @@ import com.csu.lab.pojo.Message;
 import com.csu.lab.pojo.Thesis;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 public interface ThesisService {
 
     public List<Thesis> getThesisList();
 
-    public void saveThesis(Thesis thesis)throws Exception;
+    public void saveThesis(Thesis thesis, List<MultipartFile> files) throws Exception;
 
-    public void updateThesis(Thesis thesis);
+    public void updateThesis(Thesis thesis, List<MultipartFile> files) throws IOException;
 
     public void deleteThesis(Integer thesisId);
 
