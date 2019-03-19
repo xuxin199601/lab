@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -54,12 +54,38 @@
                             </div>
                         </div>
                         <div class="ibox-content">
+
+                            <!--<form method="post" th:action="@{/server/tutor/upload}"-->
+                                  <!--class="form-horizontal" enctype="multipart/form-data">-->
+                                <!--<div class="form-group"><label class="col-sm-2 control-label">头像：</label>-->
+                                    <!--<div class="col-sm-10">-->
+                                        <!--<input type="text" class="form-control" id="image" name="image" placeholder="头像"-->
+                                               <!--th:value="${researcher.image}" th:if="${researcher!=null}"/>-->
+                                        <!--<input type="text" class="form-control" id="image" name="image" placeholder="头像"-->
+                                               <!--th:value="${image}" th:if="${researcher==null}"/>-->
+                                        <!--<p>-->
+                                            <!--<input type="file" name="file" id="xdaTanFileImg" onchange="xmTanUploadImg(this)" accept="image/*" />-->
+                                            <!--<input type="button" value="隐藏图片" onclick="document.getElementById('xmTanImg').style.display = 'none';" th:if="${image==null}"/>-->
+                                            <!--<input type="button" value="显示图片" onclick="document.getElementById('xmTanImg').style.display = 'block';" th:if="${image==null}"/>-->
+                                            <!--<input type="submit" value="上传">-->
+                                        <!--</p>-->
+                                        <!--<img id="xmTanImg" th:src="@{/img/cat.jpg}"/>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+
+                                <!--<div class="hr-line-dashed"></div>-->
+                            <!--</form>-->
+
+
                             <form th:action="@{/server/tutor/saveTutor}" id="formTag" method="POST"
                                   class="form-horizontal" enctype="multipart/form-data">
 
                                 <input type="hidden" name="_method" value="put" th:if="${researcher!=null}">
 
                                 <input type="hidden" name="rid" th:value="${researcher.rid}"
+                                       th:if="${researcher!=null}">
+
+                                <input type="hidden" name="image" th:value="${researcher.image}"
                                        th:if="${researcher!=null}">
 
                                 <input type="hidden" name="personType" th:value="0" th:if="${researcher == null}">
@@ -84,8 +110,10 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">头像：</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="image" name="image" placeholder="头像"
-                                               th:value="${researcher!=null}?${researcher.image}">
+                                        <input type="file" name="file" id="xdaTanFileImg" onchange="xmTanUploadImg(this)" accept="image/*" /><br>
+                                        <input type="button" value="隐藏图片" onclick="document.getElementById('xmTanImg').style.display = 'none';"/>
+                                        <input type="button" value="显示图片" onclick="document.getElementById('xmTanImg').style.display = 'block';"/>
+                                        <div><img id="xmTanImg" th:if="${researcher == null}" style="display: none"/></div>
                                     </div>
                                 </div>
 
@@ -132,7 +160,7 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
-                                        <button type="submit" class="btn btn-primary"
+                                        <button type="submit" class="btn btn-primary" id="update"
                                                 th:text="${researcher!=null}?'&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改&nbsp;&nbsp;&nbsp;&nbsp;':'&nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;'">
                                             &nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;
                                         </button>
@@ -166,6 +194,7 @@
 <script th:src="@{/js/locales/bootstrap-datetimepicker.zh-CN.js}"></script>
 
 <script th:inline="javascript">
+
     $("#minOrderTimeStr").datetimepicker({
         format: "yyyy-mm-dd",
         autoclose: true,
@@ -189,6 +218,49 @@
         startView: 2,//月视图
         minView: 2//日期时间选择器所能够提供的最精确的时间选择视图
     });
+</script>
+
+<script type="text/javascript">
+    //判断浏览器是否支持FileReader接口
+    if (typeof FileReader == 'undefined') {
+        document.getElementById("xmTanDiv").InnerHTML = "<h1>当前浏览器不支持FileReader接口</h1>";
+        //使选择控件不可操作
+        document.getElementById("xdaTanFileImg").setAttribute("disabled", "disabled");
+    }
+
+    //选择图片，马上预览
+    function xmTanUploadImg(obj) {
+        var file = obj.files[0];
+
+        console.log(obj);console.log(file);
+        console.log("file.size = " + file.size);  //file.size 单位为byte
+
+        var reader = new FileReader();
+
+        //读取文件过程方法
+        reader.onloadstart = function (e) {
+            console.log("开始读取....");
+        }
+        reader.onprogress = function (e) {
+            console.log("正在读取中....");
+        }
+        reader.onabort = function (e) {
+            console.log("中断读取....");
+        }
+        reader.onerror = function (e) {
+            console.log("读取异常....");
+        }
+        reader.onload = function (e) {
+            console.log("成功读取....");
+
+            var img = document.getElementById("xmTanImg");
+            img.src = e.target.result;
+            //或者 img.src = this.result;  //e.target == this
+        }
+
+        reader.readAsDataURL(file)
+    }
+
 </script>
 
 </body>

@@ -64,6 +64,9 @@
 
                                 <input type="hidden" name="personType" th:value="1" th:if="${researcher == null}">
 
+                                <input type="hidden" name="image" th:value="${researcher.image}"
+                                       th:if="${researcher!=null}">
+
                                 <div class="form-group"><label class="col-sm-2 control-label">学生编号：</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="aid" name="aid" placeholder="学生编号"
@@ -84,8 +87,10 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">头像：</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="image" name="image" placeholder="头像"
-                                               th:value="${researcher!=null}?${researcher.image}">
+                                        <input type="file" name="file" id="xdaTanFileImg" onchange="xmTanUploadImg(this)" accept="image/*" /><br>
+                                        <input type="button" value="隐藏图片" onclick="document.getElementById('xmTanImg').style.display = 'none';"/>
+                                        <input type="button" value="显示图片" onclick="document.getElementById('xmTanImg').style.display = 'block';"/>
+                                        <div><img id="xmTanImg" th:if="${researcher == null}" style="display: none"/></div>
                                     </div>
                                 </div>
 
@@ -198,6 +203,49 @@
         startView: 2,//月视图
         minView: 2//日期时间选择器所能够提供的最精确的时间选择视图
     });
+</script>
+
+<script type="text/javascript">
+    //判断浏览器是否支持FileReader接口
+    if (typeof FileReader == 'undefined') {
+        document.getElementById("xmTanDiv").InnerHTML = "<h1>当前浏览器不支持FileReader接口</h1>";
+        //使选择控件不可操作
+        document.getElementById("xdaTanFileImg").setAttribute("disabled", "disabled");
+    }
+
+    //选择图片，马上预览
+    function xmTanUploadImg(obj) {
+        var file = obj.files[0];
+
+        console.log(obj);console.log(file);
+        console.log("file.size = " + file.size);  //file.size 单位为byte
+
+        var reader = new FileReader();
+
+        //读取文件过程方法
+        reader.onloadstart = function (e) {
+            console.log("开始读取....");
+        }
+        reader.onprogress = function (e) {
+            console.log("正在读取中....");
+        }
+        reader.onabort = function (e) {
+            console.log("中断读取....");
+        }
+        reader.onerror = function (e) {
+            console.log("读取异常....");
+        }
+        reader.onload = function (e) {
+            console.log("成功读取....");
+
+            var img = document.getElementById("xmTanImg");
+            img.src = e.target.result;
+            //或者 img.src = this.result;  //e.target == this
+        }
+
+        reader.readAsDataURL(file)
+    }
+
 </script>
 
 </body>
