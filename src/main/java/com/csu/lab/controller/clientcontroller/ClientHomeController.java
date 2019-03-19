@@ -30,6 +30,21 @@ public class ClientHomeController {
     //跳转到index界面
     @RequestMapping("/index")
     public String doIndex(Model model){
+       /* List<Laboratory> laboratoryList = laboratoryService.getLaboratoryList();
+        List<Activity> activityList = activityService.getActivityList();
+
+        //分页处理activity里的信息放到首页（应该做成逆序查询，待改）
+        PageInfo pageInfo = new PageInfo(activityList,5);
+        model.addAttribute("pageInfo",pageInfo);
+
+        model.addAttribute("laboratory" ,laboratoryList.get(0));
+        model.addAttribute("activity" ,activityList.get(0));*/
+
+        return "client/index";
+    }
+
+    @RequestMapping("/home")
+    public String doHome(Model model){
         List<Laboratory> laboratoryList = laboratoryService.getLaboratoryList();
         List<Activity> activityList = activityService.getActivityList();
 
@@ -39,8 +54,7 @@ public class ClientHomeController {
 
         model.addAttribute("laboratory" ,laboratoryList.get(0));
         model.addAttribute("activity" ,activityList.get(0));
-
-        return "client/index";
+        return "client/home";
     }
 
 

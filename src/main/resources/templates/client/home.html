@@ -8,7 +8,7 @@
     <link rel="stylesheet" th:href="@{/css/csu-style.css}">
 </head>
 
-<body class="csu-iframe-body" th:fragment="home">
+<body class="csu-iframe-body">
 
 <div class="layui-row">
 
@@ -34,7 +34,7 @@
                 <th><a class="csu-color-graylight" href="javascript:;">更多</a></th>
             </tr>
             </thead>
-            <tbody >
+            <tbody>
             <tr th:each="activity:${pageInfo.list}">
                 <td><a href="javascript:;" th:text="${activity.introduction}">测试是真的难</a></td>
                 <td>2016-11-29</td>
@@ -49,7 +49,7 @@
     <fieldset class="layui-elem-field">
         <legend class="csu-color-theme"><b>实验室简介</b></legend>
         <div class="layui-field-box" th:text="${laboratory.resDirection}">
-            实验室详细信息
+            实验室简介
         </div>
     </fieldset>
 </div>

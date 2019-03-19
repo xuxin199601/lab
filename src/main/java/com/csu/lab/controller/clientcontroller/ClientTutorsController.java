@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping("/client/tutor")
@@ -30,19 +30,16 @@ public class ClientTutorsController {
 
         PageHelper.startPage(pageNum,pageSize);
 
-         List<Researcher> researcherList;
+        List<Researcher> researcherList;
         if (value != null){
             model.addAttribute("key", value);
             researcherList = researcherService.queryByProperty("name", value);
         }else {
-            researcherList = researcherService.getResearcherList(1);
+            researcherList = researcherService.getResearcherList(0);
         }
-
-        //每页6个参数
         PageInfo pageInfo = new PageInfo(researcherList,6);
 
         model.addAttribute("pageInfo",pageInfo);
-
         //获得当前页
         model.addAttribute("pageNum",pageInfo.getPageNum());
         //获得一页显示的条数
@@ -53,6 +50,12 @@ public class ClientTutorsController {
         model.addAttribute("totalPages",pageInfo.getPages());
         //是否是最后一页
         model.addAttribute("isLastPage",pageInfo.isIsLastPage());
+        //获得总共查询到多少条
+        model.addAttribute("totalNum",researcherList.size());
+
+        System.out.println();
+        System.out.println(researcherList.size());
+        System.out.println();
 
         return "client/tutor/index";
     }

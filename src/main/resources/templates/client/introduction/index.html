@@ -8,24 +8,12 @@
     <link rel="stylesheet" th:href="@{/css/csu-style.css}">
 </head>
 
-<!--
 <body class="csu-iframe-body">
--->
-<body>
-<!--顶端信息条-->
-<nav frameborder="0" scrolling="no" name="csu-content-iframe" id="csu-content-iframe-top" class="navbar-default navbar-static-side" role="top" th:include="client/top :: top"></nav>
 
-<div class="csu-content-left">
 <fieldset class="layui-elem-field">
     <legend class="csu-color-theme"><b>实验室简介</b></legend>
     <div class="layui-field-box" th:text="${laboratory.resDirection}">
-        地球物理大地测量国家测绘地理信息局重点实验室前身是天文、重力实验室，由中国科学院首批学部委员夏坚白教授于1957年创建，1996年批准为国家测绘地理信息局部级重点实验室。实验室依托于武汉大学测绘学院的大地测量学与测量工程国家重点学科和固体地球物理学湖北省重点学科，具有大地测量学与测量工程、地球物理学两个一级学科博士学位授予点。实验室具有国际先进的导航定位、重力和地磁探测设备，建立了多个野外观测基地。已逐渐成为我国大地测量和固体地球物理等领域科学研究、学术交流及高层次人才培养的重要基地。
-
-        实验室以研究地球重力场确定、大地测量地球物理反演、空间定位理论、方法与技术及其应用为目标，推进对地球系统运行规律的科学认识，为国家资源和环境政策、灾害对策、空间和国防技术的发展等提供科学依据和技术支撑。
-
-        实验室在地球重力场理论与局部重力场精化、大地测量地球物理反演理论及应用、卫星大地测量技术及应用等方面取得了重大或重要的研究进展，部分成果达到国际领先水平，先后有30余项研究成果获得国家科技进步奖、省部级科技进步奖及自然科学奖，在国内外重要学术刊物上公开发表学术论文300余篇。
-
-        实验室的主要研究方向为：（1）地球重力场理论、方法与应用，（2）大地测量地球物理反演理论、方法及应用，（3）地球内部物理与地球动力学，（4）空间大地测量理论、技术及应用，（5）地震波传播理论及应用。
+        实验室简介
     </div>
 </fieldset>
 
@@ -80,21 +68,17 @@
         </div>
     </div>
 </fieldset>
-</div>
-
-<!--底端信息条-->
-<nav frameborder="0" scrolling="no" name="csu-content-iframe" id="csu-content-iframe-bottom" class="navbar-default navbar-static-side" role="bottom" th:include="client/bottom :: bottom"></nav>
 
 <!--这是layui的脚本-->
-<script src="../../static/layui/layui.js"></script>
+<script th:src="@{/layui/layui.js}"></script>
 <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
 <!--[if lt IE 9]>
-<script src="../../static/js/layui/html5.min.js"></script>
-<script src="../../static/js/layui/respond.min.js"></script>
+<script th:src="@{/js/layui/html5.min.js}"></script>
+<script th:src="@{/js/layui/respond.min.js}"></script>
 <![endif]-->
 
 <!--这是iframeResizer的脚本-->
-<script src="../../static/js/iframe-resizer/iframeResizer.contentWindow.min.js"></script>
+<script th:src="@{/js/iframe-resizer/iframeResizer.contentWindow.min.js}"></script>
 
 </body>
 

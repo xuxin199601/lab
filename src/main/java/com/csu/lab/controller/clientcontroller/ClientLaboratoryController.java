@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import java.util.*;
 
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class ClientLaboratoryController {
         List<Laboratory> laboratoryList = laboratoryService.getLaboratoryList();
         List<Direction> directionList = directionService.getDirectionList();
 
-        PageInfo pageInfo = new PageInfo(directionList,10);
+        PageInfo pageInfo = new PageInfo(directionList,directionList.size());
         model.addAttribute("pageInfo",pageInfo);
 
         model.addAttribute("laboratory" ,laboratoryList.get(0));
