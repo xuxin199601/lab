@@ -53,10 +53,6 @@ public class ClientTutorsController {
         //获得总共查询到多少条
         model.addAttribute("totalNum",researcherList.size());
 
-        System.out.println();
-        System.out.println(researcherList.size());
-        System.out.println();
-
         return "client/tutor/index";
     }
 
