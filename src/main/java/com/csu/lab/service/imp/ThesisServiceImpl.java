@@ -3,6 +3,7 @@ package com.csu.lab.service.imp;
 import com.csu.lab.enums.ResultEnum;
 import com.csu.lab.exception.ThesisException;
 import com.csu.lab.mapper.ThesisMapper;
+import com.csu.lab.pojo.Message;
 import com.csu.lab.pojo.Thesis;
 import com.csu.lab.service.ThesisService;
 import com.github.pagehelper.PageHelper;
@@ -14,8 +15,10 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
-
+import com.csu.lab.utils.FileUtil;
 
 @Service
 public class ThesisServiceImpl implements ThesisService {
@@ -99,4 +102,60 @@ public class ThesisServiceImpl implements ThesisService {
 
         return thesisMapper.selectByExample(example);
     }
+
+    /**
+     * 通过验证的用户下载论文
+     */
+    @Override
+    public void getThesisContent(Integer tid, Integer aid, HttpServletResponse response, HttpServletRequest request){
+
+        //根据aid判断用户是否已经登录
+        //【待补充】
+
+        //根据tid获取论文的url
+        Thesis thesis = thesisMapper.selectByPrimaryKey(tid);
+
+        if(thesis.getContent()==null){
+            throw new ThesisException(ResultEnum.THESIS_NO_FOUND);
+        }
+        //根据url读取文件，并将文件流返回到前端
+        FileUtil.downloadFile( thesis.getContent(),response);
+    }
+
+    /**
+     * 通过验证的用户下载论文代码
+     */
+    @Override
+    public void getThesisCode(Integer tid, Integer aid, HttpServletResponse response, HttpServletRequest request){
+        //根据aid判断用户是否已经登录
+        //【待补充】
+
+        //根据tid获取论文的url
+        Thesis thesis = thesisMapper.selectByPrimaryKey(tid);
+
+        if(thesis.getCode()==null){
+            throw new ThesisException(ResultEnum.THESIS_NO_FOUND);
+        }
+        //根据url读取文件，并将文件流返回到前端
+        FileUtil.downloadFile( thesis.getCode(),response);
+    }
+
+    /**
+     * 通过验证的用户下载论文数据集（考虑没有数据集的情况）
+     */
+    @Override
+    public void getThesisData(Integer tid, Integer aid, HttpServletResponse response, HttpServletRequest request){
+        //根据aid判断用户是否已经登录
+        //【待补充】
+
+        //根据tid获取论文的url
+        Thesis thesis = thesisMapper.selectByPrimaryKey(tid);
+
+        if(thesis.getData()==null){
+            throw new ThesisException(ResultEnum.THESIS_NO_FOUND);
+        }
+        //根据url读取文件，并将文件流返回到前端
+        FileUtil.downloadFile( thesis.getData(),response);
+    }
+
 }

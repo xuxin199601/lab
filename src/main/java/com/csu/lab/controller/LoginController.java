@@ -27,7 +27,7 @@ public class LoginController {
     private ResearcherService researcherService;
 
     //跳转到登录界面
-    @RequestMapping("/login")
+    @RequestMapping("/")
     public String doLoginLab() {
         return "server/login";
     }
@@ -41,13 +41,13 @@ public class LoginController {
 
 
     //登录实现
-    @RequestMapping(value = "/doLogin",method = RequestMethod.POST)
-    public String doLogin(Account account, Model model, HttpSession httpSession) {
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    public String doLogin(Account account, Model model, HttpSession session) {
 
         Account user = accountService.loginVaildata(account);
 
         if (user != null) {
-            httpSession.setAttribute("user", user);
+            session.setAttribute("user", user);
             return "redirect:home";
         } else {
             model.addAttribute("error", "用户名或密码错误，请重新登录！");

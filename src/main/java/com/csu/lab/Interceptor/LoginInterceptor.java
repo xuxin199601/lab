@@ -2,29 +2,26 @@ package com.csu.lab.Interceptor;
 
 //import com.csu.bootone.Const.CustomConst;
 
-import com.csu.lab.customConst.CustomConstant;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("preHandle");
-        if (request.getSession().getAttribute(CustomConstant.IS_LOGIN) != null) {
-            boolean is_login = (Boolean) request.getSession().getAttribute(CustomConstant.IS_LOGIN);
-            if (!is_login) {
-//            request.getRequestDispatcher()
-                response.sendRedirect("/server/account/login");
-            }
-        } else {
-//            带有/就是绝对的路径，没有带/就表示的相对的路径。
-            response.sendRedirect("/server/account/login");
-        }
+        HttpSession session = request.getSession(true);
 
-        return true;
+        if (session.getAttribute("user") == null) {
+            response.sendRedirect("/server/");
+            return false;
+        } else {
+            session.setAttribute("user", session.getAttribute("user"));
+            return true;
+
+        }
     }
 
     /**
