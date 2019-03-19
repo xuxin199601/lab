@@ -59,15 +59,12 @@ public class DirectionServiceImpl implements DirectionService{
     }
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRED)
-    public void updateDirection(Direction direction) {
-        if(directionMapper.updateByPrimaryKeySelective(direction) != 1) {
-            throw new DirectionException(ResultEnum.DIRECTION_UPDATE_FAILURE);
-        }
+    public int updateDirection(Direction direction) {
+        int result = directionMapper.updateByPrimaryKeySelective(direction);
+        return result;
     }
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRED)
     public void deleteDirection(Integer directionId) {
         if(directionMapper.deleteByPrimaryKey(directionId) != 1) {
             throw new DirectionException(ResultEnum.DIRECTION_DELETE_FAILURE);
@@ -75,12 +72,8 @@ public class DirectionServiceImpl implements DirectionService{
     }
 
     @Override
-    @Transactional(propagation = Propagation.SUPPORTS)
     public Direction queryDirectionById(Integer directionId) {
         Direction direction = directionMapper.selectByPrimaryKey(directionId);
-        if (direction == null) {
-            throw new DirectionException(ResultEnum.DIRECTION_NO_FOUND);
-        }
         return direction;
     }
 
