@@ -12,7 +12,7 @@ public interface DirectionService {
 
     public List<Direction> saveDirection(Direction direction)throws Exception;
 
-    public void updateDirection(Direction direction);
+    public int updateDirection(Direction direction);
 
     public void deleteDirection(Integer directionId);
 
