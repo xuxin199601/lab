@@ -34,11 +34,11 @@ video{
 }
 .csu-content {
     text-align: center;
+    margin: 15px 150px;
 }
 
-.csu-content iframe {
-    width: 1px;
-    min-width: 100%;
+.csu-content-left {
+    margin: 15px 150px;
 }
 
 .csu-bottom {
@@ -61,10 +61,6 @@ video{
     bottom: 15px;
     right: 15px;
     display: none;
-}
-
-.csu-iframe-body {
-    margin: 15px 150px;
 }
 
 /*这是account/login.html的css*/
@@ -189,7 +185,7 @@ video{
         display: inline;
     }
 
-    .csu-iframe-body {
+    .csu-content{
         margin-left: 0px;
         margin-right: 0px;
     }

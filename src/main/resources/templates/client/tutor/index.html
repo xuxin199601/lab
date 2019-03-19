@@ -1,90 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
     <title>导师列表</title>
-    <link rel="stylesheet" href="../../static/layui/css/layui.css">
-    <link rel="stylesheet" href="../../static/css/csu-style.css">
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+    <link rel="stylesheet" th:href="@{/css/csu-style.css}">
 </head>
 
-<body class="csu-iframe-body">
+<body>
+<!--顶端信息条-->
+<nav frameborder="0" scrolling="no" name="csu-content-iframe" id="csu-content-iframe-top" class="navbar-default navbar-static-side" role="top" th:include="client/top :: top"></nav>
+
+<div class="csu-content">
 <fieldset class="layui-elem-field" id="introduction">
     <legend class="csu-color-theme"><b>导师列表</b></legend>
     <div class="layui-field-box">
 
         <div class="layui-row layui-col-space15">
 
-            <div class="layui-col-lg2 layui-col-sm3 layui-col-xs6">
+            <div class="layui-col-lg2 layui-col-sm3 layui-col-xs6" th:each="researcher:${pageInfo.list}">
                 <!--只给第一个card添加了a href跳转链接用于测试，其它的card同样按这个来-->
                 <a href="tutor.html">
                     <div class="csu-card csu-card-hover">
-                        <img class="csu-card-img" src="../../static/img/test/photo.png">
-                        <div class="csu-card-name">肖途</div>
-                        <div class="csu-card-post">胡峰</div>
-                        <div class="csu-card-type">中共地下党</div>
+                        <img class="csu-card-img" th:src="${researcher.image}">
+                        <div class="csu-card-name" th:text="${researcher.name}">肖途</div>
+                        <div class="csu-card-post" th:text="${researcher.post}">胡峰</div>
+                        <div class="csu-card-type" th:text="${researcher.personType}">中共地下党</div>
                     </div>
                 </a>
-            </div>
-
-            <div class="layui-col-lg2 layui-col-sm3 layui-col-xs6">
-                <div class="csu-card csu-card-hover">
-                    <img class="csu-card-img" src="../../static/img/test/photo1.png">
-                    <div class="csu-card-name">庄晓曼</div>
-                    <div class="csu-card-post">飞鹰</div>
-                    <div class="csu-card-type">军统特务</div>
-                </div>
-            </div>
-
-            <div class="layui-col-lg2 layui-col-sm3 layui-col-xs6">
-                <div class="csu-card csu-card-hover">
-                    <img class="csu-card-img" src="../../static/img/test/photo2.png">
-                    <div class="csu-card-name">方敏</div>
-                    <div class="csu-card-post">第三号</div>
-                    <div class="csu-card-type">中共地下党</div>
-                </div>
-            </div>
-            <div class="layui-col-lg2 layui-col-sm3 layui-col-xs6">
-                <div class="csu-card csu-card-hover">
-                    <img class="csu-card-img" src="../../static/img/test/photo3.png">
-                    <div class="csu-card-name">武藤纯子</div>
-                    <div class="csu-card-post">作家</div>
-                    <div class="csu-card-type">日本左派</div>
-                </div>
-            </div>
-            <div class="layui-col-lg2 layui-col-sm3 layui-col-xs6">
-                <div class="csu-card csu-card-hover">
-                    <img class="csu-card-img" src="../../static/img/test/photo4.png">
-                    <div class="csu-card-name">陆望舒</div>
-                    <div class="csu-card-post">夜莺</div>
-                    <div class="csu-card-type">中共地下党</div>
-                </div>
-            </div>
-
-            <div class="layui-col-lg2 layui-col-sm3 layui-col-xs6">
-                <div class="csu-card csu-card-hover">
-                    <img class="csu-card-img" src="../../static/img/test/photo5.png">
-                    <div class="csu-card-name">顾君如</div>
-                    <div class="csu-card-post">小学妹</div>
-                    <div class="csu-card-type">汪伪特务</div>
-                </div>
             </div>
         </div>
     </div>
 </fieldset>
+</div>
 
-<div class="csu-page" id="csu-page"></div>
+    <div class="ibox-footer" align="right">
+        <ul class="pagination">
+            <li>
+                <a th:if="${not isFirstPage}"
+                   th:href="@{${'thesisList'}(pageNum=${pageNum-1},pageSize=${pageSize})}"
+                   aria-label="Previous">
+                    <span aria-hidden="true">«</span>
+                </a>
+                <a th:if="${isFirstPage}" href="javascript:void(0);" aria-label="Previous">
+                    <span aria-hidden="true">«</span>
+                </a>
+            </li>
+
+            <li th:each="pageNo : ${#numbers.sequence(1, totalPages)}">
+                <a th:if="${pageNum eq pageNo}" href="javascript:void(0);">
+                    <span th:text="${pageNo}"></span>
+                </a>
+
+                <a th:if="${not (pageNum eq pageNo)}"
+                   th:href="@{${'thesisList'}(pageNum=${pageNo},pageSize=${pageSize})}">
+                    <span th:text="${pageNo}"></span>
+                </a>
+            </li>
+
+            <li>
+                <a th:if="${not isLastPage}"
+                   th:href="@{${'thesisList'}(pageNum=${pageNum+1},pageSize=${pageSize})}"
+                   aria-label="Next">
+                    <span aria-hidden="true">»</span>
+                </a>
+                <a th:if="${isLastPage}" href="javascript:void(0);" aria-label="Next">
+                    <span aria-hidden="true">»</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+<div class="csu-page" id="csu-page">
+</div>
+
+<!--底端信息条-->
+<nav frameborder="0" scrolling="no" name="csu-content-iframe" id="csu-content-iframe-bottom" class="navbar-default navbar-static-side" role="bottom" th:include="client/bottom :: bottom"></nav>
 
 <!--这是layui的脚本-->
-<script src="../../static/layui/layui.js"></script>
+<script th:src="@{/layui/layui.js}"></script>
 <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
 <!--[if lt IE 9]>
-<script src="../../static/js/layui/html5.min.js"></script>
-<script src="../../static/js/layui/respond.min.js"></script>
+<script th:src="@{/js/layui/html5.min.js}"></script>
+<script th:src="@{/js/layui/respond.min.js}"></script>
 <![endif]-->
 
 <!--这是iframeResizer的脚本-->
-<script src="../../static/js/iframe-resizer/iframeResizer.contentWindow.min.js"></script>
+<script th:src="@{/js/iframe-resizer/iframeResizer.contentWindow.min.js}"></script>
 
 <!--这是自己设定的一些脚本-->
 <script>
@@ -94,8 +96,8 @@
         //执行一个laypage实例
         laypage.render({
             elem: 'csu-page'
-            , count: 35
-            , limit: 10
+            , count:50 /*'+${totalPages}+'*/
+            , limit: 6
             // ,curr:2
             , jump: function (obj, first) {
                 //obj包含了当前分页的所有参数，比如：
