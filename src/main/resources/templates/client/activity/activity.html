@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../../static/layui/css/layui.css">
-    <link rel="stylesheet" href="../../static/css/csu-style.css">
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css} ">
+    <link rel="stylesheet" th:href="@{/css/csu-style.css}">
 </head>
 <body class="csu-iframe-body">
 <fieldset class="layui-elem-field">
-    <legend class="csu-color-theme"><b>活动名称</b></legend>
+    <legend class="csu-color-theme" th:text="${activity.name}"><b>活动名称</b></legend>
     <div class="layui-field-box">
 
         <fieldset class="layui-elem-field layui-field-title">
-            <legend>活动时间</legend>
+            <legend th:text="${activity.time}">活动时间</legend>
         </fieldset>
         <div class="layui-col-md10 layui-col-sm6">
-            <div class="csu-card-introduction">
+            <div class="csu-card-introduction" th:text="${activity.introduction}">
                 富文本区域
             </div>
         </div>

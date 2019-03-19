@@ -9,23 +9,20 @@
 
     <!--乱删了一堆东西，只保留了pagination的相关内容-->
     <link th:href="@{/css/my-bootstrap.min.css}" rel="stylesheet"/>
-
-
 </head>
 
 <body class="csu-iframe-body">
-
 <fieldset class="layui-elem-field" id="introduction">
     <legend class="csu-color-theme"><b>导师列表</b></legend>
     <div class="layui-field-box">
         <div class="layui-row layui-col-space15">
-            <div class="layui-col-lg2 layui-col-sm3 layui-col-xs6" th:each="researcher:${pageInfo.list}">
-                <a th:href="@{${'/client/tutor/tutor'}(id=${researcher.rid})}">
+            <div class="layui-col-lg2 layui-col-sm3 layui-col-xs6" th:each="tutor:${pageInfo.list}">
+                <a th:href="@{${'/client/tutor/tutor'}(id=${tutor.rid})}">
                     <div class="csu-card csu-card-hover">
-                        <img class="csu-card-img" th:src="${researcher.image}">
-                        <div class="csu-card-name" th:text="${researcher.name}">肖途</div>
-                        <div class="csu-card-post" th:text="${researcher.post}">胡峰</div>
-                        <div class="csu-card-type" th:text="${researcher.direction}">中共地下党</div>
+                        <img class="csu-card-img" th:src="${tutor.image}">
+                        <div class="csu-card-name" th:text="${tutor.name}">肖途</div>
+                        <div class="csu-card-post" th:text="${tutor.post}">胡峰</div>
+                        <div class="csu-card-type" th:text="${tutor.direction}">中共地下党</div>
                     </div>
                 </a>
             </div>
@@ -43,7 +40,7 @@
                 <span aria-hidden="true">上一页</span>
             </a>
             <a th:if="${isFirstPage}" href="javascript:void(0);" aria-label="Previous">
-                <span aria-hidden="true">下一页</span>
+                <span aria-hidden="true">上一页</span>
             </a>
         </li>
 
@@ -62,10 +59,10 @@
             <a th:if="${not isLastPage}"
                th:href="@{${'tutorList'}(pageNum=${pageNum+1},pageSize=${pageSize})}"
                aria-label="Next">
-                <span aria-hidden="true">»</span>
+                <span aria-hidden="true">下一页</span>
             </a>
             <a th:if="${isLastPage}" href="javascript:void(0);" aria-label="Next">
-                <span aria-hidden="true">»</span>
+                <span aria-hidden="true">下一页</span>
             </a>
         </li>
     </ul>

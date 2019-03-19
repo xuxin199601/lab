@@ -23,21 +23,15 @@ public class ClientTutorsController {
     private ResearcherService researcherService;
 
     @RequestMapping("/tutorList")
-    public String getClientActivityList(@RequestParam(defaultValue = "1") Integer pageNum,
+    public String getClientTutorList(@RequestParam(defaultValue = "1") Integer pageNum,
                                   @RequestParam(defaultValue = "6") Integer pageSize,
-                                  @RequestParam(name = "value",required = false) String value,
                                   Model model) {
 
         PageHelper.startPage(pageNum,pageSize);
 
-        List<Researcher> researcherList;
-        if (value != null){
-            model.addAttribute("key", value);
-            researcherList = researcherService.queryByProperty("name", value);
-        }else {
-            researcherList = researcherService.getResearcherList(0);
-        }
-        PageInfo pageInfo = new PageInfo(researcherList,6);
+        List<Researcher> tutorList = researcherService.getResearcherList(0);
+
+        PageInfo pageInfo = new PageInfo(tutorList,6);
 
         model.addAttribute("pageInfo",pageInfo);
         //获得当前页
@@ -51,7 +45,7 @@ public class ClientTutorsController {
         //是否是最后一页
         model.addAttribute("isLastPage",pageInfo.isIsLastPage());
         //获得总共查询到多少条
-        model.addAttribute("totalNum",researcherList.size());
+        model.addAttribute("totalNum",tutorList.size());
 
         return "client/tutor/index";
     }
