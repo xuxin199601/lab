@@ -23,7 +23,7 @@ public class ClientTutorsController {
     private ResearcherService researcherService;
 
     @RequestMapping("/tutorList")
-    public String getActivityList(@RequestParam(defaultValue = "1") Integer pageNum,
+    public String getClientActivityList(@RequestParam(defaultValue = "1") Integer pageNum,
                                   @RequestParam(defaultValue = "6") Integer pageSize,
                                   @RequestParam(name = "value",required = false) String value,
                                   Model model) {
@@ -54,6 +54,22 @@ public class ClientTutorsController {
         model.addAttribute("totalNum",researcherList.size());
 
         return "client/tutor/index";
+    }
+
+    @RequestMapping("/tutor")
+    public String getClientTutor(@RequestParam(name = "id",required = false) int rid,
+                                 Model model){
+        //根据ID获取导师信息
+        Researcher tutor = researcherService.queryResearcherById(rid);
+
+        //获取导师名下的学生
+        List<Researcher> studentList = researcherService.queryByProperty("affiliatedTutor",rid);
+
+        model.addAttribute("tutor",tutor);
+        model.addAttribute("studentList" , studentList);
+
+
+        return "client/tutor/tutor";
     }
 
 

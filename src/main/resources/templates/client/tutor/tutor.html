@@ -8,20 +8,15 @@
 </head>
 <body class="csu-iframe-body">
 
-<!--顶端信息条-->
-<div class="csu-content-top">
-    <nav frameborder="0" scrolling="no" name="csu-content-iframe" id="csu-content-iframe-top" class="navbar-default navbar-static-side" role="top" th:include="client/top :: top"></nav>
-</div>
-
 <fieldset class="layui-elem-field">
-    <legend class="csu-color-theme"><b>肖途</b></legend>
+    <legend class="csu-color-theme" th:text="${tutor.name}"><b>肖途</b></legend>
     <div class="layui-field-box">
         <div class="layui-row">
             <div class="layui-col-md2 layui-col-sm6">
                 <div class="csu-card">
-                    <img class="csu-card-img" src="../../static/img/test/photo.png">
-                    <div class="csu-card-post">胡峰</div>
-                    <div class="csu-card-type">中共地下党</div>
+                    <img class="csu-card-img" th:src="${tutor.image}">
+                    <div class="csu-card-post" th:text="${tutor.post}">胡峰</div>
+                    <div class="csu-card-type" th:text="${tutor.direction}">中共地下党</div>
                 </div>
             </div>
 
@@ -29,7 +24,7 @@
 
                 <fieldset class="layui-elem-field csu-card-introduction">
                     <legend class="csu-color-theme">导师简介</legend>
-                    <div class="layui-field-box">
+                    <div class="layui-field-box" th:text="${tutor.introduction}">
                         富文本区域
                     </div>
                 </fieldset>
@@ -45,35 +40,13 @@
                     <legend class="csu-color-theme">学生信息</legend>
                     <div class="layui-field-box">
                         <div class="layui-row layui-col-space15">
-                            <div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
+                            <div class="layui-col-md3 layui-col-sm6 layui-col-xs6" th:each="student:${studentList}">
                                 <a href="../student/student.html">
                                     <div class="csu-card csu-card-hover">
-                                        <img class="csu-card-img" src="../../static/img/test/photo1.png">
-                                        <div class="csu-card-name">庄晓曼</div>
-                                        <div class="csu-card-post">飞鹰</div>
-                                        <div class="csu-card-type">军统特务</div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
-                                <a href="../student/student.html">
-                                    <div class="csu-card csu-card-hover">
-                                        <img class="csu-card-img" src="../../static/img/test/photo2.png">
-                                        <div class="csu-card-name">方敏</div>
-                                        <div class="csu-card-post">第三号</div>
-                                        <div class="csu-card-type">中共地下党</div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
-                                <a href="../student/student.html">
-                                    <div class="csu-card csu-card-hover">
-                                        <img class="csu-card-img" src="../../static/img/test/photo3.png">
-                                        <div class="csu-card-name">武藤纯子</div>
-                                        <div class="csu-card-post">作家</div>
-                                        <div class="csu-card-type">日本左派</div>
+                                        <img class="csu-card-img" th:src="${student.image}">
+                                        <div class="csu-card-name" th:text="${student.name}">庄晓曼</div>
+                                        <div class="csu-card-post" th:text="${student.post}">飞鹰</div>
+                                        <div class="csu-card-type" th:text="${student.direction}">军统特务</div>
                                     </div>
                                 </a>
                             </div>
@@ -88,14 +61,14 @@
 <hr>
 
 <!--这是layui的脚本-->
-<script src="../../static/layui/layui.js"></script>
+<script th:src="@{/layui/layui.js}"></script>
 <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
 <!--[if lt IE 9]>
-<script src="../../static/js/layui/html5.min.js"></script>
-<script src="../../static/js/layui/respond.min.js"></script>
+<script th:src="@{/js/layui/html5.min.js}"></script>
+<script th:src="@{/js/layui/respond.min.js}"></script>
 <![endif]-->
 
 <!--这是iframeResizer的脚本-->
-<script src="../../static/js/iframe-resizer/iframeResizer.contentWindow.min.js"></script>
+<script th:src="@{/js/iframe-resizer/iframeResizer.contentWindow.min.js}"></script>
 </body>
 </html>
