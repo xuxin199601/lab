@@ -32,7 +32,8 @@
                         <a>研究方向管理</a>
                     </li>
                     <li class="active">
-                        <strong>添加方向</strong>
+                        <strong th:if="${direction==null}">添加方向</strong>
+                        <strong th:if="${direction!=null}">修改方向</strong>
                     </li>
                 </ol>
             </div>
@@ -46,7 +47,8 @@
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>实验室信息</h5>
+                            <h5 th:if="${direction==null}">添加方向</h5>
+                            <h5 th:if="${direction!=null}">修改方向</h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -54,18 +56,22 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-                            <form id="formTag" th:action="@{/server/direction/addDirection}" method="post"
+                            <form id="formTag" th:action="@{/server/direction/saveDirection}" method="post"
                                   class="form-horizontal" enctype="multipart/form-data">
+
+                                <input type="hidden" name="_method" value="put" th:if="${direction!=null}">
+
+                                <input type="hidden" name="aid" th:value="${direction.did}" th:if="${direction!=null}">
 
                                 <div class="form-group"><label class="col-sm-2 control-label">研究方向：</label>
                                     <div class="col-sm-10">
-                                        <input id="realName1" name="resDirection" type="text" class="form-control"/>
+                                        <input id="realName1" name="resDirection" type="text" class="form-control" th:value="${direction.resDirection}" th:if="${direction != null}"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group"><label class="col-sm-2 control-label">详情：</label>
                                     <div class="col-sm-10">
-                                        <textarea id="direction" name="details" class="form-control" rows="6"></textarea>
+                                        <textarea id="direction" name="details" class="form-control" rows="6" th:text="${direction.details}" th:if="${direction != null}"></textarea>
                                     </div>
                                 </div>
 

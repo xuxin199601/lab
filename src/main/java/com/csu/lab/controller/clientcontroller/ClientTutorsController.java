@@ -2,6 +2,7 @@ package com.csu.lab.controller.clientcontroller;
 
 import com.csu.lab.pojo.Activity;
 import com.csu.lab.pojo.Researcher;
+import com.csu.lab.pojo.Thesis;
 import com.csu.lab.service.ResearcherService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -24,12 +25,20 @@ public class ClientTutorsController {
     @RequestMapping("/tutorList")
     public String getActivityList(@RequestParam(defaultValue = "1") Integer pageNum,
                                   @RequestParam(defaultValue = "6") Integer pageSize,
+                                  @RequestParam(name = "value",required = false) String value,
                                   Model model) {
+
         PageHelper.startPage(pageNum,pageSize);
 
-        //查询导师的信息，导师personType为0
-        List<Researcher> researcherList = researcherService.getResearcherList(0);
+         List<Researcher> researcherList;
+        if (value != null){
+            model.addAttribute("key", value);
+            researcherList = researcherService.queryByProperty("name", value);
+        }else {
+            researcherList = researcherService.getResearcherList(1);
+        }
 
+        //每页6个参数
         PageInfo pageInfo = new PageInfo(researcherList,6);
 
         model.addAttribute("pageInfo",pageInfo);
