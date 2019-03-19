@@ -10,11 +10,9 @@ public interface DirectionService {
 
     int addDirection(Direction direction);
 
-    public List<Direction> saveDirection(Direction direction)throws Exception;
+    public int updateDirection(Direction direction);
 
-    public void updateDirection(Direction direction);
-
-    public void deleteDirection(Integer directionId);
+    public int deleteDirection(Integer directionId);
 
     public Direction queryDirectionById(Integer directionId);
 
