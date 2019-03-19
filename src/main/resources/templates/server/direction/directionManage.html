@@ -87,7 +87,7 @@
                                     <tr>
                                         <th width="5%">编号</th>
                                         <th>研究方向</th>
-                                        <th width="10%">操作</th>
+                                        <th width="20%">操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -96,6 +96,10 @@
                                         <td th:text="${direction.resDirection}">Onions</td>
                                         <td>
                                             <a th:href="@{#}" class="btn btn-success btn-xs">查看详情</a>
+                                            <a th:href="@{${'/server/direction/doModifyDirection'}(id=${direction.did})}"
+                                               class="btn btn-info btn-xs" title="修改">&nbsp;修&nbsp;改&nbsp;</a>
+                                            <a th:href="@{${'/server/direction/deleteDirection'}(id=${direction.did})}"
+                                               class="btn btn-info btn-warning btn-xs" title="修改">&nbsp;删&nbsp;除&nbsp;</a>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -112,7 +116,7 @@
                         <div class="ibox-footer" align="right">
                             <ul class="pagination">
                                 <li>
-                                    <a th:if="${not isFirstPage}" th:href="@{${'accountList'}(pageNum=${pageNum-1},pageSize=${pageSize})}" aria-label="Previous">
+                                    <a th:if="${not isFirstPage}" th:href="@{${'directionList'}(pageNum=${pageNum-1},pageSize=${pageSize})}" aria-label="Previous">
                                         <span aria-hidden="true">«</span>
                                     </a>
                                     <a th:if="${isFirstPage}" href="javascript:void(0);" aria-label="Previous">
@@ -125,13 +129,13 @@
                                         <span th:text="${pageNo}"></span>
                                     </a>
 
-                                    <a th:if="${not (pageNum eq pageNo)}" th:href="@{${'accountList'}(pageNum=${pageNo},pageSize=${pageSize})}">
+                                    <a th:if="${not (pageNum eq pageNo)}" th:href="@{${'directionList'}(pageNum=${pageNo},pageSize=${pageSize})}">
                                         <span th:text="${pageNo}"></span>
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a th:if="${not isLastPage}" th:href="@{${'accountList'}(pageNum=${pageNum+1},pageSize=${pageSize})}" aria-label="Next">
+                                    <a th:if="${not isLastPage}" th:href="@{${'directionList'}(pageNum=${pageNum+1},pageSize=${pageSize})}" aria-label="Next">
                                         <span aria-hidden="true">»</span>
                                     </a>
                                     <a th:if="${isLastPage}" href="javascript:void(0);" aria-label="Next">
@@ -144,8 +148,6 @@
                 </div>
             </div>
         </div>
-
-        [[${session.error}]]
 
         <div class="footer" th:include="server/footer :: copyright"></div>
     </div>
