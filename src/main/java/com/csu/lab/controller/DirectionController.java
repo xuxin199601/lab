@@ -26,6 +26,7 @@ public class DirectionController {
     @GetMapping("/directionList")
     public String getStudentByPage(@RequestParam(defaultValue = "1") Integer pageNum,
                                    @RequestParam(defaultValue = "10") Integer pageSize,
+                                   @RequestParam(name = "value", required = false) String value,
                                    Model model,
                                    HttpSession session) {
 
@@ -34,7 +35,14 @@ public class DirectionController {
 
         PageHelper.startPage(pageNum, pageSize);
 
-        List<Direction> directionList = directionService.getDirectionList();
+        List<Direction> directionList;
+
+        if (value != null){
+            model.addAttribute("key", value);
+            directionList = directionService.queryByProperty("resDirection", value);
+        }else {
+            directionList = directionService.getDirectionList();
+        }
         PageInfo pageInfo = new PageInfo(directionList, 10);
 
         model.addAttribute("pageInfo", pageInfo);
@@ -72,7 +80,12 @@ public class DirectionController {
     // 删除研究方向信息
     @RequestMapping("/deleteDirection")
     public String deleteDirection(@RequestParam("id") Integer did) {
-        directionService.deleteDirection(did);
+        int result = directionService.deleteDirection(did);
+        if (result == 1) {
+            msg = "删除成功";
+        } else {
+            msg = "删除失败";
+        }
         return "redirect:directionList";
     }
 
