@@ -99,7 +99,7 @@
                     <div class="layui-field-box">
                         <div class="layui-row layui-col-space15">
                             <div class="layui-col-md3 layui-col-sm6 layui-col-xs6" th:each="student:${studentList}">
-                                <a href="../student/student.html">
+                                <a th:href="@{${'/client/student/student'}(id=${student.rid})}">
                                     <div class="csu-card csu-card-hover">
                                         <img class="csu-card-img" th:src="${student.image}">
                                         <div class="csu-card-name" th:text="${student.name}">庄晓曼</div>

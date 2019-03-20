@@ -97,7 +97,7 @@
                     <div class="layui-field-box">
                         <div class="layui-row layui-col-space15">
                             <div class="layui-col-md3 layui-col-sm6 layui-col-xs6" th:each="tutor:${tutorList}">
-                                <a href="../tutor/tutor.html">
+                                <a th:href="@{${'/client/tutor/tutor'}(id=${tutor.rid})}">
                                     <div class="csu-card csu-card-hover">
                                         <img class="csu-card-img" th:src="${tutor.image}">
                                         <div class="csu-card-name" th:text="${tutor.name}">庄晓曼</div>

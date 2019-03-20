@@ -11,16 +11,12 @@
 <body class="csu-iframe-body">
 
 <fieldset class="layui-elem-field">
-    <legend class="csu-color-theme"><b>论文名称</b></legend>
+    <legend class="csu-color-theme"><b th:text="${thesis.name}">论文名称</b></legend>
     <div class="layui-field-box csu-detail">
-
-        <fieldset class="layui-elem-field layui-field-title">
-            <legend>论文时间</legend>
-        </fieldset>
 
         <fieldset class="layui-elem-field">
             <legend class="csu-color-theme">摘要</legend>
-            <div class="layui-field-box">
+            <div class="layui-field-box" th:text="${thesis.abstracts}">
                 摘要区域
             </div>
         </fieldset>
@@ -28,53 +24,53 @@
         <fieldset class="layui-elem-field">
             <legend class="csu-color-theme">关键词</legend>
             <div class="layui-field-box">
-                <b>关键词区域</b>
+                <b th:text="${thesis.keywords}">关键词区域</b>
             </div>
         </fieldset>
 
-        <fieldset class="layui-elem-field csu-card-tutor">
-            <legend class="csu-color-theme">作者</legend>
-            <div class="layui-field-box">
+        <!--<fieldset class="layui-elem-field csu-card-tutor">-->
+            <!--<legend class="csu-color-theme">作者</legend>-->
+            <!--<div class="layui-field-box">-->
 
-                <div class="layui-row layui-col-space15">
+                <!--<div class="layui-row layui-col-space15">-->
 
-                    <div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
-                        <a href="../student/student.html">
-                            <div class="csu-card csu-card-hover">
-                                <img class="csu-card-img" src="../../static/img/test/photo1.png">
-                                <div class="csu-card-name">庄晓曼</div>
-                                <div class="csu-card-post">飞鹰</div>
-                                <div class="csu-card-type">军统特务</div>
-                            </div>
-                        </a>
-                    </div>
+                    <!--<div class="layui-col-md3 layui-col-sm6 layui-col-xs6">-->
+                        <!--<a href="../student/student.html">-->
+                            <!--<div class="csu-card csu-card-hover">-->
+                                <!--<img class="csu-card-img" src="../../static/img/test/photo1.png">-->
+                                <!--<div class="csu-card-name">庄晓曼</div>-->
+                                <!--<div class="csu-card-post">飞鹰</div>-->
+                                <!--<div class="csu-card-type">军统特务</div>-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</div>-->
 
-                    <div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
-                        <a href="../student/student.html">
-                            <div class="csu-card csu-card-hover">
-                                <img class="csu-card-img" src="../../static/img/test/photo2.png">
-                                <div class="csu-card-name">方敏</div>
-                                <div class="csu-card-post">第三号</div>
-                                <div class="csu-card-type">中共地下党</div>
-                            </div>
-                        </a>
-                    </div>
+                    <!--<div class="layui-col-md3 layui-col-sm6 layui-col-xs6">-->
+                        <!--<a href="../student/student.html">-->
+                            <!--<div class="csu-card csu-card-hover">-->
+                                <!--<img class="csu-card-img" src="../../static/img/test/photo2.png">-->
+                                <!--<div class="csu-card-name">方敏</div>-->
+                                <!--<div class="csu-card-post">第三号</div>-->
+                                <!--<div class="csu-card-type">中共地下党</div>-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</div>-->
 
-                    <div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
-                        <a href="../student/student.html">
-                            <div class="csu-card csu-card-hover">
-                                <img class="csu-card-img" src="../../static/img/test/photo3.png">
-                                <div class="csu-card-name">武藤纯子</div>
-                                <div class="csu-card-post">作家</div>
-                                <div class="csu-card-type">日本左派</div>
-                            </div>
-                        </a>
-                    </div>
+                    <!--<div class="layui-col-md3 layui-col-sm6 layui-col-xs6">-->
+                        <!--<a href="../student/student.html">-->
+                            <!--<div class="csu-card csu-card-hover">-->
+                                <!--<img class="csu-card-img" src="../../static/img/test/photo3.png">-->
+                                <!--<div class="csu-card-name">武藤纯子</div>-->
+                                <!--<div class="csu-card-post">作家</div>-->
+                                <!--<div class="csu-card-type">日本左派</div>-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</div>-->
 
-                </div>
+                <!--</div>-->
 
-            </div>
-        </fieldset>
+            <!--</div>-->
+        <!--</fieldset>-->
 
         <fieldset class="layui-elem-field">
             <legend class="csu-color-theme">资源</legend>
@@ -88,7 +84,7 @@
                             <table class="layui-table csu-table" lay-skin="nob">
                                 <tbody>
                                 <tr>
-                                    <td><a>正文下载区域</a></td>
+                                    <td><a target="_blank" th:href="@{${'thesisContent'}(id=${thesis.tid})}">正文下载区域</a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -101,7 +97,7 @@
                             <table class="layui-table csu-table" lay-skin="nob">
                                 <tbody>
                                 <tr>
-                                    <td><a>代码下载区域</a></td>
+                                    <td><a target="_blank" th:href="@{${'thesisCode'}(id=${thesis.tid})}">代码下载区域</a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -114,7 +110,7 @@
                             <table class="layui-table csu-table" lay-skin="nob">
                                 <tbody>
                                 <tr>
-                                    <td><a>数据下载区域</a></td>
+                                    <td><a target="_blank" th:href="@{${'thesisData'}(id=${thesis.tid})}">数据下载区域</a></td>
                                 </tr>
                                 </tbody>
                             </table>
