@@ -18,7 +18,12 @@
                 <div class="csu-card">
                     <img class="csu-card-img" th:src="${student.image}">
                     <div class="csu-card-post" th:text="${student.post}">胡峰</div>
-                    <div class="csu-card-type" th:text="${student.direction}">中共地下党</div>
+                    <div class="csu-card-type" th:switch="${student.personType}">
+                        <p th:case="'0'">导师</p>
+                        <p th:case="'1'">硕士</p>
+                        <p th:case="'2'">博士</p>
+                        <p th:case="'3'">其他</p>
+                    </div>
                 </div>
             </div>
 
@@ -39,7 +44,7 @@
                 </fieldset>
 
                 <!--如果有就显示-->
-                <fieldset class="layui-elem-field">
+                <!--<fieldset class="layui-elem-field">
                     <legend class="csu-color-theme">论文成果</legend>
                     <div class="layui-field-box">
                         <table class="layui-table csu-table" lay-skin="line">
@@ -62,10 +67,10 @@
                             </tbody>
                         </table>
                     </div>
-                </fieldset>
+                </fieldset>-->
 
                 <!--如果有就显示-->
-                <fieldset class="layui-elem-field">
+                <!--<fieldset class="layui-elem-field">
                     <legend class="csu-color-theme">项目成果</legend>
                     <div class="layui-field-box">
                         <div class="layui-field-box">
@@ -90,7 +95,7 @@
                             </table>
                         </div>
                     </div>
-                </fieldset>
+                </fieldset>-->
 
                 <fieldset class="layui-elem-field">
                     <legend class="csu-color-theme">导师信息</legend>

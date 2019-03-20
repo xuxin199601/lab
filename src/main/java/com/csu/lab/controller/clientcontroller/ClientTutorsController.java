@@ -1,9 +1,7 @@
 package com.csu.lab.controller.clientcontroller;
 
-import com.csu.lab.pojo.Activity;
-import com.csu.lab.pojo.Relationship;
-import com.csu.lab.pojo.Researcher;
-import com.csu.lab.pojo.Thesis;
+import com.csu.lab.pojo.*;
+import com.csu.lab.service.DirectionService;
 import com.csu.lab.service.ResearcherService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -23,6 +21,9 @@ public class ClientTutorsController {
 
     @Autowired
     private ResearcherService researcherService;
+
+    @Autowired
+    private DirectionService directionService;
 
     @RequestMapping("/tutorList")
     public String getClientTutorList(@RequestParam(defaultValue = "1") Integer page,
@@ -51,6 +52,18 @@ public class ClientTutorsController {
                                  Model model){
         //根据ID获取导师信息
         Researcher tutor = researcherService.queryResearcherById(rid);
+
+        /*String directionStr=tutor.getDirection();
+
+        String[] StrArray=Str.split(",");
+
+        for(int i=0;i<StrArray.length;i++){
+
+            System.out.println(StrArray[i]);
+
+        }
+
+        List<Direction> directionList = directionService.queryDirectionById(tutor.getDirection());*/
 
         //根据ID获取论文、项目关系
         //Relationship relationship = relationService;
