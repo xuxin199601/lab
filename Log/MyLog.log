@@ -1,828 +1,190 @@
-2019-03-20 08:35:10.813  INFO 13788 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 13788 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 08:35:10.874  INFO 13788 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 08:35:11.325  INFO 13788 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 08:35:11.325  INFO 13788 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 08:35:14.310  INFO 13788 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 08:35:14.367  INFO 13788 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48ms. Found 0 repository interfaces.
-2019-03-20 08:35:14.931  INFO 13788 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b03512cf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 08:35:16.054  INFO 13788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 08:35:16.140  INFO 13788 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 08:35:16.141  INFO 13788 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 08:35:16.171  INFO 13788 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 08:35:16.402  INFO 13788 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 08:35:16.403  INFO 13788 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5077 ms
-2019-03-20 08:35:16.808  INFO 13788 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 08:35:16.809  WARN 13788 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 08:35:19.631  INFO 13788 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 08:35:19.816  INFO 13788 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2019-03-21 00:02:55.562  INFO 5592 --- [http-nio-8081-exec-7] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-21 00:02:55.772 ERROR 5592 --- [http-nio-8081-exec-7] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8081-exec-7] Exception processing template "client/thesis/thesis": An error happened during template parsing (template: "URL [file:src/main/resources/templates/client/thesis/thesis.html]" - line 25, col 21)
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "URL [file:src/main/resources/templates/client/thesis/thesis.html]" - line 25, col 21)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:239) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) [thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) [spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+Caused by: org.attoparser.ParseException: (Line = 25, Column = 21) Malformed markup: Attribute "class" appears more than once in element
+	at org.attoparser.MarkupEventProcessorHandler.handleAttribute(MarkupEventProcessorHandler.java:549) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingAttributeSequenceUtil.parseAttributeSequence(ParsingAttributeSequenceUtil.java:300) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:153) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	... 52 common frames omitted
+
+2019-03-21 00:02:55.780 ERROR 5592 --- [http-nio-8081-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "URL [file:src/main/resources/templates/client/thesis/thesis.html]" - line 25, col 21)] with root cause
+
+org.attoparser.ParseException: (Line = 25, Column = 21) Malformed markup: Attribute "class" appears more than once in element
+	at org.attoparser.MarkupEventProcessorHandler.handleAttribute(MarkupEventProcessorHandler.java:549) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingAttributeSequenceUtil.parseAttributeSequence(ParsingAttributeSequenceUtil.java:300) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:153) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189) ~[thymeleaf-spring5-3.0.11.RELEASE.jar:3.0.11.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1370) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1116) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1055) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+
+2019-03-21 00:05:55.692  INFO 5592 --- [http-nio-8081-exec-8] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-21 00:06:37.504  INFO 5592 --- [http-nio-8081-exec-3] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:2
+2019-03-21 00:13:23.647  INFO 1244 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on 5MFXWXQ80RPMJT0 with PID 1244 (E:\idea-workspace\lab\target\classes started by Administrator in E:\idea-workspace\lab)
+2019-03-21 00:13:23.650  INFO 1244 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-21 00:13:23.711  INFO 1244 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-21 00:13:23.711  INFO 1244 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-21 00:13:24.754  INFO 1244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-21 00:13:24.782  INFO 1244 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 repository interfaces.
+2019-03-21 00:13:25.117  INFO 1244 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$dcc8fae5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 00:13:25.455  INFO 1244 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-21 00:13:25.475  INFO 1244 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-21 00:13:25.475  INFO 1244 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-21 00:13:25.481  INFO 1244 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Program Files (x86)\JDK-1.8\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\ProgramFiles\Anaconda3;D:\ProgramFiles\Anaconda3\Library\mingw-w64\bin;D:\ProgramFiles\Anaconda3\Library\usr\bin;D:\ProgramFiles\Anaconda3\Library\bin;D:\ProgramFiles\Anaconda3\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files (x86)\JDK-1.8\bin;D:\Program Files (x86)\apache-maven-3.3.3\bin;D:\Program Files (x86)\TortoiseSVN\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\libnvvp;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include;D:\Program Files (x86)\JDK-1.8\jre\bin;D:\ProgramFiles\Git\cmd;D:\ProgramFiles\CTEX\UserData\miktex\bin;D:\ProgramFiles\CTEX\MiKTeX\miktex\bin;D:\ProgramFiles\CTEX\CTeX\ctex\bin;D:\ProgramFiles\CTEX\CTeX\cct\bin;D:\ProgramFiles\CTEX\CTeX\ty\bin;D:\ProgramFiles\CTEX\Ghostscript\gs9.05\bin;D:\ProgramFiles\CTEX\GSview\gsview;D:\ProgramFiles\CTEX\WinEd;D:\ProgramFiles\python-3.7\Scripts\;D:\ProgramFiles\python-3.7\;;.]
+2019-03-21 00:13:25.572  INFO 1244 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-21 00:13:25.573  INFO 1244 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1862 ms
+2019-03-21 00:13:25.731  INFO 1244 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-21 00:13:27.850  INFO 1244 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-21 00:13:27.908  INFO 1244 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2019-03-20 08:35:20.025  INFO 13788 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 08:35:20.026  INFO 13788 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 08:35:20.775  INFO 13788 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 08:35:22.167  INFO 13788 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 08:35:22.603  INFO 13788 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 08:35:24.157  INFO 13788 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 08:35:24.219  WARN 13788 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 08:35:24.371  WARN 13788 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 08:35:24.960  INFO 13788 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 08:35:25.033  INFO 13788 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 08:35:25.036  INFO 13788 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 15.909 seconds (JVM running for 23.363)
-2019-03-20 08:35:49.303  INFO 13788 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 08:35:49.304  INFO 13788 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 08:35:49.316  INFO 13788 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
-2019-03-20 08:36:37.784 ERROR 13788 --- [http-nio-8081-exec-8] com.csu.lab.exception.ExceptionHandle    : 【系统异常】Request method 'GET' not supported
-2019-03-20 08:36:37.896  WARN 13788 --- [http-nio-8081-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
-2019-03-20 08:38:23.217  INFO 13788 --- [http-nio-8081-exec-2] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:33
-2019-03-20 08:39:19.411  INFO 13788 --- [http-nio-8081-exec-3] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:33
-2019-03-20 08:40:35.923  INFO 13788 --- [http-nio-8081-exec-2] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:33
-2019-03-20 08:41:02.969  INFO 13788 --- [http-nio-8081-exec-1] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:33
-2019-03-20 08:47:48.399 ERROR 13788 --- [http-nio-8081-exec-5] com.csu.lab.exception.ExceptionHandle    : 【系统异常】Request method 'GET' not supported
-2019-03-20 08:47:48.400  WARN 13788 --- [http-nio-8081-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
-2019-03-20 08:47:57.577 ERROR 13788 --- [http-nio-8081-exec-10] com.csu.lab.exception.ExceptionHandle    : 【系统异常】Request method 'GET' not supported
-2019-03-20 08:47:57.578  WARN 13788 --- [http-nio-8081-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
-2019-03-20 08:48:11.162  INFO 13788 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : deleteResearcherById:65
-2019-03-20 08:48:17.223 ERROR 13788 --- [http-nio-8081-exec-1] com.csu.lab.exception.ExceptionHandle    : 【系统异常】Request method 'GET' not supported
-2019-03-20 08:48:17.224  WARN 13788 --- [http-nio-8081-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
-2019-03-20 08:49:31.349 ERROR 13788 --- [http-nio-8081-exec-4] com.csu.lab.exception.ExceptionHandle    : 【系统异常】Request method 'GET' not supported
-2019-03-20 08:49:31.349  WARN 13788 --- [http-nio-8081-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
-2019-03-20 08:50:11.971  INFO 7444 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 7444 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 08:50:11.975  INFO 7444 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 08:50:12.062  INFO 7444 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 08:50:12.063  INFO 7444 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 08:50:13.058  INFO 7444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 08:50:13.101  INFO 7444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37ms. Found 0 repository interfaces.
-2019-03-20 08:50:13.466  INFO 7444 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d90941b9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 08:50:14.041  INFO 7444 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 08:50:14.068  INFO 7444 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 08:50:14.068  INFO 7444 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 08:50:14.076  INFO 7444 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 08:50:14.267  INFO 7444 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 08:50:14.267  INFO 7444 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2203 ms
-2019-03-20 08:50:14.455  INFO 7444 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 08:50:14.456  WARN 7444 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 08:50:15.066  INFO 7444 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 08:50:15.156  INFO 7444 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 08:50:15.228  INFO 7444 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 08:50:15.229  INFO 7444 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 08:50:15.383  INFO 7444 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 08:50:15.691  INFO 7444 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 08:50:15.888  INFO 7444 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 08:50:16.853  INFO 7444 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 08:50:16.894  WARN 7444 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 08:50:16.987  WARN 7444 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 08:50:17.500  INFO 7444 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 08:50:17.568  INFO 7444 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 08:50:17.572  INFO 7444 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 6.128 seconds (JVM running for 7.782)
-2019-03-20 08:50:22.260  INFO 7444 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 08:50:22.261  INFO 7444 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 08:50:22.269  INFO 7444 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2019-03-20 08:50:39.512  INFO 7444 --- [http-nio-8081-exec-9] c.c.l.service.imp.ResearcherServiceImpl  : deleteResearcherById:53
-2019-03-20 08:52:18.089  INFO 3872 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 3872 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 08:52:18.093  INFO 3872 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 08:52:18.177  INFO 3872 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 08:52:18.178  INFO 3872 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 08:52:19.235  INFO 3872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 08:52:19.283  INFO 3872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39ms. Found 0 repository interfaces.
-2019-03-20 08:52:19.762  INFO 3872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$95bc9e7e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 08:52:20.316  INFO 3872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 08:52:20.341  INFO 3872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 08:52:20.341  INFO 3872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 08:52:20.350  INFO 3872 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 08:52:20.543  INFO 3872 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 08:52:20.543  INFO 3872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2365 ms
-2019-03-20 08:52:20.741  INFO 3872 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 08:52:20.742  WARN 3872 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 08:52:23.650  INFO 3872 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 08:52:23.734  INFO 3872 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 08:52:23.798  INFO 3872 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 08:52:23.799  INFO 3872 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 08:52:23.938  INFO 3872 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 08:52:24.555  INFO 3872 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 08:52:24.729  INFO 3872 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 08:52:25.638  INFO 3872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 08:52:25.676  WARN 3872 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 08:52:25.769  WARN 3872 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 08:52:26.258  INFO 3872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 08:52:26.325  INFO 3872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 08:52:26.330  INFO 3872 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 8.756 seconds (JVM running for 10.684)
-2019-03-20 08:52:29.117  INFO 3872 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 08:52:29.117  INFO 3872 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 08:52:29.124  INFO 3872 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2019-03-20 08:58:33.951  INFO 4124 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 4124 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 08:58:33.955  INFO 4124 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 08:58:34.010  INFO 4124 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 08:58:34.010  INFO 4124 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 08:58:34.889  INFO 4124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 08:58:34.931  INFO 4124 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35ms. Found 0 repository interfaces.
-2019-03-20 08:58:35.287  INFO 4124 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2293408f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 08:58:35.827  INFO 4124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 08:58:35.850  INFO 4124 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 08:58:35.850  INFO 4124 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 08:58:35.857  INFO 4124 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 08:58:36.041  INFO 4124 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 08:58:36.041  INFO 4124 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2031 ms
-2019-03-20 08:58:36.220  INFO 4124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 08:58:36.221  WARN 4124 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 08:58:38.943  INFO 4124 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 08:58:39.007  INFO 4124 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 08:58:39.081  INFO 4124 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 08:58:39.082  INFO 4124 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 08:58:39.220  INFO 4124 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 08:58:39.511  INFO 4124 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 08:58:39.716  INFO 4124 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 08:58:40.537  INFO 4124 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 08:58:40.599  WARN 4124 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 08:58:40.673  WARN 4124 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 08:58:41.052  INFO 4124 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 08:58:41.111  INFO 4124 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 08:58:41.114  INFO 4124 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 7.477 seconds (JVM running for 8.912)
-2019-03-20 08:58:48.555  INFO 4124 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 08:58:48.555  INFO 4124 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 08:58:48.564  INFO 4124 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2019-03-20 08:59:40.784  INFO 12504 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 12504 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 08:59:40.791  INFO 12504 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 08:59:40.873  INFO 12504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 08:59:40.874  INFO 12504 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 08:59:41.659  INFO 12504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 08:59:41.694  INFO 12504 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29ms. Found 0 repository interfaces.
-2019-03-20 08:59:41.972  INFO 12504 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d976d862] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 08:59:42.370  INFO 12504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 08:59:42.389  INFO 12504 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 08:59:42.390  INFO 12504 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 08:59:42.395  INFO 12504 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 08:59:42.538  INFO 12504 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 08:59:42.539  INFO 12504 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1664 ms
-2019-03-20 08:59:42.663  INFO 12504 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 08:59:42.663  WARN 12504 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 08:59:45.663  INFO 12504 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 08:59:45.727  INFO 12504 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 08:59:45.779  INFO 12504 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 08:59:45.780  INFO 12504 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 08:59:45.891  INFO 12504 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 08:59:46.095  INFO 12504 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 08:59:46.228  INFO 12504 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 08:59:46.911  INFO 12504 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 08:59:46.944  WARN 12504 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 08:59:47.018  WARN 12504 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 08:59:47.370  INFO 12504 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 08:59:47.422  INFO 12504 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 08:59:47.425  INFO 12504 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 7.129 seconds (JVM running for 9.704)
-2019-03-20 08:59:53.453  INFO 12504 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 08:59:53.453  INFO 12504 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 08:59:53.461  INFO 12504 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2019-03-20 09:00:42.588  INFO 12504 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : addResearcher:Researcher{rid=null, aid=7013, name='赵云', post='副教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img/001.png', personType=0, affiliatedTutor=-1, direction='大数据', introduction='大数据开发'}
-2019-03-20 09:01:11.609  INFO 12504 --- [http-nio-8081-exec-3] c.c.l.service.imp.ResearcherServiceImpl  : addResearcher:Researcher{rid=null, aid=6664, name='66', post='教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img/001.png', personType=0, affiliatedTutor=-1, direction='6', introduction='6'}
-2019-03-20 09:04:17.636  INFO 8612 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 8612 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 09:04:17.638  INFO 8612 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 09:04:17.722  INFO 8612 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 09:04:17.722  INFO 8612 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 09:04:18.513  INFO 8612 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 09:04:18.545  INFO 8612 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 repository interfaces.
-2019-03-20 09:04:18.834  INFO 8612 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$27bb3fba] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 09:04:19.283  INFO 8612 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 09:04:19.301  INFO 8612 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 09:04:19.301  INFO 8612 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 09:04:19.307  INFO 8612 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 09:04:19.447  INFO 8612 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 09:04:19.448  INFO 8612 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1724 ms
-2019-03-20 09:04:19.615  INFO 8612 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 09:04:19.616  WARN 8612 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 09:04:22.602  INFO 8612 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 09:04:22.673  INFO 8612 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 09:04:22.738  INFO 8612 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 09:04:22.739  INFO 8612 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 09:04:22.884  INFO 8612 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 09:04:23.572  INFO 8612 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 09:04:23.764  INFO 8612 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 09:04:24.668  INFO 8612 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 09:04:24.707  WARN 8612 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 09:04:24.811  WARN 8612 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 09:04:25.363  INFO 8612 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 09:04:25.428  INFO 8612 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 09:04:25.431  INFO 8612 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 8.233 seconds (JVM running for 9.746)
-2019-03-20 09:04:29.482  INFO 8612 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 09:04:29.483  INFO 8612 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 09:04:29.490  INFO 8612 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2019-03-20 09:04:47.378  INFO 8612 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:69
-2019-03-20 09:04:54.657  INFO 8612 --- [http-nio-8081-exec-7] c.c.l.service.imp.ResearcherServiceImpl  : updateResearcher:Researcher{rid=69, aid=12, name='zhangqi', post='硕士', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img/001.png', personType=null, affiliatedTutor=1, direction='1231', introduction='21321'}
-2019-03-20 09:05:04.638  INFO 8612 --- [http-nio-8081-exec-10] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:69
-2019-03-20 09:05:20.174  INFO 8612 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:40
-2019-03-20 09:05:49.569  INFO 8612 --- [http-nio-8081-exec-3] c.c.l.service.imp.ResearcherServiceImpl  : addResearcher:Researcher{rid=null, aid=245977, name='admin', post='博士', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img/001.png', personType=1, affiliatedTutor=6, direction='大数据', introduction='大佬'}
-2019-03-20 09:05:56.957  INFO 8612 --- [http-nio-8081-exec-6] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:74
-2019-03-20 09:06:06.758  INFO 8612 --- [http-nio-8081-exec-2] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:74
-2019-03-20 09:06:36.270  INFO 8612 --- [http-nio-8081-exec-4] c.c.l.service.imp.ResearcherServiceImpl  : addResearcher:Researcher{rid=null, aid=245999, name='zkk方法', post='教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img/001.png', personType=0, affiliatedTutor=-1, direction='大数据', introduction='一个大佬'}
-2019-03-20 09:06:36.466 ERROR 8612 --- [http-nio-8081-exec-4] com.csu.lab.exception.ExceptionHandle    : 【请求失败】Tutor Exist.
-2019-03-20 09:06:36.480  WARN 8612 --- [http-nio-8081-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.csu.lab.exception.ResearcherException: Tutor Exist.]
-2019-03-20 09:06:45.125  INFO 8612 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : addResearcher:Researcher{rid=null, aid=245999, name='zkk方法999', post='教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img/001.png', personType=0, affiliatedTutor=-1, direction='大数据', introduction='一个大佬'}
-2019-03-20 09:06:45.266 ERROR 8612 --- [http-nio-8081-exec-5] com.csu.lab.exception.ExceptionHandle    : 【请求失败】Tutor Exist.
-2019-03-20 09:06:45.268  WARN 8612 --- [http-nio-8081-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.csu.lab.exception.ResearcherException: Tutor Exist.]
-2019-03-20 09:07:02.341  INFO 8612 --- [http-nio-8081-exec-2] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:73
-2019-03-20 09:07:25.039  INFO 8612 --- [http-nio-8081-exec-1] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:59
-2019-03-20 09:08:46.992  INFO 5688 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 5688 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 09:08:46.996  INFO 5688 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 09:08:47.059  INFO 5688 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 09:08:47.059  INFO 5688 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 09:08:47.832  INFO 5688 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 09:08:47.866  INFO 5688 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 0 repository interfaces.
-2019-03-20 09:08:48.161  INFO 5688 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8d9c534] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 09:08:48.565  INFO 5688 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 09:08:48.586  INFO 5688 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 09:08:48.586  INFO 5688 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 09:08:48.592  INFO 5688 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 09:08:48.767  INFO 5688 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 09:08:48.767  INFO 5688 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1707 ms
-2019-03-20 09:08:48.938  INFO 5688 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 09:08:48.939  WARN 5688 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 09:08:50.772  INFO 5688 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 09:08:50.854  INFO 5688 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 09:08:50.918  INFO 5688 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 09:08:50.920  INFO 5688 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 09:08:51.058  INFO 5688 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 09:08:51.348  INFO 5688 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 09:08:51.527  INFO 5688 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 09:08:52.397  INFO 5688 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 09:08:52.437  WARN 5688 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 09:08:52.533  WARN 5688 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 09:08:53.007  INFO 5688 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 09:08:53.072  INFO 5688 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 09:08:53.075  INFO 5688 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 6.506 seconds (JVM running for 8.056)
-2019-03-20 09:08:56.436  INFO 5688 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 09:08:56.437  INFO 5688 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 09:08:56.448  INFO 5688 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
-2019-03-20 09:10:15.693  INFO 5688 --- [http-nio-8081-exec-9] c.c.l.service.imp.ResearcherServiceImpl  : addResearcher:Researcher{rid=null, aid=11111166, name='admin', post='教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img/001.png', personType=0, affiliatedTutor=-1, direction='6', introduction='6'}
-2019-03-20 09:10:30.047  INFO 5688 --- [http-nio-8081-exec-9] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:72
-2019-03-20 09:10:40.021  INFO 5688 --- [http-nio-8081-exec-4] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 09:15:57.428  INFO 5432 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 5432 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 09:15:57.431  INFO 5432 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 09:15:57.509  INFO 5432 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 09:15:57.509  INFO 5432 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 09:15:58.253  INFO 5432 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 09:15:58.287  INFO 5432 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 0 repository interfaces.
-2019-03-20 09:15:58.583  INFO 5432 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$eda53a04] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 09:15:58.990  INFO 5432 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 09:15:59.009  INFO 5432 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 09:15:59.009  INFO 5432 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 09:15:59.015  INFO 5432 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 09:15:59.159  INFO 5432 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 09:15:59.159  INFO 5432 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1650 ms
-2019-03-20 09:15:59.293  INFO 5432 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 09:15:59.294  WARN 5432 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 09:15:59.881  INFO 5432 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 09:15:59.964  INFO 5432 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 09:16:00.022  INFO 5432 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 09:16:00.023  INFO 5432 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 09:16:00.138  INFO 5432 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 09:16:00.347  INFO 5432 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 09:16:00.487  INFO 5432 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 09:16:01.239  INFO 5432 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 09:16:01.270  WARN 5432 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 09:16:01.345  WARN 5432 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 09:16:01.704  INFO 5432 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 09:16:01.758  INFO 5432 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 09:16:01.761  INFO 5432 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 4.773 seconds (JVM running for 6.27)
-2019-03-20 09:16:18.576  INFO 5432 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 09:16:18.577  INFO 5432 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 09:16:18.585  INFO 5432 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2019-03-20 09:16:28.061  INFO 5432 --- [http-nio-8081-exec-10] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 09:18:30.254  INFO 9784 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 9784 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 09:18:30.258  INFO 9784 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 09:18:30.330  INFO 9784 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 09:18:30.330  INFO 9784 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 09:18:31.152  INFO 9784 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 09:18:31.189  INFO 9784 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31ms. Found 0 repository interfaces.
-2019-03-20 09:18:31.469  INFO 9784 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bd641fb0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 09:18:31.843  INFO 9784 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 09:18:31.861  INFO 9784 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 09:18:31.861  INFO 9784 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 09:18:31.868  INFO 9784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 09:18:32.026  INFO 9784 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 09:18:32.027  INFO 9784 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1696 ms
-2019-03-20 09:18:32.160  INFO 9784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 09:18:32.161  WARN 9784 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 09:18:33.778  INFO 9784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 09:18:33.838  INFO 9784 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 09:18:33.905  INFO 9784 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 09:18:33.906  INFO 9784 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 09:18:34.044  INFO 9784 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 09:18:34.345  INFO 9784 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 09:18:34.536  INFO 9784 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 09:18:35.418  INFO 9784 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 09:18:35.457  WARN 9784 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 09:18:35.553  WARN 9784 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 09:18:36.047  INFO 9784 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 09:18:36.128  INFO 9784 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 09:18:36.131  INFO 9784 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 6.288 seconds (JVM running for 7.765)
-2019-03-20 09:18:42.406  INFO 9784 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 09:18:42.406  INFO 9784 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 09:18:42.415  INFO 9784 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
-2019-03-20 09:18:59.337  INFO 9784 --- [http-nio-8081-exec-1] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 09:19:03.063 ERROR 9784 --- [http-nio-8081-exec-3] com.csu.lab.exception.ExceptionHandle    : 【系统异常】java.io.FileNotFoundException: F:\xuxin_Project\Lab\lab\target\classes\static\img (拒绝访问。)
-2019-03-20 09:19:03.078  WARN 9784 --- [http-nio-8081-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.io.IOException: java.io.FileNotFoundException: F:\xuxin_Project\Lab\lab\target\classes\static\img (拒绝访问。)]
-2019-03-20 09:19:30.595  INFO 9784 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 09:19:39.480  INFO 9784 --- [http-nio-8081-exec-2] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 09:19:42.927 ERROR 9784 --- [http-nio-8081-exec-4] com.csu.lab.exception.ExceptionHandle    : 【系统异常】java.io.FileNotFoundException: F:\xuxin_Project\Lab\lab\target\classes\static\img (拒绝访问。)
-2019-03-20 09:19:42.927  WARN 9784 --- [http-nio-8081-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.io.IOException: java.io.FileNotFoundException: F:\xuxin_Project\Lab\lab\target\classes\static\img (拒绝访问。)]
-2019-03-20 09:21:59.097  INFO 15752 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 15752 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 09:21:59.103  INFO 15752 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 09:21:59.205  INFO 15752 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 09:21:59.206  INFO 15752 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 09:22:00.015  INFO 15752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 09:22:00.050  INFO 15752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30ms. Found 0 repository interfaces.
-2019-03-20 09:22:00.343  INFO 15752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$de1d6cea] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 09:22:00.774  INFO 15752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 09:22:00.794  INFO 15752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 09:22:00.795  INFO 15752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 09:22:00.801  INFO 15752 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 09:22:00.947  INFO 15752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 09:22:00.948  INFO 15752 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1741 ms
-2019-03-20 09:22:01.106  INFO 15752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 09:22:01.107  WARN 15752 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 09:22:02.762  INFO 15752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 09:22:02.837  INFO 15752 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 09:22:02.905  INFO 15752 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 09:22:02.907  INFO 15752 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 09:22:03.050  INFO 15752 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 09:22:03.350  INFO 15752 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 09:22:03.531  INFO 15752 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 09:22:04.443  INFO 15752 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 09:22:04.483  WARN 15752 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 09:22:04.584  WARN 15752 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 09:22:05.054  INFO 15752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 09:22:05.124  INFO 15752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 09:22:05.127  INFO 15752 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 6.542 seconds (JVM running for 8.23)
-2019-03-20 09:22:13.916  INFO 15752 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 09:22:13.916  INFO 15752 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 09:22:13.923  INFO 15752 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2019-03-20 09:22:21.343  INFO 15752 --- [http-nio-8081-exec-10] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 09:22:26.835 ERROR 15752 --- [http-nio-8081-exec-3] com.csu.lab.exception.ExceptionHandle    : 【系统异常】java.io.FileNotFoundException: F:\xuxin_Project\Lab\lab\target\classes\static\img (拒绝访问。)
-2019-03-20 09:22:26.848  WARN 15752 --- [http-nio-8081-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.io.IOException: java.io.FileNotFoundException: F:\xuxin_Project\Lab\lab\target\classes\static\img (拒绝访问。)]
-2019-03-20 09:23:33.575  INFO 15752 --- [http-nio-8081-exec-1] c.c.l.service.imp.ResearcherServiceImpl  : addResearcher:Researcher{rid=null, aid=245777, name='admin', post='副教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001.png', personType=0, affiliatedTutor=-1, direction='大数据', introduction='大佬'}
-2019-03-20 09:28:02.399  INFO 10996 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 10996 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 09:28:02.403  INFO 10996 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 09:28:02.487  INFO 10996 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 09:28:02.487  INFO 10996 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 09:28:03.360  INFO 10996 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 09:28:03.393  INFO 10996 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 repository interfaces.
-2019-03-20 09:28:03.686  INFO 10996 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$37e86035] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 09:28:04.188  INFO 10996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 09:28:04.212  INFO 10996 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 09:28:04.212  INFO 10996 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 09:28:04.220  INFO 10996 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 09:28:04.401  INFO 10996 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 09:28:04.402  INFO 10996 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1915 ms
-2019-03-20 09:28:04.596  INFO 10996 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 09:28:04.597  WARN 10996 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 09:28:05.155  INFO 10996 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 09:28:05.238  INFO 10996 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 09:28:05.302  INFO 10996 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 09:28:05.304  INFO 10996 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 09:28:05.446  INFO 10996 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 09:28:05.764  INFO 10996 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 09:28:05.943  INFO 10996 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 09:28:06.898  INFO 10996 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 09:28:06.940  WARN 10996 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 09:28:07.039  WARN 10996 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 09:28:07.501  INFO 10996 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 09:28:07.568  INFO 10996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 09:28:07.571  INFO 10996 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 5.637 seconds (JVM running for 7.089)
-2019-03-20 09:28:10.322  INFO 10996 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 09:28:10.322  INFO 10996 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 09:28:10.331  INFO 10996 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2019-03-20 09:28:40.582  INFO 10996 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : addResearcher:Researcher{rid=null, aid=245787, name='徐鑫', post='讲师', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001.png', personType=0, affiliatedTutor=-1, direction='大数据', introduction='lll'}
-2019-03-20 09:28:49.856  INFO 10996 --- [http-nio-8081-exec-10] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:84
-2019-03-20 09:28:56.292 ERROR 10996 --- [http-nio-8081-exec-2] com.csu.lab.exception.ExceptionHandle    : 【系统异常】java.io.FileNotFoundException: F:\xuxin_Project\Lab\lab\target\classes\static\img (拒绝访问。)
-2019-03-20 09:28:56.304  WARN 10996 --- [http-nio-8081-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.io.IOException: java.io.FileNotFoundException: F:\xuxin_Project\Lab\lab\target\classes\static\img (拒绝访问。)]
-2019-03-20 09:34:40.921  INFO 10996 --- [http-nio-8081-exec-6] c.c.l.service.imp.ResearcherServiceImpl  : updateResearcher:Researcher{rid=84, aid=245787, name='张三', post='讲师', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001.png', personType=null, affiliatedTutor=-1, direction='大数据', introduction='lll'}
-2019-03-20 09:34:50.144  INFO 10996 --- [http-nio-8081-exec-6] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 09:34:56.926  INFO 10996 --- [http-nio-8081-exec-9] c.c.l.service.imp.ResearcherServiceImpl  : updateResearcher:Researcher{rid=37, aid=111114, name='zkk', post='教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001.png', personType=null, affiliatedTutor=-1, direction='大数据', introduction='大佬大佬大佬'}
-2019-03-20 09:41:03.540  INFO 4156 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 4156 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 09:41:03.544  INFO 4156 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 09:41:03.616  INFO 4156 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 09:41:03.617  INFO 4156 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 09:41:04.460  INFO 4156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 09:41:04.498  INFO 4156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31ms. Found 0 repository interfaces.
-2019-03-20 09:41:04.775  INFO 4156 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$792e41ea] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 09:41:05.184  INFO 4156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 09:41:05.202  INFO 4156 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 09:41:05.202  INFO 4156 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 09:41:05.208  INFO 4156 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 09:41:05.380  INFO 4156 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 09:41:05.380  INFO 4156 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1763 ms
-2019-03-20 09:41:05.560  INFO 4156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 09:41:05.561  WARN 4156 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 09:41:06.945  INFO 4156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 09:41:07.031  INFO 4156 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 09:41:07.096  INFO 4156 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 09:41:07.097  INFO 4156 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 09:41:07.265  INFO 4156 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 09:41:07.598  INFO 4156 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 09:41:07.812  INFO 4156 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 09:41:08.716  INFO 4156 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 09:41:08.760  WARN 4156 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 09:41:08.872  WARN 4156 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 09:41:09.382  INFO 4156 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 09:41:09.448  INFO 4156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 09:41:09.451  INFO 4156 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 6.321 seconds (JVM running for 7.847)
-2019-03-20 09:41:14.520  INFO 4156 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 09:41:14.520  INFO 4156 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 09:41:14.527  INFO 4156 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2019-03-20 09:41:26.932  INFO 4156 --- [http-nio-8081-exec-1] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 09:41:31.610  INFO 4156 --- [http-nio-8081-exec-3] c.c.l.service.imp.ResearcherServiceImpl  : updateResearcher:Researcher{rid=37, aid=111114, name='zkk', post='副教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001.png', personType=null, affiliatedTutor=-1, direction='大数据', introduction='大佬大佬大佬'}
-2019-03-20 09:41:36.197  INFO 4156 --- [http-nio-8081-exec-6] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 09:41:40.757  INFO 4156 --- [http-nio-8081-exec-9] c.c.l.service.imp.ResearcherServiceImpl  : updateResearcher:Researcher{rid=37, aid=111114, name='zkk', post='副教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001.png', personType=null, affiliatedTutor=-1, direction='大数据', introduction='大佬大佬大佬'}
-2019-03-20 09:41:43.372  INFO 4156 --- [http-nio-8081-exec-2] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 09:41:49.571  INFO 4156 --- [http-nio-8081-exec-4] c.c.l.service.imp.ResearcherServiceImpl  : updateResearcher:Researcher{rid=37, aid=111114, name='zkk', post='副教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001.png', personType=null, affiliatedTutor=-1, direction='大数据', introduction='大佬大佬大佬'}
-2019-03-20 09:42:09.856  INFO 4156 --- [http-nio-8081-exec-8] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 09:42:16.590  INFO 4156 --- [http-nio-8081-exec-10] c.c.l.service.imp.ResearcherServiceImpl  : updateResearcher:Researcher{rid=37, aid=111114, name='zkk方法999', post='副教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001.png', personType=null, affiliatedTutor=-1, direction='大数据', introduction='大佬大佬大佬'}
-2019-03-20 09:42:28.750  INFO 4156 --- [http-nio-8081-exec-4] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 09:42:37.602  INFO 4156 --- [http-nio-8081-exec-6] c.c.l.service.imp.ResearcherServiceImpl  : updateResearcher:Researcher{rid=37, aid=111114, name='zkk', post='副教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001.png', personType=null, affiliatedTutor=-1, direction='大数据', introduction='大佬大佬大佬'}
-2019-03-20 09:45:51.527  INFO 15672 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 15672 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 09:45:51.533  INFO 15672 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 09:45:51.624  INFO 15672 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 09:45:51.625  INFO 15672 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 09:45:52.461  INFO 15672 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 09:45:52.495  INFO 15672 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 repository interfaces.
-2019-03-20 09:45:52.844  INFO 15672 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$638d03a2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 09:45:53.387  INFO 15672 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 09:45:53.409  INFO 15672 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 09:45:53.409  INFO 15672 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 09:45:53.416  INFO 15672 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 09:45:53.603  INFO 15672 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 09:45:53.604  INFO 15672 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1979 ms
-2019-03-20 09:45:53.782  INFO 15672 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 09:45:53.784  WARN 15672 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 09:45:56.632  INFO 15672 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 09:45:56.711  INFO 15672 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 09:45:56.776  INFO 15672 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 09:45:56.777  INFO 15672 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 09:45:56.914  INFO 15672 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 09:45:57.587  INFO 15672 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 09:45:57.769  INFO 15672 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 09:45:58.670  INFO 15672 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 09:45:58.713  WARN 15672 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 09:45:58.823  WARN 15672 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 09:45:59.322  INFO 15672 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 09:45:59.387  INFO 15672 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 09:45:59.390  INFO 15672 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 8.304 seconds (JVM running for 9.815)
-2019-03-20 09:46:05.413  INFO 15672 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 09:46:05.413  INFO 15672 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 09:46:05.423  INFO 15672 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
-2019-03-20 09:47:38.087  INFO 15672 --- [http-nio-8081-exec-3] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 09:47:43.323  INFO 15672 --- [http-nio-8081-exec-6] c.c.l.service.imp.ResearcherServiceImpl  : updateResearcher:Researcher{rid=37, aid=111114, name='zkk方法', post='副教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001.png', personType=null, affiliatedTutor=-1, direction='大数据', introduction='大佬大佬大佬'}
-2019-03-20 09:47:51.181  INFO 15672 --- [http-nio-8081-exec-9] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 09:48:07.093  INFO 15672 --- [http-nio-8081-exec-1] c.c.l.service.imp.ResearcherServiceImpl  : updateResearcher:Researcher{rid=37, aid=111114, name='zkk', post='副教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001.png', personType=null, affiliatedTutor=-1, direction='大数据', introduction='大佬大佬大佬'}
-2019-03-20 09:48:09.740  INFO 15672 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 09:48:15.571  INFO 15672 --- [http-nio-8081-exec-7] c.c.l.service.imp.ResearcherServiceImpl  : updateResearcher:Researcher{rid=37, aid=111114, name='zkk', post='副教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001 - 副本.png', personType=null, affiliatedTutor=-1, direction='大数据', introduction='大佬大佬大佬'}
-2019-03-20 09:49:04.711  INFO 15672 --- [http-nio-8081-exec-7] c.c.l.service.imp.ResearcherServiceImpl  : addResearcher:Researcher{rid=null, aid=87878, name='徐鑫', post='硕士', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001.png', personType=1, affiliatedTutor=6, direction='大数据', introduction='理论'}
-2019-03-20 09:49:10.671  INFO 15672 --- [http-nio-8081-exec-3] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:85
-2019-03-20 09:49:24.445  INFO 15672 --- [http-nio-8081-exec-1] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:85
-2019-03-20 09:54:44.574  INFO 8436 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 8436 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 09:54:44.577  INFO 8436 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 09:54:44.648  INFO 8436 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 09:54:44.649  INFO 8436 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 09:54:45.377  INFO 8436 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 09:54:45.410  INFO 8436 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 repository interfaces.
-2019-03-20 09:54:45.692  INFO 8436 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3c17e2b9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 09:54:46.087  INFO 8436 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 09:54:46.105  INFO 8436 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 09:54:46.106  INFO 8436 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 09:54:46.110  INFO 8436 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 09:54:46.258  INFO 8436 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 09:54:46.258  INFO 8436 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1609 ms
-2019-03-20 09:54:46.397  INFO 8436 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 09:54:46.398  WARN 8436 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 09:54:46.975  INFO 8436 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 09:54:47.057  INFO 8436 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 09:54:47.125  INFO 8436 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 09:54:47.126  INFO 8436 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 09:54:47.263  INFO 8436 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 09:54:47.548  INFO 8436 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 09:54:47.722  INFO 8436 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 09:54:48.628  INFO 8436 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 09:54:48.683  WARN 8436 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 09:54:48.792  WARN 8436 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 09:54:49.280  INFO 8436 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 09:54:49.344  INFO 8436 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 09:54:49.347  INFO 8436 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 5.188 seconds (JVM running for 6.828)
-2019-03-20 09:55:01.579  INFO 8436 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 09:55:01.580  INFO 8436 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 09:55:01.589  INFO 8436 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
-2019-03-20 09:55:49.277 ERROR 8436 --- [http-nio-8081-exec-5] com.csu.lab.exception.ExceptionHandle    : 【系统异常】java.io.FileNotFoundException: F:\xuxin_Project\Lab\lab\target\classes\static\img (拒绝访问。)
-2019-03-20 09:55:49.289  WARN 8436 --- [http-nio-8081-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.io.IOException: java.io.FileNotFoundException: F:\xuxin_Project\Lab\lab\target\classes\static\img (拒绝访问。)]
-2019-03-20 09:56:01.292  INFO 8436 --- [http-nio-8081-exec-7] c.c.l.service.imp.ResearcherServiceImpl  : addResearcher:Researcher{rid=null, aid=11, name='测试_01', post='本科', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001.png', personType=1, affiliatedTutor=1, direction='测试_01', introduction='测试_01'}
-2019-03-20 09:56:14.557  INFO 8436 --- [http-nio-8081-exec-10] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:86
-2019-03-20 09:56:19.584  INFO 8436 --- [http-nio-8081-exec-2] c.c.l.service.imp.ResearcherServiceImpl  : updateResearcher:Researcher{rid=86, aid=11, name='测试_011', post='本科', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001.png', personType=null, affiliatedTutor=1, direction='测试_01', introduction='测试_01'}
-2019-03-20 09:56:25.382  INFO 8436 --- [http-nio-8081-exec-9] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:86
-2019-03-20 09:56:30.605  INFO 8436 --- [http-nio-8081-exec-1] c.c.l.service.imp.ResearcherServiceImpl  : updateResearcher:Researcher{rid=86, aid=11, name='测试_011', post='本科', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001 - 副本.png', personType=null, affiliatedTutor=1, direction='测试_01', introduction='测试_01'}
-2019-03-20 10:03:38.599  INFO 3076 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 3076 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 10:03:38.605  INFO 3076 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 10:03:38.700  INFO 3076 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 10:03:38.700  INFO 3076 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 10:03:39.611  INFO 3076 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 10:03:39.645  INFO 3076 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 0 repository interfaces.
-2019-03-20 10:03:39.915  INFO 3076 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$de8c04f3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 10:03:40.312  INFO 3076 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 10:03:40.336  INFO 3076 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 10:03:40.337  INFO 3076 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 10:03:40.343  INFO 3076 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 10:03:40.534  INFO 3076 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 10:03:40.535  INFO 3076 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1834 ms
-2019-03-20 10:03:40.720  INFO 3076 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 10:03:40.721  WARN 3076 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 10:03:41.930  INFO 3076 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 10:03:42.030  INFO 3076 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 10:03:42.110  INFO 3076 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 10:03:42.111  INFO 3076 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 10:03:42.255  INFO 3076 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 10:03:42.558  INFO 3076 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 10:03:42.753  INFO 3076 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 10:03:43.629  INFO 3076 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 10:03:43.668  WARN 3076 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 10:03:43.759  WARN 3076 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 10:03:44.254  INFO 3076 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 10:03:44.318  INFO 3076 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 10:03:44.321  INFO 3076 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 6.254 seconds (JVM running for 7.798)
-2019-03-20 10:03:50.888  INFO 3076 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 10:03:50.889  INFO 3076 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 10:03:50.899  INFO 3076 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
-2019-03-20 10:04:01.568  INFO 3076 --- [http-nio-8081-exec-1] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 10:04:06.602  INFO 3076 --- [http-nio-8081-exec-3] c.c.l.service.imp.ResearcherServiceImpl  : updateResearcher:Researcher{rid=37, aid=111114, name='zkk', post='副教授', image='/F:/xuxin_Project/Lab/lab/target/classes/static/img001.png', personType=null, affiliatedTutor=-1, direction='大数据', introduction='大佬大佬大佬'}
-2019-03-20 10:04:45.578  INFO 8164 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 8164 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 10:04:45.582  INFO 8164 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 10:04:45.666  INFO 8164 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 10:04:45.666  INFO 8164 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 10:04:46.604  INFO 8164 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 10:04:46.638  INFO 8164 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 0 repository interfaces.
-2019-03-20 10:04:46.932  INFO 8164 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f068eff6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 10:04:47.339  INFO 8164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 10:04:47.371  INFO 8164 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 10:04:47.371  INFO 8164 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 10:04:47.382  INFO 8164 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 10:04:47.533  INFO 8164 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 10:04:47.534  INFO 8164 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1868 ms
-2019-03-20 10:04:47.690  INFO 8164 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 10:04:47.691  WARN 8164 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 10:04:50.603  INFO 8164 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 10:04:50.667  INFO 8164 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 10:04:50.733  INFO 8164 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 10:04:50.734  INFO 8164 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 10:04:50.888  INFO 8164 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 10:04:51.575  INFO 8164 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 10:04:51.835  INFO 8164 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 10:04:52.961  INFO 8164 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 10:04:52.999  WARN 8164 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 10:04:53.095  WARN 8164 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 10:04:53.547  INFO 8164 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 10:04:53.615  INFO 8164 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 10:04:53.618  INFO 8164 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 8.603 seconds (JVM running for 10.225)
-2019-03-20 14:02:23.075  INFO 13928 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on DESKTOP-9LM98U5 with PID 13928 (C:\Users\DaShu\IdeaProjects\lab\target\classes started by DaShu in C:\Users\DaShu\IdeaProjects\lab)
-2019-03-20 14:02:23.078  INFO 13928 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 14:02:23.137  INFO 13928 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 14:02:23.137  INFO 13928 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 14:02:24.097  INFO 13928 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 14:02:24.137  INFO 13928 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34ms. Found 0 repository interfaces.
-2019-03-20 14:02:24.460  INFO 13928 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$49e5a4d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 14:02:24.848  INFO 13928 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 14:02:24.870  INFO 13928 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 14:02:24.871  INFO 13928 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 14:02:24.877  INFO 13928 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\CTEX\UserData\miktex\bin;C:\CTEX\MiKTeX\miktex\bin;C:\CTEX\CTeX\ctex\bin;C:\CTEX\CTeX\cct\bin;C:\CTEX\CTeX\ty\bin;C:\CTEX\Ghostscript\gs9.05\bin;C:\CTEX\GSview\gsview;C:\CTEX\WinEdt;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Program Files\Java\jdk1.8.0_191\jre\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Apache Software Foundation\apache-maven-3.6.0\bin;C:\Users\DaShu\AppData\Local\Programs\Python\Python37;C:\Program Files\Apache Software Foundation\groovy-2.5.6\bin;C:\Users\DaShu\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\DaShu\AppData\Local\Programs\Python\Python37\;C:\Users\DaShu\AppData\Local\Microsoft\WindowsApps;;C:\Users\DaShu\AppData\Local\Programs\Microsoft VS Code\bin;.]
-2019-03-20 14:02:25.004  INFO 13928 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 14:02:25.005  INFO 13928 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1868 ms
-2019-03-20 14:02:25.170  INFO 13928 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 14:02:25.171  WARN 13928 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 14:02:25.694  INFO 13928 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 14:02:25.814  INFO 13928 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 14:02:25.910  INFO 13928 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 14:02:25.911  INFO 13928 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 14:02:26.045  INFO 13928 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 14:02:27.207  INFO 13928 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 14:02:27.369  INFO 13928 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 14:02:28.362  INFO 13928 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 14:02:28.394  WARN 13928 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 14:02:28.468  WARN 13928 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 14:02:28.819  INFO 13928 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 14:02:28.873  INFO 13928 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 14:02:28.876  INFO 13928 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 6.213 seconds (JVM running for 7.331)
-2019-03-20 14:02:40.208  INFO 13928 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 14:02:40.208  INFO 13928 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 14:02:40.217  INFO 13928 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2019-03-20 14:02:56.383  INFO 13928 --- [http-nio-8081-exec-1] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 14:08:33.019  INFO 12212 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on DESKTOP-9LM98U5 with PID 12212 (C:\Users\DaShu\IdeaProjects\lab\target\classes started by DaShu in C:\Users\DaShu\IdeaProjects\lab)
-2019-03-20 14:08:33.022  INFO 12212 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 14:08:33.081  INFO 12212 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 14:08:33.082  INFO 12212 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 14:08:33.875  INFO 12212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 14:08:33.914  INFO 12212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33ms. Found 0 repository interfaces.
-2019-03-20 14:08:34.185  INFO 12212 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1320135a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 14:08:34.507  INFO 12212 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 14:08:34.526  INFO 12212 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 14:08:34.527  INFO 12212 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 14:08:34.532  INFO 12212 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\CTEX\UserData\miktex\bin;C:\CTEX\MiKTeX\miktex\bin;C:\CTEX\CTeX\ctex\bin;C:\CTEX\CTeX\cct\bin;C:\CTEX\CTeX\ty\bin;C:\CTEX\Ghostscript\gs9.05\bin;C:\CTEX\GSview\gsview;C:\CTEX\WinEdt;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Program Files\Java\jdk1.8.0_191\jre\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Apache Software Foundation\apache-maven-3.6.0\bin;C:\Users\DaShu\AppData\Local\Programs\Python\Python37;C:\Program Files\Apache Software Foundation\groovy-2.5.6\bin;C:\Users\DaShu\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\DaShu\AppData\Local\Programs\Python\Python37\;C:\Users\DaShu\AppData\Local\Microsoft\WindowsApps;;C:\Users\DaShu\AppData\Local\Programs\Microsoft VS Code\bin;.]
-2019-03-20 14:08:34.646  INFO 12212 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 14:08:34.647  INFO 12212 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1564 ms
-2019-03-20 14:08:34.783  INFO 12212 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 14:08:34.784  WARN 12212 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 14:08:37.224  INFO 12212 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 14:08:37.276  INFO 12212 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 14:08:37.326  INFO 12212 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 14:08:37.327  INFO 12212 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 14:08:37.429  INFO 12212 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 14:08:37.679  INFO 12212 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 14:08:37.815  INFO 12212 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 14:08:38.491  INFO 12212 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 14:08:38.524  WARN 12212 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 14:08:38.601  WARN 12212 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 14:08:38.934  INFO 12212 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 14:08:38.984  INFO 12212 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 14:08:38.987  INFO 12212 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 6.306 seconds (JVM running for 7.17)
-2019-03-20 14:08:46.141  INFO 12212 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 14:08:46.141  INFO 12212 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 14:08:46.149  INFO 12212 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2019-03-20 14:11:02.017  INFO 8084 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on DESKTOP-9LM98U5 with PID 8084 (C:\Users\DaShu\IdeaProjects\lab\target\classes started by DaShu in C:\Users\DaShu\IdeaProjects\lab)
-2019-03-20 14:11:02.021  INFO 8084 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 14:11:02.078  INFO 8084 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 14:11:02.078  INFO 8084 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 14:11:02.885  INFO 8084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 14:11:02.924  INFO 8084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33ms. Found 0 repository interfaces.
-2019-03-20 14:11:03.199  INFO 8084 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5f3fab31] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 14:11:03.522  INFO 8084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 14:11:03.543  INFO 8084 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 14:11:03.543  INFO 8084 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 14:11:03.548  INFO 8084 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\CTEX\UserData\miktex\bin;C:\CTEX\MiKTeX\miktex\bin;C:\CTEX\CTeX\ctex\bin;C:\CTEX\CTeX\cct\bin;C:\CTEX\CTeX\ty\bin;C:\CTEX\Ghostscript\gs9.05\bin;C:\CTEX\GSview\gsview;C:\CTEX\WinEdt;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Program Files\Java\jdk1.8.0_191\jre\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Apache Software Foundation\apache-maven-3.6.0\bin;C:\Users\DaShu\AppData\Local\Programs\Python\Python37;C:\Program Files\Apache Software Foundation\groovy-2.5.6\bin;C:\Users\DaShu\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\DaShu\AppData\Local\Programs\Python\Python37\;C:\Users\DaShu\AppData\Local\Microsoft\WindowsApps;;C:\Users\DaShu\AppData\Local\Programs\Microsoft VS Code\bin;.]
-2019-03-20 14:11:03.662  INFO 8084 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 14:11:03.663  INFO 8084 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1585 ms
-2019-03-20 14:11:03.803  INFO 8084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 14:11:03.804  WARN 8084 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2019-03-20 14:11:06.291  INFO 8084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 14:11:06.345  INFO 8084 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 14:11:06.396  INFO 8084 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 14:11:06.397  INFO 8084 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 14:11:06.502  INFO 8084 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 14:11:06.748  INFO 8084 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 14:11:06.885  INFO 8084 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 14:11:07.552  INFO 8084 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 14:11:07.583  WARN 8084 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 14:11:07.668  WARN 8084 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 14:11:08.061  INFO 8084 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 14:11:08.115  INFO 8084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 14:11:08.118  INFO 8084 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 6.493 seconds (JVM running for 7.343)
-2019-03-20 14:11:14.577  INFO 8084 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 14:11:14.577  INFO 8084 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 14:11:14.585  INFO 8084 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2019-03-20 14:58:25.260  INFO 5624 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on AFOHQ-703111641 with PID 5624 (F:\xuxin_Project\Lab\lab\target\classes started by Administrator in F:\xuxin_Project\Lab\lab)
-2019-03-20 14:58:25.265  INFO 5624 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 14:58:25.356  INFO 5624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 14:58:25.356  INFO 5624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 14:58:26.420  INFO 5624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 14:58:26.470  INFO 5624 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41ms. Found 0 repository interfaces.
-2019-03-20 14:58:26.849  INFO 5624 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5a66bf98] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 14:58:27.367  INFO 5624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 14:58:27.391  INFO 5624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 14:58:27.391  INFO 5624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 14:58:27.398  INFO 5624 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [E:\JAVA\JDK\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;E:\CTEX\UserData\miktex\bin;E:\CTEX\MiKTeX\miktex\bin;E:\CTEX\CTeX\ctex\bin;E:\CTEX\CTeX\cct\bin;E:\CTEX\CTeX\ty\bin;E:\CTEX\Ghostscript\gs9.05\bin;E:\CTEX\GSview\gsview;E:\CTEX\WinEdt;E:\JAVA\JDK\bin;E:\JAVA\JDK\jre\bin;E:\JAVA\JDK\lib\tools.jar;E:\JAVA\JDK\lib\dt.jar;E:\Anaconda3;E:\Anaconda3\Scripts;E:\Anaconda3\Library;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;E:\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Program Files\Git;C:\Program Files\VisualSVN Server\bin;E:\TortoiseSVN\bin;E:\SPSS24\JRE\bin;C:\Program Files\Microsoft VS Code\bin;E:\gradle-4.3.1\bin;F:\Hadoop\hadoop-2.9.2\bin;E:\nodejs\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python37\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;.]
-2019-03-20 14:58:27.620  INFO 5624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 14:58:27.620  INFO 5624 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2264 ms
-2019-03-20 14:58:27.784  INFO 5624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 14:58:29.719  INFO 5624 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 14:58:29.783  INFO 5624 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 14:58:29.851  INFO 5624 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 14:58:29.852  INFO 5624 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 14:58:29.995  INFO 5624 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 14:58:30.625  INFO 5624 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 14:58:30.822  INFO 5624 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 14:58:31.961  INFO 5624 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 14:58:32.009  WARN 5624 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 14:58:32.110  WARN 5624 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 14:58:32.576  INFO 5624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 14:58:32.646  INFO 5624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 14:58:32.650  INFO 5624 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 7.981 seconds (JVM running for 10.01)
-2019-03-20 14:58:32.894  INFO 5624 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 14:58:32.894  INFO 5624 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 14:58:32.904  INFO 5624 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
-2019-03-20 14:58:53.528  INFO 5624 --- [http-nio-8081-exec-3] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 14:58:59.101  INFO 5624 --- [http-nio-8081-exec-10] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
-2019-03-20 18:24:29.429  INFO 3268 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on DESKTOP-9LM98U5 with PID 3268 (C:\Users\DaShu\IdeaProjects\lab\target\classes started by DaShu in C:\Users\DaShu\IdeaProjects\lab)
-2019-03-20 18:24:29.433  INFO 3268 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
-2019-03-20 18:24:29.493  INFO 3268 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-03-20 18:24:29.493  INFO 3268 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-03-20 18:24:30.226  INFO 3268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-03-20 18:24:30.264  INFO 3268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31ms. Found 0 repository interfaces.
-2019-03-20 18:24:30.578  INFO 3268 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f3dd3a73] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-20 18:24:30.928  INFO 3268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-2019-03-20 18:24:30.946  INFO 3268 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-20 18:24:30.947  INFO 3268 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
-2019-03-20 18:24:30.953  INFO 3268 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\CTEX\UserData\miktex\bin;C:\CTEX\MiKTeX\miktex\bin;C:\CTEX\CTeX\ctex\bin;C:\CTEX\CTeX\cct\bin;C:\CTEX\CTeX\ty\bin;C:\CTEX\Ghostscript\gs9.05\bin;C:\CTEX\GSview\gsview;C:\CTEX\WinEdt;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Program Files\Java\jdk1.8.0_191\jre\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Apache Software Foundation\apache-maven-3.6.0\bin;C:\Users\DaShu\AppData\Local\Programs\Python\Python37;C:\Program Files\Apache Software Foundation\groovy-2.5.6\bin;C:\Users\DaShu\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\DaShu\AppData\Local\Programs\Python\Python37\;C:\Users\DaShu\AppData\Local\Microsoft\WindowsApps;;C:\Users\DaShu\AppData\Local\Programs\Microsoft VS Code\bin;.]
-2019-03-20 18:24:31.064  INFO 3268 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-03-20 18:24:31.065  INFO 3268 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1571 ms
-2019-03-20 18:24:31.197  INFO 3268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-03-20 18:24:34.304  INFO 3268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-03-20 18:24:34.356  INFO 3268 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-2019-03-20 18:24:34.414  INFO 3268 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-03-20 18:24:34.415  INFO 3268 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-03-20 18:24:34.682  INFO 3268 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-03-20 18:24:35.262  INFO 3268 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2019-03-20 18:24:35.415  INFO 3268 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-03-20 18:24:36.149  INFO 3268 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-03-20 18:24:36.184  WARN 3268 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-03-20 18:24:36.283  WARN 3268 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2019-03-20 18:24:36.645  INFO 3268 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-03-20 18:24:36.699  INFO 3268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2019-03-20 18:24:36.702  INFO 3268 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 7.692 seconds (JVM running for 8.945)
-2019-03-20 18:24:36.797  INFO 3268 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-03-20 18:24:36.798  INFO 3268 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-03-20 18:24:36.806  INFO 3268 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2019-03-20 18:24:57.089  INFO 3268 --- [http-nio-8081-exec-6] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:25:04.716  INFO 3268 --- [http-nio-8081-exec-1] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
-2019-03-20 18:25:24.255  INFO 3268 --- [http-nio-8081-exec-6] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
-2019-03-20 18:25:28.331  INFO 3268 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:25:33.033  INFO 3268 --- [http-nio-8081-exec-10] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
-2019-03-20 18:25:36.434  INFO 3268 --- [http-nio-8081-exec-5] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
-2019-03-20 18:25:44.622  INFO 3268 --- [http-nio-8081-exec-1] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
-2019-03-20 18:26:12.044  INFO 3268 --- [http-nio-8081-exec-4] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:26:50.361  INFO 3268 --- [http-nio-8081-exec-3] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
-2019-03-20 18:27:56.497  INFO 3268 --- [http-nio-8081-exec-2] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:28:02.344  INFO 3268 --- [http-nio-8081-exec-8] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
-2019-03-20 18:28:21.037  INFO 3268 --- [http-nio-8081-exec-2] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
-2019-03-20 18:29:30.409  INFO 3268 --- [http-nio-8081-exec-10] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:29:36.154  INFO 3268 --- [http-nio-8081-exec-9] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
-2019-03-20 18:29:47.315  INFO 3268 --- [http-nio-8081-exec-5] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
-2019-03-20 18:30:45.282  INFO 3268 --- [http-nio-8081-exec-1] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:30:49.686  INFO 3268 --- [http-nio-8081-exec-8] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
-2019-03-20 18:30:58.321  INFO 3268 --- [http-nio-8081-exec-7] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
-2019-03-20 18:31:04.655  INFO 3268 --- [http-nio-8081-exec-10] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
-2019-03-20 18:31:15.912  INFO 3268 --- [http-nio-8081-exec-4] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
-2019-03-20 18:31:31.934  INFO 3268 --- [http-nio-8081-exec-8] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:31:50.300  INFO 3268 --- [http-nio-8081-exec-6] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
-2019-03-20 18:33:12.269  INFO 3268 --- [http-nio-8081-exec-3] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:34:03.590  INFO 3268 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
-2019-03-20 18:35:09.223  INFO 3268 --- [http-nio-8081-exec-4] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:35:18.128  INFO 3268 --- [http-nio-8081-exec-8] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
-2019-03-20 18:35:41.864  INFO 3268 --- [http-nio-8081-exec-9] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
-2019-03-20 18:35:48.275  INFO 3268 --- [http-nio-8081-exec-4] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
-2019-03-20 18:36:36.273  INFO 3268 --- [http-nio-8081-exec-6] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:37:09.125  INFO 3268 --- [http-nio-8081-exec-2] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:37:23.273  INFO 3268 --- [http-nio-8081-exec-8] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:38:00.325  INFO 3268 --- [http-nio-8081-exec-3] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:40:59.176  INFO 3268 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:43:00.189  INFO 3268 --- [http-nio-8081-exec-9] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:43:05.254  INFO 3268 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
-2019-03-20 18:43:14.353  INFO 3268 --- [http-nio-8081-exec-1] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
-2019-03-20 18:43:21.381  INFO 3268 --- [http-nio-8081-exec-8] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
-2019-03-20 18:45:55.591  INFO 3268 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:48:00.856  INFO 3268 --- [http-nio-8081-exec-7] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:48:10.109  INFO 3268 --- [http-nio-8081-exec-6] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
-2019-03-20 18:48:17.432  INFO 3268 --- [http-nio-8081-exec-2] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
-2019-03-20 18:48:37.711  INFO 3268 --- [http-nio-8081-exec-1] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
-2019-03-20 18:48:48.364  INFO 3268 --- [http-nio-8081-exec-1] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
-2019-03-20 18:50:25.611  INFO 3268 --- [http-nio-8081-exec-5] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
-2019-03-20 18:50:35.511  INFO 3268 --- [http-nio-8081-exec-2] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
-2019-03-20 18:52:21.172  INFO 3268 --- [http-nio-8081-exec-1] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
-2019-03-20 18:52:39.128  INFO 3268 --- [http-nio-8081-exec-3] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
-2019-03-20 18:53:58.195  INFO 3268 --- [http-nio-8081-exec-2] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
-2019-03-20 18:54:07.549  INFO 3268 --- [http-nio-8081-exec-5] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
-2019-03-20 18:55:09.207  INFO 3268 --- [http-nio-8081-exec-7] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
-2019-03-20 18:55:32.966  INFO 3268 --- [http-nio-8081-exec-7] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
-2019-03-20 18:55:41.196  INFO 3268 --- [http-nio-8081-exec-4] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
-2019-03-20 18:55:47.069  INFO 3268 --- [http-nio-8081-exec-9] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
-2019-03-20 18:55:51.395  INFO 3268 --- [http-nio-8081-exec-3] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
+2019-03-21 00:13:27.960  INFO 1244 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-03-21 00:13:27.962  INFO 1244 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-03-21 00:13:28.063  INFO 1244 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-03-21 00:13:28.192  INFO 1244 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-21 00:13:28.327  INFO 1244 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-21 00:13:29.097  INFO 1244 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-21 00:13:29.128  WARN 1244 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-21 00:13:29.220  WARN 1244 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-03-21 00:13:29.388  INFO 1244 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-21 00:13:29.442  INFO 1244 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-21 00:13:29.445  INFO 1244 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 6.364 seconds (JVM running for 7.195)
+2019-03-21 00:15:14.140  INFO 1244 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-21 00:15:14.140  INFO 1244 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-21 00:15:14.151  INFO 1244 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-03-21 00:15:18.229  INFO 1244 --- [http-nio-8081-exec-7] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-21 00:16:56.118  INFO 1244 --- [http-nio-8081-exec-6] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:6
+2019-03-21 00:16:59.831 ERROR 1244 --- [http-nio-8081-exec-2] com.csu.lab.exception.ExceptionHandle    : 【系统异常】下载文件不存在
+2019-03-21 00:16:59.904  WARN 1244 --- [http-nio-8081-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: 下载文件不存在]
+2019-03-21 00:17:03.863 ERROR 1244 --- [http-nio-8081-exec-10] com.csu.lab.exception.ExceptionHandle    : 【系统异常】下载文件不存在
+2019-03-21 00:17:03.867  WARN 1244 --- [http-nio-8081-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: 下载文件不存在]
+2019-03-21 00:17:06.821 ERROR 1244 --- [http-nio-8081-exec-9] com.csu.lab.exception.ExceptionHandle    : 【系统异常】下载文件不存在
+2019-03-21 00:17:06.824  WARN 1244 --- [http-nio-8081-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: 下载文件不存在]
+2019-03-21 00:19:19.844 ERROR 1244 --- [http-nio-8081-exec-4] com.csu.lab.exception.ExceptionHandle    : 【系统异常】下载文件不存在
+2019-03-21 00:19:19.853  WARN 1244 --- [http-nio-8081-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: 下载文件不存在]
+2019-03-21 00:20:12.528 ERROR 1244 --- [http-nio-8081-exec-3] com.csu.lab.exception.ExceptionHandle    : 【系统异常】下载文件不存在
+2019-03-21 00:20:12.530  WARN 1244 --- [http-nio-8081-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: 下载文件不存在]
+2019-03-21 00:20:21.020  INFO 1244 --- [http-nio-8081-exec-1] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:6
+2019-03-21 00:20:23.084 ERROR 1244 --- [http-nio-8081-exec-6] com.csu.lab.exception.ExceptionHandle    : 【系统异常】下载文件不存在
+2019-03-21 00:20:23.085  WARN 1244 --- [http-nio-8081-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: 下载文件不存在]
+2019-03-21 00:33:02.332  WARN 1244 --- [http-nio-8081-exec-5] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@60feed00 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-03-21 00:33:05.648  INFO 1244 --- [http-nio-8081-exec-5] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:10
+2019-03-21 00:33:58.028  INFO 1244 --- [http-nio-8081-exec-9] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:13
+2019-03-21 00:35:02.047  INFO 1244 --- [http-nio-8081-exec-4] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:10
+2019-03-21 00:39:58.195  INFO 1244 --- [http-nio-8081-exec-1] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:12
+2019-03-21 00:40:40.958  INFO 1244 --- [http-nio-8081-exec-7] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:11
+2019-03-21 00:41:10.886  INFO 1244 --- [http-nio-8081-exec-8] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-21 00:41:16.893  INFO 1244 --- [http-nio-8081-exec-2] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
+2019-03-21 00:43:03.731  INFO 1244 --- [http-nio-8081-exec-8] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:6
+2019-03-21 00:45:06.603  INFO 1244 --- [http-nio-8081-exec-10] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:5
+2019-03-21 00:53:40.995  WARN 1244 --- [http-nio-8081-exec-5] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@72c5c362 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
