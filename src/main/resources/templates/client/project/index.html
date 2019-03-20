@@ -17,21 +17,9 @@
     <div class="layui-field-box">
 
         <table class="layui-table csu-table" lay-skin="line">
-            <tbody>
+            <tbody th:each="project:${pageInfo.list}">
             <tr>
-                <td><a href="project.html">测试是真的难</a></td>
-            </tr>
-            <tr>
-                <td><a href="javascript:;">于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</a></td>
-            </tr>
-            <tr>
-                <td><a href="javascript:;">测试是真的难</a></td>
-            </tr>
-            <tr>
-                <td><a href="javascript:;">测试是真的难</a></td>
-            </tr>
-            <tr>
-                <td><a href="javascript:;">测试是真的难</a></td>
+                <td><a th:href="@{${'project'}(id=${project.pid})}" th:text="${project.name}">项目名称</a></td>
             </tr>
             </tbody>
         </table>
@@ -54,16 +42,16 @@
 <!--这是iframeResizer的脚本-->
 <script th:src="@{/js/iframe-resizer/iframeResizer.contentWindow.min.js}"></script>
 
-<script>
+<script th:inline="javascript">
     layui.use('laypage', function(){
         var laypage = layui.laypage;
 
         //执行一个laypage实例
         laypage.render({
             elem: 'csu-page'
-            ,count: 35//从model里取当前总数
+            ,count: [[${size}]]//从model里取当前总数
             ,limit:12
-            ,curr:2//从model里取当前page数
+            ,curr:[[${page}]]//从model里取当前page数
             ,jump: function(obj, first){
                 //首次不执行
                 if(!first){
