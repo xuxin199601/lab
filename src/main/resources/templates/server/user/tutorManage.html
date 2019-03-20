@@ -105,7 +105,7 @@
                                         <td th:text="${tutorStat.count} + (${pageNum} - 1) * ${pageSize}">Onions</td>
                                         <td>
                                             <!--<img src="@{${studnet.image}}"/>-->
-                                            <img th:src="@{/img/tutor.jpg}" height="18px" width="18px"/>
+                                            <img th:src="@{${tutor.image}}" style="width: 30px;height: 30px;border-radius:100%; overflow:hidden;"/>
                                         </td>
                                         <td th:text="${tutor.name}">Onions</td>
                                         <td th:text="${tutor.post}">Onions</td>
