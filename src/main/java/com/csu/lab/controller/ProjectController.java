@@ -115,4 +115,13 @@ public class ProjectController {
         model.addAttribute("project", project);
         return "server/gain/addProject";
     }
+
+    @RequestMapping("/detailProject")
+    public String detailProject(@RequestParam("id") Integer pid,
+                                Model model) {
+        Project project = projectService.queryProjectById(pid);
+        model.addAttribute("project", project);
+        model.addAttribute("detail", true);
+        return "server/gain/addProject";
+    }
 }

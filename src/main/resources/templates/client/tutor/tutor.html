@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
     <link rel="stylesheet" th:href="@{/css/csu-style.css}">
 </head>
+
 <body class="csu-iframe-body">
 
 <fieldset class="layui-elem-field">
     <legend class="csu-color-theme" th:text="${tutor.name}"><b>肖途</b></legend>
     <div class="layui-field-box">
+
         <div class="layui-row">
+
             <div class="layui-col-md2 layui-col-sm6">
                 <div class="csu-card">
                     <img class="csu-card-img" th:src="${tutor.image}">
@@ -20,16 +24,16 @@
                 </div>
             </div>
 
-            <div class="layui-col-md10 layui-col-sm6">
+            <div class="layui-col-md10 layui-col-sm6 csu-detail">
 
-                <fieldset class="layui-elem-field csu-card-introduction">
+                <fieldset class="layui-elem-field">
                     <legend class="csu-color-theme">导师简介</legend>
                     <div class="layui-field-box" th:text="${tutor.introduction}">
                         富文本区域
                     </div>
                 </fieldset>
 
-                <fieldset class="layui-elem-field csu-card-direction">
+                <fieldset class="layui-elem-field">
                     <legend class="csu-color-theme">研究方向</legend>
                     <div class="layui-field-box" th:text="${tutor.direction}">
                         研究方向研究方向研究方向研究方向研究方向研究方向研究方向研究方向研究方向研究方向研究方向研究方向研究方向研究方向研究方向研究方向研究方向研究方向研究方向研究方向研究方向
@@ -37,7 +41,7 @@
                 </fieldset>
 
                 <!--如果有就显示-->
-                <fieldset class="layui-elem-field csu-card-direction">
+                <fieldset class="layui-elem-field">
                     <legend class="csu-color-theme">论文成果</legend>
                     <div class="layui-field-box">
                         <table class="layui-table csu-table" lay-skin="line">
@@ -63,7 +67,7 @@
                 </fieldset>
 
                 <!--如果有就显示-->
-                <fieldset class="layui-elem-field csu-card-direction">
+                <fieldset class="layui-elem-field">
                     <legend class="csu-color-theme">项目成果</legend>
                     <div class="layui-field-box">
                         <div class="layui-field-box">
@@ -90,7 +94,7 @@
                     </div>
                 </fieldset>
 
-                <fieldset class="layui-elem-field csu-card-tutor">
+                <fieldset class="layui-elem-field">
                     <legend class="csu-color-theme">学生信息</legend>
                     <div class="layui-field-box">
                         <div class="layui-row layui-col-space15">
@@ -109,10 +113,11 @@
                 </fieldset>
 
             </div>
+
         </div>
+
     </div>
 </fieldset>
-<hr>
 
 <!--这是layui的脚本-->
 <script th:src="@{/layui/layui.js}"></script>
@@ -124,5 +129,7 @@
 
 <!--这是iframeResizer的脚本-->
 <script th:src="@{/js/iframe-resizer/iframeResizer.contentWindow.min.js}"></script>
+
 </body>
+
 </html>

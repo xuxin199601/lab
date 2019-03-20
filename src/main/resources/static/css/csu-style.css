@@ -3,8 +3,7 @@ table a {
 }
 
 fieldset {
-    margin: 30px 0px;
-    /*padding:15px;*/
+    margin: 0;
 }
 fieldset a {
     color: #009688;
@@ -13,7 +12,6 @@ video{
     height:240px;
 }
 
-/*这是/index.html的css*/
 .csu-header {
     height: 120px;
     background-image: url(../img/header_background.png);
@@ -49,7 +47,6 @@ video{
 
 .csu-bottom span {
     margin: 0px 5px;
-    color: #009688;
 }
 
 .csu-catalog-button {
@@ -67,7 +64,6 @@ video{
     margin: 15px 150px;
 }
 
-/*这是account/login.html的css*/
 .csu-login-main {
     width: 300px;
     margin: 0 auto;
@@ -100,7 +96,6 @@ video{
     right: 0;
 }
 
-/*这是home/index.html的css*/
 .csu-activities-album {
     padding: 30px 15px;
 }
@@ -154,10 +149,6 @@ video{
     color: gray;
 }
 
-.csu-card-direction,.csu-card-introduction,.csu-card-tutor {
-    margin: 15px 30px;
-}
-
 .csu-card-hover:hover {
     background-color: #009688;
 
@@ -167,21 +158,20 @@ video{
     color: white;
 }
 
+.csu-detail fieldset{
+    margin: 15px 30px;
+}
+
 .csu-page {
     text-align: center;
 }
-
-.csu-img {
-    width: 70%;
-}
-
 
 @media screen and (max-width: 992px) {
     .csu-header {
         background-position: center;
     }
 
-    .csu-logo, .csu-nav-1 {
+    .csu-logo, .csu-nav-catalog {
         display: none;
     }
 
@@ -190,11 +180,10 @@ video{
     }
 
     .csu-iframe-body {
-        margin-left: 0px;
-        margin-right: 0px;
+        margin: 15px 0px;
     }
 
-    .csu-card-direction,.csu-card-introduction,.csu-card-tutor {
+    .csu-detail fieldset{
         margin: 15px 0px;
     }
 }

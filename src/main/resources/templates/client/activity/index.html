@@ -1,25 +1,32 @@
 <!DOCTYPE html>
+
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
-    <title>实验室概况</title>
+    <title>Title</title>
     <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
     <link rel="stylesheet" th:href="@{/css/csu-style.css}">
 
     <!--乱删了一堆东西，只保留了pagination的相关内容-->
-    <link th:href="@{/css/my-bootstrap.min.css}" rel="stylesheet"/>
+    <!--<link th:href="@{/css/my-bootstrap.min.css}" rel="stylesheet"/>-->
 </head>
 
 <body class="csu-iframe-body">
-<fieldset class="layui-elem-field" id="introduction">
-    <legend class="csu-color-theme"><b>实验室活动</b></legend>
+
+<fieldset class="layui-elem-field">
+    <legend class="csu-color-theme">
+        <b>实验室活动</b>
+    </legend>
     <div class="layui-field-box">
-        <table class="layui-table csu-table" id="csu-activities-table" lay-skin="line">
+
+        <table class="layui-table csu-table" lay-skin="line">
+
             <colgroup>
                 <col>
                 <col width="120">
             </colgroup>
+
             <tbody>
             <tr th:each="activity:${pageInfo.list}">
                 <td><a th:href="@{${'/client/activity/activity'}(id=${activity.aid})}" th:text="${activity.name}">测试是真的难</a></td>
@@ -27,76 +34,79 @@
             </tr>
             </tbody>
         </table>
+
     </div>
 </fieldset>
 
-<div class="ibox-footer" align="center">
+<div class="csu-page" id="csu-page"></div>
 
-    <ul class="pagination">
-        <li>
-            <a th:if="${not isFirstPage}"
-               th:href="@{${'activityList'}(pageNum=${pageNum-1},pageSize=${pageSize})}"
-               aria-label="Previous">
-                <span aria-hidden="true">上一页</span>
-            </a>
-            <a th:if="${isFirstPage}" href="javascript:void(0);" aria-label="Previous">
-                <span aria-hidden="true">上一页</span>
-            </a>
-        </li>
+<!--<div class="ibox-footer" align="center">-->
 
-        <li th:each="pageNo : ${#numbers.sequence(1, totalPages)}">
-            <a th:if="${pageNum eq pageNo}" href="javascript:void(0);">
-                <span th:text="${pageNo}"></span>
-            </a>
+<!--<ul class="pagination">-->
+<!--<li>-->
+<!--<a th:if="${not isFirstPage}"-->
+<!--th:href="@{${'activityList'}(pageNum=${pageNum-1},pageSize=${pageSize})}"-->
+<!--aria-label="Previous">-->
+<!--<span aria-hidden="true">上一页</span>-->
+<!--</a>-->
+<!--<a th:if="${isFirstPage}" href="javascript:void(0);" aria-label="Previous">-->
+<!--<span aria-hidden="true">上一页</span>-->
+<!--</a>-->
+<!--</li>-->
 
-            <a th:if="${not (pageNum eq pageNo)}"
-               th:href="@{${'activityList'}(pageNum=${pageNo},pageSize=${pageSize})}">
-                <span th:text="${pageNo}"></span>
-            </a>
-        </li>
+<!--<li th:each="pageNo : ${#numbers.sequence(1, totalPages)}">-->
+<!--<a th:if="${pageNum eq pageNo}" href="javascript:void(0);">-->
+<!--<span th:text="${pageNo}"></span>-->
+<!--</a>-->
 
-        <li>
-            <a th:if="${not isLastPage}"
-               th:href="@{${'activityList'}(pageNum=${pageNum+1},pageSize=${pageSize})}"
-               aria-label="Next">
-                <span aria-hidden="true">下一页</span>
-            </a>
-            <a th:if="${isLastPage}" href="javascript:void(0);" aria-label="Next">
-                <span aria-hidden="true">下一页</span>
-            </a>
-        </li>
-    </ul>
-</div>
+<!--<a th:if="${not (pageNum eq pageNo)}"-->
+<!--th:href="@{${'activityList'}(pageNum=${pageNo},pageSize=${pageSize})}">-->
+<!--<span th:text="${pageNo}"></span>-->
+<!--</a>-->
+<!--</li>-->
+
+<!--<li>-->
+<!--<a th:if="${not isLastPage}"-->
+<!--th:href="@{${'activityList'}(pageNum=${pageNum+1},pageSize=${pageSize})}"-->
+<!--aria-label="Next">-->
+<!--<span aria-hidden="true">下一页</span>-->
+<!--</a>-->
+<!--<a th:if="${isLastPage}" href="javascript:void(0);" aria-label="Next">-->
+<!--<span aria-hidden="true">下一页</span>-->
+<!--</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
 
 <!--这是layui的脚本-->
-<script src="../../static/layui/layui.js"></script>
+<script th:src="@{/layui/layui.js}"></script>
 <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
 <!--[if lt IE 9]>
-<script src="../../static/js/layui/html5.min.js"></script>
-<script src="../../static/js/layui/respond.min.js"></script>
+<script th:src="@{/js/layui/html5.min.js}"></script>
+<script th:src="@{/js/layui/respond.min.js}"></script>
 <![endif]-->
 
 <!--这是iframeResizer的脚本-->
-<script src="../../static/js/iframe-resizer/iframeResizer.contentWindow.min.js"></script>
+<script th:src="@{/js/iframe-resizer/iframeResizer.contentWindow.min.js}"></script>
 
+<!--这是自己设定的一些脚本-->
 <script>
-    layui.use('laypage', function(){
+    layui.use('laypage', function () {
         var laypage = layui.laypage;
 
         //执行一个laypage实例
         laypage.render({
             elem: 'csu-page'
-            ,count: 35
-            ,limit:10
-            // ,curr:2
-            ,jump: function(obj, first){
-                //obj包含了当前分页的所有参数，比如：
-                console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
-                console.log(obj.limit); //得到每页显示的条数
-
+            , count: 35//从model里取当前总数
+            , limit: 12
+            , curr: 2//从model里取当前page数
+            , jump: function (obj, first) {
                 //首次不执行
-                if(!first){
-                    //do something
+                if (!first) {
+                    console.log(obj.curr);
+                    //obj.curr是目标页的index
+                    //打开目标页后controller往model里放入学生信息和page数count总数，以便curr，count参数获得
+                    window.location.href = "../activity/index.html?page=" + obj.curr;
                 }
             }
         });

@@ -49,7 +49,6 @@
                         <div class="ibox-content" style="display: block;">
                             <form th:action="@{/server/project/projectList}" method="get">
                                 <div class="row">
-
                                     <div class="col-sm-2 m-b-xs">
                                         <input type="text" name="value" class="form-control" placeholder="搜索项目"
                                                th:if="${key} == null"/>
@@ -115,7 +114,8 @@
                                             Onions
                                         </td>
                                         <td>
-                                            <a th:href="@{#}" class="btn btn-success btn-xs">查看详情</a>
+                                            <a th:href="@{${'/server/project/detailProject'}(id=${project.pid})}"
+                                               class="btn btn-success btn-xs">查看详情</a>
                                             <a th:href="@{${'/server/project/editProject'}(id=${project.pid})}"
                                                class="btn btn-info btn-xs" title="修改">&nbsp;修&nbsp;改&nbsp;</a>
                                             <a th:href="@{${'/server/project/deleteProject'}(id=${project.pid})}"
