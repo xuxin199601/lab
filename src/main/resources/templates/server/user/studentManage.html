@@ -100,14 +100,15 @@
 									<tr th:each="student:${pageInfo.list}">
 										<td th:text="${studentStat.count} + (${pageNum} - 1) * ${pageSize}">Onions</td>
 										<td>
-											<img src="@{${student.image}}"/>
+											<!--<img src="@{${student.image}}"/>-->
+											<img th:src="@{/img/student.jpg}" height="18px" width="18px"/>
 										</td>
 										<td th:text="${student.name}">Onions</td>
 										<td th:text="${student.post}">Onions</td>
 										<td th:text="${student.affiliatedTutor}">Onions</td>
 										<td th:text="${student.direction}">Onions</td>
 										<td>
-											<a th:href="@{#}" class="btn btn-success btn-xs">查看详情</a>
+											<a th:href="@{${'/server/student/detailStudent'}(id=${student.rid})}" class="btn btn-success btn-xs">查看详情</a>
 											<a th:href="@{${'/server/student/editStudent'}(id=${student.rid})}" class="btn btn-info btn-xs" title="修改">&nbsp;修&nbsp;改&nbsp;</a>
 											<a th:href="@{${'/server/student/deleteStudent'}(id=${student.rid})}" class="btn btn-warning btn-xs" title="删除">&nbsp;删&nbsp;除&nbsp;</a>
 										</td>

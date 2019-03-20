@@ -91,7 +91,7 @@ public class AccountController {
 
     // 保存添加的账户信息，跳转到账户管理界面
     @RequestMapping(value = "/saveAccount", method = RequestMethod.POST)
-    public String saveTutor(Account account) {
+    public String saveAccount(Account account) {
         int result = accountService.addAccount(account);
         if (result == 1){
             msg = "添加成功";
@@ -103,7 +103,7 @@ public class AccountController {
 
     // 保存修改的账户信息，跳转到账户管理界面
     @RequestMapping(value = "/saveAccount", method = RequestMethod.PUT)
-    public String saveEditTutor(Account account) {
+    public String saveEditAccount(Account account) {
         int result = accountService.updateAccount(account);
         if (result == 1){
             msg = "修改成功";
@@ -115,7 +115,7 @@ public class AccountController {
 
     // 删除账户信息，跳转到账户管理界面
     @RequestMapping("/deleteAccount")
-    public String delTutor(@RequestParam("id")Integer rid) {
+    public String delAccount(@RequestParam("id")Integer rid) {
         int result = accountService.deleteAccount(rid);
         if (result == 1){
             msg = "删除成功";
@@ -123,6 +123,16 @@ public class AccountController {
             msg = "删除失败";
         }
         return "redirect:/server/account/accountList";
+    }
+
+    // 查看账户详情
+    @RequestMapping("/detailAccount")
+    public String detailAccount(@RequestParam("id") Integer aid,
+                               Model model) {
+        Account account = accountService.queryAccountById(aid);
+        model.addAttribute("detail", true);
+        model.addAttribute("account", account);
+        return "server/account/addAccount";
     }
 
 }

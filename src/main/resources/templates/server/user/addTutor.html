@@ -32,8 +32,9 @@
                         <a>导师管理</a>
                     </li>
                     <li class="active">
-                        <strong th:if="${researcher==null}">添加导师信息</strong>
-                        <strong th:if="${researcher!=null}">修改导师信息</strong>
+                        <strong th:if="${researcher==null&&detail==null}">添加导师信息</strong>
+                        <strong th:if="${researcher!=null&&detail==null}">修改导师信息</strong>
+                        <strong th:if="${detail!=null&&detail==true}">查看详情</strong>
                     </li>
                 </ol>
             </div>
@@ -45,8 +46,9 @@
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5 th:if="${researcher==null}">添加导师信息</h5>
-                            <h5 th:if="${researcher!=null}">修改导师信息</h5>
+                            <h5 th:if="${researcher==null&&detail==null}">添加导师信息</h5>
+                            <h5 th:if="${researcher!=null&&detail==null}">修改导师信息</h5>
+                            <h5 th:if="${detail!=null&&detail==true}">查看详情</h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -93,7 +95,8 @@
                                 <div class="form-group"><label class="col-sm-2 control-label">导师编号：</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="aid" name="aid" placeholder="导师编号"
-                                               th:value="${researcher!=null}?${researcher.aid}">
+                                               th:value="${researcher!=null}?${researcher.aid}"
+                                               th:readonly="${detail!=null}?${detail}">
                                     </div>
                                 </div>
 
@@ -102,26 +105,29 @@
                                 <div class="form-group"><label class="col-sm-2 control-label">姓名：</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="name" name="name" placeholder="姓名"
-                                               th:value="${researcher!=null}?${researcher.name}">
+                                               th:value="${researcher!=null}?${researcher.name}"
+                                               th:readonly="${detail!=null}?${detail}">
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group"><label class="col-sm-2 control-label">头像：</label>
+                                <div th:if="${detail==null}" class="form-group" ><label class="col-sm-2 control-label">头像：</label>
                                     <div class="col-sm-10">
-                                        <input type="file" name="file" id="xdaTanFileImg" onchange="xmTanUploadImg(this)" accept="image/*" /><br>
+                                        <input type="file" name="file" id="xdaTanFileImg" onchange="xmTanUploadImg(this)" accept="image/*"/><br>
                                         <input type="button" value="隐藏图片" onclick="document.getElementById('xmTanImg').style.display = 'none';"/>
                                         <input type="button" value="显示图片" onclick="document.getElementById('xmTanImg').style.display = 'block';"/>
                                         <div><img id="xmTanImg" style="display: none"/></div>
                                     </div>
                                 </div>
 
-                                <div class="hr-line-dashed"></div>
+                                <div th:if="${detail==null}" class="hr-line-dashed"></div>
 
                                 <div class="form-group"><label class="col-sm-2 control-label">职称：</label>
                                     <div class="col-sm-10">
-                                        <select class="form-control" id="post" name="post">
+                                        <input type="text" class="form-control" id="post"  name="post" placeholder="职称"
+                                               th:value="${researcher.post}" th:if="${detail!=null}" th:readonly="${detail}">
+                                        <select class="form-control" id="post" name="post" th:if="${detail==null}">
                                             <option th:selected="${researcher!=null}?${researcher.post == '教授'}"
                                                     th:value="教授">教授
                                             </option>
@@ -142,7 +148,8 @@
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="direction" name="direction"
                                                placeholder="研究方向"
-                                               th:value="${researcher!=null}?${researcher.direction}">
+                                               th:value="${researcher!=null}?${researcher.direction}"
+                                               th:readonly="${detail!=null}?${detail}">
                                     </div>
                                 </div>
 
@@ -152,7 +159,8 @@
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="introduction" name="introduction"
                                                placeholder="人员简介"
-                                               th:value="${researcher!=null}?${researcher.introduction}">
+                                               th:value="${researcher!=null}?${researcher.introduction}"
+                                               th:readonly="${detail!=null}?${detail}">
                                     </div>
                                 </div>
 
@@ -160,10 +168,13 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
-                                        <button type="submit" class="btn btn-primary" id="update"
+                                        <button type="submit" class="btn btn-primary" id="update" th:if="${detail==null}"
                                                 th:text="${researcher!=null}?'&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改&nbsp;&nbsp;&nbsp;&nbsp;':'&nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;'">
                                             &nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;
                                         </button>
+                                        <a th:href="@{/server/tutor/tutorList}" type="button" class="btn btn-primary" th:if="${detail!=null}">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;返&nbsp;&nbsp;&nbsp;&nbsp;回&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </a>
                                     </div>
                                 </div>
                             </form>

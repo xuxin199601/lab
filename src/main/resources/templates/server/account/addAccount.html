@@ -32,8 +32,9 @@
                         <a>账户管理</a>
                     </li>
                     <li class="active">
-                        <strong th:if="${account==null}">添加账户</strong>
-                        <strong th:if="${account!=null}">修改账户</strong>
+                        <strong th:if="${account==null&&detail==null}">添加账户</strong>
+                        <strong th:if="${account!=null&&detail==null}">修改账户</strong>
+                        <strong th:if="${detail!=null&&detail==true}">查看详情</strong>
                     </li>
                 </ol>
             </div>
@@ -46,8 +47,9 @@
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5 th:if="${account==null}">添加账户</h5>
-                            <h5 th:if="${account!=null}">修改账户</h5>
+                            <h5 th:if="${account==null&&detail==null}">添加账户</h5>
+                            <h5 th:if="${account!=null&&detail==null}">修改账户</h5>
+                            <h5 th:if="${detail!=null&&detail==true}">查看详情</h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -65,7 +67,8 @@
                                 <div class="form-group"><label class="col-sm-2 control-label">账号：</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="username" name="username"
-                                               placeholder="用户名" th:value="${account!=null}?${account.username}">
+                                               placeholder="用户名" th:value="${account!=null}?${account.username}"
+                                               th:readonly="${detail!=null}?${detail}">
                                     </div>
                                 </div>
 
@@ -74,7 +77,8 @@
                                 <div class="form-group"><label class="col-sm-2 control-label">密码：</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="password" name="password"
-                                               placeholder="密码" th:value="${account!=null}?${account.password}">
+                                               placeholder="密码" th:value="${account!=null}?${account.password}"
+                                               th:readonly="${detail!=null}?${detail}">
                                     </div>
                                 </div>
 
@@ -82,8 +86,13 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">权限：</label>
                                     <div class="col-sm-10">
-                                        <!--<input type="text" class="form-control" id="privileges"  name="privileges" placeholder="权限" th:value="${account!=null}?${account.privileges}">-->
-                                        <select class="form-control" id="privileges" name="privileges">
+                                        <input type="text" class="form-control" id="privileges"  name="privileges" placeholder="权限"
+                                               th:value="超级管理员" th:if="${account!=null&&detail!=null&&account.privileges==0}" th:readonly="${detail!=null}?${detail}">
+                                        <input type="text" class="form-control" id="privileges"  name="privileges" placeholder="权限"
+                                               th:value="管理员" th:if="${account!=null&&detail!=null&&account.privileges==1}" th:readonly="${detail!=null}?${detail}">
+                                        <input type="text" class="form-control" id="privileges"  name="privileges" placeholder="权限"
+                                               th:value="普通人员" th:if="${account!=null&&detail!=null&&account.privileges==2}" th:readonly="${detail!=null}?${detail}">
+                                        <select class="form-control" id="privileges" name="privileges" th:if="${detail==null}">
                                             <option th:selected="${account!=null}?${account.privileges == 0}"
                                                     th:value="0">超级管理员
                                             </option>
@@ -101,10 +110,15 @@
 
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
-                                        <button type="submit" class="btn btn-primary"
+
+                                        <button type="submit" class="btn btn-primary" th:if="${detail==null}"
                                                 th:text="${account!=null}?'&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改&nbsp;&nbsp;&nbsp;&nbsp;':'&nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;'">
                                             &nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;
                                         </button>
+
+                                        <a th:href="@{/server/account/accountList}" type="button" class="btn btn-primary" th:if="${detail!=null}">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;返&nbsp;&nbsp;&nbsp;&nbsp;回&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </a>
                                     </div>
                                 </div>
                             </form>

@@ -165,6 +165,15 @@ public class TutorsController {
         return "redirect:/server/tutor/tutorList";
     }
 
+    // 查看导师详情
+    @RequestMapping("/detailTutor")
+    public String detailTutor(@RequestParam("id") Integer rid,
+                               Model model) {
+        Researcher tutor = researcherService.queryResearcherById(rid);
+        model.addAttribute("detail", true);
+        model.addAttribute("researcher", tutor);
+        return "server/user/addTutor";
+    }
 
     // 文件上传
     @RequestMapping(value = "/upload", method = RequestMethod.POST)

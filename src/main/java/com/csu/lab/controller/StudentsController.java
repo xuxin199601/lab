@@ -165,4 +165,14 @@ public class StudentsController {
         }
         return "redirect:/server/student/studentList";
     }
+
+    // 查看学生详情
+    @RequestMapping("/detailStudent")
+    public String detailStudent(@RequestParam("id") Integer rid,
+                              Model model) {
+        Researcher student = researcherService.queryResearcherById(rid);
+        model.addAttribute("detail", true);
+        model.addAttribute("researcher", student);
+        return "server/user/addStudent";
+    }
 }
