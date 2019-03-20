@@ -72,15 +72,17 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">论文摘要：</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="abstracts" name="abstracts"
-                                               placeholder="论文摘要" th:value="${thesis!=null}?${thesis.abstracts}">
+                                        <textarea id="abstracts" name="abstracts" class="form-control" rows="9" placeholder="论文摘要"
+                                                  th:text="${thesis!=null}?${thesis.abstracts}"></textarea>
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
 
-                                <div class="form-group"><label class="col-sm-2 control-label">论文摘要：</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">关键字：</label>
                                     <div class="col-sm-10">
+                                        <!--<input type="text" class="form-control" id="keywords" name="keywords" placeholder="关键词"-->
+                                               <!--th:value="${thesis!=null}?${thesis.keywords}">-->
                                         <input type="text" class="form-control" id="keywords" name="keywords"
                                                placeholder="关键词" th:value="${thesis!=null}?${thesis.keywords}">
                                     </div>

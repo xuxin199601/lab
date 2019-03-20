@@ -70,7 +70,10 @@
 
                     <div class="form-group"><label class="col-sm-2 control-label">开始时间：</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="startTime"  name="startTime" placeholder="开始时间" th:value="${project!=null}?${#dates.format(project.startTime,'yyyy-MM-dd')}">
+                            <input type="date" class="form-control" id="startTime" name="startTime"
+                                   placeholder="开始时间"
+                                   th:value="${project!=null}?${#dates.format(project.startTime,'yyyy-MM-dd')}">
+                            <!--<input type="text" class="form-control" id="startTime"  name="startTime" placeholder="开始时间" th:value="${project!=null}?${#dates.format(project.startTime,'yyyy-MM-dd')}">-->
                         </div>
                     </div>
 
@@ -78,7 +81,10 @@
 
                     <div class="form-group"><label class="col-sm-2 control-label">结束时间：</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="endTime"  name="endTime" placeholder="结束时间" th:value="${project!=null}?${#dates.format(project.endTime,'yyyy-MM-dd')}">
+                            <input type="date" class="form-control" id="endTime" name="endTime"
+                                   placeholder="开始时间"
+                                   th:value="${project!=null}?${#dates.format(project.endTime,'yyyy-MM-dd')}">
+                            <!--<input type="text" class="form-control" id="endTime"  name="endTime" placeholder="结束时间" th:value="${project!=null}?${#dates.format(project.endTime,'yyyy-MM-dd')}">-->
                         </div>
                     </div>
 

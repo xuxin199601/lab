@@ -51,9 +51,9 @@
                                 <div class="row">
 
                                     <div class="col-sm-2 m-b-xs">
-                                        <input type="text" name="value" class="form-control" placeholder="搜索论文名称"
+                                        <input type="text" name="value" class="form-control" placeholder="搜索活动名称"
                                                th:if="${key} == null"/>
-                                        <input type="text" name="value" class="form-control" placeholder="搜索论文名称"
+                                        <input type="text" name="value" class="form-control" placeholder="搜索活动名称"
                                                th:if="${key} != null" th:value="${key}"/>
                                     </div>
                                     <div class="col-sm-2 m-b-xs">
@@ -104,7 +104,9 @@
                                     <tr th:each="activity:${pageInfo.list}">
                                         <td th:text="${activityStat.count} + (${pageNum} - 1) * ${pageSize}">Onions</td>
                                         <td th:text="${activity.name}">Onions</td>
-                                        <td th:text="${activity.time}">Onions</td>
+                                        <!--<td th:text="${activity.time}">Onions</td>-->
+                                        <td
+                                                th:text="${activity!=null}?${#dates.format(activity.time,'yyyy-MM-dd')}">
                                         <td>
                                             <a th:href="@{#}" class="btn btn-success btn-xs">查看详情</a>
                                             <a th:href="@{${'/server/activity/editActivity'}(id=${activity.aid})}"

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <title>后台信息管理系统</title>
 
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
-    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
-    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
 
     <link th:href="@{/css/plugins/iCheck/custom.css}" rel="stylesheet"/>
     <link th:href="@{/css/plugins/footable/footable.core.css}" rel="stylesheet"/>
@@ -51,14 +51,19 @@
                                 <div class="row">
 
                                     <div class="col-sm-2 m-b-xs">
-                                        <input type="text" name="value" class="form-control" placeholder="搜索项目" th:if="${key} == null"/>
-                                        <input type="text" name="value" class="form-control" placeholder="搜索项目" th:if="${key} != null" th:value="${key}" />
+                                        <input type="text" name="value" class="form-control" placeholder="搜索项目"
+                                               th:if="${key} == null"/>
+                                        <input type="text" name="value" class="form-control" placeholder="搜索项目"
+                                               th:if="${key} != null" th:value="${key}"/>
                                     </div>
                                     <div class="col-sm-2 m-b-xs">
-                                        <button class="btn btn-primary btn-block" type="submit"><i class="fa fa-search"></i>&nbsp;&nbsp;&nbsp;&nbsp;<strong>搜索</strong></button>
+                                        <button class="btn btn-primary btn-block" type="submit"><i
+                                                class="fa fa-search"></i>&nbsp;&nbsp;&nbsp;&nbsp;<strong>搜索</strong>
+                                        </button>
                                     </div>
                                     <div class="col-sm-2 m-b-xs">
-                                        <a href="#" th:href="@{/server/project/addProject}" class="btn btn-primary btn-block"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;&nbsp;<strong>新增</strong></a>
+                                        <a href="#" th:href="@{/server/project/addProject}"
+                                           class="btn btn-primary btn-block"><i class="fa fa-plus"></i>&nbsp;&nbsp;&nbsp;&nbsp;<strong>新增</strong></a>
                                     </div>
                                 </div>
                             </form>
@@ -102,8 +107,13 @@
                                         <td th:text="${project.name}">Onions</td>
                                         <!--<td th:text="${project.project}">Onions</td>-->
                                         <!--<td th:text="${project.video}">Onions</td>-->
-                                        <td th:text="${project.startTime}">Onions</td>
-                                        <td th:text="${project.endTime}">Onions</td>
+
+                                        <td th:text="${project!=null}?${#dates.format(project.startTime,'yyyy-MM-dd')}">
+                                            Onions
+                                        </td>
+                                        <td th:text="${project!=null}?${#dates.format(project.endTime,'yyyy-MM-dd')}">
+                                            Onions
+                                        </td>
                                         <td>
                                             <a th:href="@{#}" class="btn btn-success btn-xs">查看详情</a>
                                             <a th:href="@{${'/server/project/editProject'}(id=${project.pid})}"
@@ -126,7 +136,9 @@
                         <div class="ibox-footer" align="right">
                             <ul class="pagination">
                                 <li>
-                                    <a th:if="${not isFirstPage}" th:href="@{${'projectList'}(pageNum=${pageNum-1},pageSize=${pageSize})}" aria-label="Previous">
+                                    <a th:if="${not isFirstPage}"
+                                       th:href="@{${'projectList'}(pageNum=${pageNum-1},pageSize=${pageSize})}"
+                                       aria-label="Previous">
                                         <span aria-hidden="true">«</span>
                                     </a>
                                     <a th:if="${isFirstPage}" href="javascript:void(0);" aria-label="Previous">
@@ -139,13 +151,16 @@
                                         <span th:text="${pageNo}"></span>
                                     </a>
 
-                                    <a th:if="${not (pageNum eq pageNo)}" th:href="@{${'projectList'}(pageNum=${pageNo},pageSize=${pageSize})}">
+                                    <a th:if="${not (pageNum eq pageNo)}"
+                                       th:href="@{${'projectList'}(pageNum=${pageNo},pageSize=${pageSize})}">
                                         <span th:text="${pageNo}"></span>
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a th:if="${not isLastPage}" th:href="@{${'projectList'}(pageNum=${pageNum+1},pageSize=${pageSize})}" aria-label="Next">
+                                    <a th:if="${not isLastPage}"
+                                       th:href="@{${'projectList'}(pageNum=${pageNum+1},pageSize=${pageSize})}"
+                                       aria-label="Next">
                                         <span aria-hidden="true">»</span>
                                     </a>
                                     <a th:if="${isLastPage}" href="javascript:void(0);" aria-label="Next">
