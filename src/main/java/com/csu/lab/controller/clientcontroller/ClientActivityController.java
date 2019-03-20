@@ -27,13 +27,13 @@ public class ClientActivityController {
     // 分页活动信息列表
     @RequestMapping("/activityList")
     public String getClientActivityList(@RequestParam(defaultValue = "1") Integer pageNum,
-                                  @RequestParam(defaultValue = "10") Integer pageSize,
+                                  @RequestParam(defaultValue = "12") Integer pageSize,
                                   Model model) {
         PageHelper.startPage(pageNum,pageSize);
 
         List<Activity> activityList = activityService.getActivityList();
 
-        PageInfo pageInfo = new PageInfo(activityList,10);
+        PageInfo pageInfo = new PageInfo(activityList,12);
 
         model.addAttribute("pageInfo",pageInfo);
 

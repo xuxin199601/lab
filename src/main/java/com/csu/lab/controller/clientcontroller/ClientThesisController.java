@@ -33,7 +33,7 @@ public class ClientThesisController {
                                    Model model
                                    ) {
 
-        PageHelper.startPage(page, 4);
+        PageHelper.startPage(page, 12);
 
         List<Thesis> thesisList=thesisService.getThesisList();
 
@@ -42,20 +42,16 @@ public class ClientThesisController {
         model.addAttribute("pageInfo", pageInfo);
         //获得当前页
         model.addAttribute("pageNum", pageInfo.getPageNum());
-        //获得一页显示的条数
-        model.addAttribute("pageSize", pageInfo.getPageSize());
         //获得总页数
         model.addAttribute("totalPages", pageInfo.getPages());
 
         model.addAttribute("thesisList",thesisList);
 
-        int size=thesisList.size();
-        model.addAttribute("size", size);
         model.addAttribute("page", page);
 
         System.out.println(model.getClass());
 
-        return "client/home";
+        return "client/thesis/index";
     }
 
     // 通过id获取成果信息

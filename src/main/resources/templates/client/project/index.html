@@ -39,26 +39,31 @@
 <script th:src="@{/js/layui/respond.min.js}"></script>
 <![endif]-->
 
-<!--这是iframeResizer的脚本-->
-<script th:src="@{/js/iframe-resizer/iframeResizer.contentWindow.min.js}"></script>
-
+<!--这是自己设定的一些脚本（加分页功能）-->
 <script th:inline="javascript">
-    layui.use('laypage', function(){
+    layui.use('laypage', function () {
         var laypage = layui.laypage;
+        //用size获取总页数，size*12可以大致判断有多少条数据
+        var size = [[${totalPages}]];
+
+        //用page获取当前的页数
+        var page = [[${pageNum}]];
 
         //执行一个laypage实例
         laypage.render({
             elem: 'csu-page'
-            ,count: [[${size}]]//从model里取当前总数
-            ,limit:12
-            ,curr:[[${page}]]//从model里取当前page数
-            ,jump: function(obj, first){
+            , count: size*12//从model里取当前总数
+            , limit: 12
+            , curr: page//从model里取当前page数
+            , jump: function (obj, first) {
                 //首次不执行
-                if(!first){
+                if (!first) {
                     console.log(obj.curr);
                     //obj.curr是目标页的index
                     //打开目标页后controller往model里放入学生信息和page数count总数，以便curr，count参数获得
-                    window.location.href="../project/index.html?page="+obj.curr;
+                    var url = [[@{${'/client/project/projectList'}}]]+"?page="+obj.curr;
+                    console.log(url);
+                    window.location.href = url;
                 }
             }
         });

@@ -15,7 +15,7 @@
     <div class="layui-field-box">
 
         <table class="layui-table csu-table" lay-skin="line">
-        <tbody th:each="thesis:${pageInfo.list}">
+        <tbody th:each="thesis:${pageInfo.list}" >
         <tr>
         <td><a th:href="@{${'thesis'}(id=${thesis.tid})}" th:text="${thesis.name}">论文名称</a></td>
         </tr>
@@ -39,29 +39,36 @@
 <!--这是iframeResizer的脚本-->
 <script th:src="@{/js/iframe-resizer/iframeResizer.contentWindow.min.js}"></script>
 
-<!--<script >-->
-<!--layui.use('laypage', function () {-->
-<!--var laypage = layui.laypage;-->
+<!--这是自己设定的一些脚本（加分页功能）-->
+<script th:inline="javascript">
+    layui.use('laypage', function () {
+        var laypage = layui.laypage;
+        //用size获取总页数，size*12可以大致判断有多少条数据
+        var size = [[${totalPages}]];
+        //用page获取当前的页数
+        var page = [[${pageNum}]];
+        //console.log(page);
 
-<!--//执行一个laypage实例-->
-<!--laypage.render({-->
-<!--elem: 'csu-page'-->
-<!--, count: 12//从model里取当前总数-->
-<!--, limit: 4-->
-<!--, curr: 1//从model里取当前page数-->
-<!--, jump: function (obj, first) {-->
-<!--// console.log([[${/client/thesis/thesisList?page=}]] + obj.curr);-->
-<!--//首次不执行-->
-<!--if (!first) {-->
-
-<!--//obj.curr是目标页的index-->
-<!--//打开目标页后controller往model里放入学生信息和page数count总数，以便curr，count参数获得-->
-<!--// window.location.href = [[@{${/client/thesis/thesisList}(page=obj.curr)}]];-->
-<!--}-->
-<!--}-->
-<!--});-->
-<!--});-->
-<!--</script>-->
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'csu-page'
+            , count: size*12//从model里取当前总数
+            , limit: 12
+            , curr: page//从model里取当前page数
+            , jump: function (obj, first) {
+                //首次不执行
+                if (!first) {
+                    //console.log(obj.curr);
+                    //obj.curr是目标页的index
+                    //打开目标页后controller往model里放入学生信息和page数count总数，以便curr，count参数获得
+                    var url = [[@{${'/client/thesis/thesisList'}}]]+"?page="+obj.curr;
+                    //console.log(url);
+                    window.location.href = url;
+                }
+            }
+        });
+    });
+</script>
 
 </body>
 

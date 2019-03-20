@@ -24,14 +24,14 @@ public class ClientTutorsController {
 
     @RequestMapping("/tutorList")
     public String getClientTutorList(@RequestParam(defaultValue = "1") Integer page,
-                                  @RequestParam(defaultValue = "6") Integer pageSize,
+                                  @RequestParam(defaultValue = "12") Integer pageSize,
                                   Model model) {
 
         PageHelper.startPage(page,pageSize);
 
         List<Researcher> tutorList = researcherService.getResearcherList(0);
 
-        PageInfo pageInfo = new PageInfo(tutorList,6);
+        PageInfo pageInfo = new PageInfo(tutorList,12);
 
         model.addAttribute("pageInfo",pageInfo);
         //获得当前页

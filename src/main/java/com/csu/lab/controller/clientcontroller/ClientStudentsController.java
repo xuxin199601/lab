@@ -23,15 +23,15 @@ public class ClientStudentsController {
     private ResearcherService researcherService;
 
     @RequestMapping("/studentList")
-    public String getClientStudentList(@RequestParam(defaultValue = "1") Integer pageNum,
-                                        @RequestParam(defaultValue = "6") Integer pageSize,
+    public String getClientStudentList(@RequestParam(defaultValue = "1") Integer page,
+                                        @RequestParam(defaultValue = "12") Integer pageSize,
                                         Model model) {
 
-        PageHelper.startPage(pageNum,pageSize);
+        PageHelper.startPage(page,pageSize);
 
         List<Researcher> studentList = researcherService.queryAllStudent();
 
-        PageInfo pageInfo = new PageInfo(studentList,6);
+        PageInfo pageInfo = new PageInfo(studentList,12);
 
         model.addAttribute("pageInfo",pageInfo);
         //获得当前页
