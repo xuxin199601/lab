@@ -32,8 +32,9 @@
                         <a>学术成果管理</a>
                     </li>
                     <li class="active">
-                        <strong th:if="${thesis==null}">添加论文信息</strong>
-                        <strong th:if="${thesis!=null}">修改论文信息</strong>
+                        <strong th:if="${thesis==null&&detail==null}">添加论文信息</strong>
+                        <strong th:if="${thesis!=null&&detail==null}">修改论文信息</strong>
+                        <strong th:if="${detail!=null&&detail==true}">查看详情</strong>
                     </li>
                 </ol>
             </div>
@@ -45,8 +46,9 @@
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5 th:if="${thesis==null}">添加论文信息</h5>
-                            <h5 th:if="${thesis!=null}">修改论文信息</h5>
+                            <h5 th:if="${thesis==null&&detail==null}">添加论文信息</h5>
+                            <h5 th:if="${thesis!=null&&detail==null}">修改论文信息</h5>
+                            <h5 th:if="${detail!=null&&detail==true}">查看详情</h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -64,7 +66,8 @@
                                 <div class="form-group"><label class="col-sm-2 control-label">论文名称：</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="name" name="name" placeholder="论文标题"
-                                               th:value="${thesis!=null}?${thesis.name}">
+                                               th:value="${thesis!=null}?${thesis.name}"
+                                               th:readonly="${detail!=null}?${detail}">
                                     </div>
                                 </div>
 
@@ -72,8 +75,10 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">论文摘要：</label>
                                     <div class="col-sm-10">
-                                        <textarea id="abstracts" name="abstracts" class="form-control" rows="9" placeholder="论文摘要"
-                                                  th:text="${thesis!=null}?${thesis.abstracts}"></textarea>
+                                        <textarea id="abstracts" name="abstracts" class="form-control" rows="9"
+                                                  placeholder="论文摘要"
+                                                  th:text="${thesis!=null}?${thesis.abstracts}"
+                                                  th:readonly="${detail!=null}?${detail}"></textarea>
                                     </div>
                                 </div>
 
@@ -82,20 +87,26 @@
                                 <div class="form-group"><label class="col-sm-2 control-label">关键字：</label>
                                     <div class="col-sm-10">
                                         <!--<input type="text" class="form-control" id="keywords" name="keywords" placeholder="关键词"-->
-                                               <!--th:value="${thesis!=null}?${thesis.keywords}">-->
+                                        <!--th:value="${thesis!=null}?${thesis.keywords}">-->
                                         <input type="text" class="form-control" id="keywords" name="keywords"
-                                               placeholder="关键词" th:value="${thesis!=null}?${thesis.keywords}">
+                                               placeholder="关键词" th:value="${thesis!=null}?${thesis.keywords}"
+                                               th:readonly="${detail!=null}?${detail}">
                                     </div>
                                 </div>
 
                                 <div class="hr-line-dashed"></div>
                                 <div class="form-group"><label class="col-sm-2 control-label">论文内容：</label>
                                     <div class="col-sm-10">
-                                        <input type="file" name="file"/>
-                                        <input type="hidden" name="content"
-                                               th:value="${thesis!=null}?${thesis.content}"/>
-                                        <p th:if="${thesis!=null&&thesis.content!=''}" th:text="上传新的文件，将覆盖旧的文件"></p>
-                                        <p th:if="${thesis!=null&&thesis.content==''}" th:text="该论文目前还没有内容"></p>
+                                        <div th:if="${detail==null||detail==false}">
+                                            <input type="file" name="file"/>
+                                            <input type="hidden" name="content"
+                                                   th:value="${thesis!=null}?${thesis.content}"/>
+                                            <p th:if="${thesis!=null&&thesis.content!=''}" th:text="上传新的文件，将覆盖旧的文件"></p>
+                                            <p th:if="${thesis!=null&&thesis.content==''}" th:text="该论文目前还没有内容"></p>
+                                        </div>
+                                        <div th:if="${detail!=null&&detail==true}">
+                                            <p th:text="${thesis!=null}?${thesis.content}"></p>
+                                        </div>
                                         <!--<input type="text" class="form-control" id="content"  name="content" placeholder="内容" th:value="${thesis!=null}?${thesis.content}">-->
                                     </div>
                                 </div>
@@ -104,10 +115,15 @@
                                 <!--<div class="hr-line-dashed"></div>-->
                                 <div class="form-group"><label class="col-sm-2 control-label">论文代码：</label>
                                     <div class="col-sm-10">
-                                        <input type="file" name="file"/>
-                                        <input type="hidden" name="code" th:value="${thesis!=null}?${thesis.code}"/>
-                                        <p th:if="${thesis!=null&&thesis.code!=''}" th:text="上传新的文件，将覆盖旧的文件"></p>
-                                        <p th:if="${thesis!=null&&thesis.code==''}" th:text="该论文目前还没有代码"></p>
+                                        <div th:if="${detail==null||detail==false}">
+                                            <input type="file" name="file"/>
+                                            <input type="hidden" name="code" th:value="${thesis!=null}?${thesis.code}"/>
+                                            <p th:if="${thesis!=null&&thesis.code!=''}" th:text="上传新的文件，将覆盖旧的文件"></p>
+                                            <p th:if="${thesis!=null&&thesis.code==''}" th:text="该论文目前还没有代码"></p>
+                                        </div>
+                                        <div th:if="${detail!=null&&detail==true}">
+                                            <p th:text="${thesis!=null}?${thesis.code}"></p>
+                                        </div>
                                         <!--<input type="text" class="form-control" id="code"  name="code" placeholder="代码" th:value="${thesis!=null}?${thesis.code}">-->
                                     </div>
                                 </div>
@@ -116,10 +132,15 @@
 
                                 <div class="form-group"><label class="col-sm-2 control-label">论文数据：</label>
                                     <div class="col-sm-10">
-                                        <input type="file" name="file"/>
-                                        <input type="hidden" name="data" th:value="${thesis!=null}?${thesis.data}"/>
-                                        <p th:if="${thesis!=null&&thesis.data!=''}" th:text="上传新的文件，将覆盖旧的文件"></p>
-                                        <p th:if="${thesis!=null&&thesis.data==''}" th:text="该论文目前还没有代码"></p>
+                                        <div th:if="${detail==null||detail==false}">
+                                            <input type="file" name="file"/>
+                                            <input type="hidden" name="data" th:value="${thesis!=null}?${thesis.data}"/>
+                                            <p th:if="${thesis!=null&&thesis.data!=''}" th:text="上传新的文件，将覆盖旧的文件"></p>
+                                            <p th:if="${thesis!=null&&thesis.data==''}" th:text="该论文目前还没有代码"></p>
+                                        </div>
+                                        <div th:if="${detail!=null&&detail==true}">
+                                            <p th:text="${thesis!=null}?${thesis.data}"></p>
+                                        </div>
                                         <!--<input type="text" class="form-control" id="data"  name="data" placeholder="数据" th:value="${thesis!=null}?${thesis.data}">-->
                                     </div>
                                 </div>
@@ -141,6 +162,7 @@
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
                                         <button type="submit" class="btn btn-primary"
+                                                th:if="${detail==null||detail==false}"
                                                 th:text="${thesis!=null}?'&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改&nbsp;&nbsp;&nbsp;&nbsp;':'&nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;'">
                                             &nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;
                                         </button>

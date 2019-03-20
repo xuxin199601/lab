@@ -8,5 +8,6 @@ public class CustomConstant {
     public static String THESIS_DATA_SAVE_PATH = "static/thesis/data";
     public static String IMAGE_SAVE_PATH = "static/img/";
     public static int STATUS_SUCCESS = 1;
+    public static boolean IS_DETAIL_VIEW = true;
 
 }

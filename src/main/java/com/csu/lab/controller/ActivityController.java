@@ -89,6 +89,15 @@ public class ActivityController {
         return "server/activity/addActivity";
     }
 
+    @RequestMapping("/detailActivity")
+    public String detailActivity(@RequestParam("id") Integer pid,
+                                 Model model) {
+        Activity activity = activityService.queryActivityById(pid);
+        model.addAttribute("detail", CustomConstant.IS_DETAIL_VIEW);
+        model.addAttribute("activity", activity);
+        return "server/activity/addActivity";
+    }
+
     /**
      * 逻辑代码啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
      *
