@@ -85,18 +85,18 @@
             <!--</div>-->
         <!--</fieldset>-->
 
-        <!--<fieldset class="layui-elem-field">-->
-            <!--<legend class="csu-color-theme">项目下载</legend>-->
-            <!--<div class="layui-field-box">-->
-                <!--<table class="layui-table csu-table" lay-skin="nob">-->
-                    <!--<tbody>-->
-                    <!--<tr>-->
-                        <!--<td><a>项目下载区域</a></td>-->
-                    <!--</tr>-->
-                    <!--</tbody>-->
-                <!--</table>-->
+        <fieldset class="layui-elem-field">
+            <legend class="csu-color-theme">项目主页</legend>
+            <div class="layui-field-box">
+                <table class="layui-table csu-table" lay-skin="nob">
+                    <tbody>
+                    <tr>
+                        <td><a target="_blank" th:href="${project.project}" th:text="${project.name}">项目下载区域</a></td>
+                    </tr>
+                    </tbody>
+                </table>
 
-            <!--</div>-->
+            </div>
         <!--</fieldset>-->
     </div>
 
