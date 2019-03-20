@@ -159,7 +159,8 @@ video{
 }
 
 .csu-detail fieldset{
-    margin: 15px 30px;
+    margin: 15px 0px;
+    padding: 0px 30px;
 }
 
 .csu-page {
