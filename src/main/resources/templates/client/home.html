@@ -23,27 +23,23 @@
     </div>
 
     <div class="layui-col-md4">
-        <table class="layui-table csu-table" lay-skin="line">
-
+        <table class="layui-table csu-table" id="csu-activities-table" lay-skin="line">
             <colgroup>
                 <col>
                 <col width="120">
             </colgroup>
-
             <thead>
             <tr class="layui-bg-black">
                 <th>最新活动</th>
                 <th><a class="csu-color-graylight" href="javascript:;">更多</a></th>
             </tr>
             </thead>
-
             <tbody>
             <tr th:each="activity:${pageInfo.list}">
                 <td><a href="javascript:;" th:text="${activity.introduction}">测试是真的难</a></td>
                 <td>2016-11-29</td>
             </tr>
             </tbody>
-
         </table>
     </div>
 
@@ -53,7 +49,7 @@
     <fieldset class="layui-elem-field">
         <legend class="csu-color-theme"><b>实验室简介</b></legend>
         <div class="layui-field-box" th:text="${laboratory.resDirection}">
-            实验室简介内容
+            实验室简介
         </div>
     </fieldset>
 </div>
