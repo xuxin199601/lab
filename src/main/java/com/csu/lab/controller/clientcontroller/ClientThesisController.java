@@ -30,8 +30,8 @@ public class ClientThesisController {
     // 分页成果信息列表
     @RequestMapping("/thesisList")
     public String getThesisListByPage(@RequestParam(defaultValue = "1") Integer page,
-                                   Model model
-                                   ) {
+                                      Model model
+    ) {
 
         PageHelper.startPage(page, 12);
 
