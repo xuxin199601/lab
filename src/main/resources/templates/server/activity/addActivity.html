@@ -32,8 +32,9 @@
                         <a>活动管理</a>
                     </li>
                     <li class="active">
-                        <strong th:if="${activity==null}">添加活动</strong>
-                        <strong th:if="${activity!=null}">修改活动</strong>
+                        <strong th:if="${activity==null&&detail==null}">添加活动</strong>
+                        <strong th:if="${activity!=null&&detail==null}">修改活动</strong>
+                        <strong th:if="${detail!=null&&detail==true}">查看详情</strong>
                     </li>
                 </ol>
             </div>
@@ -45,8 +46,9 @@
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5 th:if="${activity==null}">添加论文信息</h5>
-                            <h5 th:if="${activity!=null}">修改论文信息</h5>
+                            <h5 th:if="${activity==null&&detail==null}">添加论文信息</h5>
+                            <h5 th:if="${activity!=null&&detail==null}">修改论文信息</h5>
+                            <h5 th:if="${detail!=null&&detail==true}">查看详情</h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -54,7 +56,8 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-                            <form th:action="@{/server/activity/saveActivity}" id="formTag" method="POST"
+                            <form th:action="${detail!=null&&detail==true}?@{/server/activity/activityList}:@{/server/activity/saveActivity}"
+                                  id="formTag" method="POST"
                                   class="form-horizontal" enctype="multipart/form-data">
 
                                 <input type="hidden" name="_method" value="put" th:if="${activity!=null}">
@@ -64,7 +67,8 @@
                                 <div class="form-group"><label class="col-sm-2 control-label">活动名称：</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="name" name="name" placeholder="活动名称"
-                                               th:value="${activity!=null}?${activity.name}">
+                                               th:value="${activity!=null}?${activity.name}"
+                                               th:readonly="${detail!=null}?${detail}">
                                     </div>
                                 </div>
 
@@ -74,19 +78,24 @@
                                     <div class="col-sm-10">
                                         <input type="date" class="form-control" id="time" name="time"
                                                placeholder="活动时间"
-                                               th:value="${activity!=null}?${#dates.format(activity.time,'yyyy-MM-dd')}">
+                                               th:value="${activity!=null}?${#dates.format(activity.time,'yyyy-MM-dd')}"
+                                               th:readonly="${detail!=null}?${detail}">
                                     </div>
                                 </div>
 
-                                <div class="hr-line-dashed"></div>
+                                <div class=" hr-line-dashed">
+                                </div>
 
                                 <div class="form-group"><label class="col-sm-2 control-label">活动介绍：</label>
                                     <div class="col-sm-10">
                                         <!--<input type="text" class="form-control" id="keywords" name="keywords"-->
                                         <!--placeholder="活动介绍" th:value="${activity!=null}?${activity.introduction}">-->
 
-                                        <textarea id="introduction" name="introduction" class="form-control" rows="9"
-                                                  th:text="${activity!=null}?${activity.introduction}"></textarea>
+                                        <textarea id="introduction" name="introduction" class="form-control"
+                                                  rows="9"
+                                                  th:text="${activity!=null}?${activity.introduction}"
+                                                  th:readonly="${detail!=null}?${detail}"
+                                        ></textarea>
                                     </div>
                                 </div>
 
@@ -95,6 +104,7 @@
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-2">
                                         <button type="submit" class="btn btn-primary"
+                                                th:if="${detail==null||detail==false}"
                                                 th:text="${activity!=null}?'&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改&nbsp;&nbsp;&nbsp;&nbsp;':'&nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;'">
                                             &nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;
                                         </button>

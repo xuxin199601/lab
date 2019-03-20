@@ -1,5 +1,6 @@
 package com.csu.lab.controller;
 
+import com.csu.lab.customConst.CustomConstant;
 import com.csu.lab.enums.ResultEnum;
 import com.csu.lab.exception.ThesisException;
 import com.csu.lab.pojo.Message;
@@ -92,6 +93,23 @@ public class ThesisController {
         return "server/gain/addThesis";
     }
 
+    @RequestMapping("/detailThesis")
+    public String detailThesis(@RequestParam("id") Integer aid,
+                               Model model) {
+        Thesis thesis = thesisService.queryThesisById(aid);
+        model.addAttribute("detail", CustomConstant.IS_DETAIL_VIEW);
+        model.addAttribute("thesis", thesis);
+        return "server/gain/addThesis";
+    }
+
+    /**
+     * 逻辑代码
+     *
+     * @param thesis
+     * @param request
+     * @return
+     * @throws Exception
+     */
     // 添加成果
     @RequestMapping(value = "/saveThesis", method = RequestMethod.POST)
     public String saveThesis(Thesis thesis, HttpServletRequest request) throws Exception {
@@ -131,7 +149,6 @@ public class ThesisController {
         }
         return "redirect:/server/thesis/thesisList";
     }
-
 
 
     /********************************************************************************************************************************/
