@@ -12,21 +12,21 @@
 
 <fieldset class="layui-elem-field">
 
-    <legend class="csu-color-theme"><b>项目名称</b></legend>
+    <legend class="csu-color-theme"><b th:text="${project.name}">项目名称</b></legend>
 
     <div class="layui-field-box csu-detail">
 
-        <fieldset class="layui-elem-field">
-            <legend class="csu-color-theme">项目摘要</legend>
-            <div class="layui-field-box">
-                摘要区域
-            </div>
-        </fieldset>
+        <!--<fieldset class="layui-elem-field">-->
+            <!--<legend class="csu-color-theme">项目摘要</legend>-->
+            <!--<div class="layui-field-box">-->
+                <!--摘要区域-->
+            <!--</div>-->
+        <!--</fieldset>-->
 
 
         <fieldset class="layui-elem-field">
             <legend class="csu-color-theme">项目简介</legend>
-            <div class="layui-field-box">
+            <div class="layui-field-box"  th:text="${project.introduction}">
                 简介区域
             </div>
         </fieldset>
@@ -34,69 +34,70 @@
         <fieldset class="layui-elem-field">
             <legend class="csu-color-theme">项目视频</legend>
             <div class="layui-field-box">
-                <video src="http://www.w3school.com.cn/i/movie.ogg" controls="controls">
+                <video th:src="${project.video}" controls="controls">
                     your browser does not support the video tag
+
                 </video>
             </div>
         </fieldset>
 
-        <fieldset class="layui-elem-field csu-card-tutor">
-            <legend class="csu-color-theme">参与人员</legend>
-            <div class="layui-field-box">
+        <!--<fieldset class="layui-elem-field csu-card-tutor">-->
+            <!--<legend class="csu-color-theme">参与人员</legend>-->
+            <!--<div class="layui-field-box">-->
 
-                <div class="layui-row layui-col-space15">
+                <!--<div class="layui-row layui-col-space15">-->
 
-                    <div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
-                        <a href="../student/student.html">
-                            <div class="csu-card csu-card-hover">
-                                <img class="csu-card-img" src="../../static/img/test/photo1.png">
-                                <div class="csu-card-name">庄晓曼</div>
-                                <div class="csu-card-post">飞鹰</div>
-                                <div class="csu-card-type">军统特务</div>
-                            </div>
-                        </a>
-                    </div>
+                    <!--<div class="layui-col-md3 layui-col-sm6 layui-col-xs6">-->
+                        <!--<a href="../student/student.html">-->
+                            <!--<div class="csu-card csu-card-hover">-->
+                                <!--<img class="csu-card-img" src="../../static/img/test/photo1.png">-->
+                                <!--<div class="csu-card-name">庄晓曼</div>-->
+                                <!--<div class="csu-card-post">飞鹰</div>-->
+                                <!--<div class="csu-card-type">军统特务</div>-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</div>-->
 
-                    <div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
-                        <a href="../student/student.html">
-                            <div class="csu-card csu-card-hover">
-                                <img class="csu-card-img" src="../../static/img/test/photo2.png">
-                                <div class="csu-card-name">方敏</div>
-                                <div class="csu-card-post">第三号</div>
-                                <div class="csu-card-type">中共地下党</div>
-                            </div>
-                        </a>
-                    </div>
+                    <!--<div class="layui-col-md3 layui-col-sm6 layui-col-xs6">-->
+                        <!--<a href="../student/student.html">-->
+                            <!--<div class="csu-card csu-card-hover">-->
+                                <!--<img class="csu-card-img" src="../../static/img/test/photo2.png">-->
+                                <!--<div class="csu-card-name">方敏</div>-->
+                                <!--<div class="csu-card-post">第三号</div>-->
+                                <!--<div class="csu-card-type">中共地下党</div>-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</div>-->
 
-                    <div class="layui-col-md3 layui-col-sm6 layui-col-xs6">
-                        <a href="../student/student.html">
-                            <div class="csu-card csu-card-hover">
-                                <img class="csu-card-img" src="../../static/img/test/photo3.png">
-                                <div class="csu-card-name">武藤纯子</div>
-                                <div class="csu-card-post">作家</div>
-                                <div class="csu-card-type">日本左派</div>
-                            </div>
-                        </a>
-                    </div>
+                    <!--<div class="layui-col-md3 layui-col-sm6 layui-col-xs6">-->
+                        <!--<a href="../student/student.html">-->
+                            <!--<div class="csu-card csu-card-hover">-->
+                                <!--<img class="csu-card-img" src="../../static/img/test/photo3.png">-->
+                                <!--<div class="csu-card-name">武藤纯子</div>-->
+                                <!--<div class="csu-card-post">作家</div>-->
+                                <!--<div class="csu-card-type">日本左派</div>-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</div>-->
 
-                </div>
+                <!--</div>-->
 
-            </div>
-        </fieldset>
+            <!--</div>-->
+        <!--</fieldset>-->
 
-        <fieldset class="layui-elem-field">
-            <legend class="csu-color-theme">项目下载</legend>
-            <div class="layui-field-box">
-                <table class="layui-table csu-table" lay-skin="nob">
-                    <tbody>
-                    <tr>
-                        <td><a>项目下载区域</a></td>
-                    </tr>
-                    </tbody>
-                </table>
+        <!--<fieldset class="layui-elem-field">-->
+            <!--<legend class="csu-color-theme">项目下载</legend>-->
+            <!--<div class="layui-field-box">-->
+                <!--<table class="layui-table csu-table" lay-skin="nob">-->
+                    <!--<tbody>-->
+                    <!--<tr>-->
+                        <!--<td><a>项目下载区域</a></td>-->
+                    <!--</tr>-->
+                    <!--</tbody>-->
+                <!--</table>-->
 
-            </div>
-        </fieldset>
+            <!--</div>-->
+        <!--</fieldset>-->
     </div>
 
 </fieldset>
