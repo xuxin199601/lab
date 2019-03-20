@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <title>后台信息管理系统</title>
 
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
-    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
-    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
 
     <link th:href="@{/css/plugins/iCheck/custom.css}" rel="stylesheet"/>
     <link th:href="@{/css/plugins/footable/footable.core.css}" rel="stylesheet"/>
@@ -25,8 +25,9 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5 th:if="${project==null}">添加项目信息</h5>
-                <h5 th:if="${project!=null}">修改项目信息</h5>
+                <h5 th:if="${project==null&&detail==null}">添加项目信息</h5>
+                <h5 th:if="${project!=null&&detail==null}">修改项目信息</h5>
+                <h5 th:if="${detail!=null&&detail==true}">查看详情</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -34,7 +35,8 @@
                 </div>
             </div>
             <div class="ibox-content">
-                <form th:action="@{/server/project/saveProject}" id="formTag" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                <form th:action="@{/server/project/saveProject}" id="formTag" method="POST" class="form-horizontal"
+                      enctype="multipart/form-data">
 
                     <input type="hidden" name="_method" value="put" th:if="${project!=null}">
 
@@ -42,7 +44,9 @@
 
                     <div class="form-group"><label class="col-sm-2 control-label">项目名称：</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="name"  name="name" placeholder="用户名" th:value="${project!=null}?${project.name}">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="用户名"
+                                   th:readonly="${detail!=null}?${detail}"
+                                   th:value=" ${project!=null}?${project.name}">
                         </div>
                     </div>
 
@@ -50,7 +54,9 @@
 
                     <div class="form-group"><label class="col-sm-2 control-label">项目工程：</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="project"  name="project" placeholder="项目工程" th:value="${project!=null}?${project.project}">
+                            <input type="text" class="form-control" id="project" name="project" placeholder="项目工程"
+                                   th:readonly="${detail!=null}?${detail}"
+                                   th:value=" ${project!=null}?${project.project}">
                         </div>
                     </div>
 
@@ -58,10 +64,16 @@
 
                     <div class="form-group"><label class="col-sm-2 control-label">项目视频：</label>
                         <div class="col-sm-10">
-                            <input type="file" name="blFile" accept=".mp4,.rmvb,.flv,.avi,video"/>
-                            <input type="hidden" name="video" th:value="${project!=null}?${project.video}"/>
-                            <p th:if="${project!=null&&project.video!=''}" th:text="上传新的文件，将覆盖旧的文件"></p>
-                            <p th:if="${project!=null&&project.video==''}" th:text="该项目目前还没有视频"></p>
+                            <div th:if="${detail==null||detail==false}">
+                                <input type="file" name="blFile" accept=".mp4,.rmvb,.flv,.avi,video"/>
+                                <input type="hidden" name="video" th:value="${project!=null}?${project.video}"/>
+                                <p th:if="${project!=null&&project.video!=''}" th:text="上传新的文件，将覆盖旧的文件"></p>
+                                <p th:if="${project!=null&&project.video==''}" th:text="该项目目前还没有视频"></p>
+                            </div>
+                            <div th:if="${detail!=null&&detail==true}">
+                                <p th:if="${project!=null&&project.video!=''}" th:text="${project.video}"></p>
+                                <p th:if="${project!=null&&project.video==''}" th:text="暂无视频"></p>
+                            </div>
                             <!--<input type="text" class="form-control" id="video"  name="video" placeholder="项目视频" th:value="${project!=null}?${project.video}">-->
                         </div>
                     </div>
@@ -72,6 +84,7 @@
                         <div class="col-sm-10">
                             <input type="date" class="form-control" id="startTime" name="startTime"
                                    placeholder="开始时间"
+                                   th:readonly="${detail!=null}?${detail}"
                                    th:value="${project!=null}?${#dates.format(project.startTime,'yyyy-MM-dd')}">
                             <!--<input type="text" class="form-control" id="startTime"  name="startTime" placeholder="开始时间" th:value="${project!=null}?${#dates.format(project.startTime,'yyyy-MM-dd')}">-->
                         </div>
@@ -83,6 +96,7 @@
                         <div class="col-sm-10">
                             <input type="date" class="form-control" id="endTime" name="endTime"
                                    placeholder="开始时间"
+                                   th:readonly="${detail!=null}?${detail}"
                                    th:value="${project!=null}?${#dates.format(project.endTime,'yyyy-MM-dd')}">
                             <!--<input type="text" class="form-control" id="endTime"  name="endTime" placeholder="结束时间" th:value="${project!=null}?${#dates.format(project.endTime,'yyyy-MM-dd')}">-->
                         </div>
@@ -92,7 +106,9 @@
 
                     <div class="form-group"><label class="col-sm-2 control-label">项目简介：</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="introduction"  name="introduction" placeholder="项目简介" th:value="${project!=null}?${project.introduction}">
+                            <textarea type="text" class="form-control" id="introduction" name="introduction"
+                                      th:readonly="${detail!=null}?${detail}"
+                                      placeholder="项目简介" th:value="${project!=null}?${project.introduction}"></textarea>
                         </div>
                     </div>
 
@@ -100,7 +116,11 @@
 
                     <div class="form-group">
                         <div class="col-sm-4 col-sm-offset-2">
-                            <button type="submit" class="btn btn-primary" th:text="${project!=null}?'&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改&nbsp;&nbsp;&nbsp;&nbsp;':'&nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;'">&nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                            <button type="submit" class="btn btn-primary"
+                                    th:if="${detail==null||detail==false}"
+                                    th:text="${project!=null}?'&nbsp;&nbsp;&nbsp;&nbsp;修&nbsp;&nbsp;&nbsp;&nbsp;改&nbsp;&nbsp;&nbsp;&nbsp;':'&nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;'">
+                                &nbsp;&nbsp;&nbsp;&nbsp;添&nbsp;&nbsp;&nbsp;&nbsp;加&nbsp;&nbsp;&nbsp;&nbsp;
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -110,8 +130,8 @@
 </div>
 
 </div>
-        <div class="footer" th:include="server/footer :: copyright"></div>
-    </div>
+<div class="footer" th:include="server/footer :: copyright"></div>
+</div>
 </div>
 
 <!-- Mainly scripts -->
