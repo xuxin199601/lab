@@ -100,8 +100,7 @@
 									<tr th:each="student:${pageInfo.list}">
 										<td th:text="${studentStat.count} + (${pageNum} - 1) * ${pageSize}">Onions</td>
 										<td>
-											<!--<img src="@{${student.image}}"/>-->
-											<img th:src="@{/img/student.jpg}" height="18px" width="18px"/>
+											<img th:src="@{${student.image}}" style="width: 30px;height: 30px;border-radius:100%; overflow:hidden;"/>
 										</td>
 										<td th:text="${student.name}">Onions</td>
 										<td th:text="${student.post}">Onions</td>
