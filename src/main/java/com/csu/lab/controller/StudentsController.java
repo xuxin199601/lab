@@ -88,10 +88,10 @@ public class StudentsController {
     // 保存添加的学生信息，跳转到学生管理界面
     @RequestMapping(value = "/saveStudent", method = RequestMethod.POST)
     public String saveStudent(Researcher researcher,
-                              @RequestParam("file") MultipartFile file,
-                              Model model) throws Exception {
+                            @RequestParam("file") MultipartFile file,
+                            Model model) throws Exception {
         if (file.isEmpty()) {
-            return "redirect:/server/student/studentList";
+            msg = "修改失败";
         }
 
         String fileName = file.getOriginalFilename();
@@ -114,12 +114,22 @@ public class StudentsController {
         return "redirect:/server/student/studentList";
     }
 
+
     // 保存修改的学生信息，跳转到学生管理界面
     @RequestMapping(value = "/saveStudent", method = RequestMethod.PUT)
-    public String saveEditStudent(Researcher researcher,
-                              @RequestParam("file") MultipartFile file,
-                              Model model) throws Exception {
-        if (file.isEmpty()) {
+    public String saveEditTutor(Researcher researcher,
+                                @RequestParam(value = "file", required = false)MultipartFile file,
+                                @RequestParam(value = "image", required = false) String image,
+                                Model model) throws Exception {
+
+        // 只修改文本信息，不含头像修改
+        if (file.isEmpty() && (image != null)) {
+            int result = researcherService.updateResearcher(researcher);
+            if (result == 1) {
+                msg = "修改成功";
+            } else {
+                msg = "修改失败";
+            }
             return "redirect:/server/student/studentList";
         }
 
@@ -143,6 +153,7 @@ public class StudentsController {
         return "redirect:/server/student/studentList";
     }
 
+    
     // 删除学生信息，跳转到学生管理界面
     @RequestMapping("/deleteStudent")
     public String delStudent(@RequestParam("id")Integer rid) {

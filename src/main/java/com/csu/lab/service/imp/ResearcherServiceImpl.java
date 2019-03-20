@@ -38,34 +38,37 @@ public class ResearcherServiceImpl implements ResearcherService {
         Researcher tempResearcher = new Researcher();
         tempResearcher.setAid(researcher.getAid());
         Researcher exitsResearcher = researcherMapper.selectOne(tempResearcher);
+        Integer result;
         if (exitsResearcher == null) {
-            if(researcherMapper.insert(researcher) != 1) {
+            result = researcherMapper.insert(researcher);
+            if(result != 1) {
                 throw new ResearcherException(ResultEnum.RESEARCHER_SAVE_FAILURE);
             }
         } else {
             throw new ResearcherException(ResultEnum.TUTOR_EXIST);
         }
-        return researcherMapper.insert(researcher);
+        return result;
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public Integer updateResearcher(Researcher researcher) {
         logger.info("updateResearcher:{}", researcher);
-        researcherMapper.updateByPrimaryKeySelective(researcher);
-        if(researcherMapper.updateByPrimaryKeySelective(researcher) != 1) {
+        Integer result = researcherMapper.updateByPrimaryKeySelective(researcher);
+        if(result != 1) {
             throw new ResearcherException(ResultEnum.RESEARCHER_UPDATE_FAILURE);
         }
-        return researcherMapper.updateByPrimaryKeySelective(researcher);
+        return result;
     }
 
     @Override
     public Integer deleteResearcher(Integer researcherId) {
 
-        if(researcherMapper.deleteByPrimaryKey(researcherId) != 1) {
+        int resutlt = researcherMapper.deleteByPrimaryKey(researcherId);
+        if(resutlt != 1) {
             throw new ResearcherException(ResultEnum.RESEARCHER_DELETE_FAILURE);
         }
-        return researcherMapper.deleteByPrimaryKey(researcherId);
+        return resutlt;
     }
 
     @Override

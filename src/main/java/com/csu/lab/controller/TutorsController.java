@@ -91,7 +91,7 @@ public class TutorsController {
                               @RequestParam("file") MultipartFile file,
                               Model model) throws Exception {
         if (file.isEmpty()) {
-            return "redirect:/server/tutor/tutorList";
+            msg = "修改失败";
         }
 
         String fileName = file.getOriginalFilename();
@@ -118,9 +118,18 @@ public class TutorsController {
     // 保存修改的导师信息，跳转到导师管理界面
     @RequestMapping(value = "/saveTutor", method = RequestMethod.PUT)
     public String saveEditTutor(Researcher researcher,
-                            @RequestParam("file") MultipartFile file,
-                            Model model) throws Exception {
-        if (file.isEmpty()) {
+                                @RequestParam(value = "file", required = false)MultipartFile file,
+                                @RequestParam(value = "image", required = false) String image,
+                                Model model) throws Exception {
+
+        // 只修改文本信息，不含头像修改
+        if (file.isEmpty() && (image != null)) {
+            int result = researcherService.updateResearcher(researcher);
+            if (result == 1) {
+                msg = "修改成功";
+            } else {
+                msg = "修改失败";
+            }
             return "redirect:/server/tutor/tutorList";
         }
 
