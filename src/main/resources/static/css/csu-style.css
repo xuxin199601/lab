@@ -5,11 +5,13 @@ table a {
 fieldset {
     margin: 0;
 }
+
 fieldset a {
     color: #009688;
 }
-video{
-    height:240px;
+
+video {
+    height: 240px;
 }
 
 .csu-header {
@@ -23,13 +25,14 @@ video{
     height: 120px;
 }
 
-.csu-nav{
-    padding:0 20px;
+.csu-nav {
+    padding: 0 20px;
 }
 
-.csu-nav .layui-nav{
-    padding:0;
+.csu-nav .layui-nav {
+    padding: 0;
 }
+
 .csu-content {
     text-align: center;
 }
@@ -102,7 +105,6 @@ video{
 
 .csu-table {
     table-layout: fixed;
-    margin-bottom: 30px;
 }
 
 .csu-table th a:hover {
@@ -158,9 +160,9 @@ video{
     color: white;
 }
 
-.csu-detail fieldset{
+.csu-detail fieldset {
     margin: 15px 0px;
-    padding: 0px 30px;
+    padding: 15px 15px;
 }
 
 .csu-page {
@@ -181,10 +183,6 @@ video{
     }
 
     .csu-iframe-body {
-        margin: 15px 0px;
-    }
-
-    .csu-detail fieldset{
         margin: 15px 0px;
     }
 }

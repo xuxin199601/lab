@@ -740,3 +740,89 @@
 2019-03-20 14:58:32.904  INFO 5624 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
 2019-03-20 14:58:53.528  INFO 5624 --- [http-nio-8081-exec-3] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
 2019-03-20 14:58:59.101  INFO 5624 --- [http-nio-8081-exec-10] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
+2019-03-20 18:24:29.429  INFO 3268 --- [restartedMain] com.csu.lab.LabApplication               : Starting LabApplication on DESKTOP-9LM98U5 with PID 3268 (C:\Users\DaShu\IdeaProjects\lab\target\classes started by DaShu in C:\Users\DaShu\IdeaProjects\lab)
+2019-03-20 18:24:29.433  INFO 3268 --- [restartedMain] com.csu.lab.LabApplication               : No active profile set, falling back to default profiles: default
+2019-03-20 18:24:29.493  INFO 3268 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-03-20 18:24:29.493  INFO 3268 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-03-20 18:24:30.226  INFO 3268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-20 18:24:30.264  INFO 3268 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31ms. Found 0 repository interfaces.
+2019-03-20 18:24:30.578  INFO 3268 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f3dd3a73] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-20 18:24:30.928  INFO 3268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 18:24:30.946  INFO 3268 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 18:24:30.947  INFO 3268 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 18:24:30.953  INFO 3268 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\CTEX\UserData\miktex\bin;C:\CTEX\MiKTeX\miktex\bin;C:\CTEX\CTeX\ctex\bin;C:\CTEX\CTeX\cct\bin;C:\CTEX\CTeX\ty\bin;C:\CTEX\Ghostscript\gs9.05\bin;C:\CTEX\GSview\gsview;C:\CTEX\WinEdt;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Program Files\Java\jdk1.8.0_191\jre\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Apache Software Foundation\apache-maven-3.6.0\bin;C:\Users\DaShu\AppData\Local\Programs\Python\Python37;C:\Program Files\Apache Software Foundation\groovy-2.5.6\bin;C:\Users\DaShu\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\DaShu\AppData\Local\Programs\Python\Python37\;C:\Users\DaShu\AppData\Local\Microsoft\WindowsApps;;C:\Users\DaShu\AppData\Local\Programs\Microsoft VS Code\bin;.]
+2019-03-20 18:24:31.064  INFO 3268 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 18:24:31.065  INFO 3268 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1571 ms
+2019-03-20 18:24:31.197  INFO 3268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-20 18:24:34.304  INFO 3268 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-20 18:24:34.356  INFO 3268 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-20 18:24:34.414  INFO 3268 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-03-20 18:24:34.415  INFO 3268 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-03-20 18:24:34.682  INFO 3268 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-03-20 18:24:35.262  INFO 3268 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-20 18:24:35.415  INFO 3268 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-20 18:24:36.149  INFO 3268 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 18:24:36.184  WARN 3268 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-20 18:24:36.283  WARN 3268 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-03-20 18:24:36.645  INFO 3268 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-03-20 18:24:36.699  INFO 3268 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 18:24:36.702  INFO 3268 --- [restartedMain] com.csu.lab.LabApplication               : Started LabApplication in 7.692 seconds (JVM running for 8.945)
+2019-03-20 18:24:36.797  INFO 3268 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-20 18:24:36.798  INFO 3268 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-20 18:24:36.806  INFO 3268 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2019-03-20 18:24:57.089  INFO 3268 --- [http-nio-8081-exec-6] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:25:04.716  INFO 3268 --- [http-nio-8081-exec-1] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
+2019-03-20 18:25:24.255  INFO 3268 --- [http-nio-8081-exec-6] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
+2019-03-20 18:25:28.331  INFO 3268 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:25:33.033  INFO 3268 --- [http-nio-8081-exec-10] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
+2019-03-20 18:25:36.434  INFO 3268 --- [http-nio-8081-exec-5] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-20 18:25:44.622  INFO 3268 --- [http-nio-8081-exec-1] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
+2019-03-20 18:26:12.044  INFO 3268 --- [http-nio-8081-exec-4] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:26:50.361  INFO 3268 --- [http-nio-8081-exec-3] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
+2019-03-20 18:27:56.497  INFO 3268 --- [http-nio-8081-exec-2] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:28:02.344  INFO 3268 --- [http-nio-8081-exec-8] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-20 18:28:21.037  INFO 3268 --- [http-nio-8081-exec-2] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
+2019-03-20 18:29:30.409  INFO 3268 --- [http-nio-8081-exec-10] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:29:36.154  INFO 3268 --- [http-nio-8081-exec-9] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
+2019-03-20 18:29:47.315  INFO 3268 --- [http-nio-8081-exec-5] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
+2019-03-20 18:30:45.282  INFO 3268 --- [http-nio-8081-exec-1] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:30:49.686  INFO 3268 --- [http-nio-8081-exec-8] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
+2019-03-20 18:30:58.321  INFO 3268 --- [http-nio-8081-exec-7] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-20 18:31:04.655  INFO 3268 --- [http-nio-8081-exec-10] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
+2019-03-20 18:31:15.912  INFO 3268 --- [http-nio-8081-exec-4] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-20 18:31:31.934  INFO 3268 --- [http-nio-8081-exec-8] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:31:50.300  INFO 3268 --- [http-nio-8081-exec-6] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-20 18:33:12.269  INFO 3268 --- [http-nio-8081-exec-3] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:34:03.590  INFO 3268 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
+2019-03-20 18:35:09.223  INFO 3268 --- [http-nio-8081-exec-4] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:35:18.128  INFO 3268 --- [http-nio-8081-exec-8] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
+2019-03-20 18:35:41.864  INFO 3268 --- [http-nio-8081-exec-9] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-20 18:35:48.275  INFO 3268 --- [http-nio-8081-exec-4] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
+2019-03-20 18:36:36.273  INFO 3268 --- [http-nio-8081-exec-6] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:37:09.125  INFO 3268 --- [http-nio-8081-exec-2] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:37:23.273  INFO 3268 --- [http-nio-8081-exec-8] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:38:00.325  INFO 3268 --- [http-nio-8081-exec-3] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:40:59.176  INFO 3268 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:43:00.189  INFO 3268 --- [http-nio-8081-exec-9] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:43:05.254  INFO 3268 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
+2019-03-20 18:43:14.353  INFO 3268 --- [http-nio-8081-exec-1] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-20 18:43:21.381  INFO 3268 --- [http-nio-8081-exec-8] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
+2019-03-20 18:45:55.591  INFO 3268 --- [http-nio-8081-exec-5] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:48:00.856  INFO 3268 --- [http-nio-8081-exec-7] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:48:10.109  INFO 3268 --- [http-nio-8081-exec-6] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
+2019-03-20 18:48:17.432  INFO 3268 --- [http-nio-8081-exec-2] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-20 18:48:37.711  INFO 3268 --- [http-nio-8081-exec-1] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
+2019-03-20 18:48:48.364  INFO 3268 --- [http-nio-8081-exec-1] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
+2019-03-20 18:50:25.611  INFO 3268 --- [http-nio-8081-exec-5] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-20 18:50:35.511  INFO 3268 --- [http-nio-8081-exec-2] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
+2019-03-20 18:52:21.172  INFO 3268 --- [http-nio-8081-exec-1] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-20 18:52:39.128  INFO 3268 --- [http-nio-8081-exec-3] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-20 18:53:58.195  INFO 3268 --- [http-nio-8081-exec-2] c.csu.lab.service.imp.ThesisServiceImpl  : queryThesisById:1
+2019-03-20 18:54:07.549  INFO 3268 --- [http-nio-8081-exec-5] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
+2019-03-20 18:55:09.207  INFO 3268 --- [http-nio-8081-exec-7] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
+2019-03-20 18:55:32.966  INFO 3268 --- [http-nio-8081-exec-7] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:37
+2019-03-20 18:55:41.196  INFO 3268 --- [http-nio-8081-exec-4] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
+2019-03-20 18:55:47.069  INFO 3268 --- [http-nio-8081-exec-9] c.c.l.service.imp.ResearcherServiceImpl  : queryResearcherById:43
+2019-03-20 18:55:51.395  INFO 3268 --- [http-nio-8081-exec-3] c.c.lab.service.imp.ProjectServiceImpl   : queryProjectById:8
