@@ -96,9 +96,9 @@
                                     <tr>
                                         <th width="5%">编号</th>
                                         <th>论文名称</th>
-                                        <td width="25%">摘要</td>
+                                        <td width="22%">摘要</td>
                                         <th width="20%">关键字</th>
-                                        <td width="20%">发表时间</td>
+                                        <td width="10%">发表时间</td>
                                         <th width="20%">操作</th>
                                     </tr>
                                     </thead>
@@ -106,8 +106,8 @@
                                     <tr th:each="thesis:${pageInfo.list}">
                                         <td th:text="${thesisStat.count} + (${pageNum} - 1) * ${pageSize}">Onions</td>
                                         <td th:text="${thesis.name}">Onions</td>
-                                        <td th:text="${thesis.abstracts}">Onions</td>
-                                        <td th:text="${thesis.keywords}">Onions</td>
+                                        <td th:text="${#strings.abbreviate(thesis.abstracts,20)}">Onions</td>
+                                        <td th:text="${#strings.abbreviate(thesis.keywords,16)}">Onions</td>
                                         <!--后期这里是换成url？-->
                                         <!--<td th:text="${thesis.content}">Onions</td>-->
                                         <!--<td th:text="${thesis.code}">Onions</td>-->
