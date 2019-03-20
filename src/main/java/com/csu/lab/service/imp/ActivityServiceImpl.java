@@ -1,5 +1,6 @@
 package com.csu.lab.service.imp;
 
+import com.csu.lab.customConst.CustomConstant;
 import com.csu.lab.enums.ResultEnum;
 import com.csu.lab.exception.ActivityException;
 import com.csu.lab.mapper.ActivityMapper;
@@ -18,7 +19,7 @@ import java.util.List;
 
 
 @Service
-public class ActivityServiceImpl implements ActivityService{
+public class ActivityServiceImpl implements ActivityService {
 
     private Logger logger = LoggerFactory.getLogger(ActivityServiceImpl.class);
 
@@ -35,12 +36,14 @@ public class ActivityServiceImpl implements ActivityService{
      */
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public void saveActivity(Activity activity) {
+    public int saveActivity(Activity activity) {
         logger.info("addActivity:{}", activity);
         List<Activity> activityList = queryByProperty("name", activity.getName());
         if (activityList.isEmpty()) {
-            if(activityMapper.insert(activity) != 1) {
+            if (activityMapper.insert(activity) != 1) {
                 throw new ActivityException(ResultEnum.ACTIVITY_SAVE_FAILURE);
+            } else {
+                return 1;
             }
         } else {
             throw new ActivityException(ResultEnum.ACTIVITY_EXIST);
@@ -49,18 +52,22 @@ public class ActivityServiceImpl implements ActivityService{
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public void updateActivity(Activity activity) {
+    public int updateActivity(Activity activity) {
         logger.info("updateActivity:{}", activity);
-        if(activityMapper.updateByPrimaryKeySelective(activity) != 1) {
+        if (activityMapper.updateByPrimaryKeySelective(activity) != 1) {
             throw new ActivityException(ResultEnum.ACTIVITY_UPDATE_FAILURE);
+        } else {
+            return CustomConstant.STATUS_SUCCESS;
         }
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public void deleteActivity(Integer activityId) {
-        if(activityMapper.deleteByPrimaryKey(activityId) != 1) {
+    public int deleteActivity(Integer activityId) {
+        if (activityMapper.deleteByPrimaryKey(activityId) != 1) {
             throw new ActivityException(ResultEnum.ACTIVITY_DELETE_FAILURE);
+        } else {
+            return CustomConstant.STATUS_SUCCESS;
         }
     }
 

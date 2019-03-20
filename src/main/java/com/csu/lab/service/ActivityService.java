@@ -8,11 +8,11 @@ public interface ActivityService {
 
     List<Activity> getActivityList();
 
-    void saveActivity(Activity activity)throws Exception;
+    int saveActivity(Activity activity)throws Exception;
 
-    void updateActivity(Activity activity);
+    int updateActivity(Activity activity);
 
-    void deleteActivity(Integer activityId);
+    int deleteActivity(Integer activityId);
 
     Activity queryActivityById(Integer activityId);
 

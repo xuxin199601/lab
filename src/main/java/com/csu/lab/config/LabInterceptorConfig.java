@@ -17,7 +17,7 @@ public class LabInterceptorConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        // 注册拦截器
+//        // 注册拦截器
         LoginInterceptor loginInterceptor = new LoginInterceptor();
         InterceptorRegistration loginRegistry = registry.addInterceptor(loginInterceptor);
         // 拦截路径

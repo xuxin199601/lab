@@ -1,7 +1,5 @@
 package com.csu.lab.pojo;
 
-import org.springframework.data.annotation.Id;
-
 import java.util.Date;
 import javax.persistence.*;
 
