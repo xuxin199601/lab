@@ -1,6 +1,7 @@
 package com.csu.lab.controller.clientcontroller;
 
 import com.csu.lab.pojo.Activity;
+import com.csu.lab.pojo.Relationship;
 import com.csu.lab.pojo.Researcher;
 import com.csu.lab.pojo.Thesis;
 import com.csu.lab.service.ResearcherService;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.management.relation.RelationService;
 import java.util.*;
 
 @Controller
@@ -49,6 +51,9 @@ public class ClientTutorsController {
                                  Model model){
         //根据ID获取导师信息
         Researcher tutor = researcherService.queryResearcherById(rid);
+
+        //根据ID获取论文、项目关系
+        //Relationship relationship = relationService;
 
         //获取导师名下的学生
         List<Researcher> studentList = researcherService.queryByProperty("affiliatedTutor",rid);

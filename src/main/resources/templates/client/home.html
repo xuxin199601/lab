@@ -31,12 +31,12 @@
             <thead>
             <tr class="layui-bg-black">
                 <th>最新活动</th>
-                <th><a class="csu-color-graylight" href="javascript:;">更多</a></th>
+                <th><a class="csu-color-graylight" th:href="@{/client/activity/activityList}">更多</a></th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="activity:${pageInfo.list}">
-                <td><a href="javascript:;" th:text="${activity.introduction}">测试是真的难</a></td>
+                <td><a th:href="@{${'/client/activity/activity'}(id=${activity.aid})}" th:text="${activity.name}">测试是真的难</a></td>
                 <td>2016-11-29</td>
             </tr>
             </tbody>
