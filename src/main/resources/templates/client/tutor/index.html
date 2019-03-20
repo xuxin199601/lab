@@ -87,23 +87,29 @@
 <script th:src="@{/js/iframe-resizer/iframeResizer.contentWindow.min.js}"></script>
 
 <!--这是自己设定的一些脚本（加分页功能）-->
-<script>
+<script th:inline="javascript">
     layui.use('laypage', function () {
         var laypage = layui.laypage;
+        var size = [[${totalPages}]];
+        console.log(size);
+        var page = [[${pageNum}]];
+        console.log(page);
 
         //执行一个laypage实例
         laypage.render({
             elem: 'csu-page'
-            , count: 35//从model里取当前总数
-            , limit: 12
-            , curr: 2//从model里取当前page数
+            , count: size*6//从model里取当前总数
+            , limit: 6
+            , curr: page//从model里取当前page数
             , jump: function (obj, first) {
                 //首次不执行
                 if (!first) {
                     console.log(obj.curr);
                     //obj.curr是目标页的index
                     //打开目标页后controller往model里放入学生信息和page数count总数，以便curr，count参数获得
-                    window.location.href = "../tutor/index.html?page=" + obj.curr;
+                    var url = [[@{${'/client/tutor/tutorList'}}]]+"?page="+obj.curr;
+                    console.log(url);
+                    window.location.href = url;
                 }
             }
         });

@@ -23,11 +23,11 @@ public class ClientTutorsController {
     private ResearcherService researcherService;
 
     @RequestMapping("/tutorList")
-    public String getClientTutorList(@RequestParam(defaultValue = "1") Integer pageNum,
+    public String getClientTutorList(@RequestParam(defaultValue = "1") Integer page,
                                   @RequestParam(defaultValue = "6") Integer pageSize,
                                   Model model) {
 
-        PageHelper.startPage(pageNum,pageSize);
+        PageHelper.startPage(page,pageSize);
 
         List<Researcher> tutorList = researcherService.getResearcherList(0);
 
@@ -38,14 +38,8 @@ public class ClientTutorsController {
         model.addAttribute("pageNum",pageInfo.getPageNum());
         //获得一页显示的条数
         model.addAttribute("pageSize",pageInfo.getPageSize());
-        //是否是第一页
-        model.addAttribute("isFirstPage",pageInfo.isIsFirstPage());
         //获得总页数
         model.addAttribute("totalPages",pageInfo.getPages());
-        //是否是最后一页
-        model.addAttribute("isLastPage",pageInfo.isIsLastPage());
-        //获得总共查询到多少条
-        model.addAttribute("totalNum",tutorList.size());
 
         return "client/tutor/index";
     }
