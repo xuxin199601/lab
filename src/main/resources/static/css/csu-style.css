@@ -154,7 +154,7 @@ video{
     color: gray;
 }
 
-.csu-card-direction,.csu-card-introduction,.csu-card-tutor {
+.csu-detail fieldset{
     margin: 15px 30px;
 }
 
@@ -181,7 +181,7 @@ video{
         background-position: center;
     }
 
-    .csu-logo, .csu-nav-1 {
+    .csu-logo, .csu-nav-catalog {
         display: none;
     }
 
