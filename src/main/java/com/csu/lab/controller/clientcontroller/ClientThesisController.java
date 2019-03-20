@@ -70,24 +70,24 @@ public class ClientThesisController {
     /**
      * 通过验证的用户下载论文
      */
-    @GetMapping("/thesisContent/{tid}/{aid}")
-    public void getThesisContent(@PathVariable Integer tid, @PathVariable Integer aid, HttpServletResponse response, HttpServletRequest request) {
+    @GetMapping("/thesisContent")
+    public void getThesisContent(@RequestParam("id") Integer tid, @RequestParam(name="aid",defaultValue = "1") Integer aid, HttpServletResponse response, HttpServletRequest request) {
         thesisService.getThesisContent(tid, aid, response, request);
     }
 
     /**
      * 通过验证的用户下载论文代码
      */
-    @GetMapping("/thesisCode/{tid}/{aid}")
-    public void getThesisCode(@PathVariable Integer tid, @PathVariable Integer aid, HttpServletResponse response, HttpServletRequest request) {
+    @GetMapping("/thesisCode")
+    public void getThesisCode(@RequestParam("id") Integer tid, @RequestParam(name="aid",defaultValue = "1") Integer aid, HttpServletResponse response, HttpServletRequest request) {
         thesisService.getThesisCode(tid, aid, response, request);
     }
 
     /**
      * 通过验证的用户下载论文数据集（考虑没有数据集的情况）
      */
-    @GetMapping("/thesisData/{tid}/{aid}")
-    public void getThesisData(@PathVariable Integer tid, @PathVariable Integer aid, HttpServletResponse response, HttpServletRequest request) {
+    @GetMapping("/thesisData")
+    public void getThesisData(@RequestParam("id") Integer tid, @RequestParam(name="aid",defaultValue = "1") Integer aid, HttpServletResponse response, HttpServletRequest request) {
         thesisService.getThesisData(tid, aid, response, request);
     }
 }
