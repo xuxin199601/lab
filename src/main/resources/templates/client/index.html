@@ -53,20 +53,23 @@
             <div class="layui-col-md2">
 
                 <!--如果登录就显示-->
-                <li class="layui-nav-item">
-                    <a href="javascript:;"><img th:src="@{/img/test/head.png}" class="layui-nav-img">大叔</a>
+                <li class="layui-nav-item" th:unless="${sessionState}">
+                    <a href="javascript:;"><img th:src="${researcher.image}" class="layui-nav-img" ><a th:text="${researcher.name}"></a></a>
                     <dl class="layui-nav-child">
-                        <dd id="csu-my-information"><a target="csu-content-iframe" href="student/student.html">我的信息</a>
+                        <dd id="csu-my-information">
+                            <a target="csu-content-iframe" th:if="${researcher.personType eq 0}" th:href="@{${'/client/tutor/tutor'}(id=${researcher.rid})}">我的信息</a>
+                            <a target="csu-content-iframe" th:if="${not(researcher.personType eq 0)}" th:href="@{${'/client/student/student'}(id=${researcher.rid})}">我的信息</a>
                         </dd>
                         <hr>
-                        <dd><a href="account/login.html">退出</a></dd>
+                        <dd><a th:href="@{/client/loginOut}">退出</a></dd>
                     </dl>
                 </li>
 
                 <!--如果未登录就显示-->
-                <!--<li class="layui-nav-item">-->
-                    <!--<a href="account/login.html">登录</a>-->
-                <!--</li>-->
+
+                <li class="layui-nav-item" th:if="${sessionState}">
+                    <a th:href="@{/client/login}">登录</a>
+                </li>
 
             </div>
 

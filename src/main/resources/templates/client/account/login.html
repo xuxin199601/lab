@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <title>CSU学生管理系统</title>
-    <link rel="stylesheet" href="../../static/layui/css/layui.css">
-    <link rel="stylesheet" href="../../static/css/csu-style.css">
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css} ">
+    <link rel="stylesheet" th:href="@{/css/csu-style.css}">
 </head>
 
 <body class="layui-bg-gray">
@@ -14,10 +14,10 @@
         <h2>登录</h2>
         <p>CSU学生管理系统</p>
     </div>
-    <form class="layui-form" action="">
+    <form class="layui-form" action="/client/loginCheck" method="post">
 
         <div class="layui-form-item">
-            <input type="text" required lay-verify="required" placeholder="学号" autocomplete="off" class="layui-input">
+            <input type="text" name = "username" required lay-verify="required" placeholder="学号" autocomplete="off" class="layui-input">
         </div>
 
         <!--正则表达式：(?!^\\d+$)(?!^[a-zA-Z]+$)(?!^[_#@]+$).{8,18}-->
@@ -33,26 +33,27 @@
         </div>
 
         <div class="layui-form-item">
-            <button class="layui-btn" lay-submit lay-filter="csu-login-button">登录</button>
+            <button class="layui-btn" lay-submit lay-filter="csu-login-button" type="submit">登录</button>
         </div>
     </form>
 </div>
 
-<div class="csu-bottom csu-login-bottom layui-bg-gray">
+<div class="csu-bottom">
     <hr>
-    <span>@2019</span>
+    <span class="csu-color-theme">@2019</span>
     <span class="layui-breadcrumb" lay-separator="|">
-        <a href="../index.html">CSU学生管理系统</a>
+        <a th:href="@{/client/index}">CSU学生管理系统</a>
         <a href="http://www.csu.edu.cn/">中南大学</a>
         <a href="http://software.csu.edu.cn">中南大学软件学院</a>
     </span>
 </div>
+
 <!--这是layui的脚本-->
-<script src="../../static/layui/layui.js"></script>
+<script th:src="@{/layui/layui.js}"></script>
 <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
 <!--[if lt IE 9]>
-<script src="../../static/js/layui/html5.min.js"></script>
-<script src="../../static/js/layui/respond.min.js"></script>
+<script th:src="@{/js/layui/html5.min.js}"></script>
+<script th:src="@{/js/layui/respond.min.js}"></script>
 <![endif]-->
 
 <script>
