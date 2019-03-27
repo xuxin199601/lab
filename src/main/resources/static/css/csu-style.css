@@ -130,6 +130,10 @@ video {
     color: #dddddd;
 }
 
+.csu-color-red {
+    color: red;
+}
+
 .csu-card {
     text-align: center;
     border: 1px solid #dddddd;

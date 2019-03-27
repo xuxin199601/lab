@@ -53,12 +53,12 @@
             <div class="layui-col-md2">
 
                 <!--如果登录就显示-->
-                <li class="layui-nav-item" th:unless="${sessionState}">
-                    <a href="javascript:;"><img th:style="'background-image:url(' + ${researcher.image} + ');'" class="layui-nav-img" th:text="${researcher.name}"></a>
+                <li class="layui-nav-item" th:if="${session.researcher}">
+                    <a href="javascript:;"><img th:style="'background-image:url(' + ${session.researcher.image} + ');'" class="layui-nav-img" th:text="${session.researcher.name}"></a>
                     <dl class="layui-nav-child">
                         <dd id="csu-my-information">
-                            <a target="csu-content-iframe" th:if="${researcher.personType eq 0}" th:href="@{${'/client/tutor/tutor'}(id=${researcher.rid})}">我的信息</a>
-                            <a target="csu-content-iframe" th:if="${not(researcher.personType eq 0)}" th:href="@{${'/client/student/student'}(id=${researcher.rid})}">我的信息</a>
+                            <a target="csu-content-iframe" th:if="${session.researcher.personType==0}" th:href="@{${'/client/tutor/tutor'}(id=${session.researcher.rid})}">我的信息</a>
+                            <a target="csu-content-iframe" th:unless="${session.researcher.personType==0}" th:href="@{${'/client/student/student'}(id=${session.researcher.rid})}">我的信息</a>
                         </dd>
                         <hr>
                         <dd><a th:href="@{/client/loginOut}">退出</a></dd>
@@ -66,8 +66,7 @@
                 </li>
 
                 <!--如果未登录就显示-->
-
-                <li class="layui-nav-item" th:if="${sessionState}">
+                <li class="layui-nav-item" th:unless="${session.researcher}">
                     <a th:href="@{/client/login}">登录</a>
                 </li>
 

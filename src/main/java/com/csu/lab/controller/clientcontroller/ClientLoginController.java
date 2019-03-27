@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -37,33 +38,27 @@ public class ClientLoginController {
 
     //登录实现
     @RequestMapping(value = "/loginCheck",method = RequestMethod.POST)
-    public String doLogin(Account account, Model model, HttpSession session) {
-        //boolean sessionState = true;
+    public String doLogin(Account account, RedirectAttributesModelMap modelMap, HttpSession session) {
+
         Account user = accountService.loginVaildata(account);
 
         if (user != null) {
-            session.setAttribute("user", user);
-            //sessionState = false;
 
             //通过aid查询用户，获得个人信息
             List<Researcher> researcherList = researcherService.queryByProperty("aid",user.getAid());
-            model.addAttribute("researcher",researcherList.get(0));
-            //model.addAttribute("sessionState", sessionState);
+            session.setAttribute("researcher",researcherList.get(0));
 
-            //return "redirect:/client/index";
-            return "client/index";
+            return "redirect:/client/index";
         } else {
-            model.addAttribute("error", "用户名或密码错误，请重新登录！");
-            return "client/account/login";
+            //注意Model属性会随着重定向而被销毁，所以这里直接使用RedirectAttributesModelMap对象的addFlashAttribute方法来添加Model属性。
+            modelMap.addFlashAttribute("error", "用户名或密码错误，请重新登录！");
+            return "redirect:/client/login";
         }
     }
 
     @RequestMapping("/loginOut")
     public String loginOut(HttpSession session,Model model){
-        boolean sessionState = false;
-        session.setAttribute("user", null);
-        sessionState = false;
-        model.addAttribute("sessionState", sessionState);
+        session.setAttribute("researcher", null);
         return "redirect:/client/index";
     }
 

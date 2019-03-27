@@ -35,6 +35,10 @@
         <div class="layui-form-item">
             <button class="layui-btn" lay-submit lay-filter="csu-login-button" type="submit">登录</button>
         </div>
+
+        <div class="layui-form-item csu-color-red" style="margin-bottom: 20px;" th:text="${error}">
+            错误信息
+        </div>
     </form>
 </div>
 

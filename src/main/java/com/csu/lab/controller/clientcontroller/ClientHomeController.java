@@ -35,30 +35,6 @@ public class ClientHomeController {
     @RequestMapping("/index")
     public String doIndex(Model model ,HttpSession session){
 
-        /*System.out.println("session是："+ session.getAttribute("user"));
-        boolean sessionState = false;
-        //如果获取到了session，则把登录成功的状态返回给前端
-        if (session.getAttribute("user")!=null) {
-            sessionState = true;
-
-            System.out.println("sessionState是：" + sessionState);
-            Account account = (Account) session.getAttribute("user");
-            System.out.println("account是：" + account);
-
-            //通过aid查询用户，获得个人信息
-            List<Researcher> researcherList = researcherService.queryByProperty("aid", account.getAid());
-            model.addAttribute("researcher", researcherList.get(0));
-        }
-        model.addAttribute("sessionState", sessionState);
-        System.out.println("model里有"+model);*/
-
-        boolean sessionState = true;
-        System.out.println(session.getAttribute("user"));
-        if (session.getAttribute("user")!=null)
-            sessionState = false;
-
-        model.addAttribute("sessionState", sessionState);
-
         return "client/index";
     }
 
