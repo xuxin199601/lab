@@ -33,6 +33,11 @@ video {
     padding: 0;
 }
 
+.csu-nav .layui-nav-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .csu-content {
     text-align: center;
 }
