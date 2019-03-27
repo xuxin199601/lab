@@ -35,7 +35,6 @@ video {
 
 .csu-nav .layui-nav-img {
     background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .csu-content {
@@ -144,8 +143,12 @@ video {
 
 .csu-card-img {
     width: 75%;
+    height: 0;
+    padding-top:105%;
+    margin: auto;
     margin-bottom: 30px;
-    border-radius: 5%
+    border-radius: 5%;
+    background-size: cover;
 }
 
 .csu-card-name {
