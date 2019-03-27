@@ -22,7 +22,7 @@
             <div class="layui-col-lg2 layui-col-sm3 layui-col-xs6" th:each="tutor:${pageInfo.list}">
                 <a th:href="@{${'/client/tutor/tutor'}(id=${tutor.rid})}">
                     <div class="csu-card csu-card-hover">
-                        <div class="csu-card-img" th:style="'background-image:url(' + ${tutor.image} + ');'">图片</div>
+                        <div class="csu-card-img" th:style="'background-image:url(' + ${tutor.image} + ');'"></div>
                         <div class="csu-card-name" th:text="${tutor.name}">肖途</div>
                         <div class="csu-card-post" th:text="${tutor.post}">胡峰</div>
                         <!--通过switch语句，根据personType输出不同值-->

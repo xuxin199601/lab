@@ -23,7 +23,7 @@
 
                 <a th:href="@{${'/client/student/student'}(id=${student.rid})}">
                     <div class="csu-card csu-card-hover">
-                        <div class="csu-card-img" th:style="'background-image:url(' + ${student.image} + ');'">图片</div>
+                        <div class="csu-card-img" th:style="'background-image:url(' + ${student.image} + ');'"></div>
                         <div class="csu-card-name" th:text="${student.name}">肖途</div>
                         <div class="csu-card-post" th:text="${student.post}">胡峰</div>
                         <!--通过switch语句，根据personType输出不同值-->

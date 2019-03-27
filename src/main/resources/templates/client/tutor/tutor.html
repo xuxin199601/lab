@@ -18,7 +18,7 @@
 
             <div class="layui-col-md2 layui-col-sm4 layui-col-space15">
                 <div class="csu-card">
-                    <div class="csu-card-img" th:style="'background-image:url(' + ${tutor.image} + ');'">图片</div>
+                    <div class="csu-card-img" th:style="'background-image:url(' + ${tutor.image} + ');'"></div>
                     <div class="csu-card-post" th:text="${tutor.post}">胡峰</div>
                     <div class="csu-card-type" th:switch="${tutor.personType}">
                         <p th:case="'0'">导师</p>
@@ -106,7 +106,7 @@
                             <div class="layui-col-md3 layui-col-sm6 layui-col-xs6" th:each="student:${studentList}">
                                 <a th:href="@{${'/client/student/student'}(id=${student.rid})}">
                                     <div class="csu-card csu-card-hover">
-                                        <div class="csu-card-img" th:style="'background-image:url(' + ${student.image} + ');'">图片</div>
+                                        <div class="csu-card-img" th:style="'background-image:url(' + ${student.image} + ');'"></div>
                                         <div class="csu-card-name" th:text="${student.name}">庄晓曼</div>
                                         <div class="csu-card-post" th:text="${student.post}">飞鹰</div>
                                         <div class="csu-card-type" th:text="${student.direction}">军统特务</div>
