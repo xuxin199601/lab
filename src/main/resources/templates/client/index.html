@@ -54,7 +54,7 @@
 
                 <!--如果登录就显示-->
                 <li class="layui-nav-item" th:unless="${sessionState}">
-                    <a href="javascript:;"><img th:src="${researcher.image}" class="layui-nav-img" ><a th:text="${researcher.name}"></a></a>
+                    <a href="javascript:;"><img th:style="'background:url(' + ${researcher.image} + '); background-size: cover; background-repeat: no-repeat;'" class="layui-nav-img" th:text="${researcher.name}"></a>
                     <dl class="layui-nav-child">
                         <dd id="csu-my-information">
                             <a target="csu-content-iframe" th:if="${researcher.personType eq 0}" th:href="@{${'/client/tutor/tutor'}(id=${researcher.rid})}">我的信息</a>
